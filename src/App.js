@@ -24,10 +24,8 @@ function Header({ currentSection, setCurrentSection }) {
     const windowHeight = window.innerHeight;
     const sectionHeight = section.offsetHeight;
     
-    // Calculate the extra offset needed to center the section
     const centerOffset = (windowHeight - sectionHeight) / 2;
     
-    // Make sure centerOffset does not go beyond headerOffset
     const offsetPosition = sectionTop - Math.max(headerOffset, centerOffset);
 
     window.scrollTo({
@@ -111,7 +109,6 @@ function App() {
             if (entry.target.id === 'about-me') {
               document.querySelector('.headshot').classList.add('headshot-visible');
             }
-            // Add the animation to all item containers within the visible section
             const containers = entry.target.querySelectorAll('.item-container');
             containers.forEach(container => {
               container.classList.add('item-container-visible');

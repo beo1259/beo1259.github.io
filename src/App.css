@@ -1,20 +1,20 @@
 @font-face {
   font-family: 'Lato';
   src: url('./lato/Lato-Light.ttf');
-  font-weight: 100; /* or 'thin' if supported */
+  font-weight: 100;
 }
 
 @font-face {
   font-family: 'Lato';
   src: url('./lato/Lato-Regular.ttf');
-  font-weight: 400; /* Normal weight */
+  font-weight: 400; 
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Lato';
   src: url('./lato/Lato-Bold.ttf');
-  font-weight: bold; /* Normal weight */
+  font-weight: bold; 
 }
 
 
@@ -191,7 +191,7 @@ body::before {
   z-index: -1;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
-  border-radius: inherit; /* Match the border radius of the container */
+  border-radius: inherit; 
 }
 
 .item-container:hover:before {
@@ -306,7 +306,7 @@ body::before {
 
 .headshot{
   margin-top: 80px;
-  border-radius: 100px;
+  border-radius: 200x;
   transition: box-shadow 2.5s ease-in-out, transform 1s ease-in, transform 1s ease-out, border 2.5s ease-in-out;
 }
 
