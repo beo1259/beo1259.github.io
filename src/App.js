@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import python from './python.png';
 import js from './js.png';
 import java from './java.png';
@@ -8,16 +8,27 @@ import sql from './sql.png';
 import toggle from './toggle.png';
 import wai from './wai.png';
 import mcdonalds from './mcdonalds.png';
-import headshot from './Headshot.jpg';
+import headshot from './Headshot.png';
 import github from './github.png';
 import linkedin from './linkedin.png';
+import react from './react.png';
+import reactnative from './reactnative.png';
+import flutter from './flutter.png';
 
-function Header({ currentSection }) {
+function Header({ currentSection, setCurrentSection }) {
   const scrollToSection = (sectionId) => {
+    setCurrentSection(sectionId);
     const headerOffset = document.querySelector('.header').offsetHeight;
     const section = document.getElementById(sectionId);
     const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = sectionTop - headerOffset;
+    const windowHeight = window.innerHeight;
+    const sectionHeight = section.offsetHeight;
+    
+    // Calculate the extra offset needed to center the section
+    const centerOffset = (windowHeight - sectionHeight) / 2;
+    
+    // Make sure centerOffset does not go beyond headerOffset
+    const offsetPosition = sectionTop - Math.max(headerOffset, centerOffset);
 
     window.scrollTo({
       top: offsetPosition,
@@ -28,12 +39,16 @@ function Header({ currentSection }) {
   const getButtonClass = (sectionName) => {
     return `button ${currentSection === sectionName ? 'active' : ''}`;
   };
-
+  
   return (
     <header className="header">
-      <button type="button" className="name-button">
+      <button type="name-button"
+        className='name-button'
+        onClick={() => scrollToSection('name')}
+      >
         BRAYDEN O'NEIL
       </button>
+
       <div className="button-container">
         <button
           type="button"
@@ -79,24 +94,46 @@ function Header({ currentSection }) {
 }
 
 function App() {
+
+  const [currentSection, setCurrentSection] = useState('about-me'); 
+
   useEffect(() => {
+    
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            setCurrentSection(entry.target.id);
             entry.target.classList.add('visible');
+            if (entry.target.id === 'about-me') {
+              document.querySelector('.headshot').classList.add('headshot-visible');
+            }
+            // Add the animation to all item containers within the visible section
+            const containers = entry.target.querySelectorAll('.item-container');
+            containers.forEach(container => {
+              container.classList.add('item-container-visible');
+            });
           } else {
             entry.target.classList.remove('visible');
+            if (entry.target.id === 'about-me') {
+              document.querySelector('.headshot').classList.remove('headshot-visible');
+            }
+            const containers = entry.target.querySelectorAll('.item-container');
+            containers.forEach(container => {
+              container.classList.remove('item-container-visible');
+            });
           }
         });
       },
       {
-        threshold: 0.1,
+        threshold: 0.15,
       }
     );
-
+  
     const sections = document.querySelectorAll('.section-container');
-
     sections.forEach((section) => {
       observer.observe(section);
     });
@@ -107,12 +144,13 @@ function App() {
       });
     };
   }, []);
+  
   return (
     <>
-    <Header />
+    <Header currentSection={currentSection} setCurrentSection={setCurrentSection} />
     <div className='App'>
       
-      <section className='section-container'>
+      <section id='name' className='section-container'>
       <div class="wrapper">
         <div class="static-txt">I'm a...</div>
         <ul class="dynamic-txts">
@@ -125,182 +163,300 @@ function App() {
       </section>
       <section id='about-me' className='section-container fade-in'>
         <div className='about-me-content'>
-          <img src={headshot} className="headshot" alt="Headshot" height="500" />
+          <img src={headshot} className="headshot" alt="Headshot" height="400" />
           <div class='section-text'>
-            <div class='section-title'>Hello!</div>
+            <div class='section-title' style={{paddingLeft: '20px'}}>HELLO!</div>
             <p>I'm Brayden! I am a hardworking Computer Science student, who enjoys pursuing hard-to-reach goals
             that require critical thinking and problem solving. I pursue these goals through the use
             of cutting edge technology that I find interesting, and maintain an optimistic attitude
             when faced with an issue.</p>
-            <p>
-            Outside of Software Engineering, I enjoy things like film, mixed martial arts, and chess. Contact me if you would like to discuss these!
-            </p>
           </div>
         </div>
       </section>
-      <section id='skills' className='section-container fade-in'>
-        <div class='section-title'>My Languages...</div>
-        <div className="section-text">
-          <h3>Python <img src={python} className="image-logo" alt="python" height="100" /></h3>
-          <p>Adept at Python, adept at leveraging its powerful libraries for data analysis, machine learning, and web development. My experience ranges from automating tasks to developing complex algorithms, emphasizing clean, efficient code.</p>
-        </div>
-        <div className="section-text">
-          <h3>JavaScript <img src={js} className="image-logo" alt="js" height="80" /></h3>
-          <p>Skilled in JavaScript, with a strong grasp of both front-end and back-end development. I excel in creating dynamic, user-friendly web applications using frameworks like React and Node.js, with a focus on performance and scalability.</p>
-        </div>
-        <div className="section-text">
-          <h3>Java <img src={java} className="image-logo" alt="java" height="100" /></h3>
-          <p>Proficient in Java, with substantial experience in building robust, scalable applications. My expertise includes working with Spring Boot for backend services and Android app development, ensuring high-quality software solutions.</p>
-        </div>
-        <div className="section-text">
-          <h3>C++ <img src={cpp} className="image-logo" alt="cpp" height="100" /></h3>
-          <p>Experienced in C++, adept at developing high-performance software. My knowledge extends to optimizing algorithms and memory management, suitable for system-level programming and computationally intensive tasks.</p>
-        </div>
-        <div className="section-text">
-          <h3>MySQL <img src={sql} className="image-logo" alt="sql" height="100" /></h3>
-          <p>Well-versed in MySQL, specializing in designing and managing databases. My skills include data modeling, query optimization, and ensuring data integrity, crucial for developing data-driven applications with efficient data storage solutions.</p>
-        </div>
-              
+      <section id='skills' className='section-container fade in'>
+      <div class="section-title" style={{paddingLeft: '290px'}}>Languages...</div>
+      
+        <button id='skills' className='item-container fade in'>
+          
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img src={python} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+            <h2 className='item-title'>Python</h2>
+          </div>
+          <ul className='item-text'>
+              <li>Expertise in data analysis and visualization using libraries like Pandas and Matplotlib.</li>
+              <p></p>
+              <li>Proficient in developing efficient algorithms and problem-solving skills.</li>
+              <p></p>
+              <li>Strong background in machine learning and artificial intelligence with Python.</li>
+              <p></p>
+              <li>Experienced in web development using Python frameworks like Django and Flask.</li>
+              <p></p>
+              <li>Ability to write clean, maintainable, and well-documented code.</li>
+          </ul>
+        </button>
+        
+        <button id='skills' className='item-container fade in'>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img src={java} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+            <h2 className='item-title'>Java</h2>
+          </div>
+          <ul className='item-text'>
+              <li>Strong proficiency in object-oriented programming and design patterns with Java.</li>
+              <p></p>
+              <li>Experienced in building scalable, high-performance enterprise applications.</li>
+              <p></p>
+              <li>Skilled in Android app development and cross-platform solutions.</li>
+              <p></p>
+              <li>Adept at using Java frameworks like Spring and Hibernate for backend development.</li>
+              <p></p>
+              <li>Committed to writing efficient, secure, and well-documented Java code.</li>
+          </ul>
+        </button>
+          <button id='skills' className='item-container fade in'>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <img src={cpp} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+                <h2 className='item-title'>C++</h2>
+              </div>
+            <ul className='item-text'>
+                <li>Expert in system-level programming and memory management with C++.</li>
+                <p></p>
+                <li>Proficient in developing complex algorithms and data structures in C++.</li>
+                <p></p>
+                <li>Experience in building high-performance software and game development.</li>
+                <p></p>
+                <li>Adept at using C++ for hardware interfacing and embedded system programming.</li>
+                <p></p>
+                <li>Focused on writing optimized, modular, and well-documented C++ code.</li>
+            </ul>
+          </button>
+
+          <button id='skills' className='item-container fade in'>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+                <img src={js} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+                <h2 className='item-title'>JavaScript</h2>
+              </div>
+            <ul className='item-text'>
+                <li>Expertise in front-end development with JavaScript frameworks.</li>
+                <p></p>
+                <li>Proficient in creating dynamic, interactive web applications using JavaScript.</li>
+                <p></p>
+                <li>Skilled in server-side development with Node.js and Express.</li>
+                <p></p>
+                <li>Experience in developing and integrating RESTful APIs with JavaScript.</li>
+                <p></p>
+                <li>Commitment to writing clean, maintainable, and well-documented JavaScript code.</li>
+            </ul>
+
+          </button>
+          <section className='frameworks-container fade in'>
+          <div class="section-title"  style={{paddingTop: '80px', paddingLeft: '240px'}}>Frameworks...</div>
+          
+          <button id='skills' className='item-container fade in'>
+            
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+                <img src={react} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+                <h2 className='item-title'>React</h2>
+              </div>
+            <ul className='item-text'>
+              <li>Proficient in building responsive web applications using React.</li>
+              <p></p>
+              <li>Experience with state management using tools like Redux and Context API.</li>
+              <p></p>
+              <li>Skilled in creating reusable UI components and optimizing performance.</li>
+              <p></p>
+              <li>Knowledge of React Router for handling client-side routing.</li>
+              <p></p>
+              <li>Experience with RESTful API integration and asynchronous data fetching.</li>
+            </ul>
+          </button>
+
+        <button id='skills' className='item-container fade in'>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+                <img src={reactnative} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+                <h2 className='item-title'>React Native</h2>
+              </div>
+          <ul className='item-text'>
+            <li>Developed cross-platform mobile apps using React Native for iOS and Android.</li>
+            <p></p>
+            <li>Proficient in building custom UI components and integrating third-party libraries.</li>
+            <p></p>
+            <li>Experience with navigation using React Navigation for seamless user journeys.</li>
+            <p></p>
+            <li>Knowledge of debugging tools like React Native Debugger.</li>
+            <p></p>
+            <li>Testing and deployment of React Native applications to app stores.</li>
+          </ul>
+        </button>
+
+        <button id='skills' className='item-container fade in'>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+                <img src={flutter} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+                <h2 className='item-title'>Flutter</h2>
+              </div>
+          <ul className='item-text'>
+            <li>Developed mobile apps for Android and iOS using the Flutter framework.</li>
+            <p></p>
+            <li>Experience in building beautiful and responsive UIs with Flutter widgets.</li>
+            <p></p>
+            <li>Proficient in state management using Provider and Bloc patterns.</li>
+            <p></p>
+            <li>Knowledge of platform-specific integrations for device features.</li>
+            <p></p>
+            <li>Testing, debugging, and deployment of Flutter applications.</li>
+          </ul>
+        </button>
+
+        <button id='skills' className='item-container fade in'>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img src={sql} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+            <h2 className='item-title'>SQL</h2>
+          </div>
+          <ul className='item-text'>
+            <li>Expert in writing complex SQL queries for data retrieval and manipulation.</li>
+            <p></p>
+            <li>Experience in designing normalized database schemas for efficiency.</li>
+            <p></p>
+            <li>Proficient in using relational database management systems (RDBMS) like MySQL.</li>
+            <p></p>
+            <li>Knowledge of database optimization techniques and indexing strategies.</li>
+            <p></p>
+            <li>Ensuring data security and integrity through SQL best practices and permissions.</li>
+          </ul>
+        </button>
+      </section>
       </section>
       <section id='experience' className='section-container fade-in'>
-        <div class="section-title">Experience & Achievements...</div>
-          <div className="image-logo">
-          <img src={toggle} alt="Toggle Logo" />
-        </div>
-  
-          <div className="section-subtitle">
-            <p>
-            Software Engineer Intern (Decemeber 2022 - July 2023) 
-            </p>
-          </div>
-          <div className="section-text">
-          <p>At Toggle, I leveraged Google's Tesseract API to convert 
-            users emails into text format, enabling data accessibility. Additionally, I integrated OpenAI's GPT-4 via their API to provide 
-            valuable answers to user queries, enhancing the user experience.</p>
+  <div className="section-title" style={{paddingLeft: '30px'}}>Experiences...</div>
 
-          <p>On the backend, I designed and implemented a database using SQL, with Node.js and Express for REST API development. This allowed 
-            us to efficiently store and manage the information generated from the Emails and user interactions.</p>
-
-          <p>For the frontend, I crafted a web app using React, powered by JavaScript, HTML, 
-            and CSS, delivering a seamless user interface and overall experience. Additionally, I developed a desktop app using Flutter and Dart, featuring 
-            a calendar and the ability to import events from various productivity platforms.</p>
-
-          <p>Collaboration was a key aspect of my role, and I excelled at working with a team via GitHub, ensuring smooth project development and version 
-            control. Lastly, I had the privilege of contributing creative and innovative UI/UX design ideas in collaboration with the design team, enhancing 
-            the overall user interaction and visual appeal of our applications.</p>
-          </div>
-          <div className="image-logo">
-        </div>
-          <div className="section-subtitle">
-            <p>
-            Western AI Case Competition 2023: Top 3 Finalist, Cash Prize Winner
-            </p>
-          </div>  
-          <div className="section-text">
-              <p>My group's task was to conceive an innovative concept centered around AI technology. We addressed the common issue 
-                of a lack of human connection experienced during video calls when the connection drops.</p>
-
-              <p>The strategy we devised involved a multi-step approach to enhance the visual quality of video frames.</p>
-        
-            <p>First, we strategized Fast Super-Resolution Neural Networks (FSCNN) to sharpen the frame. Next, we included Computer Vision 
-              techniques to recognize facial structures. Then, we combined the user's 3D face model with the information from computer vision's 
-              analysis. Finally, we reconstructed the user's face using a General Adversarial Network (GAN) to achieve a higher-quality result.</p>
-          </div>
-          
-          <div className="image-logo">
-          <img src={mcdonalds} alt="McDonalds Logo" height="200" />
-        </div>
-          <div className="section-subtitle">
-            <p>
-            McDonalds Crew Trainer
-            </p>
-          </div>  
-          <div className="section-text">
-              <p>Recived a promotion to crew trainer as a show of my leadership and collaboration skills</p>
-
-          </div>
-              
-      </section>
-      <section id='projects' className='section-container fade-in'>
-  <div className="section-title">Projects</div>
-
-
-  <div className="section-subtitle">
-    <p>Alarm Car</p>
-  </div>
-  <div className="section-text">
-    <article>
-      <p>
-        This innovative project involves an alarm clock mounted on a set of wheels. It's designed to activate at a user-defined time, 
-        initiating a unique mechanism where it drives around the room until the user manually disables it. This design encourages 
-        physical interaction, ensuring the user is fully awake.
-      </p>
-      <h4>Key Features:</h4>
-      <ul>
-        <li><strong>Custom-built Car:</strong> The vehicle was meticulously assembled from scratch, incorporating a Raspberry Pi for 
-        enhanced customizability and control.</li>
-        <li><strong>Python Script:</strong> A specialized Python script was developed to manage the car’s actions. It includes 
-        randomized movement patterns triggered when the alarm is set off.</li>
-        <li><strong>Component Integration:</strong> The project features a sophisticated blend of various components - servo motors, 
-        standard motors, an alarm buzzer, LEDs, and an ultrasonic module. Each component was carefully programmed and integrated 
-        to achieve the desired functionality.</li>
-      </ul>
-    </article>
+  <div className='items-row' style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+    <div className='item-container fade in' style={{ flex: '1', maxWidth: '30%', padding: '10px' }}>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <img src={toggle} alt="Toggle Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+        <h2 className='item-title'>Full Stack Software Engineer Intern</h2>
+      </div>
+    <ul className='item-text'>
+      <li>Utilized Google's Tesseract API for email text conversion, enhancing data accessibility.</li>
+      <p></p>
+      <li>Integrated OpenAI's GPT-4 to deliver accurate responses to user inquiries.</li>
+      <p></p>
+      <li>Designed and implemented a SQL database, with a Node.js/Express backend.</li>
+      <p></p>
+      <li>Created a web app interface using React, and a desktop app with Flutter.</li>
+      <p></p>
+      <li>Collaborated with teams on GitHub for project development and contributed to UI/UX design.</li>
+    </ul>
   </div>
 
-  <div className="section-subtitle">
-    <p>NBA Player Comparison</p>
-  </div>
-  <div className="section-text">
-    <article>
-      <p>
-        This project focuses on evaluating the overall abilities of NBA players through a unique algorithm. The algorithm is designed to 
-        assign different weights to each player's statistics, offering a nuanced and comprehensive assessment of their performance.
-      </p>
-      <h4>Project Highlights:</h4>
-      <ul>
-        <li><strong>Data Integration:</strong> Utilized a public third-party NBA API to fetch comprehensive player statistics. The data 
-        spans from the inception of the NBA to the present, allowing for a broad analysis of player performances across different eras.</li>
-        <li><strong>Custom Algorithm Development:</strong> Developed a specialized algorithm that assigns varying weights to different 
-        statistical categories. This approach enables a more balanced and accurate representation of a player's overall impact and skill.</li>
-        <li><strong>Front-End Development:</strong> Personally handled the entire front-end development of the web application. This 
-        experience provided invaluable insights and proficiency in various front-end technologies, enhancing both the functional and 
-        aesthetic aspects of the application.</li>
-      </ul>
-    </article>
+  <div className='item-container fade in' style={{ flex: '1', maxWidth: '30%', padding: '10px' }}>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <img src={wai} alt="Award Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+        <h2 className='item-title'>Western AI Case Competition Finalist</h2>
+      </div>
+    <ul className='item-text'>
+      <li>Conceived an AI-based solution to improve human connection in video calls.</li>
+      <p></p>
+      <li>Employed FSCNN to enhance video frame resolution in real-time.</li>
+      <p></p>
+      <li>Integrated Computer Vision for accurate facial structure recognition.</li>
+      <p></p>
+      <li>Utilized a 3D face model and GANs for high-quality video frame reconstruction.</li>
+      <p></p>
+      <li>Awarded Top 3 Finalist and received a cash prize for innovative approach.</li>
+    </ul>
   </div>
 
-  <div className="section-subtitle">
-    <p>Study Helper Chrome Extension</p>
+  <div className='item-container fade in' style={{ flex: '1', maxWidth: '30%', padding: '10px' }}>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <img src={mcdonalds} alt="McDonalds Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+        <h2 className='item-title'>McDonalds Crew Trainer</h2>
+      </div>
+    <ul className='item-text'>
+      <li>Promoted to Crew Trainer, demonstrating leadership and teamwork skills.</li>
+      <p></p>
+      <li>Guided new employees through training processes and protocols.</li>
+      <p></p>
+      <li>Ensured high standards of customer service and operational efficiency.</li>
+      <p></p>
+      <li>Contributed to a positive work environment and team morale.</li>
+      <p></p>
+      <li>Implemented feedback mechanisms to improve training methods.</li>
+    </ul>
   </div>
-  <div className="section-text">
-    <article>
-      <p>
-        Recognizing the absence of an efficient study planning tool in the Chrome Web Store, I developed this app to fulfill the essential need for simplified study session organization. Its key objective is to enhance the overall study experience by introducing a user-friendly approach to time management.
-      </p>
-      <h4>Core Features:</h4>
-      <ul>
-        <li><strong>Customizable Timers:</strong> Enables users to set specific timers for focused study periods, ensuring productive and uninterrupted learning sessions.</li>
-        <li><strong>Scheduled Break Times:</strong> Integrates the option to plan break times, facilitating a balanced study routine that prevents burnout.</li>
-        <li><strong>Straightforward Planning:</strong> The app offers a straightforward, effortless interface for listing and planning study sessions, making it accessible and convenient for all users.</li>
-      </ul>
-    </article>
   </div>
 </section>
+
+<section id='projects' className='section-container fade-in'>
+  <div className="section-title" style={{paddingLeft: '30px'}}>Projects...</div>
+
+  <div className='items-row' style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+    <div className='item-container fade in' style={{ flex: '1', maxWidth: '30%', padding: '10px' }}>
+
+        <h2 className='item-title'>Alarm Car</h2>
+
+      <ul className='item-text'>
+        <li>Engineered a mobile alarm clock to ensure waking through physical interaction.</li>
+        <p></p>
+        <li>Assembled a custom car with a Raspberry Pi for programmable control.</li>
+        <p></p>
+        <li>Developed a Python script for random movement upon alarm activation.</li>
+        <p></p>
+        <li>Integrated servo motors, buzzers, LEDs, and an ultrasonic module.</li>
+        <p></p>
+        <li>Designed a system that fosters user engagement and wakefulness.</li>
+      </ul>
+    </div>
+
+    <div className='item-container fade in' style={{ flex: '1', maxWidth: '30%', padding: '10px' }}>
+
+        <h2 className='item-title'>NBA Player Comparison</h2>
+
+      <ul className='item-text'>
+        <li>Analyzed NBA players' abilities with a custom statistical weight algorithm.</li>
+        <p></p>
+        <li>Integrated data from an NBA API for historical and current player stats.</li>
+        <p></p>
+        <li>Developed a nuanced algorithm for comprehensive player performance assessment.</li>
+        <p></p>
+        <li>Executed complete front-end development for a user-centric web application.</li>
+        <p></p>
+        <li>Delivered an analytical tool for comparing players across different eras.</li>
+      </ul>
+    </div>
+
+    <div className='item-container fade in' style={{ flex: '1', maxWidth: '30%', padding: '10px' }}>
+
+        <h2 className='item-title'>Study Helper Chrome Extension</h2>
+
+      <ul className='item-text'>
+        <li>Created a Chrome extension for improved study session organization.</li>
+        <p></p>
+        <li>Enabled customizable timers for focused study periods and planned breaks.</li>
+        <p></p>
+        <li>Facilitated a balanced study routine to enhance learning and prevent burnout.</li>
+        <p></p>
+        <li>Offered a simple, accessible interface for session planning and time management.</li>
+        <p></p>
+        <li>Addressed a market gap by providing an efficient study planning tool.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '20vh' }}>
   <div style={{ marginRight: '20px' }}>
     <a href="https://github.com/beo1259" target="_blank" rel="noopener noreferrer">
-      <img src={github} className="hyperlink-imgs" height="75"  alt="GitHub" />
+      <img src={github} className="hyperlink-imgs gold-filter" height="75" alt="GitHub"  style={{filter: 'saturate(85%)', filter: 'hue-rotate(14deg)'}}/>
     </a>
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '20vh' }}>
     <a href="https://www.linkedin.com/in/brayden-o-neil-32b405205/" target="_blank" rel="noopener noreferrer">
-      <img src={linkedin} className="hyperlink-imgs" height="70" alt="LinkedIn" />
+      <img src={linkedin} className="hyperlink-imgs gold-filter" height="65" alt="LinkedIn" />
     </a>
   </div>
 </div>
 
-<div style={{ textAlign: 'center', color: 'white', marginBottom: '10px'}}>Copyright @2023 | All rights reserved | Brayden O'Neil</div>
+
+<div style={{ textAlign: 'center', color: 'white', marginBottom: '10px', fontFamily: 'lato', color: 'gold'}}>Copyright ©2023 | All rights reserved | Brayden O'Neil</div>
 </div>
     </>
   );

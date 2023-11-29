@@ -22,7 +22,7 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  background-image: url('toronto.gif');
+  background-image: url('toronto.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -41,7 +41,9 @@ body::before {
 }
 
 .header {
-  background-color: rgb(2, 1, 20);
+  background-image: url('toronto.jpg');
+  background-size: cover;
+  background-position: top;
   width: 100%;
   height: 80px;
   position: fixed;
@@ -66,7 +68,7 @@ body::before {
   font-family: 'lato';
   border: none;
   background-color: transparent;
-  color: white;
+  color: rgba(245, 245, 245, 0.5);
   cursor: pointer;
   margin-left: 1%;
   margin-right: auto;
@@ -74,8 +76,7 @@ body::before {
 }
 
 .name-button:hover {
-  transform: scale(1.10);
-  color: gold;
+  transform: scale(1.02);
 }
 
 .button {
@@ -83,27 +84,31 @@ body::before {
   font-family: 'lato';
   border: none;
   background-color: transparent;
-  color: white;
+  color: rgba(245, 245, 245, 0.5);
   cursor: pointer;
   margin-left: auto;
   margin-right: auto;
   transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
+.button.active {
+  color: rgb(255, 238, 0);
+  transform: scale(1.05);
+}
+
 .button:hover {
   transform: scale(1.05);
-  color: gold;
+  color: white;
 }
 
 .section-container {
 
   border-radius: 30px;
   min-height: 300px;
-  padding-top: 20px;
   margin-top: 400px;
   margin-bottom: 400px;
-  margin-left: 400px;
-  margin-right: 400px;
+  margin-left: 50px;
+  margin-right: 50px;
   position: relative;
   color: white;
   text-align: center;
@@ -116,20 +121,85 @@ body::before {
   opacity: 1;
 }
 
+.frameworks-container {
+
+  border-radius: 30px;
+  min-height: 300px;
+  margin-top: 100px;
+  margin-bottom: 400px;
+  margin-left: 50px;
+  margin-right: 50px;
+  position: relative;
+  color: white;
+  text-align: center;
+  z-index: 4;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.frameworks-container.visible {
+  opacity: 1;
+}
+
+.items-container {
+
+  border-radius: 30px;
+  min-height: 300px;
+  padding-top: 20px;
+  margin-top: 400px;
+  margin-bottom: 400px;
+
+  position: relative;
+  color: white;
+  text-align: center;
+  z-index: 4;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.item-container {
+  margin: 20px;
+  border-radius: 30px;
+  padding-left: 10px;
+  padding-top: 5px;
+  height: 250px;
+  width: 600px;
+  background: rgba(17, 17, 17, 0.8);
+  border: 5px solid rgb(37, 37, 37);
+  z-index: 5;
+  opacity: 1; 
+  position: relative; 
+  color: white;
+  transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.item-container:hover {
+  transform: scale(1.01);
+  border: 5px solid rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.1);
+}
+
+.item-text{
+  font-family: 'lato';
+  font-weight: 100;
+  font-size: 15px;
+  text-align: left;
+}
+
+.item-title{
+  font-family: 'lato';
+  text-align: center;
+  padding-left: 30px;
+  font-size: 20px;
+}
 .section-title{
   margin-top: 50px;
-  margin-right: 900px;
+  margin-bottom: 20px;
+  text-align: left;
+  color: gold;
   font-family: 'lato';
   font-weight: 800;
   font-size: 3rem;
-}
-
-.section-subtitle{
-  padding-left: 100px;
-  padding-right: 100px;
-  font-family: 'lato';
-  font-weight: 800;
-  font-size: 1.7rem;
 }
 
 .section-text{
@@ -138,11 +208,6 @@ body::before {
   font-family: 'lato';
   font-weight: 100;
   font-size: 1.7rem;
-}
-
-.wrapper{
-  display: flex;
-  flex-direction: column; /* Stack the static and dynamic texts vertically */
 }
 
 .static-txt{
@@ -202,7 +267,12 @@ body::before {
 
 .headshot{
   margin-top: 80px;
-  border-radius: 50px;
+  border-radius: 100px;
+  transition: box-shadow 2.5s ease-in-out, transform 2.5s ease-in-out, border 2.5s ease-in-out;
+}
+
+.headshot:hover{
+  transform: scale(1.15);
 }
 
 .proj-img{
@@ -211,20 +281,20 @@ body::before {
 
 .about-me-content {
   display: flex;
-  align-items: center; /* Aligns items vertically in the center */
-  justify-content: center; /* Centers the items horizontally */
-  gap: 20px; /* Adds some space between the image and text */
+  align-items: center; 
+  padding-left: 250px;
+  padding-right: 250px;
+  justify-content: center;
+  gap: 20px; 
 }
 
 .hyperlink-imgs {
   
-  -webkit-filter: drop-shadow(5px 10px 5px #222);
-  filter: drop-shadow(5px 5px 5px #222);
   transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
 
 }
 
 .hyperlink-imgs:hover {
   color: gold;
-  transform: scale(1.1); 
+  transform: scale(1.05); 
 }
