@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.272e4ac8.css",
+    "main.js": "/static/js/main.464fc6c7.js",
+    "static/js/787.bbee3217.chunk.js": "/static/js/787.bbee3217.chunk.js",
+    "static/media/toronto.jpg": "/static/media/toronto.d9aebb42fee1ce338cee.jpg",
+    "static/media/Headshot.png": "/static/media/Headshot.0ade729e585e92fe269d.png",
+    "static/media/python.png": "/static/media/python.82efb64f8698a267f8bf.png",
+    "static/media/wai.png": "/static/media/wai.7a848b5fb9e3711f1bd4.png",
+    "static/media/Lato-Light.ttf": "/static/media/Lato-Light.c7400fcad9e48ca9043f.ttf",
+    "static/media/Lato-Regular.ttf": "/static/media/Lato-Regular.9d883d540ee2b4de8024.ttf",
+    "static/media/Lato-Bold.ttf": "/static/media/Lato-Bold.636be8de934918e38ed9.ttf",
+    "static/media/react.png": "/static/media/react.214af24d7f042fd76977.png",
+    "static/media/sql.png": "/static/media/sql.f9dcca7050d0de6ab643.png",
+    "static/media/C++_logo.png": "/static/media/C++_logo.053a898d752aef72651e.png",
+    "static/media/reactnative.png": "/static/media/reactnative.8541b143aec91404e0e4.png",
+    "static/media/java.png": "/static/media/java.17f1047b2752f83ef109.png",
+    "static/media/github.png": "/static/media/github.a6956aa73fec8918f497.png",
+    "index.html": "/index.html",
+    "main.272e4ac8.css.map": "/static/css/main.272e4ac8.css.map",
+    "main.464fc6c7.js.map": "/static/js/main.464fc6c7.js.map",
+    "787.bbee3217.chunk.js.map": "/static/js/787.bbee3217.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.272e4ac8.css",
+    "static/js/main.464fc6c7.js"
+  ]
+}
