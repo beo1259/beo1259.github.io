@@ -445,7 +445,7 @@ function App() {
 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '20vh' }}>
   <div style={{ marginRight: '20px' }}>
     <a href="https://github.com/beo1259" target="_blank" rel="noopener noreferrer">
-      <img src={github} className="hyperlink-imgs gold-filter" height="75" alt="GitHub"  style={{filter: 'saturate(85%)', filter: 'hue-rotate(14deg)'}}/>
+      <img src={github} className="hyperlink-imgs gold-filter" height="75" alt="GitHub"  style={{filter: 'hue-rotate(14deg)'}}/>
     </a>
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '20vh' }}>
@@ -456,7 +456,7 @@ function App() {
 </div>
 
 
-<div style={{ textAlign: 'center', color: 'white', marginBottom: '10px', fontFamily: 'lato', color: 'gold'}}>Copyright ©2023 | All rights reserved | Brayden O'Neil</div>
+<div style={{ textAlign: 'center', marginBottom: '10px', fontFamily: 'lato', color: 'gold'}}>Copyright ©2023 | All rights reserved | Brayden O'Neil</div>
 </div>
     </>
   );
