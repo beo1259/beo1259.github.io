@@ -163,8 +163,8 @@ body::before {
   color: white;
   flex-grow: 0;
   flex-shrink: 0;
+  overflow: hidden;
   transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
-  text-overflow:ellipsis;
 }
 
 .item-container:hover {
