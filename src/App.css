@@ -124,30 +124,85 @@ body::before {
 .section-container.visible {
   opacity: 1;
 }
-@media only screen and (max-width: 400px) {
-  /* Target the skills, experiences, and projects sections specifically */
-  #skills.section-container, .skills.section-container,
-  #experience.section-container, .experience.section-container,
-  #projects.section-container, .projects.section-container {
+@media only screen and (max-width: 600px) {
+  /* General styles for header and body when on mobile */
+  .header {
+    display: none; /* Hide the header */
+  }
+
+  body {
+    font-size: 18px; /* Adjust font size for readability on mobile */
+  }
+
+  /* Section container styles for mobile */
+  .section-container {
+    /* Align items in column for mobile */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the items */
+    align-items: center;
+    margin-top: 10%; /* Adjust top margin to fit mobile screens */
+    margin-bottom: 10%;
   }
 
-  /* Target the item-container specifically within the skills, experiences, and projects sections */
-  #skills .item-container, .skills .item-container,
-  #experience .item-container, .experience .item-container,
-  #projects .item-container, .projects .item-container {
-    width: 70%; /* Set the width to full width */
-    max-width: 100%; /* Ensure it doesn't exceed the parent's width */
-    margin: 10px 0; /* Add some space between the items */
-    box-sizing: border-box; /* Include padding and border in the element's width */
+  /* Item container styles for mobile */
+  .item-container {
+    width: 100%; /* Full width for mobile */
+    min-width: 100%; /* Ensure it takes up full width */
+    max-width: 100%; /* Prevent exceeding full width */
+    margin: 10px 0; /* Add top and bottom margin */
+    box-sizing: border-box; /* Include padding and border in width */
   }
 
-  /* Ensure that the images within the containers resize properly */
-  #skills .item-container img, #experience .item-container img, #projects .item-container img {
-    max-width: 100%; /* Ensure images are not wider than the container */
+  /* Image styles within item containers for mobile */
+  .item-container img {
+    max-width: 100%; /* Full width images within the item container */
     height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Text styles for mobile */
+  .item-text {
+    font-size: 1rem; /* Adjust font size for mobile readability */
+  }
+
+  /* Title styles for mobile */
+  .item-title {
+    font-size: 1.2rem; /* Adjust title font size for mobile */
+  }
+
+  /* Make sure the buttons stack vertically on mobile */
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+    margin: 0; /* Reset left margin */
+    gap: 10px; /* Add space between buttons */
+  }
+
+  /* Adjust name button for mobile */
+  .name-button {
+    font-size: 1.2rem; /* Adjust font size for mobile */
+  }
+
+  /* Adjust section title for mobile */
+  .section-title {
+    font-size: 1.5rem; /* Adjust section title size for mobile */
+    padding-left: 0; /* Reset padding */
+    text-align: center; /* Center align text */
+  }
+
+  /* Adjust static text for mobile */
+  .static-txt {
+    font-size: 2rem; /* Adjust font size for mobile */
+    margin-top: 10%; /* Adjust top margin for mobile */
+  }
+
+  /* Adjust dynamic text animations for mobile */
+  .dynamic-txts li {
+    font-size: 2.5rem; /* Adjust font size for mobile */
+  }
+
+  /* Hide the bottom icons on mobile if needed */
+  .bottom-icons {
+    display: none; /* Optional: hide bottom icons on mobile */
   }
 }
 
