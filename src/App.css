@@ -1,20 +1,20 @@
 @font-face {
   font-family: 'Lato';
   src: url('./lato/Lato-Light.ttf');
-  font-weight: 100;
+  font-weight: 100; /* or 'thin' if supported */
 }
 
 @font-face {
   font-family: 'Lato';
   src: url('./lato/Lato-Regular.ttf');
-  font-weight: 400; 
+  font-weight: 400; /* Normal weight */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Lato';
   src: url('./lato/Lato-Bold.ttf');
-  font-weight: bold; 
+  font-weight: bold; /* Normal weight */
 }
 
 
@@ -45,7 +45,7 @@ body::before {
   background-size: cover;
   background-position: top;
   width: 100%;
-  height: 80px;
+  height: 60px;
   position: fixed;
   top: 0;
   display: flex;
@@ -92,16 +92,16 @@ body::before {
   cursor: pointer;
   margin-left: auto;
   margin-right: auto;
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out, color 0.3s ease-in-out;
   color: grey;
 }
 
 .button.active {
-  transform: scale(1.10);
+  transform: scale(1.04);
   color: gold;
 }
 .button:hover {
-  transform: scale(1.14);
+  transform: scale(1.04);
   color: white;
 }
 
@@ -118,7 +118,7 @@ body::before {
   text-align: center;
   z-index: 4;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .section-container.visible {
@@ -164,7 +164,7 @@ body::before {
 .item-container:hover {
   transform: scale(1.01);
   border: 5px solid rgba(255, 215, 0, 0.8);
-  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.03);
 }
 
 .item-container:before {
@@ -306,7 +306,7 @@ body::before {
 
 .headshot{
   margin-top: 80px;
-  border-radius: 200x;
+  border-radius: 100px;
   transition: box-shadow 2.5s ease-in-out, transform 1s ease-in, transform 1s ease-out, border 2.5s ease-in-out;
 }
 
@@ -336,4 +336,32 @@ body::before {
 .hyperlink-imgs:hover {
   color: gold;
   transform: scale(1.05); 
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 80%;
+  height: 90%;
+  background: white;
+  padding: 20px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
 }
