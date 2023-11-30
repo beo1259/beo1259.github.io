@@ -201,11 +201,13 @@ function App() {
           <img src={headshot} className="headshot" alt="Headshot" height="400" />
           <div class='section-text'>
             <div class='section-title' style={{paddingLeft: '20px'}}>HELLO!</div>
+            <div className='gif-container'></div>
             <p>I'm Brayden! I am a hardworking Computer Science student, who enjoys pursuing hard-to-reach goals
             that require critical thinking and problem solving. I pursue these goals through the use
             of cutting edge technology that I find interesting, and maintain an optimistic attitude
             when faced with an issue.</p>
           </div>
+          
         </div>
       </section>
       <section id='skills' className='section-container fade in'>
@@ -363,7 +365,7 @@ function App() {
       <section id='experience' className='section-container fade-in'>
   <div className="section-title" style={{paddingLeft: '290px'}}>Experiences...</div>
 
-  <button id='experiences' className='experience-container fade in'>
+  <button id='experiences' className='item-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src={toggle} alt="Toggle Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
         <h2 className='item-title'>Full Stack Software Engineer Intern</h2>
@@ -381,7 +383,7 @@ function App() {
     </ul>
   </button>
 
-  <button id='experiences' className='experience-container fade in'>
+  <button id='experiences' className='item-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src={wai} alt="Award Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
         <h2 className='item-title'>Western AI Case Competition Finalist</h2>
@@ -399,7 +401,7 @@ function App() {
     </ul>
   </button>
 
-  <button id='experiences' className='experience-container fade in'>
+  <button id='experiences' className='item-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src={mcdonalds} alt="McDonalds Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
         <h2 className='item-title'>McDonalds Crew Trainer</h2>
@@ -417,7 +419,7 @@ function App() {
     </ul>
   </button>
 
-  <button id='experiences' className='experience-container fade in'>
+  <button id='experiences' className='item-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src={mcdonalds} alt="McDonalds Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
         <h2 className='item-title'>McDonalds Crew Trainer</h2>
@@ -456,7 +458,7 @@ function App() {
       </ul>
     </button>
 
-    <button className='experience-container fade in' onClick={() => showProjectDetails('nbaPlayerComparison')}>
+    <button className='item-container fade in' onClick={() => showProjectDetails('nbaPlayerComparison')}>
 
         <h2 className='item-title'>NBA Player Comparison</h2>
 
@@ -475,7 +477,7 @@ function App() {
 
 
 
-    <button className='experience-container fade in' onClick={() => showProjectDetails('studyHelperExtension')}>
+    <button className='item-container fade in' onClick={() => showProjectDetails('studyHelperExtension')}>
 
         <h2 className='item-title'>Study Helper Chrome Extension</h2>
 
@@ -492,7 +494,7 @@ function App() {
       </ul>
     </button>
 
-    <button className='experience-container fade in' onClick={() => showProjectDetails('studyHelperExtension')}>
+    <button className='item-container fade in' onClick={() => showProjectDetails('studyHelperExtension')}>
 
         <h2 className='item-title'>Study Helper Chrome Extension</h2>
 
@@ -509,11 +511,6 @@ function App() {
       </ul>
     </button>
 
-    <ProjectDetailsModal 
-        isVisible={isModalVisible} 
-        onClose={hideProjectDetails} 
-        content={currentProject}
-      />
 </section>
 
 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '20vh' }}>
