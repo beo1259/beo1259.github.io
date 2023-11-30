@@ -159,7 +159,7 @@ function App() {
           <li><span>Student</span></li>
           <li><span>Friend</span></li>
           <li><span>Hardworker</span></li>
-          <li><span>Obsessive Learner</span></li>
+          <li><span>Compulsive Learner</span></li>
           <li><span>Curious Person</span></li>
           <li><span>Programmer</span></li>
         </ul>
@@ -254,8 +254,7 @@ function App() {
             </ul>
 
           </button>
-          <section className='frameworks-container fade in'>
-          <div class="section-title"  style={{paddingTop: '80px', paddingLeft: '200px'}}>Frameworks...</div>
+          <div class="section-title" style={{paddingTop: '120px'}}>Frameworks...</div>
           
           <button id='skills' className='item-container fade in'>
             
@@ -329,7 +328,6 @@ function App() {
             <li>Ensuring data security and integrity through SQL best practices and permissions.</li>
           </ul>
         </button>
-      </section>
       </section>
       <section id='experience' className='section-container fade-in'>
   <div className="section-title">Experiences...</div>
