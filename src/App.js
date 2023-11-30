@@ -97,14 +97,6 @@ function App() {
 
   const [currentSection, setCurrentSection] = useState('about-me'); 
 
-  const projectDetails = {
-    'alarmCar': <div>Alarm Car Project Details...</div>,
-    'nbaPlayerComparison': <div>NBA Player Comparison Project Details...</div>,
-    'studyHelperExtension': <div>Study Helper Chrome Extension Project Details...</div>,
-  };
-
-
-
   useEffect(() => {
     
     window.onbeforeunload = function () {
