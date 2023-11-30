@@ -392,15 +392,15 @@ function App() {
         <h2 className='item-title'>Port Credit Yacht Club (2022 - 2023, Seasonal)</h2>
       </div>
     <ul className='item-text'>
-      <li>Promoted to Crew Trainer, demonstrating leadership and teamwork skills.</li>
+      <li>Dealt with disgruntled members with the utmost respect.</li>
       <p></p>
-      <li>Guided new employees through training processes and protocols.</li>
+      <li>Used a spreadsheet program to store display data in an organized manner.</li>
       <p></p>
-      <li>Ensured high standards of customer service and operational efficiency.</li>
+      <li>Accessed member data in a database, learning about company backend strcutre.</li>
       <p></p>
-      <li>Contributed to a positive work environment and team morale.</li>
+      <li>Dealt with conflict among employees, resolving situations swiftly.</li>
       <p></p>
-      <li>Implemented feedback mechanisms to improve training methods.</li>
+      <li>Worked on/fixed the docks, maintaining a high level of club preservation.</li>
     </ul>
   </button>
 </section>
@@ -434,7 +434,7 @@ function App() {
         <p></p>
         <li>Integrated data from an NBA API for historical and current player stats.</li>
         <p></p>
-        <li>Developed a nuanced algorithm for comprehensive player performance assessment.</li>
+        <li>Implemented an calculation for comprehensive player assessments.</li>
         <p></p>
         <li>Executed complete front-end development for a user-centric web application.</li>
         <p></p>
@@ -466,15 +466,15 @@ function App() {
         <h2 className='item-title'>Personal Portfolio Website (2023 - Present)</h2>
 
       <ul className='item-text'>
-        <li>Created a Chrome extension for improved study session organization.</li>
+        <li>Wanted to showcase my web development talents in a personal way.</li>
         <p></p>
-        <li>Enabled customizable timers for focused study periods and planned breaks.</li>
+        <li>Included JavaScript functions to work in conjunction with my CSS designs.</li>
         <p></p>
-        <li>Facilitated a balanced study routine to enhance learning and prevent burnout.</li>
+        <li>Emphasized a focus on simplicity to focus on a smooth learning experience.</li>
         <p></p>
-        <li>Offered a simple, accessible interface for session planning and time management.</li>
+        <li>This project is a personal playground, showing my design ideas and capabilities.</li>
         <p></p>
-        <li>Addressed a market gap by providing an efficient study planning tool.</li>
+        <li>Refreshed myself on many web development fundamentals, expanding my scope.</li>
       </ul>
     </button>
 
