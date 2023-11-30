@@ -138,7 +138,7 @@ body::before {
   #skills .item-container, .skills .item-container,
   #experience .item-container, .experience .item-container,
   #projects .item-container, .projects .item-container {
-    width: 100%; /* Set the width to full width */
+    width: 70%; /* Set the width to full width */
     max-width: 100%; /* Ensure it doesn't exceed the parent's width */
     margin: 10px 0; /* Add some space between the items */
     box-sizing: border-box; /* Include padding and border in the element's width */
