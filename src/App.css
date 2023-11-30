@@ -164,6 +164,7 @@ body::before {
   flex-grow: 0;
   flex-shrink: 0;
   transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+  text-overflow:ellipsis;
 }
 
 .item-container:hover {
@@ -313,9 +314,8 @@ body::before {
   margin-left: 30px;
   padding-top: 30px;
 }
-
 .headshot{
-  
+
   margin-top: 60px;
   border-radius: 100px;
   transition: box-shadow 2.5s ease-in-out, transform 1s ease-in, transform 1s ease-out, border 2.5s ease-in-out;
@@ -347,6 +347,13 @@ body::before {
 .hyperlink-imgs:hover {
   color: gold;
   transform: scale(1.05); 
+}
+
+.bottom-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -420,3 +427,4 @@ body::before {
     font-size: 24px;
   }
 }
+

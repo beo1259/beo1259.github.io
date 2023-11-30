@@ -577,17 +577,15 @@ function App() {
 
 </section>
 
-<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '15vh' }}>
-  <div style={{ marginRight: '20px' }}>
+<div className='bottom-icons'>
     <a href="https://github.com/beo1259" target="_blank" rel="noopener noreferrer">
-      <img src={github} className="hyperlink-imgs gold-filter" height="50" alt="GitHub"  style={{filter: 'hue-rotate(14deg)'}}/>
+      <img src={github} className="hyperlink-imgs gold-filter" height="50" alt="GitHub"  style={{filter: 'hue-rotate(14deg)', marginRight: '5px'}}/>
     </a>
-  </div>
-  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '20vh' }}>
+  
+
     <a href="https://www.linkedin.com/in/brayden-o-neil-32b405205/" target="_blank" rel="noopener noreferrer">
-      <img src={linkedin} className="hyperlink-imgs gold-filter" height="45" alt="LinkedIn" />
+      <img src={linkedin} className="hyperlink-imgs gold-filter" height="48" alt="LinkedIn" style={{marginLeft: '5px'}}/>
     </a>
-  </div>
 </div>
 
 
