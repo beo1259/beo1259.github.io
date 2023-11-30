@@ -463,7 +463,7 @@ function App() {
 
     <button className='item-container fade in' >
 
-        <h2 className='item-title'>Study Helper Chrome Extension - 2023</h2>
+        <h2 className='item-title'>Personal Portfolio Website (2023 - Present)</h2>
 
       <ul className='item-text'>
         <li>Created a Chrome extension for improved study session organization.</li>
