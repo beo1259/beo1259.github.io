@@ -174,7 +174,7 @@ function App() {
             <p>I'm Brayden! I am a hardworking Computer Science student, who enjoys pursuing hard-to-reach goals
             that require critical thinking and problem solving. I pursue these goals through the use
             of cutting edge technology that I find interesting, and maintain an optimistic attitude
-            when faced with an issue.</p>
+            when faced with adversity.</p>
           </div>
           
         </div>
