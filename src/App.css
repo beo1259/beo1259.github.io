@@ -151,9 +151,9 @@ body::before {
   border-radius: 30px;
   padding-left: 14.5px;
   padding-top: 3.75px;
-  min-height: 300px;
+  min-height: 290px;
   min-width: 39%;
-  max-height: 300px;
+  max-height: 290px;
   max-width: 39%;
   background: rgba(17, 17, 17, 0.8);
   border: 5px solid rgb(37, 37, 37);

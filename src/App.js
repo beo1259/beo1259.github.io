@@ -231,27 +231,11 @@ function App() {
               <li>Committed to writing efficient, secure, and well-documented Java code.</li>
           </ul>
         </button>
-          <button id='skills' className='item-container fade in'>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={cpp} alt="Python logo" style={{ width: '50px', height: '55px', marginRight: '10px' }} />
-                <h2 className='item-title'>C/C++</h2>
-              </div>
-            <ul className='item-text'>
-                <li>Expert in system-level programming and memory management with C++.</li>
-                <p></p>
-                <li>Proficient in developing complex algorithms and data structures in C++.</li>
-                <p></p>
-                <li>Experience in building high-performance software and game development.</li>
-                <p></p>
-                <li>Adept at using C++ for hardware interfacing and embedded system programming.</li>
-                <p></p>
-                <li>Focused on writing optimized, modular, and well-documented C++ code.</li>
-            </ul>
-          </button>
+          
 
           <button id='skills' className='item-container fade in'>
           <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={js} alt="Python logo" style={{ width: '50px', height: '55px', marginRight: '10px', borderRadius: '10px' }} />
+                <img src={js} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
                 <h2 className='item-title'>JavaScript</h2>
               </div>
             <ul className='item-text'>
@@ -322,6 +306,23 @@ function App() {
             <li>Committed to writing efficient, maintainable, and secure C# code.</li>
           </ul>
         </button>
+        <button id='skills' className='item-container fade in'>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <img src={cpp} alt="Python logo" style={{ width: '50px', height: '55px', marginRight: '10px' }} />
+                <h2 className='item-title'>C/C++</h2>
+              </div>
+            <ul className='item-text'>
+                <li>Expert in system-level programming and memory management with C++.</li>
+                <p></p>
+                <li>Proficient in developing complex algorithms and data structures in C++.</li>
+                <p></p>
+                <li>Experience in building high-performance software and game development.</li>
+                <p></p>
+                <li>Adept at using C++ for hardware interfacing and embedded system programming.</li>
+                <p></p>
+                <li>Focused on writing optimized, modular, and well-documented C++ code.</li>
+            </ul>
+          </button>
         <button id='skills' className='item-container fade in'>
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <img src={sql} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
