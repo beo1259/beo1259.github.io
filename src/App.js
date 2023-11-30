@@ -4,7 +4,11 @@ import python from './python.png';
 import js from './js.png';
 import java from './java.png';
 import cpp from './C++_logo.png';
+import htmlcss from './htmlcss.png';
+import csharp from './csharp.png';
+import typescript from './typescript.png';
 import sql from './sql.png';
+import expressLogo from './expressLogo.png';
 import toggle from './toggle.png';
 import wai from './wai.png';
 import mcdonalds from './mcdonalds.png';
@@ -39,12 +43,21 @@ function Header({ currentSection, setCurrentSection }) {
   const getButtonClass = (sectionName) => {
     return `button ${currentSection === sectionName ? 'active' : ''}`;
   };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   
+  
+
   return (
     <header className="header">
       <button type="name-button"
         className='name-button'
-        onClick={() => scrollToSection('name')}
+        onClick={() => scrollToTop()}
       >
         BRAYDEN O'NEIL
       </button>
@@ -195,7 +208,7 @@ function App() {
               <p></p>
               <li>Strong background in machine learning and artificial intelligence with Python.</li>
               <p></p>
-              <li>Experienced in web development using Python frameworks like Django and Flask.</li>
+              <li>I have experience in web development using Python frameworks.</li>
               <p></p>
               <li>Ability to write clean, maintainable, and well-documented code.</li>
           </ul>
@@ -220,8 +233,8 @@ function App() {
         </button>
           <button id='skills' className='item-container fade in'>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={cpp} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-                <h2 className='item-title'>C++</h2>
+                <img src={cpp} alt="Python logo" style={{ width: '50px', height: '55px', marginRight: '10px' }} />
+                <h2 className='item-title'>C/C++</h2>
               </div>
             <ul className='item-text'>
                 <li>Expert in system-level programming and memory management with C++.</li>
@@ -238,7 +251,7 @@ function App() {
 
           <button id='skills' className='item-container fade in'>
           <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={js} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+                <img src={js} alt="Python logo" style={{ width: '50px', height: '55px', marginRight: '10px', borderRadius: '10px' }} />
                 <h2 className='item-title'>JavaScript</h2>
               </div>
             <ul className='item-text'>
@@ -254,12 +267,84 @@ function App() {
             </ul>
 
           </button>
+
+          <button id='skills' className='item-container fade in'>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img src={typescript} alt="TypeScript logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+            <h2 className='item-title'>TypeScript</h2>
+          </div>
+          <ul className='item-text'>
+            <li>Proficient in using TypeScript to build scalable and maintainable web applications.</li>
+            <p></p>
+            <li>Experienced in leveraging TypeScript's static typing to catch errors early in development.</li>
+            <p></p>
+            <li>Skilled in integrating TypeScript with popular front-end frameworks like React.</li>
+            <p></p>
+            <li>Familiar with TypeScript's features such as interfaces, enums, and decorators.</li>
+            <p></p>
+            <li>Committed to following best practices and design patterns in TypeScript development.</li>
+          </ul>
+        </button>
+
+
+          <button id='skills' className='item-container fade in'>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img src={htmlcss} alt="HTML/CSS logo" style={{ width: '60px', height: '50px', marginRight: '10px' }} />
+            <h2 className='item-title'>HTML/CSS</h2>
+          </div>
+          <ul className='item-text'>
+            <li>Proficient in creating responsive and visually appealing web designs using HTML and CSS.</li>
+            <p></p>
+            <li>Experienced in building cross-browser compatible websites.</li>
+            <p></p>
+            <li>Skilled in using CSS frameworks like Bootstrap for rapid development.</li>
+            <p></p>
+            <li>Knowledgeable in modern CSS features like Flexbox and Grid layout.</li>
+            <p></p>
+            <li>Committed to writing clean and maintainable code for front-end development.</li>
+          </ul>
+        </button>
+
+        <button id='skills' className='item-container fade in'>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img src={csharp} alt="C# logo" style={{ width: '50px', height: '55px', marginRight: '10px' }} />
+            <h2 className='item-title'>C#</h2>
+          </div>
+          <ul className='item-text'>
+            <li>Proficient in object-oriented programming with C#.</li>
+            <p></p>
+            <li>Experienced in developing Windows desktop applications using WinForms and WPF.</li>
+            <p></p>
+            <li>Skilled in using ASP.NET for web application development.</li>
+            <p></p>
+            <li>Familiar with C# libraries and frameworks for various application types.</li>
+            <p></p>
+            <li>Committed to writing efficient, maintainable, and secure C# code.</li>
+          </ul>
+        </button>
+        <button id='skills' className='item-container fade in'>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img src={sql} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+            <h2 className='item-title'>SQL</h2>
+          </div>
+          <ul className='item-text'>
+            <li>Expert in writing complex SQL queries for data retrieval and manipulation.</li>
+            <p></p>
+            <li>Experience in designing normalized database schemas for efficiency.</li>
+            <p></p>
+            <li>Proficient in using relational database management systems (RDBMS) like MySQL.</li>
+            <p></p>
+            <li>Knowledge of database optimization techniques and indexing strategies.</li>
+            <p></p>
+            <li>Ensuring data security and integrity through SQL best practices and permissions.</li>
+          </ul>
+        </button>
           <div class="section-title" style={{paddingTop: '120px'}}>Frameworks...</div>
           
           <button id='skills' className='item-container fade in'>
             
           <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={react} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+                <img src={react} alt="Python logo" style={{ width: '50px', height: '55px', marginRight: '10px', borderRadius: '10px' }} />
                 <h2 className='item-title'>React</h2>
               </div>
             <ul className='item-text'>
@@ -311,23 +396,25 @@ function App() {
           </ul>
         </button>
 
+
         <button id='skills' className='item-container fade in'>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={sql} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
-            <h2 className='item-title'>SQL</h2>
-          </div>
-          <ul className='item-text'>
-            <li>Expert in writing complex SQL queries for data retrieval and manipulation.</li>
-            <p></p>
-            <li>Experience in designing normalized database schemas for efficiency.</li>
-            <p></p>
-            <li>Proficient in using relational database management systems (RDBMS) like MySQL.</li>
-            <p></p>
-            <li>Knowledge of database optimization techniques and indexing strategies.</li>
-            <p></p>
-            <li>Ensuring data security and integrity through SQL best practices and permissions.</li>
-          </ul>
-        </button>
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <img src={expressLogo} alt="Express.js logo" style={{ width: '80px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+    <h2 className='item-title'>Express/NodeJS</h2>
+  </div>
+  <ul className='item-text'>
+    <li>Proficient in building web applications and APIs using Express.js.</li>
+    <p></p>
+    <li>Experienced in routing, middleware, and handling HTTP requests.</li>
+    <p></p>
+    <li>Skilled in integrating Express.js with databases and MySQL.</li>
+    <p></p>
+    <li>Familiar with Express.js frameworks for scalable and structured application development.</li>
+    <p></p>
+    <li>Committed to writing clean and maintainable code while following best practices.</li>
+  </ul>
+</button>
+
       </section>
       <section id='experience' className='section-container fade-in'>
   <div className="section-title">Experiences...</div>
