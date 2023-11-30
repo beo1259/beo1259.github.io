@@ -14,7 +14,7 @@ import linkedin from './linkedin.png';
 import react from './react.png';
 import reactnative from './reactnative.png';
 import flutter from './flutter.png';
-
+import pcyc from './pcyc.png'
 
 
 function Header({ currentSection, setCurrentSection }) {
@@ -335,7 +335,7 @@ function App() {
   <button id='experiences' className='item-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src={toggle} alt="Toggle Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-        <h2 className='item-title'>Full Stack Software Engineer Intern</h2>
+        <h2 className='item-title'>Full Stack Software Engineer Intern (2022 - 2023)</h2>
       </div>
     <ul className='item-text'>
       <li>Utilized Google's Tesseract API for email text conversion, enhancing data accessibility.</li>
@@ -353,7 +353,7 @@ function App() {
   <button id='experiences' className='item-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src={wai} alt="Toggle Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-        <h2 className='item-title'>Western AI Case Competiton Finalist</h2>
+        <h2 className='item-title'>Western AI Case Competiton Finalist (2023)</h2>
       </div>
     <ul className='item-text'>
       <li>Conceptualized an AI-based solution to improve human connection in video calls, involing replacing the low quality face with a 3D rendered version</li>
@@ -371,7 +371,7 @@ function App() {
   <button id='experiences' className='item-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src={mcdonalds} alt="McDonalds Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-        <h2 className='item-title'>McDonalds Crew Trainer</h2>
+        <h2 className='item-title'>McDonalds Crew Trainer (2020 - 2021)</h2>
       </div>
     <ul className='item-text'>
       <li>Promoted to Crew Trainer, demonstrating leadership and teamwork skills.</li>
@@ -388,8 +388,8 @@ function App() {
 
   <button id='experiences' className='item-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <img src={mcdonalds} alt="McDonalds Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-        <h2 className='item-title'>McDonalds Crew Trainer</h2>
+        <img src={pcyc} alt="McDonalds Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+        <h2 className='item-title'>Port Credit Yacht Club (2022 - 2023, Seasonal)</h2>
       </div>
     <ul className='item-text'>
       <li>Promoted to Crew Trainer, demonstrating leadership and teamwork skills.</li>
@@ -410,7 +410,7 @@ function App() {
 
     <button className='item-container fade in' >
 
-        <h2 className='item-title'>Alarm Car</h2>
+        <h2 className='item-title'>Alarm Car (2023 - Present)</h2>
 
       <ul className='item-text'>
         <li>Engineered a mobile alarm clock to ensure waking through physical interaction.</li>
@@ -427,7 +427,7 @@ function App() {
 
     <button className='item-container fade in' >
 
-        <h2 className='item-title'>NBA Player Comparison</h2>
+        <h2 className='item-title'>NBA Player Comparison (2022 - Present)</h2>
 
       <ul className='item-text'>
         <li>Analyzed NBA players' abilities with a custom statistical weight algorithm.</li>
@@ -446,7 +446,7 @@ function App() {
 
     <button className='item-container fade in' >
 
-        <h2 className='item-title'>Study Helper Chrome Extension</h2>
+        <h2 className='item-title'>Study Helper Chrome Extension (2023 - Present)</h2>
 
       <ul className='item-text'>
         <li>Created a Chrome extension for improved study session organization.</li>
@@ -463,7 +463,7 @@ function App() {
 
     <button className='item-container fade in' >
 
-        <h2 className='item-title'>Study Helper Chrome Extension</h2>
+        <h2 className='item-title'>Study Helper Chrome Extension - 2023</h2>
 
       <ul className='item-text'>
         <li>Created a Chrome extension for improved study session organization.</li>
