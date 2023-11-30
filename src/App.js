@@ -15,6 +15,20 @@ import react from './react.png';
 import reactnative from './reactnative.png';
 import flutter from './flutter.png';
 
+function ProjectDetailsModal({ isVisible, onClose, content }) {
+  if (!isVisible) return null;
+
+  return (
+    <div className="modal-backdrop">
+      <div className="modal">
+        <button onClick={onClose}>Close</button>
+        {content}
+      </div>
+    </div>
+  );
+}
+
+
 function Header({ currentSection, setCurrentSection }) {
   const scrollToSection = (sectionId) => {
     setCurrentSection(sectionId);
@@ -93,7 +107,26 @@ function Header({ currentSection, setCurrentSection }) {
 
 function App() {
 
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [currentProject, setCurrentProject] = useState(null);
   const [currentSection, setCurrentSection] = useState('about-me'); 
+
+  const projectDetails = {
+    'alarmCar': <div>Alarm Car Project Details...</div>,
+    'nbaPlayerComparison': <div>NBA Player Comparison Project Details...</div>,
+    'studyHelperExtension': <div>Study Helper Chrome Extension Project Details...</div>,
+  };
+
+  const showProjectDetails = (projectKey) => {
+    setCurrentProject(projectDetails[projectKey]);
+    setIsModalVisible(true);
+  };
+
+  const hideProjectDetails = () => {
+    setIsModalVisible(false);
+    setCurrentProject(null); 
+  };
+
 
   useEffect(() => {
     
@@ -328,9 +361,8 @@ function App() {
       </section>
       </section>
       <section id='experience' className='section-container fade-in'>
-  <div className="section-title" style={{paddingLeft: '30px'}}>Experiences...</div>
+  <div className="section-title" style={{paddingLeft: '290px'}}>Experiences...</div>
 
-  <div className='items-row' style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
   <button id='experiences' className='experience-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src={toggle} alt="Toggle Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
@@ -384,14 +416,30 @@ function App() {
       <li>Implemented feedback mechanisms to improve training methods.</li>
     </ul>
   </button>
-  </div>
+
+  <button id='experiences' className='experience-container fade in'>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <img src={mcdonalds} alt="McDonalds Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+        <h2 className='item-title'>McDonalds Crew Trainer</h2>
+      </div>
+    <ul className='item-text'>
+      <li>Promoted to Crew Trainer, demonstrating leadership and teamwork skills.</li>
+      <p></p>
+      <li>Guided new employees through training processes and protocols.</li>
+      <p></p>
+      <li>Ensured high standards of customer service and operational efficiency.</li>
+      <p></p>
+      <li>Contributed to a positive work environment and team morale.</li>
+      <p></p>
+      <li>Implemented feedback mechanisms to improve training methods.</li>
+    </ul>
+  </button>
 </section>
 
 <section id='projects' className='section-container fade-in'>
-  <div className="section-title" style={{paddingLeft: '30px'}}>Projects...</div>
+  <div className="section-title" style={{paddingLeft: '290px'}}>Projects...</div>
 
-  <div className='items-row' style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
-    <button className='experience-container fade in'>
+    <button className='experience-container fade in' onClick={() => showProjectDetails('alarmCar')}>
 
         <h2 className='item-title'>Alarm Car</h2>
 
@@ -408,7 +456,7 @@ function App() {
       </ul>
     </button>
 
-    <button className='experience-container fade in'>
+    <button className='experience-container fade in' onClick={() => showProjectDetails('nbaPlayerComparison')}>
 
         <h2 className='item-title'>NBA Player Comparison</h2>
 
@@ -425,7 +473,9 @@ function App() {
       </ul>
     </button>
 
-    <button className='experience-container fade in'>
+
+
+    <button className='experience-container fade in' onClick={() => showProjectDetails('studyHelperExtension')}>
 
         <h2 className='item-title'>Study Helper Chrome Extension</h2>
 
@@ -441,7 +491,29 @@ function App() {
         <li>Addressed a market gap by providing an efficient study planning tool.</li>
       </ul>
     </button>
-  </div>
+
+    <button className='experience-container fade in' onClick={() => showProjectDetails('studyHelperExtension')}>
+
+        <h2 className='item-title'>Study Helper Chrome Extension</h2>
+
+      <ul className='item-text'>
+        <li>Created a Chrome extension for improved study session organization.</li>
+        <p></p>
+        <li>Enabled customizable timers for focused study periods and planned breaks.</li>
+        <p></p>
+        <li>Facilitated a balanced study routine to enhance learning and prevent burnout.</li>
+        <p></p>
+        <li>Offered a simple, accessible interface for session planning and time management.</li>
+        <p></p>
+        <li>Addressed a market gap by providing an efficient study planning tool.</li>
+      </ul>
+    </button>
+
+    <ProjectDetailsModal 
+        isVisible={isModalVisible} 
+        onClose={hideProjectDetails} 
+        content={currentProject}
+      />
 </section>
 
 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '20vh' }}>
