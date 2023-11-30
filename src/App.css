@@ -124,26 +124,33 @@ body::before {
 .section-container.visible {
   opacity: 1;
 }
-
-/* This CSS targets screens with a width of 600px or less */
 @media only screen and (max-width: 600px) {
-  .section-container {
-    /* Adjust this container if necessary to ensure it allows for vertical stacking */
+  /* Target the skills, experiences, and projects sections specifically */
+  #skills.section-container, .skills.section-container,
+  #experience.section-container, .experience.section-container,
+  #projects.section-container, .projects.section-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* This centers the child items on the page */
+    align-items: center; /* Center the items */
   }
 
-  .item-container {
-    /* Adjust the width to take the full container or as much as needed */
-    min-width: 100%; /* This will make each item container full width */
-    max-width: 100%; /* This will prevent it from exceeding the width of its parent */
-    margin: 1% auto; /* Keep the margin consistent and auto will center it */
-    /* Remove any flex-grow or shrink properties that may affect the layout */
-    flex-grow: 0;
-    flex-shrink: 0;
+  /* Target the item-container specifically within the skills, experiences, and projects sections */
+  #skills .item-container, .skills .item-container,
+  #experience .item-container, .experience .item-container,
+  #projects .item-container, .projects .item-container {
+    width: 100%; /* Set the width to full width */
+    max-width: 100%; /* Ensure it doesn't exceed the parent's width */
+    margin: 10px 0; /* Add some space between the items */
+    box-sizing: border-box; /* Include padding and border in the element's width */
+  }
+
+  /* Ensure that the images within the containers resize properly */
+  #skills .item-container img, #experience .item-container img, #projects .item-container img {
+    max-width: 100%; /* Ensure images are not wider than the container */
+    height: auto; /* Maintain aspect ratio */
   }
 }
+
 
 .item-container {
   margin: 1%;
