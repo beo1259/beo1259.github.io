@@ -252,8 +252,11 @@ body::before {
 }
 
 @media (max-width: 768px) {
-  .name-button {
-    font-size: 150%; 
+  .item-text{
+    font-size: 0.55rem;
+  }
+  .item-title{
+    font-size: 0.5rem;
   }
   .section-title {
     font-size: 2rem;
