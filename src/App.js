@@ -15,18 +15,6 @@ import react from './react.png';
 import reactnative from './reactnative.png';
 import flutter from './flutter.png';
 
-function ProjectDetailsModal({ isVisible, onClose, content }) {
-  if (!isVisible) return null;
-
-  return (
-    <div className="modal-backdrop">
-      <div className="modal">
-        <button onClick={onClose}>Close</button>
-        {content}
-      </div>
-    </div>
-  );
-}
 
 
 function Header({ currentSection, setCurrentSection }) {
@@ -107,8 +95,6 @@ function Header({ currentSection, setCurrentSection }) {
 
 function App() {
 
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [currentProject, setCurrentProject] = useState(null);
   const [currentSection, setCurrentSection] = useState('about-me'); 
 
   const projectDetails = {
@@ -117,15 +103,6 @@ function App() {
     'studyHelperExtension': <div>Study Helper Chrome Extension Project Details...</div>,
   };
 
-  const showProjectDetails = (projectKey) => {
-    setCurrentProject(projectDetails[projectKey]);
-    setIsModalVisible(true);
-  };
-
-  const hideProjectDetails = () => {
-    setIsModalVisible(false);
-    setCurrentProject(null); 
-  };
 
 
   useEffect(() => {
@@ -441,7 +418,7 @@ function App() {
 <section id='projects' className='section-container fade-in'>
   <div className="section-title">Projects...</div>
 
-    <button className='item-container fade in' onClick={() => showProjectDetails('alarmCar')}>
+    <button className='item-container fade in' >
 
         <h2 className='item-title'>Alarm Car</h2>
 
@@ -458,7 +435,7 @@ function App() {
       </ul>
     </button>
 
-    <button className='item-container fade in' onClick={() => showProjectDetails('nbaPlayerComparison')}>
+    <button className='item-container fade in' >
 
         <h2 className='item-title'>NBA Player Comparison</h2>
 
@@ -477,7 +454,7 @@ function App() {
 
 
 
-    <button className='item-container fade in' onClick={() => showProjectDetails('studyHelperExtension')}>
+    <button className='item-container fade in' >
 
         <h2 className='item-title'>Study Helper Chrome Extension</h2>
 
@@ -494,7 +471,7 @@ function App() {
       </ul>
     </button>
 
-    <button className='item-container fade in' onClick={() => showProjectDetails('studyHelperExtension')}>
+    <button className='item-container fade in' >
 
         <h2 className='item-title'>Study Helper Chrome Extension</h2>
 
