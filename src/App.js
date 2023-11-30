@@ -200,7 +200,7 @@ function App() {
         <div className='about-me-content'>
           <img src={headshot} className="headshot" alt="Headshot" height="400" />
           <div class='section-text'>
-            <div class='section-title' style={{paddingLeft: '20px'}}>HELLO!</div>
+            <div class='section-title' style={{paddingLeft: '10px'}}>HELLO!</div>
             <div className='gif-container'></div>
             <p>I'm Brayden! I am a hardworking Computer Science student, who enjoys pursuing hard-to-reach goals
             that require critical thinking and problem solving. I pursue these goals through the use
@@ -211,7 +211,7 @@ function App() {
         </div>
       </section>
       <section id='skills' className='section-container fade in'>
-      <div class="section-title" style={{paddingLeft: '290px'}}>Languages...</div>
+      <div class="section-title">Languages...</div>
       
         <button id='skills' className='item-container fade in'>
           
@@ -286,7 +286,7 @@ function App() {
 
           </button>
           <section className='frameworks-container fade in'>
-          <div class="section-title"  style={{paddingTop: '80px', paddingLeft: '240px'}}>Frameworks...</div>
+          <div class="section-title"  style={{paddingTop: '80px', paddingLeft: '200px'}}>Frameworks...</div>
           
           <button id='skills' className='item-container fade in'>
             
@@ -363,7 +363,7 @@ function App() {
       </section>
       </section>
       <section id='experience' className='section-container fade-in'>
-  <div className="section-title" style={{paddingLeft: '290px'}}>Experiences...</div>
+  <div className="section-title">Experiences...</div>
 
   <button id='experiences' className='item-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -385,11 +385,11 @@ function App() {
 
   <button id='experiences' className='item-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <img src={wai} alt="Award Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-        <h2 className='item-title'>Western AI Case Competition Finalist</h2>
+        <img src={wai} alt="Toggle Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+        <h2 className='item-title'>Western AI Case Competiton Finalist</h2>
       </div>
     <ul className='item-text'>
-      <li>Conceived an AI-based solution to improve human connection in video calls.</li>
+      <li>Conceptualized an AI-based solution to improve human connection in video calls, involing replacing the low quality face with a 3D rendered version</li>
       <p></p>
       <li>Employed FSCNN to enhance video frame resolution in real-time.</li>
       <p></p>
@@ -397,7 +397,7 @@ function App() {
       <p></p>
       <li>Utilized a 3D face model and GANs for high-quality video frame reconstruction.</li>
       <p></p>
-      <li>Awarded Top 3 Finalist and received a cash prize for innovative approach.</li>
+      <li>Awarded Top 3 Finalist among 35 teams, my team and I received a cash prize for innovative approach.</li>
     </ul>
   </button>
 
@@ -439,9 +439,9 @@ function App() {
 </section>
 
 <section id='projects' className='section-container fade-in'>
-  <div className="section-title" style={{paddingLeft: '290px'}}>Projects...</div>
+  <div className="section-title">Projects...</div>
 
-    <button className='experience-container fade in' onClick={() => showProjectDetails('alarmCar')}>
+    <button className='item-container fade in' onClick={() => showProjectDetails('alarmCar')}>
 
         <h2 className='item-title'>Alarm Car</h2>
 
@@ -513,21 +513,21 @@ function App() {
 
 </section>
 
-<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '20vh' }}>
+<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '15vh' }}>
   <div style={{ marginRight: '20px' }}>
     <a href="https://github.com/beo1259" target="_blank" rel="noopener noreferrer">
-      <img src={github} className="hyperlink-imgs gold-filter" height="75" alt="GitHub"  style={{filter: 'hue-rotate(14deg)'}}/>
+      <img src={github} className="hyperlink-imgs gold-filter" height="50" alt="GitHub"  style={{filter: 'hue-rotate(14deg)'}}/>
     </a>
   </div>
   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '20vh' }}>
     <a href="https://www.linkedin.com/in/brayden-o-neil-32b405205/" target="_blank" rel="noopener noreferrer">
-      <img src={linkedin} className="hyperlink-imgs gold-filter" height="65" alt="LinkedIn" />
+      <img src={linkedin} className="hyperlink-imgs gold-filter" height="45" alt="LinkedIn" />
     </a>
   </div>
 </div>
 
 
-<div style={{ textAlign: 'center', marginBottom: '10px', fontFamily: 'lato', color: 'gold'}}>Copyright ©2023 | All rights reserved | Brayden O'Neil</div>
+<div style={{ textAlign: 'center', marginBottom: '10px', fontFamily: 'lato', fontSize: '10px', color: 'gold'}}>Copyright ©2023 | All rights reserved | Brayden O'Neil</div>
 </div>
     </>
   );
