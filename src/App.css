@@ -72,6 +72,7 @@ body::before {
   cursor: pointer;
   margin-left: 1%;
   margin-right: auto;
+  
   background: linear-gradient(280deg, rgb(255, 153, 0) 0%, rgb(255, 242, 0) 35%, rgb(255, 60, 0) 100%);
   -webkit-background-clip: text;
   background-size: 300% 300%;
@@ -145,12 +146,14 @@ body::before {
   opacity: 1;
 }
 
+
+
 .item-container {
   margin: 20px;
   border-radius: 30px;
   padding-left: 10px;
   padding-top: 5px;
-  height: 275px;
+  height: 300px;
   width: 600px;
   background: rgba(17, 17, 17, 0.8);
   border: 5px solid rgb(37, 37, 37);
@@ -174,6 +177,7 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
+  background-image: url('shooting.gif');
   background-image: linear-gradient(
   45deg,
   hsla(118deg, 100%, 20%, 0.3) 0%,
@@ -195,6 +199,60 @@ body::before {
 }
 
 .item-container:hover:before {
+  opacity: 1;
+}
+
+.experience-container {
+  margin: 20px;
+  border-radius: 30px;
+  padding-left: 10px;
+  padding-top: 5px;
+  height: 350px;
+  width: 550px;
+  background: rgba(17, 17, 17, 0.8);
+  border: 5px solid rgb(37, 37, 37);
+  z-index: 5;
+  opacity: 1; 
+  position: relative; 
+  color: white;
+  transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+.experience-container:hover {
+  transform: scale(1.01);
+  border: 5px solid rgba(255, 215, 0, 0.8);
+  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.03);
+}
+
+.experience-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('shooting.gif');
+  background-image: linear-gradient(
+  45deg,
+  hsla(118deg, 100%, 20%, 0.3) 0%,
+  hsla(62deg, 100%, 41%, 0.3) 19%,
+  hsla(40deg, 100%, 50%, 0.3) 39%,
+  hsla(22deg, 100%, 50%, 0.3) 60%,
+  hsla(36deg, 100%, 41%, 0.3) 80%,
+  hsla(185deg, 100%, 50%, 0.3) 100%
+);
+
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite;
+  transform: scale(1.01);
+  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.1);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  border-radius: inherit; 
+}
+
+.experience-container:hover:before {
   opacity: 1;
 }
 

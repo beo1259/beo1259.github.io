@@ -331,7 +331,7 @@ function App() {
   <div className="section-title" style={{paddingLeft: '30px'}}>Experiences...</div>
 
   <div className='items-row' style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
-    <div className='item-container fade in' style={{ flex: '1', maxWidth: '30%', padding: '10px' }}>
+  <button id='experiences' className='experience-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src={toggle} alt="Toggle Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
         <h2 className='item-title'>Full Stack Software Engineer Intern</h2>
@@ -347,9 +347,9 @@ function App() {
       <p></p>
       <li>Collaborated with teams on GitHub for project development and contributed to UI/UX design.</li>
     </ul>
-  </div>
+  </button>
 
-  <div className='item-container fade in' style={{ flex: '1', maxWidth: '30%', padding: '10px' }}>
+  <button id='experiences' className='experience-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src={wai} alt="Award Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
         <h2 className='item-title'>Western AI Case Competition Finalist</h2>
@@ -365,9 +365,9 @@ function App() {
       <p></p>
       <li>Awarded Top 3 Finalist and received a cash prize for innovative approach.</li>
     </ul>
-  </div>
+  </button>
 
-  <div className='item-container fade in' style={{ flex: '1', maxWidth: '30%', padding: '10px' }}>
+  <button id='experiences' className='experience-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src={mcdonalds} alt="McDonalds Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
         <h2 className='item-title'>McDonalds Crew Trainer</h2>
@@ -383,7 +383,7 @@ function App() {
       <p></p>
       <li>Implemented feedback mechanisms to improve training methods.</li>
     </ul>
-  </div>
+  </button>
   </div>
 </section>
 
@@ -391,7 +391,7 @@ function App() {
   <div className="section-title" style={{paddingLeft: '30px'}}>Projects...</div>
 
   <div className='items-row' style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
-    <div className='item-container fade in' style={{ flex: '1', maxWidth: '30%', padding: '10px' }}>
+    <button className='experience-container fade in'>
 
         <h2 className='item-title'>Alarm Car</h2>
 
@@ -406,9 +406,9 @@ function App() {
         <p></p>
         <li>Designed a system that fosters user engagement and wakefulness.</li>
       </ul>
-    </div>
+    </button>
 
-    <div className='item-container fade in' style={{ flex: '1', maxWidth: '30%', padding: '10px' }}>
+    <button className='experience-container fade in'>
 
         <h2 className='item-title'>NBA Player Comparison</h2>
 
@@ -423,9 +423,9 @@ function App() {
         <p></p>
         <li>Delivered an analytical tool for comparing players across different eras.</li>
       </ul>
-    </div>
+    </button>
 
-    <div className='item-container fade in' style={{ flex: '1', maxWidth: '30%', padding: '10px' }}>
+    <button className='experience-container fade in'>
 
         <h2 className='item-title'>Study Helper Chrome Extension</h2>
 
@@ -440,7 +440,7 @@ function App() {
         <p></p>
         <li>Addressed a market gap by providing an efficient study planning tool.</li>
       </ul>
-    </div>
+    </button>
   </div>
 </section>
 
