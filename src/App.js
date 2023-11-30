@@ -21,6 +21,30 @@ import flutter from './flutter.png';
 import pcyc from './pcyc.png'
 import githubgrey from './githubgrey.png';
 
+function equalizeContainerHeights() {
+  let maxHeight = 0;
+  const containers = document.querySelectorAll('.item-container');
+
+  containers.forEach(container => {
+    container.style.height = 'auto';
+  });
+
+  containers.forEach(container => {
+    if (container.offsetHeight > maxHeight) {
+      maxHeight = container.offsetHeight;
+    }
+  });
+
+  containers.forEach(container => {
+    container.style.height = `${maxHeight}px`;
+  });
+}
+
+equalizeContainerHeights();
+
+window.addEventListener('resize', equalizeContainerHeights);
+
+
 function Header({ currentSection, setCurrentSection }) {
   const scrollToSection = (sectionId) => {
     setCurrentSection(sectionId);
@@ -158,7 +182,10 @@ function App() {
   }, []);
   
   return (
+    
     <>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <Header currentSection={currentSection} setCurrentSection={setCurrentSection} />
     
     <div className='App'>
@@ -170,7 +197,7 @@ function App() {
           <li><span>Software Engineer</span></li>
           <li><span>Self Starter</span></li>
           <li><span>Student</span></li>
-          <li><span>Friend</span></li>
+          <li><span>Creative</span></li>
           <li><span>Hardworker</span></li>
           <li><span>Compulsive Learner</span></li>
           <li><span>Curious Person</span></li>
@@ -202,7 +229,7 @@ function App() {
             <h2 className='item-title'>Python</h2>
           </div>
           <ul className='item-text'>
-              <li>Expertise in data analysis and visualization using libraries like Pandas and Matplotlib.</li>
+              <li>Have been using python since 14 years old, and am very well versed in this language.</li>
               <p></p>
               <li>Proficient in developing efficient algorithms and problem-solving skills.</li>
               <p></p>
@@ -220,18 +247,17 @@ function App() {
             <h2 className='item-title'>Java</h2>
           </div>
           <ul className='item-text'>
-              <li>Strong proficiency in object-oriented programming and design patterns with Java.</li>
+              <li>Much like python, I am very well versed in this language and have been using it since highschool.</li>
               <p></p>
               <li>Experienced in building scalable, high-performance enterprise applications.</li>
               <p></p>
-              <li>Skilled in Android app development and cross-platform solutions.</li>
+              <li>Skilled in implementing Data Strucures and Algorithms using Java.</li>
               <p></p>
-              <li>Adept at using Java frameworks like Spring and Hibernate for backend development.</li>
+              <li>Expereinced at using frameworks like Spring and Hibernate for backend development.</li>
               <p></p>
-              <li>Committed to writing efficient, secure, and well-documented Java code.</li>
+              <li>Much of my University coursework has been in Java, and </li>
           </ul>
         </button>
-          
 
           <button id='skills' className='item-container fade in'>
           <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -262,7 +288,7 @@ function App() {
             <p></p>
             <li>Experienced in leveraging TypeScript's static typing to catch errors early in development.</li>
             <p></p>
-            <li>Skilled in integrating TypeScript with popular front-end frameworks like React.</li>
+            <li>My last internship involved using TypeScript with React and React Native.</li>
             <p></p>
             <li>Familiar with TypeScript's features such as interfaces, enums, and decorators.</li>
             <p></p>
@@ -279,13 +305,13 @@ function App() {
           <ul className='item-text'>
             <li>Proficient in creating responsive and visually appealing web designs using HTML and CSS.</li>
             <p></p>
-            <li>Experienced in building cross-browser compatible websites.</li>
+            <li>Experienced in building cross-platform compatible websites with React and React Native.</li>
             <p></p>
             <li>Skilled in using CSS frameworks like Bootstrap for rapid development.</li>
             <p></p>
             <li>Knowledgeable in modern CSS features like Flexbox and Grid layout.</li>
             <p></p>
-            <li>Committed to writing clean and maintainable code for front-end development.</li>
+            <li>I always maintan readable structure in my HTML and CSS code.</li>
           </ul>
         </button>
 
