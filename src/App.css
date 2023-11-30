@@ -349,7 +349,6 @@ body::before {
   transform: scale(1.05); 
 }
 
-
 @media screen and (min-width: 768px) and (max-width: 991px) {
   body {
     font-size: 18px;
