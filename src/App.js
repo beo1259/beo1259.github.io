@@ -156,7 +156,7 @@ function App() {
           <li><span>Student</span></li>
           <li><span>Friend</span></li>
           <li><span>Hardworker</span></li>
-          <li><span>Obsessive Learner</span></li>
+          <li><span>Fanatical Learner</span></li>
           <li><span>Curious Person</span></li>
           <li><span>Programmer</span></li>
         </ul>
