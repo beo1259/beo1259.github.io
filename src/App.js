@@ -455,23 +455,7 @@ function App() {
     </ul>
   </button>
 
-  <button id='experiences' className='item-container fade in'>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <img src={mcdonalds} alt="McDonalds Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-        <h2 className='item-title'>McDonalds Crew Trainer (2020 - 2021)</h2>
-      </div>
-    <ul className='item-text'>
-      <li>Promoted to Crew Trainer, demonstrating leadership and teamwork skills.</li>
-      <p></p>
-      <li>Guided new employees through training processes and protocols.</li>
-      <p></p>
-      <li>Ensured high standards of customer service and operational efficiency.</li>
-      <p></p>
-      <li>Contributed to a positive work environment and team morale.</li>
-      <p></p>
-      <li>Implemented feedback mechanisms to improve training methods.</li>
-    </ul>
-  </button>
+
 
   <button id='experiences' className='item-container fade in'>
       <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -488,6 +472,24 @@ function App() {
       <li>Dealt with conflict among employees, resolving situations swiftly.</li>
       <p></p>
       <li>Worked on/fixed the docks, maintaining a high level of club preservation.</li>
+    </ul>
+  </button>
+
+  <button id='experiences' className='item-container fade in'>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <img src={mcdonalds} alt="McDonalds Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+        <h2 className='item-title'>McDonalds Crew Trainer (2020 - 2021)</h2>
+      </div>
+    <ul className='item-text'>
+      <li>Promoted to Crew Trainer, demonstrating leadership and teamwork skills.</li>
+      <p></p>
+      <li>Guided new employees through training processes and protocols.</li>
+      <p></p>
+      <li>Ensured high standards of customer service and operational efficiency.</li>
+      <p></p>
+      <li>Contributed to a positive work environment and team morale.</li>
+      <p></p>
+      <li>Implemented feedback mechanisms to improve training methods.</li>
     </ul>
   </button>
 </section>
