@@ -364,7 +364,7 @@ function App() {
       <p></p>
       <li>Utilized a 3D face model and GANs for high-quality video frame reconstruction.</li>
       <p></p>
-      <li>Awarded Top 3 Finalist among 35 teams, my team and I received a cash prize for innovative approach.</li>
+      <li>Awarded Top 3 Finalist among 35 teams, received a cash prize for innovative approach.</li>
     </ul>
   </button>
 
