@@ -145,6 +145,7 @@ function App() {
   return (
     <>
     <Header currentSection={currentSection} setCurrentSection={setCurrentSection} />
+    
     <div className='App'>
       
       <section id='name' className='section-container'>

@@ -109,7 +109,7 @@ body::before {
 
   border-radius: 30px;
   min-height: 300px;
-  margin-top: 400px;
+  margin-top: 200px;
   margin-bottom: 400px;
   margin-left: 50px;
   margin-right: 50px;
@@ -226,6 +226,26 @@ body::before {
   font-size: 3rem;
 }
 
+@media (max-width: 768px) {
+  .header {
+    height: 40px; /* Adjust the height as needed */
+  }
+
+  .button-container {
+    margin-left: 10%; /* Adjust the margin as needed */
+  }
+}
+
+@media (max-width: 768px) {
+  .name-button {
+    font-size: 150%; /* Adjust the font size as needed */
+  }
+
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically */
+    margin-left: 0; /* Remove margin */
+  }
+}
 
 
 @keyframes gradient {
@@ -250,6 +270,7 @@ body::before {
 }
 
 .static-txt{
+  margin-top: 350px;
   z-index: 1;
   font-family: 'lato';
   font-size: 60px;
