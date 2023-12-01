@@ -161,7 +161,7 @@ a {
   text-align: left;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 481px) {
   body {
     font-size: 14px; 
   }
@@ -180,8 +180,17 @@ a {
     display: none !important;
   }
 
+  img{
+    height: 40px !important;
+    width: 40px !important;
+  }
+
   .section-title {
-    font-size: 1.4rem !important;
+    font-size: 1.5rem !important;
+  }
+
+  .item-title{
+    font-size: 1rem !important;
   }
 
   .section-text {
@@ -221,7 +230,7 @@ a {
   }
 
   .item-container {
-    min-width: 100% !important; /* Ensure each container takes full width */
+    min-width: 100% !important; 
     min-height: 20px !important;
     max-height: 20px !important;
     padding-left: 2%;
@@ -247,29 +256,26 @@ a {
   }
 
   .about-me-content {
-    /* Adjust layout for about me and bottom icons */
     flex-direction: column;
     align-items: center;
     padding: 5%;
   }
 
   .bottom-icons {
-    /* Use flexbox to align icons side by side */
     display: flex;
-    flex-direction: row; /* Align side by side */
-    justify-content: center; /* Center the items horizontally */
-    align-items: center; /* Center the items vertically */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
   }
 
 
   .bottom-icons {
-    /* Adjust size for hyperlink images if necessary */
+
     height: auto;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
   }
-  /* Add any additional specific styles for elements that need to be adjusted on mobile */
 }
 
 
@@ -320,6 +326,8 @@ a {
 .section-text {
   padding-left: 5%;
   padding-right: 5%;
+  
+  text-align: center;
   font-family: 'Lato';
   font-weight: 100;
   font-size: 1.75em;
@@ -392,6 +400,20 @@ a {
   border-radius: 30px;
 }
 
+.about-me-title{
+  margin-bottom: 1%;
+  padding-right: 4%;
+  text-align: center;
+  background: linear-gradient(90deg, rgb(255, 153, 0) 0%, rgb(255, 242, 0) 35%, rgb(255, 60, 0) 100%);
+  -webkit-background-clip: text;
+  background-size: 300% 300%;
+  animation: gradient 7s ease infinite;
+  -webkit-text-fill-color: transparent;
+  font-family: 'lato';
+  font-weight: 800;
+  font-size: 2.25rem;
+}
+
 .about-me-content {
   display: flex;
   align-items: center; 
@@ -404,6 +426,7 @@ a {
 .hyperlink-imgs {
   
   transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  filter: drop-shadow(0px 0px 10px rgba(0,0,0,1));
 
 }
 

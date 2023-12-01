@@ -20,6 +20,7 @@ import reactnative from './reactnative.png';
 import flutter from './flutter.png';
 import pcyc from './pcyc.png'
 import githubgrey from './githubgrey.png';
+import email from './email.png';
 
 function equalizeContainerHeights() {
   let maxHeight = 0;
@@ -245,7 +246,7 @@ function App() {
         
         <button id='skills' className='item-container fade in'>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={java} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+            <img src={java} alt="Java logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
             <h2 className='item-title'>Java</h2>
           </div>
           <ul className='item-text'>
@@ -263,7 +264,7 @@ function App() {
 
           <button id='skills' className='item-container fade in'>
           <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={js} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+                <img src={js} alt="JavaScript logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
                 <h2 className='item-title'>JavaScript</h2>
               </div>
             <ul className='item-text'>
@@ -336,7 +337,7 @@ function App() {
         </button>
         <button id='skills' className='item-container fade in'>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={cpp} alt="Python logo" style={{ width: '50px', height: '55px', marginRight: '10px' }} />
+                <img src={cpp} alt="C++ Logo" style={{ width: '50px', height: '55px', marginRight: '10px' }} />
                 <h2 className='item-title'>C/C++</h2>
               </div>
             <ul className='item-text'>
@@ -353,7 +354,7 @@ function App() {
           </button>
         <button id='skills' className='item-container fade in'>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={sql} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+            <img src={sql} alt="SQL logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
             <h2 className='item-title'>SQL</h2>
           </div>
           <ul className='item-text'>
@@ -373,7 +374,7 @@ function App() {
           <button id='skills' className='item-container fade in'>
             
           <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={react} alt="Python logo" style={{ width: '47px', height: '47px', marginRight: '10px', borderRadius: '10px' }} />
+                <img src={react} alt="React logo" style={{ width: '47px', height: '47px', marginRight: '10px', borderRadius: '10px' }} />
                 <h2 className='item-title'>React</h2>
               </div>
             <ul className='item-text'>
@@ -391,7 +392,7 @@ function App() {
 
         <button id='skills' className='item-container fade in'>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={reactnative} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+                <img src={reactnative} alt="Native logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
                 <h2 className='item-title'>React Native</h2>
               </div>
           <ul className='item-text'>
@@ -409,7 +410,7 @@ function App() {
 
         <button id='skills' className='item-container fade in'>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={flutter} alt="Python logo" style={{ width: '47px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+                <img src={flutter} alt="Flutter logo" style={{ width: '47px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
                 <h2 className='item-title'>Flutter</h2>
               </div>
           <ul className='item-text'>
@@ -427,63 +428,63 @@ function App() {
 
 
         <button id='skills' className='item-container fade in'>
-  <div style={{ display: 'flex', alignItems: 'center' }}>
-    <img src={expressLogo} alt="Express.js logo" style={{ width: '85px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
-    <h2 className='item-title'>Express/NodeJS</h2>
-  </div>
-  <ul className='item-text'>
-    <li>Proficient in building web applications and APIs using Express.js.</li>
-    <p></p>
-    <li>Experienced in routing, middleware, and handling HTTP requests.</li>
-    <p></p>
-    <li>Skilled in integrating Express.js with databases and MySQL.</li>
-    <p></p>
-    <li>Familiar with Express.js frameworks for scalable and structured application development.</li>
-    <p></p>
-    <li>Committed to writing clean and maintainable code while following best practices.</li>
-  </ul>
-</button>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <img src={expressLogo} alt="Express.js logo" style={{ width: '85px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+          <h2 className='item-title'>Express/NodeJS</h2>
+        </div>
+        <ul className='item-text'>
+          <li>Proficient in building web applications and APIs using Express.js.</li>
+          <p></p>
+          <li>Experienced in routing, middleware, and handling HTTP requests.</li>
+          <p></p>
+          <li>Skilled in integrating Express.js with databases and MySQL.</li>
+          <p></p>
+          <li>Familiar with Express.js frameworks for scalable and structured application development.</li>
+          <p></p>
+          <li>Committed to writing clean and maintainable code while following best practices.</li>
+        </ul>
+      </button>
 
       </section>
       </div>
       <section id='experience' className='section-container fade-in'>
-  <div className="section-title">Experience...</div>
+      <div className="section-title">Experience...</div>
 
- <button id='experiences' className='item-container fade in'>
+    <button id='experiences' className='item-container fade in'>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <img src={toggle} alt="Toggle Logo" className='logo'/>
+            <h2 className='item-title'>Toggle<div className='item-subtitle'>Full-Stack Software Engineer Intern: (2022 - 2023, 2023 - Present) </div></h2>
+          </div>
+        <ul className='item-text'>
+          <li>Utilized Google's Tesseract API for email text conversion, enhancing data accessibility.</li>
+          <p></p>
+          <li>Integrated OpenAI's GPT-4 to deliver accurate responses to user inquiries.</li>
+          <p></p>
+          <li>Designed and implemented a SQL database, with a Node.js/Express backend.</li>
+          <p></p>
+          <li>Created a web app interface using React, and a desktop app with Flutter.</li>
+          <p></p>
+          <li>Collaborated with teams on GitHub for project development and contributed to UI/UX design.</li>
+        </ul>
+      </button>
+
+    <button id='experiences' className='item-container fade in'>
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <img src={toggle} alt="Toggle Logo" className='logo'/>
-        <h2 className='item-title'>Toggle<div className='item-subtitle'>Full-Stack Software Engineer Intern: (2022 - 2023, 2023 - Present) </div></h2>
-      </div>
-    <ul className='item-text'>
-      <li>Utilized Google's Tesseract API for email text conversion, enhancing data accessibility.</li>
-      <p></p>
-      <li>Integrated OpenAI's GPT-4 to deliver accurate responses to user inquiries.</li>
-      <p></p>
-      <li>Designed and implemented a SQL database, with a Node.js/Express backend.</li>
-      <p></p>
-      <li>Created a web app interface using React, and a desktop app with Flutter.</li>
-      <p></p>
-      <li>Collaborated with teams on GitHub for project development and contributed to UI/UX design.</li>
-    </ul>
-  </button>
-
-  <button id='experiences' className='item-container fade in'>
-  <div style={{ display: 'flex', alignItems: 'center' }}>
-      <img src={wai} alt="WAI Logo" className='logo'/>
-        <h2 className='item-title'>Western AI Case Compeition Finalist<div className='item-subtitle'> (2023) </div></h2>
-      </div>
-    <ul className='item-text'>
-      <li>Conceptualized an AI-based solution to improve human connection in video calls, involing replacing the low quality face with a 3D rendered version</li>
-      <p></p>
-      <li>Employed FSCNN to enhance video frame resolution in real-time.</li>
-      <p></p>
-      <li>Integrated Computer Vision for accurate facial structure recognition.</li>
-      <p></p>
-      <li>Utilized a 3D face model and GANs for high-quality video frame reconstruction.</li>
-      <p></p>
-      <li>Awarded Top 3 Finalist among 35 teams, received a cash prize for innovative approach.</li>
-    </ul>
-  </button>
+        <img src={wai} alt="WAI Logo" className='logo'/>
+          <h2 className='item-title'>Western AI Case Compeition Finalist<div className='item-subtitle'> (2023) </div></h2>
+        </div>
+      <ul className='item-text'>
+        <li>Conceptualized an AI-based solution to improve human connection in video calls, involing replacing the low quality face with a 3D rendered version</li>
+        <p></p>
+        <li>Employed FSCNN to enhance video frame resolution in real-time.</li>
+        <p></p>
+        <li>Integrated Computer Vision for accurate facial structure recognition.</li>
+        <p></p>
+        <li>Utilized a 3D face model and GANs for high-quality video frame reconstruction.</li>
+        <p></p>
+        <li>Awarded Top 3 Finalist among 35 teams, received a cash prize for innovative approach.</li>
+      </ul>
+    </button>
 
 
 
@@ -620,17 +621,21 @@ function App() {
 
 <div className='bottom-icons'>
     <a href="https://github.com/beo1259" target="_blank" rel="noopener noreferrer">
-      <img src={github} className="hyperlink-imgs gold-filter" height="50" alt="GitHub"  style={{filter: 'hue-rotate(14deg)', marginRight: '5px'}}/>
+      <img src={github} className="hyperlink-imgs gold-filter" height="60" alt="GitHub"  style={{filter: 'hue-rotate(14deg)', marginRight: '5px'}}/>
     </a>
   
 
     <a href="https://www.linkedin.com/in/brayden-o-neil-32b405205/" target="_blank" rel="noopener noreferrer">
-      <img src={linkedin} className="hyperlink-imgs gold-filter" height="48" alt="LinkedIn" style={{marginLeft: '5px'}}/>
+      <img src={linkedin} className="hyperlink-imgs gold-filter" height="58" alt="LinkedIn" style={{marginLeft: '5px'}}/>
+    </a>
+
+    <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTJnxwXjkfBkDzlPZWPXczCpQgZVHnBXkgwnMMNZhMkvkbtCQGBqcFXVGwXFhTZsLhzbBB" target="_blank" rel="noopener noreferrer">
+      <img src={email} className="hyperlink-imgs gold-filter" height="58" alt="LinkedIn" style={{marginLeft: '13px'}}/>
     </a>
 </div>
 
 
-<div style={{ textAlign: 'center', marginBottom: '10px', fontFamily: 'lato', fontSize: '10px', color: 'gold'}}>Copyright ©2023 | All rights reserved | Brayden O'Neil</div>
+<div style={{ textAlign: 'center', marginBottom: '10px', fontFamily: 'lato', fontSize: '15px', color: 'gold'}}>Copyright ©2023 | All rights reserved | Brayden O'Neil</div>
 </div>
     </>
   );
