@@ -204,21 +204,24 @@ body::before {
   .section-text{
     font-size: 1px;
   }
-  .skills-section .item-text{
+  .item-text{
     display: none;
   }
 
-  .skills-section .item-container {
-    /* Make container background transparent */
-    background: none;
+  #skills .item-container {
+    margin: 3px;
     border: none;
     box-shadow: none;
-    align-items: center;
-    justify-content: center;
-    /* Adjust margins and padding to reduce space */
-    margin: 5px 0; /* Adjust top and bottom margin as needed */
-    padding: 10px; /* Adjust padding as needed */
+    background-color: transparent;
   }
+
+  .skills-section .item-container {
+    flex-basis: calc(33% - 10px); /* Adjust percentage as per layout */
+  }
+  
+
+
+  
 
   .header {
     display: none;

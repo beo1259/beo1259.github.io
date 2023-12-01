@@ -139,6 +139,10 @@ function App() {
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     }
+
+    window.onload = () => { // Ensures everything is loaded before equalizing heights
+      equalizeContainerHeights();
+    };
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -218,6 +222,7 @@ function App() {
           
         </div>
       </section>
+      <div className="skills-section">
       <section id='skills' className='section-container fade in skills-section'>
       <div class="section-title">Languages...</div>
       
@@ -442,6 +447,7 @@ function App() {
 </button>
 
       </section>
+      </div>
       <section id='experience' className='section-container fade-in'>
   <div className="section-title">Experiences...</div>
 
