@@ -168,7 +168,32 @@ a {
   text-align: left;
 }
 
+#skills .item-container{
+  vertical-align: top;
 
+  border-radius: 1.75rem;
+  padding-left: 2%;
+  min-width: 40%;
+  max-width: 40%;
+  min-height: 240px !important;
+  max-height: 240px !important;
+  background: rgba(17, 17, 17, 0.8);
+  border: 5px solid rgb(37, 37, 37);
+  z-index: 5;
+  opacity: 1; 
+  position: relative; 
+  color: white;
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+#skills .item-container:hover {
+  transform: scale(1.01);
+  border: 5px solid rgba(255, 215, 0, 0.8);
+  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.03);
+}
 
 .item-container {
   vertical-align: top;
@@ -404,7 +429,7 @@ a {
 }
 
 .modal {
-  position: fixed; 
+  position: fixed !important; 
   top: 0;
   left: 0;
   width: 100vw; 
@@ -422,6 +447,7 @@ a {
 
 .modal-content {
   position: relative;
+  z-index: 6000 !important;
   padding: 20px;
   min-height: 50%;
   max-height: 50%;
@@ -439,10 +465,6 @@ a {
   transition: transform 0.3s ease-in-out;
 }
 
-.modal-content:hover{
-  transform: scale(1.08);
-}
-
 .modal-content::-webkit-scrollbar{
   width: 0px;
 }
@@ -456,6 +478,7 @@ a {
 }
 
 .close-modal {
+  z-index: 6001 !important;
   position: absolute;
   font-family: 'lato';
   font-weight: 800;
