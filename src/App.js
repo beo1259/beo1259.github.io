@@ -23,6 +23,7 @@ import githubgrey from './githubgrey.png';
 import email from './email.png';
 import resume from './resume.pdf';
 import flowchart from './flowchart.jpg';
+import travellift from './travellift.jpg';
 
 function equalizeContainerHeights() {
   let maxHeight = 0;
@@ -556,7 +557,7 @@ function App() {
       )}
 
 
-  <button id='experiences' className='item-container fade in'>
+  <button onClick={() => toggleModal('pcycExperience')} id='experiences' className='item-container fade in'>
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <img src={pcyc} alt="PCYC Logo" className='logo'/>
         <h2 className='item-title'>Port Credit Yacht Club<div className='item-subtitle'> Harbour Staff/Administrative Assistant: (2022 - 2023, Seasonal) </div></h2>
@@ -573,8 +574,35 @@ function App() {
       <li>Worked on/fixed the docks, maintaining a high level of club preservation.</li>
     </ul>
   </button>
-
-  <button if='experiences' className='item-container fade in' >
+  
+  {activeModal === 'pcycExperience' && (
+      <div className="modal">
+        <div className="overlay"></div>
+        <div className="modal-content">
+            <h2 className='item-title'>My Experience at Port Credit Yacht Club</h2>
+            <button className='close-modal' onClick={() => toggleModal(null)}>
+              X
+            </button>
+            <p className='modal-text'>I've worked at Port Credit Yacht Club for the past two summers, and it has been an incredible experience that has taught me valuable soft skills,
+            skills that I still apply to this day, and am eternally glad that I possess.</p>
+            <p></p>
+            <p className='modal-text'> My role as Administrative Assistant consisted of me being put in charge of a dock office, where members would frequently come in and access our services, such as:
+            buying ice, booking dock space to bring their boat, and requesting event information. In this position, I frequently worked with Microsoft Excel to create and modify spreadsheets that contained 
+            information such as: dock layouts, employee information, and member's boat launch and haulout dates. I also used Jonas Databases to access member information when a member needed to be contacted,
+            whch helped me understand the way that the backends of companies are structured.
+            </p>
+            <p></p>
+            <p className='modal-text'> My role as Harbour Staff consisted of various tasks which helped to maintain the quality of the club, which I took pride in. My team and I were frequently 
+            fixing docks and building new additions to the club, and I really developed an appreciation for seeing work that I had a hand in completed to the highest degree. At the beginning
+            and end of the boating season, I was launching, and hauling boats in and out of the water. This required a great deal of responsiblity, as one slip up could have resulted in the the boat
+            slipping out of the slings. This image is an example of what we used to launch/haulout boats:
+            <img src={travellift} alt='travellift' className='flowchart-img'/>
+            </p>
+              
+          </div>
+        </div>
+      )}
+  <button onClick={() => toggleModal('mcdonaldsExperience')} if='experiences' className='item-container fade in' >
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <img src={mcdonalds} alt="McDonalds Logo" className='logo'/>
         <h2 className='item-title'>McDonalds Crew Trainer<div className='item-subtitle'> (2020 - 2021) </div></h2>
@@ -591,6 +619,29 @@ function App() {
       <li>Implemented feedback mechanisms to improve training methods.</li>
     </ul>
   </button>
+
+  {activeModal === 'mcdonaldsExperience' && (
+        <div className="modal">
+          <div className="overlay"></div>
+          <div className="modal-content">
+            <h2 className='item-title'>My Experience at McDonalds</h2>
+            <button className='close-modal' onClick={() => toggleModal(null)}>
+              X
+            </button>
+            <p className='modal-text'>At McDonalds, I was originally kitchen staff, and then promoted to Crew Trainer as a testament to my leadership and responsibility</p>
+            <p></p>
+            <p className='modal-text'>In my role as crew trainer, I frequently trained new employees and kept in mind their lack of knowledge pertaining to the way the kitchen
+            works. This skill still comes in handy when working with people who are less versed on a specific topic.  
+            </p>
+            <p></p>
+            <p className='modal-text'>
+              My managers saw that I always showed up on time, respected my coworkers, and put the efficiency and quality of the food first. As a show of appreciation, I was
+              promoted to Crew Trainer after only 2 months of working. I took this role seriously, as even though a job at McDonalds is not extremely difficult to obtain, 
+              I am unable to put my name on something that isn't done with my best effort.
+            </p>
+          </div>
+        </div>
+      )}
 </section>
 
 <section id='projects' className='section-container fade-in'>

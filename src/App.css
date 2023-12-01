@@ -436,6 +436,11 @@ a {
   overflow-y: scroll;
   overflow-x: hidden;
   z-index: 1001; 
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal-content:hover{
+  transform: scale(1.08);
 }
 
 .modal-content::-webkit-scrollbar{
@@ -454,7 +459,7 @@ a {
   position: absolute;
   font-family: 'lato';
   font-weight: 800;
-  top: 10px;
+  top: 19px;
   right: 10px;
   background: transparent;
   color: black;
@@ -492,7 +497,12 @@ a {
   color: gold;
 }
 
-
+.flowchart-img{
+  height: 90%;
+  width: 90%;
+  margin-top: 20px;
+  border-radius: 15px;
+}
 
 @media only screen and (max-width: 481px) {
   body {
