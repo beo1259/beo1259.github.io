@@ -53,6 +53,7 @@ a {
 }
 
 .github-grey{
+
   float: left; 
   height: 50px;
   width: 50px;
@@ -157,7 +158,7 @@ a {
 .item-text{
   font-family: 'lato';
   font-weight: 100;
-  font-size: 1.15em;
+  font-size: 2vh;
   text-align: left;
   z-index: 1000 !important;
 }
@@ -199,7 +200,7 @@ a {
 
 .item-container {
   vertical-align: top;
-
+  overflow: hidden;
   margin: 1%;
   border-radius: 1.75rem;
   padding-top: 2%;
@@ -217,9 +218,9 @@ a {
   color: white;
   flex-grow: 0;
   flex-shrink: 0;
-  overflow: hidden;
   transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
 }
+
 
 .item-container:hover {
   transform: scale(1.01);
@@ -227,7 +228,11 @@ a {
   box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.03);
 }
 
+
+
 .item-container:before {
+  
+  z-index: -5;
   content: '';
   position: absolute;
   top: 0;
@@ -256,8 +261,9 @@ a {
 
 .item-container:hover:before {
   opacity: 1;
+  height: 100%;
+  width: 100%;
 }
-
 .item-title{
   font-family: 'lato';
   text-align: left;
@@ -674,12 +680,12 @@ a {
   }
 
   .item-subtitle{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 
   }
 
   .item-container {
-    min-width: 75% !important; 
+    min-width: 78% !important; 
     min-height: 120px !important;
     max-height: 120px !important;
     padding-left: 2%;
