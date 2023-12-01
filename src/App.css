@@ -49,7 +49,7 @@ a {
   height: 50px;
   width: 50px;
   margin-right: 10px;
-
+  z-index: 10000;
 }
 
 .github-grey{
@@ -159,6 +159,7 @@ a {
   font-weight: 100;
   font-size: 1.15em;
   text-align: left;
+  z-index: 1000 !important;
 }
 
 .modal-text{
@@ -179,7 +180,7 @@ a {
   max-height: 240px !important;
   background: rgba(17, 17, 17, 0.8);
   border: 5px solid rgb(37, 37, 37);
-  z-index: 5;
+  z-index: 1000 !important;
   opacity: 1; 
   position: relative; 
   color: white;
@@ -193,6 +194,7 @@ a {
   transform: scale(1.01);
   border: 5px solid rgba(255, 215, 0, 0.8);
   box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.03);
+  z-index: -1;
 }
 
 .item-container {
@@ -209,7 +211,7 @@ a {
   max-height: 380px !important;
   background: rgba(17, 17, 17, 0.8);
   border: 5px solid rgb(37, 37, 37);
-  z-index: 5;
+  z-index: 1;
   opacity: 1; 
   position: relative; 
   color: white;
@@ -247,7 +249,6 @@ a {
   animation: gradient 6s ease infinite;
   transform: scale(1.01);
   box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.1);
-  z-index: -1;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
   border-radius: inherit; 
@@ -262,6 +263,7 @@ a {
   text-align: left;
   padding-left: 2.5px;
   font-size: 1.3rem;
+  z-index: 10000;
 }
 
 .item-subtitle{
@@ -275,6 +277,7 @@ a {
 
 .section-title {
   margin-bottom: 1%;
+  
   padding-left: 9.5%;
   text-align: left;
   background: linear-gradient(90deg, rgb(255, 153, 0) 0%, rgb(255, 242, 0) 35%, rgb(255, 60, 0) 100%);
@@ -429,16 +432,16 @@ a {
 }
 
 .modal {
-  position: fixed !important; 
+  position: fixed !important;
   top: 0;
   left: 0;
-  width: 100vw; 
+  width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000 !important; /* Set this value higher than any other element on the page */
 }
 
 .no-scroll {
@@ -449,10 +452,10 @@ a {
   position: relative;
   z-index: 6000 !important;
   padding: 20px;
-  min-height: 50%;
-  max-height: 50%;
-  min-width: 40%;
-  max-width: 40%;
+  min-height: 70%;
+  max-height: 70%;
+  min-width: 50%;
+  max-width: 50%;
   border-radius: 20px;
   background-image: linear-gradient(to right top, #206800, #006242, #005873, #004889, #002e79, #002d77, #002d76, #002c74, #004583, #005982, #006b78, #007a6c);
   border: 2px solid white;
@@ -460,13 +463,26 @@ a {
   animation: gradient 20s ease infinite;
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
   overflow-y: scroll;
-  overflow-x: hidden;
   z-index: 1001; 
   transition: transform 0.3s ease-in-out;
 }
 
-.modal-content::-webkit-scrollbar{
-  width: 0px;
+.modal-content::-webkit-scrollbar {
+  width: 4px;
+  padding-left: 40px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 30px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .overlay {
@@ -538,7 +554,6 @@ a {
     max-height: 80%;
     min-width: 80%;
     max-width: 80%;
-    z-index: 20001 !important;
   }
 
   .headshot {
@@ -564,8 +579,6 @@ a {
     font-size: 1.5rem !important;
   }
 
-
-
   .section-text {
     font-size: 1.1em !important;
   }
@@ -578,6 +591,7 @@ a {
     font-size: 1px;
     margin-bottom: 80px;
   }
+
  .item-text{
     display: none;
   }
@@ -597,6 +611,8 @@ a {
 
   #skills .item-container:hover{
     transform: scale(1.03);
+    border: none;
+    box-shadow: none;
   }
 
 
@@ -629,7 +645,6 @@ a {
     padding-left: 2%;
     padding-right: 2%;
     margin: 5%;
-    z-index: 20000 !important;
   }
 
   .flowchart-img{

@@ -138,16 +138,25 @@ function App() {
   const [activeModal, setActiveModal] = useState(null);
 
 
-  const toggleModal = (modalId) => {
-    if (activeModal === modalId) {
-      setActiveModal(null);
-      enableScrolling();
-    } else {
-      setActiveModal(modalId);
-    }
-  };
+      const toggleModal = (modalId) => {
+        if (modalId == null) {
+          setActiveModal(null);
+          enableScrolling();
+        } else {
+          setActiveModal(modalId);
+          disableScrolling();
+        }
+      };
+      
+      const enableScrolling = () => {
+        document.body.classList.remove('no-scroll');
+      };
+      
+      const disableScrolling = () => {
+        document.body.classList.add('no-scroll');
+      };
+  
 
-  const enableScrolling = () => document.body.classList.remove('no-scroll');
   useEffect(() => {
 
 
@@ -509,8 +518,7 @@ function App() {
                 <p></p>
                 <p className='modal-text'> I was lucky enough to be paired with 3 other very competent and creative group members, and we came up with an idea to solve the problem of low quality
                   video calls, and the lack of human conncetion that is felt when this occurs. Our process included using a submitted 3D scan of the user's face, which most of today's smartphones are capable
-                  of. Through the use of that, and various AI technologies we would construct a mapping of the user's constructed face on top of the low quality image. Please view the flowchart I Created
-                  to see the full process:
+                  of. Through the use of that, and various AI technologies we would construct a mapping of the user's constructed face on top of the low quality image. Please view the flowchart I created:
                   <img src={flowchart} alt='flowchart' className='flowchart-img' />
                 </p>
                 <p></p>
