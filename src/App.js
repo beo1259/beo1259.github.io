@@ -257,7 +257,7 @@ function App() {
               <p></p>
               <li>Expereinced at using frameworks like Spring and Hibernate for backend development.</li>
               <p></p>
-              <li>Much of my University coursework has been in Java, and </li>
+              <li>Much of my University coursework has been in Java, resulting in a deep syntatical understanding. </li>
           </ul>
         </button>
 
