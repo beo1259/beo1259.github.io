@@ -202,17 +202,27 @@ body::before {
   }
 
   .headshot {
-    height: 200px; /* Adjust to your preference */
-    width: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Circular shape */
+    height: 200px !important; /* Smaller size for mobile */
+    width: auto !important; /* Maintain aspect ratio */
+    border-radius: 30% !important; /* Circular shape */
   }
 
+  .static-txt{
+    display: none;
+  }
+
+  .wrapper{
+    display: none !important;
+  }
+
+
+
   .section-title {
-    font-size: 1.5rem; /* Smaller size for mobile */
+    font-size: 1.4rem !important; /* Smaller size for mobile */
   }
 
   .section-text {
-    font-size: 0.9em; /* Smaller size for mobile */
+    font-size: 1.1em !important; /* Smaller size for mobile */
   }
 
   body:before{
@@ -266,17 +276,21 @@ body::before {
     font-size: 1rem;
   }
 
-  .dynamic-txts li {
-    /* Scale down dynamic text size */
-    font-size: 3rem;
-  }
-
-  .about-me-content, .bottom-icons {
+  .about-me-content {
     /* Adjust layout for about me and bottom icons */
     flex-direction: column;
     align-items: center;
     padding: 5%;
   }
+
+  .bottom-icons {
+    /* Use flexbox to align icons side by side */
+    display: flex;
+    flex-direction: row; /* Align side by side */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+  }
+
 
   .bottom-icons {
     /* Adjust size for hyperlink images if necessary */
