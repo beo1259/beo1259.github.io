@@ -142,9 +142,9 @@ function App() {
 
   const openModal = (modalId) => {
     setActiveModal(modalId);
-    setIsModalVisible(true); // Make the modal visible immediately
+    setIsModalVisible(true); 
     setTimeout(() => {
-      setModalFadeIn(true); // Start fade in with a slight delay
+      setModalFadeIn(true); 
     }, 10);
     //disableScrolling();
   };
@@ -245,9 +245,9 @@ function App() {
         </section>
         <section id='about-me' className='section-container fade-in'>
           <div className='about-me-content'>
-            
+          <img src={headshot} className="headshot" alt="Headshot" />
             <div>
-              <div class="about-me-title">HELLO!<span><img src={headshot} className="headshot" alt="Headshot" /></span></div>
+              <div class="about-me-title">HELLO!</div>
               <p class='section-text'>I'm Brayden! I am a hardworking Computer Science student, who enjoys pursuing hard-to-reach goals
                 that require critical thinking and problem solving. I pursue these goals through the use
                 of cutting edge technology that I find interesting, and maintain an optimistic attitude
