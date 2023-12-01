@@ -428,6 +428,7 @@ a {
 @media only screen and (max-width: 481px) {
   body {
     font-size: 14px; 
+    background-image: none;
   }
 
   .headshot {

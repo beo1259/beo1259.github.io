@@ -562,7 +562,7 @@ function App() {
         <p></p>
         <li>Integrated data from an NBA API for historical and current player stats.</li>
         <p></p>
-        <li>Implemented an calculation for comprehensive player assessments.</li>
+        <li>Implemented a calculation for comprehensive player assessments.</li>
         <p></p>
         <li>Executed complete front-end development for a user-centric web application.</li>
         <p></p>
