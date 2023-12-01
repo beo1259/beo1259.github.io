@@ -432,12 +432,15 @@ a {
 }
 
 .modal {
+  align-items: center;
+  justify-content: center;
   position: fixed !important;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -450,6 +453,7 @@ a {
 }
 
 .modal-content {
+
   position: relative;
   z-index: 6000 !important;
   padding: 20px;
@@ -548,14 +552,24 @@ a {
 @media only screen and (max-width: 481px) {
   body {
     font-size: 14px; 
-    background-image: none;
+    background-image: ('./toronto.jpg');
+  }
+
+  .modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .modal-content{
-    min-height: 80%;
-    max-height: 80%;
-    min-width: 80%;
-    max-width: 80%;
+    width: 90%; /* Adjust width for mobile devices */
+    max-width: 500px;
   }
 
   .headshot {
