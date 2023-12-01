@@ -619,22 +619,21 @@ function App() {
 </section>
 
 <div className='bottom-icons'>
-    <a href="https://github.com/beo1259" target="_blank" rel="noopener noreferrer">
-      <img src={github} className="hyperlink-imgs gold-filter" height="60" alt="GitHub"  style={{filter: 'hue-rotate(14deg)', marginRight: '5px'}}/>
-    </a>
-  
+  <a href="https://github.com/beo1259" target="_blank" rel="noopener noreferrer">
+    <img src={github} alt='Github icon' className="hyperlink-imgs" />
+  </a>
 
-    <a href="https://www.linkedin.com/in/brayden-o-neil-32b405205/" target="_blank" rel="noopener noreferrer">
-      <img src={linkedin} className="hyperlink-imgs gold-filter" height="58" alt="LinkedIn" style={{marginLeft: '5px'}}/>
-    </a>
+  <a href="https://www.linkedin.com/in/brayden-o-neil-32b405205/" target="_blank" rel="noopener noreferrer">
+    <img src={linkedin} alt='Linkedin Icon' className="hyperlink-imgs" />
+  </a>
 
-    <a href="oneilb123@gmail.com" target="_blank" rel="noopener noreferrer">
-      <img src={email} className="hyperlink-imgs gold-filter" height="58" alt="LinkedIn" style={{marginLeft: '13px'}}/>
-    </a>
+  <a href="oneilb123@gmail.com" target="_blank" rel="noopener noreferrer">
+    <img src={email} alt='Email Icon' className="hyperlink-imgs" />
+  </a>
 </div>
 
 
-<div style={{ textAlign: 'center', marginBottom: '10px', fontFamily: 'lato', fontSize: '15px', color: 'gold'}}>Copyright ©2023 | All rights reserved | Brayden O'Neil</div>
+<div className='copyright-text'>Copyright ©2023 | All rights reserved | Brayden O'Neil</div>
 </div>
     </>
   );
