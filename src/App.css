@@ -452,13 +452,14 @@ a {
   justify-content: center;
   align-items: center;
   z-index: 1000 !important; 
-  
+  opacity: 0;
+  visibility: hidden;
 }
 
 .modal-visible {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.5s, visibility 0.5s;
+  transition: opacity 0.5s, visibility 0.5s 0.5a;
 }
 
 .modal-hidden {
@@ -471,12 +472,23 @@ a {
   overflow: hidden;
 }
 
+.modal {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.modal-fade-in {
+  visibility: visible;
+  opacity: 1;
+}
+
 .modal-content {
 
   position: relative;
   z-index: 6000 !important;
   padding: 20px;
-  min-height: 70%;
+  min-height: 20%;
   max-height: 70%;
   min-width: 50%;
   max-width: 50%;
@@ -571,7 +583,7 @@ a {
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
 
   .item-text{
-    font-size: 2.1vh;
+    font-size: 0.85rem;
   }
   
   .header {
@@ -677,8 +689,20 @@ a {
 
 
 @media only screen and (max-width: 481px) {
-  
 
+  
+  .modal-text{
+    font-family: 'lato';
+    font-weight: 100;
+    font-size: 0.85em;
+    text-align: left;
+  }
+
+  .modal{
+    min-width: 95% !important;
+  }
+
+ 
   body::before{
     font-size: 14px; 
     background-image: url('toronto.jpg');
@@ -687,35 +711,16 @@ a {
     background-attachment: scroll; 
     background-position: center center;
   }
+
+  
   
   #skills .item-title{
     text-shadow: 1px 1px 2px black;
   }
 
-  .modal {
-    z-index: 10000; 
-    position: absolute;
-    opacity: 1;
-    visibility:visible;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-
-  .modal-content{
-    position: fixed;
-    width: 90%; 
-    max-width: 500px;
-    z-index: 10001; 
-    position: relative;
-  }
-
   .headshot {
-    height: 200px !important; 
+    height: 100px !important; 
+    margin-left: 5px;
     width: auto !important;
     border-radius: 30% !important; 
   }
@@ -740,15 +745,23 @@ a {
 
   .section-text {
     background: rgba(17, 17, 17, 0.8);
-    padding: 10px;
-    border: 5px solid rgb(37, 37, 37);
+    padding: 12px;
+    border: none;
     border-radius: 30px;
-    font-size: 1.1em !important;
+    font-size: 1.05em !important;
     text-shadow: 0px 0px 2px black;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
   }
 
-  body:before{
-    background-color: rgb(14, 14, 14);
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
   }
   
   .section-text{
@@ -759,6 +772,7 @@ a {
  .item-text{
     display: none;
   }
+  
 
   #skills .item-container {
     
@@ -811,6 +825,7 @@ a {
     padding-right: 2%;
     margin: 5%;
     border: none;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
   }
 
   .flowchart-img{
@@ -828,6 +843,8 @@ a {
 
 
   .bottom-icons img {
+    position: relative;
+    z-index: 5 !important;
     max-width: 5vh; 
     max-height: 5vh; 
     display: flex;
@@ -835,6 +852,11 @@ a {
     align-items: center;
     width: auto; 
     height: auto;
+  }
+
+  .copyright-text{
+    position: relative;
+    z-index: 5 !important;
   }
 
 }

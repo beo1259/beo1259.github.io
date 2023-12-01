@@ -137,17 +137,25 @@ function App() {
   const [currentSection, setCurrentSection] = useState('about-me');
   const [activeModal, setActiveModal] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [modalFadeIn, setModalFadeIn] = useState(false);
+
 
   const openModal = (modalId) => {
     setActiveModal(modalId);
-    setIsModalVisible(true);
-    disableScrolling();
+    setIsModalVisible(true); // Make the modal visible immediately
+    setTimeout(() => {
+      setModalFadeIn(true); // Start fade in with a slight delay
+    }, 10);
+    //disableScrolling();
   };
-
+  
   const closeModal = () => {
-    setIsModalVisible(false);
-    setTimeout(() => setActiveModal(null), 500); // Ensures modal is not active when it's invisible
-    enableScrolling();
+    setModalFadeIn(false); 
+    setTimeout(() => {
+      setIsModalVisible(false);
+      setActiveModal(null);
+    }, 500); 
+    //enableScrolling();
   };
       const enableScrolling = () => {
         document.body.classList.remove('no-scroll');
@@ -237,9 +245,9 @@ function App() {
         </section>
         <section id='about-me' className='section-container fade-in'>
           <div className='about-me-content'>
-            <img src={headshot} className="headshot" alt="Headshot" />
+            
             <div>
-              <div class="about-me-title">HELLO!</div>
+              <div class="about-me-title">HELLO!<span><img src={headshot} className="headshot" alt="Headshot" /></span></div>
               <p class='section-text'>I'm Brayden! I am a hardworking Computer Science student, who enjoys pursuing hard-to-reach goals
                 that require critical thinking and problem solving. I pursue these goals through the use
                 of cutting edge technology that I find interesting, and maintain an optimistic attitude
@@ -464,7 +472,7 @@ function App() {
           </button>
 
           {isModalVisible && activeModal === 'toggleExperience' && (
-            <div className="modal">
+            <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
               <div className="overlay"  onClick={closeModal}></div>
               <div className="modal-content">
                 <h2 className='item-title'>My Experience at Toggle</h2>
@@ -507,7 +515,7 @@ function App() {
             </ul>
           </button>
           {isModalVisible && activeModal === 'waiExperience' && (
-            <div className="modal">
+            <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
               <div className="overlay" onClick={closeModal}></div>
               <div className="modal-content">
                 <h2 className='item-title'>My Experience Competing in Western AI's 2023 Case Compeition</h2>
@@ -551,7 +559,7 @@ function App() {
           </button>
 
           {isModalVisible && activeModal === 'pcycExperience' && (
-            <div className="modal">
+            <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
               <div className="overlay" onClick={closeModal}></div>
               <div className="modal-content">
                 <h2 className='item-title'>My Experience at Port Credit Yacht Club</h2>
@@ -596,7 +604,7 @@ function App() {
           </button>
 
           {isModalVisible && activeModal === 'mcdonaldsExperience' && (
-            <div className="modal">
+            <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
               <div className="overlay" onClick={closeModal}></div>
               <div className="modal-content">
                 <h2 className='item-title'>My Experience at McDonalds</h2>
