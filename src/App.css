@@ -167,9 +167,9 @@ a {
   }
 
   .headshot {
-    height: 200px !important; /* Smaller size for mobile */
-    width: auto !important; /* Maintain aspect ratio */
-    border-radius: 30% !important; /* Circular shape */
+    height: 200px !important; 
+    width: auto !important;
+    border-radius: 30% !important; 
   }
 
   .static-txt{
@@ -180,14 +180,12 @@ a {
     display: none !important;
   }
 
-
-
   .section-title {
-    font-size: 1.4rem !important; /* Smaller size for mobile */
+    font-size: 1.4rem !important;
   }
 
   .section-text {
-    font-size: 1.1em !important; /* Smaller size for mobile */
+    font-size: 1.1em !important;
   }
 
   body:before{
