@@ -629,7 +629,7 @@ function App() {
       <img src={linkedin} className="hyperlink-imgs gold-filter" height="58" alt="LinkedIn" style={{marginLeft: '5px'}}/>
     </a>
 
-    <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTJnxwXjkfBkDzlPZWPXczCpQgZVHnBXkgwnMMNZhMkvkbtCQGBqcFXVGwXFhTZsLhzbBB" target="_blank" rel="noopener noreferrer">
+    <a href="oneilb123@gmail.com" target="_blank" rel="noopener noreferrer">
       <img src={email} className="hyperlink-imgs gold-filter" height="58" alt="LinkedIn" style={{marginLeft: '13px'}}/>
     </a>
 </div>
