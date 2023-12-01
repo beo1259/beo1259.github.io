@@ -21,6 +21,7 @@ import flutter from './flutter.png';
 import pcyc from './pcyc.png'
 import githubgrey from './githubgrey.png';
 import email from './email.png';
+import resume from './resume.pdf';
 
 function equalizeContainerHeights() {
   let maxHeight = 0;
@@ -116,16 +117,14 @@ function Header({ currentSection, setCurrentSection }) {
         >
           PROJECTS
         </button>
-        <input
-          type="button"
-          className={getButtonClass('resume')}
-          onClick={() =>
-            window.open(
-              'https://drive.google.com/file/d/1aUXksLi6YUqksVmEPc_fmX5LpffzbZPw/view?usp=sharing'
-            )
-          }
-          value="RESUME"
-        />
+        <a
+  href={resume}
+  className={getButtonClass('resume')}
+  target="_blank" // Optional: open in a new tab
+  rel="noopener noreferrer" // Security for opening new tabs
+>
+  RESUME
+</a>
       </div>
     </header>
   );
