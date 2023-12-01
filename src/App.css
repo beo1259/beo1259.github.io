@@ -441,7 +441,8 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000 !important; /* Set this value higher than any other element on the page */
+  z-index: 1000 !important; 
+  
 }
 
 .no-scroll {
@@ -465,6 +466,7 @@ a {
   overflow-y: scroll;
   z-index: 1001; 
   transition: transform 0.3s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .modal-content::-webkit-scrollbar {
