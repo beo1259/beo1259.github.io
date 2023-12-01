@@ -318,6 +318,7 @@ a {
 
 .static-txt{
   margin-top: 15%;
+  text-align: centerr;
   z-index: 1;
   font-family: 'lato';
   font-size: 4rem;
@@ -551,14 +552,6 @@ a {
 
 @media only screen and (max-width: 481px) {
   
-  body {
-    font-size: 14px; 
-    background-image: url('toronto.jpg'); /* Make sure the path is correct */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll; /* Change to scroll for better mobile support */
-    background-position: center center;
-  }
 
   body::before{
     font-size: 14px; 
