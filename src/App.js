@@ -211,7 +211,7 @@ function App() {
         <div className='about-me-content'>
           <img src={headshot} className="headshot" alt="Headshot"/>
           <div>
-            <div class='section-title' style={{paddingLeft: '10px'}}>HELLO!</div>
+          <div class="about-me-title">HELLO!</div>
             <p  class='section-text'>I'm Brayden! I am a hardworking Computer Science student, who enjoys pursuing hard-to-reach goals
             that require critical thinking and problem solving. I pursue these goals through the use
             of cutting edge technology that I find interesting, and maintain an optimistic attitude
