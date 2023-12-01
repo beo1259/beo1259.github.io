@@ -209,7 +209,7 @@ body::before {
   }
 
   #skills .item-container {
-    margin: 3px;
+    margin: 1px;
     border: none;
     box-shadow: none;
     background-color: transparent;

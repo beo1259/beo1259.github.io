@@ -140,9 +140,7 @@ function App() {
       window.scrollTo(0, 0);
     }
 
-    window.onload = () => { // Ensures everything is loaded before equalizing heights
-      equalizeContainerHeights();
-    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
