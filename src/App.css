@@ -40,12 +40,36 @@ body::before {
   z-index: -1; 
 }
 
+a {
+  text-decoration: none;
+}
+
+.logo{
+  float: left; 
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+
+}
+
+.github-grey{
+  float: left; 
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  transition: transform 0.15s ease-in;
+}
+
+.github-grey:hover{
+  transform: scale(1.05);
+}
+
 .header {
   background-image: url('toronto.jpg');
   background-size: cover;
   background-position: top;
   width: 100%;
-  height: 45px;
+  height: 55px;
   position: fixed;
   top: 0;
   display: flex;
@@ -126,67 +150,6 @@ body::before {
 }
 
 
-.item-container {
-  vertical-align: top;
-
-  margin: 1%;
-  border-radius: 1.75rem;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  min-height: 100%;
-  min-width: 40%;
-  max-height: 100%;
-  max-width: 40%;
-  background: rgba(17, 17, 17, 0.8);
-  border: 5px solid rgb(37, 37, 37);
-  z-index: 5;
-  opacity: 1; 
-  position: relative; 
-  color: white;
-  flex-grow: 0;
-  flex-shrink: 0;
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
-}
-
-.item-container:hover {
-  transform: scale(1.01);
-  border: 5px solid rgba(255, 215, 0, 0.8);
-  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.03);
-}
-
-.item-container:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('shooting.gif');
-  background-image: linear-gradient(
-  45deg,
-  hsla(118deg, 100%, 20%, 0.3) 0%,
-  hsla(62deg, 100%, 41%, 0.3) 19%,
-  hsla(40deg, 100%, 50%, 0.3) 39%,
-  hsla(22deg, 100%, 50%, 0.3) 60%,
-  hsla(36deg, 100%, 41%, 0.3) 80%,
-  hsla(185deg, 100%, 50%, 0.3) 100%
-);
-
-  background-size: 400% 400%;
-  animation: gradient 6s ease infinite;
-  transform: scale(1.01);
-  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.1);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-  border-radius: inherit; 
-}
-
-.item-container:hover:before {
-  opacity: 1;
-}
-
 .experience-container:hover:before {
   opacity: 1;
 }
@@ -246,6 +209,10 @@ body::before {
   }
 
   .item-container:hover {
+    width: 100%;
+
+    margin: 10px 0;
+    padding: 0 10px;
     border: 5px solid transparent;
     box-shadow: none;
     transform: none;
@@ -265,14 +232,15 @@ body::before {
   }
 
   .item-container {
-    min-width: 95%;
-    max-width: 95%;
-    min-height: 1%;
-    max-height: 1%;
+    min-width: 100% !important; /* Ensure each container takes full width */
+    min-height: auto !important;
+    max-height: auto !important;
+    margin-top: 15px !important;
     padding-left: 2%;
     padding-right: 2%;
     margin: 5%;
   }
+
 
   .item-text {
     font-size: 1rem;
@@ -307,9 +275,18 @@ body::before {
 
 .item-title{
   font-family: 'lato';
-  text-align: center;
+  text-align: left;
   padding-left: 2.5px;
-  font-size: 15px;
+  font-size: 1.3rem;
+}
+
+.item-subtitle{
+  font-family: 'lato';
+  font-weight: 100;
+  text-align: left;
+  padding-left: 2.5px;
+  padding-top: 2%;
+  font-size: 1rem;
 }
 
 .section-title {
@@ -340,14 +317,15 @@ body::before {
 }
 
 
-.section-text{
+.section-text {
   padding-left: 5%;
   padding-right: 5%;
-  font-family: 'lato';
+  font-family: 'Lato';
   font-weight: 100;
   font-size: 1.75em;
-}
+  text-shadow: 10px 10px 3px black; /* Increased shadow size and blur */
 
+}
 
 .static-txt{
   margin-top: 15%;
@@ -439,4 +417,65 @@ body::before {
   justify-content: center;
   align-items: center;
   height: 15vh;
+}
+
+
+.item-container {
+  vertical-align: top;
+
+  margin: 1%;
+  border-radius: 1.75rem;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+  min-width: 40%;
+  max-width: 40%;
+  background: rgba(17, 17, 17, 0.8);
+  border: 5px solid rgb(37, 37, 37);
+  z-index: 5;
+  opacity: 1; 
+  position: relative; 
+  color: white;
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+.item-container:hover {
+  transform: scale(1.01);
+  border: 5px solid rgba(255, 215, 0, 0.8);
+  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.03);
+}
+
+.item-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('shooting.gif');
+  background-image: linear-gradient(
+  45deg,
+  hsla(118deg, 100%, 20%, 0.3) 0%,
+  hsla(62deg, 100%, 41%, 0.3) 19%,
+  hsla(40deg, 100%, 50%, 0.3) 39%,
+  hsla(22deg, 100%, 50%, 0.3) 60%,
+  hsla(36deg, 100%, 41%, 0.3) 80%,
+  hsla(185deg, 100%, 50%, 0.3) 100%
+);
+
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite;
+  transform: scale(1.01);
+  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.1);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  border-radius: inherit; 
+}
+
+.item-container:hover:before {
+  opacity: 1;
 }

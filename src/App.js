@@ -167,7 +167,7 @@ function App() {
         });
       },
       {
-        threshold: 0
+        threshold: 0.07
       }
     );
   
@@ -447,12 +447,12 @@ function App() {
       </section>
       </div>
       <section id='experience' className='section-container fade-in'>
-  <div className="section-title">Experiences...</div>
+  <div className="section-title">Experience...</div>
 
  <button id='experiences' className='item-container fade in'>
-       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <img src={toggle} alt="Toggle Logo" style={{ width: '50px', height: '47px', marginRight: '10px' }} />
-        <h2 className='item-title'>Full Stack Software Engineer Intern (2022 - 2023)</h2>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <img src={toggle} alt="Toggle Logo" className='logo'/>
+        <h2 className='item-title'>Toggle<div className='item-subtitle'>Full-Stack Software Engineer Intern: (2022 - 2023, 2023 - Present) </div></h2>
       </div>
     <ul className='item-text'>
       <li>Utilized Google's Tesseract API for email text conversion, enhancing data accessibility.</li>
@@ -468,9 +468,9 @@ function App() {
   </button>
 
   <button id='experiences' className='item-container fade in'>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <img src={wai} alt="Toggle Logo" style={{ width: '50px', height: '47px', marginRight: '10px' }} />
-        <h2 className='item-title'>Western AI Case Competiton Finalist (2023)</h2>
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+      <img src={wai} alt="WAI Logo" className='logo'/>
+        <h2 className='item-title'>Western AI Case Compeition Finalist<div className='item-subtitle'> (2023) </div></h2>
       </div>
     <ul className='item-text'>
       <li>Conceptualized an AI-based solution to improve human connection in video calls, involing replacing the low quality face with a 3D rendered version</li>
@@ -488,9 +488,9 @@ function App() {
 
 
   <button id='experiences' className='item-container fade in'>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <img src={pcyc} alt="McDonalds Logo" style={{ width: '50px', height: '55px', marginRight: '10px' }} />
-        <h2 className='item-title'>Port Credit Yacht Club (2022 - 2023, Seasonal)</h2>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <img src={pcyc} alt="PCYC Logo" className='logo'/>
+        <h2 className='item-title'>Port Credit Yacht Club<div className='item-subtitle'> Harbour Staff/Administrative Assistant: (2022 - 2023, Seasonal) </div></h2>
       </div>
     <ul className='item-text'>
       <li>Dealt with disgruntled members with the utmost respect.</li>
@@ -505,10 +505,10 @@ function App() {
     </ul>
   </button>
 
-  <button id='experiences' className='item-container fade in'>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <img src={mcdonalds} alt="McDonalds Logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
-        <h2 className='item-title'>McDonalds Crew Trainer (2020 - 2021)</h2>
+  <button if='experiences' className='item-container fade in' >
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <img src={mcdonalds} alt="McDonalds Logo" className='logo'/>
+        <h2 className='item-title'>McDonalds Crew Trainer<div className='item-subtitle'> (2020 - 2021) </div></h2>
       </div>
     <ul className='item-text'>
       <li>Promoted to Crew Trainer, demonstrating leadership and teamwork skills.</li>
@@ -528,10 +528,12 @@ function App() {
   <div className="section-title">Projects...</div>
 
     <button className='item-container fade in' >
-
-        <h2 className='item-title'>Alarm Car (2023 - Present) <a href="https://github.com/beo1259/Alarm-Car" target="_blank" rel="noopener noreferrer">
-      <img src={githubgrey} className="hyperlink-imgs gold-filter" height="50" alt="GitHub" />
-    </a></h2>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <a href="https://github.com/beo1259/Alarm-Car" target="_blank" rel="noopener noreferrer">
+      <img src={githubgrey} alt="github grey" className='github-grey'/>
+      </a>
+        <h2 className='item-title'>Alarm Car<div className='item-subtitle'> (2023 - Present) </div></h2>
+      </div>
 
       <ul className='item-text'>
         <li>Engineered a mobile alarm clock to ensure waking through physical interaction.</li>
@@ -548,9 +550,12 @@ function App() {
 
     <button className='item-container fade in' >
 
-        <h2 className='item-title'>NBA Player Comparison (2022 - Present) <a href="https://github.com/beo1259/nba-player-comparison" target="_blank" rel="noopener noreferrer">
-      <img src={githubgrey} className="hyperlink-imgs gold-filter" height="50" alt="GitHub" />
-    </a></h2>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <a href="https://github.com/beo1259/nba-player-comparison" target="_blank" rel="noopener noreferrer">
+      <img src={githubgrey} alt="github grey" className='github-grey'/>
+      </a>
+        <h2 className='item-title'>NBA Player Comparison<div className='item-subtitle'> (2022 - 2023) </div></h2>
+      </div>
 
       <ul className='item-text'>
         <li>Analyzed NBA players' abilities with a custom statistical weight algorithm.</li>
@@ -569,9 +574,12 @@ function App() {
 
     <button className='item-container fade in' >
 
-        <h2 className='item-title'>Study Helper Chrome Extension (2023 - Present) <a href="https://github.com/beo1259/Study-Helper-Chrome-Extension" target="_blank" rel="noopener noreferrer">
-      <img src={githubgrey} className="hyperlink-imgs gold-filter" height="50" alt="GitHub" />
-    </a></h2>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <a href="https://github.com/beo1259/Study-Helper-Chrome-Extension" target="_blank" rel="noopener noreferrer">
+      <img src={githubgrey} alt="github grey" className='github-grey'/>
+      </a>
+        <h2 className='item-title'>Study Helper Chrome Extension<div className='item-subtitle'> (2023 - Present) </div></h2>
+      </div>
 
       <ul className='item-text'>
         <li>Created a Chrome extension for improved study session organization.</li>
@@ -588,14 +596,17 @@ function App() {
 
     <button className='item-container fade in' >
 
-        <h2 className='item-title'>Personal Portfolio Website (2023 - Present) <a href="https://github.com/beo1259/beo1259.github.io" target="_blank" rel="noopener noreferrer">
-      <img src={githubgrey} className="hyperlink-imgs gold-filter" height="50" alt="GitHub" />
-    </a></h2>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <a href="https://github.com/beo1259?tab=repositories" target="_blank" rel="noopener noreferrer">
+      <img src={githubgrey} alt="github grey" className='github-grey'/>
+      </a>
+        <h2 className='item-title'>My Personal Portfolio Website<div className='item-subtitle'> (2023 - Present) </div></h2>
+      </div>
 
       <ul className='item-text'>
-        <li>Wanted to showcase my web development talents in a personal way.</li>
+        <li>The website you're currently on,<a href="braydenoneil.com" target="_blank" rel="noopener noreferrer"> <span style={{color: 'gold', textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073'}}>welcome!</span></a></li>
         <p></p>
-        <li>Included JavaScript functions to work in conjunction with my CSS designs.</li>
+        <li>Included JavaScript functions to work in conjunction with my HTML and CSS designs.</li>
         <p></p>
         <li>Emphasized a focus on simplicity to focus on a smooth learning experience.</li>
         <p></p>
