@@ -136,18 +136,19 @@ function App() {
 
   const [currentSection, setCurrentSection] = useState('about-me');
   const [activeModal, setActiveModal] = useState(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
+  const openModal = (modalId) => {
+    setActiveModal(modalId);
+    setIsModalVisible(true);
+    disableScrolling();
+  };
 
-      const toggleModal = (modalId) => {
-        if (modalId == null) {
-          setActiveModal(null);
-          enableScrolling();
-        } else {
-          setActiveModal(modalId);
-          disableScrolling();
-        }
-      };
-      
+  const closeModal = () => {
+    setIsModalVisible(false);
+    setTimeout(() => setActiveModal(null), 500); // Ensures modal is not active when it's invisible
+    enableScrolling();
+  };
       const enableScrolling = () => {
         document.body.classList.remove('no-scroll');
       };
@@ -443,7 +444,7 @@ function App() {
         <section id='experience' className='section-container fade-in'>
           <div className="section-title">Experience...</div>
 
-          <button onClick={() => toggleModal('toggleExperience')} id='experiences' className='item-container fade in'>
+          <button onClick={() => openModal('toggleExperience')} id='experiences' className='item-container fade in'>
 
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <img src={toggle} alt="Toggle Logo" className='logo' />
@@ -462,12 +463,12 @@ function App() {
             </ul>
           </button>
 
-          {activeModal === 'toggleExperience' && (
+          {isModalVisible && activeModal === 'toggleExperience' && (
             <div className="modal">
-              <div className="overlay"></div>
+              <div className="overlay"  onClick={closeModal}></div>
               <div className="modal-content">
                 <h2 className='item-title'>My Experience at Toggle</h2>
-                <button className='close-modal' onClick={() => toggleModal(null)}>
+                <button className='close-modal' onClick={closeModal}>
                   X
                 </button>
                 <p className='modal-text'>At toggle, I was priviledged with working with a capable team of Software Engineers who I was able to learn a lot from.</p>
@@ -488,7 +489,7 @@ function App() {
             </div>
           )}
 
-          <button onClick={() => toggleModal('waiExperience')} id='experiences' className='item-container fade in'>
+          <button onClick={() => openModal('waiExperience')} id='experiences' className='item-container fade in'>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <img src={wai} alt="WAI Logo" className='logo' />
               <h2 className='item-title'>Western AI Case Compeition Finalist<div className='item-subtitle'> (2023) </div></h2>
@@ -505,12 +506,12 @@ function App() {
               <li>Awarded Top 3 Finalist among 35 teams, received a cash prize for innovative approach.</li>
             </ul>
           </button>
-          {activeModal === 'waiExperience' && (
+          {isModalVisible && activeModal === 'waiExperience' && (
             <div className="modal">
-              <div className="overlay"></div>
+              <div className="overlay" onClick={closeModal}></div>
               <div className="modal-content">
                 <h2 className='item-title'>My Experience Competing in Western AI's 2023 Case Compeition</h2>
-                <button className='close-modal' onClick={() => toggleModal(null)}>
+                <button className='close-modal'  onClick={closeModal}>
                   X
                 </button>
                 <p className='modal-text'>At this year's Wetsern AI Case Compeition, groups were tasked with creating an innovative product using AI, a very general instruction which
@@ -531,7 +532,7 @@ function App() {
           )}
 
 
-          <button onClick={() => toggleModal('pcycExperience')} id='experiences' className='item-container fade in'>
+          <button onClick={() => openModal('pcycExperience')} id='experiences' className='item-container fade in'>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <img src={pcyc} alt="PCYC Logo" className='logo' />
               <h2 className='item-title'>Port Credit Yacht Club<div className='item-subtitle'> Harbour Staff/Administrative Assistant: (2022 - 2023, Seasonal) </div></h2>
@@ -549,12 +550,12 @@ function App() {
             </ul>
           </button>
 
-          {activeModal === 'pcycExperience' && (
+          {isModalVisible && activeModal === 'pcycExperience' && (
             <div className="modal">
-              <div className="overlay"></div>
+              <div className="overlay" onClick={closeModal}></div>
               <div className="modal-content">
                 <h2 className='item-title'>My Experience at Port Credit Yacht Club</h2>
-                <button className='close-modal' onClick={() => toggleModal(null)}>
+                <button className='close-modal' onClick={closeModal}>
                   X
                 </button>
                 <p className='modal-text'>I've worked at Port Credit Yacht Club for the past two summers, and it has been an incredible experience that has taught me valuable soft skills,
@@ -576,7 +577,7 @@ function App() {
               </div>
             </div>
           )}
-          <button onClick={() => toggleModal('mcdonaldsExperience')} if='experiences' className='item-container fade in' >
+          <button onClick={() => openModal('mcdonaldsExperience')} if='experiences' className='item-container fade in' >
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <img src={mcdonalds} alt="McDonalds Logo" className='logo' />
               <h2 className='item-title'>McDonalds Crew Trainer<div className='item-subtitle'> (2020 - 2021) </div></h2>
@@ -594,12 +595,12 @@ function App() {
             </ul>
           </button>
 
-          {activeModal === 'mcdonaldsExperience' && (
+          {isModalVisible && activeModal === 'mcdonaldsExperience' && (
             <div className="modal">
-              <div className="overlay"></div>
+              <div className="overlay" onClick={closeModal}></div>
               <div className="modal-content">
                 <h2 className='item-title'>My Experience at McDonalds</h2>
-                <button className='close-modal' onClick={() => toggleModal(null)}>
+                <button className='close-modal' onClick={closeModal}>
                   X
                 </button>
                 <p className='modal-text'>At McDonalds, I was originally kitchen staff, and then promoted to Crew Trainer as a testament to my leadership and responsibility</p>
@@ -656,7 +657,7 @@ function App() {
               <p></p>
               <li>Integrated data from an NBA API for historical and current player stats.</li>
               <p></p>
-              <li>Implement measures to ensure accuracy and consistency of player's stats.</li>
+              <li>Implemented measures to ensure accuracy and consistency of player's stats.</li>
               <p></p>
               <li>Executed complete front-end development for a user-centric web application.</li>
               <p></p>

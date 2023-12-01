@@ -66,9 +66,7 @@ a {
 }
 
 .header {
-  background-image: url('toronto.jpg');
-  background-size: cover;
-  background-position: top;
+  background-color: black;
   width: 100%;
   height: 55px;
   position: fixed;
@@ -131,6 +129,8 @@ a {
   color: white;
 }
 
+
+
 .section-container {
   align-items: center;
   justify-content: center;
@@ -158,7 +158,7 @@ a {
 .item-text{
   font-family: 'lato';
   font-weight: 100;
-  font-size: 2vh;
+  font-size: 1.16em;
   text-align: left;
   z-index: 1000 !important;
 }
@@ -177,8 +177,8 @@ a {
   padding-left: 2%;
   min-width: 40%;
   max-width: 40%;
-  min-height: 240px !important;
-  max-height: 240px !important;
+  min-height: 260px !important;
+  max-height: 260px !important;
   background: rgba(17, 17, 17, 0.8);
   border: 5px solid rgb(37, 37, 37);
   z-index: 1000 !important;
@@ -199,6 +199,7 @@ a {
 }
 
 .item-container {
+  z-index: 2;
   vertical-align: top;
   overflow: hidden;
   margin: 1%;
@@ -278,7 +279,7 @@ a {
   text-align: left;
   padding-left: 2.5px;
   padding-top: 2%;
-  font-size: 1rem;
+  font-size: 1.7vh;
 }
 
 .section-title {
@@ -447,12 +448,23 @@ a {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000 !important; 
   
+}
+
+.modal-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.modal-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s 0.5s;
 }
 
 .no-scroll {
@@ -469,7 +481,7 @@ a {
   min-width: 50%;
   max-width: 50%;
   border-radius: 20px;
-  background-image: linear-gradient(to right top, #206800, #006242, #005873, #004889, #002e79, #002d77, #002d76, #002c74, #004583, #005982, #006b78, #007a6c);
+  background-color: rgb(14, 14, 14);
   border: 2px solid white;
   background-size: 400% 400%;
   animation: gradient 20s ease infinite;
@@ -556,15 +568,123 @@ a {
   border-radius: 15px;
 }
 
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+
+  .item-text{
+    font-size: 2.1vh;
+  }
+  
+  .header {
+    height: 66px; 
+  }
+
+  .about-me-title{
+    padding-top: 400px;
+  }
+
+  .button-container{
+    align-items: center !important;
+    margin-right: 5%; 
+    justify-content: center;
+  }
+
+  .name-button{
+    visibility: hidden;
+    margin-right: -300px;
+  }
+
+  .button{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+  }
+
+  .name-button, .button {
+    font-size: 80%; 
+  }
+
+  #about-me .section-title{
+    padding-top: 500px;
+  }
+
+  .static-txt{
+    padding-top: 100px;
+  }
+
+  .section-container {
+    margin-top: 15%;
+    margin-bottom: 15%;
+  }
+
+  .headshot{
+    padding-top: 400px;
+    height: 250px !important; 
+    width: auto !important;
+    border-radius: 30% !important; 
+  }
+
+  .section-text{
+    font-size: 20px;
+  }
+
+  .item-container {
+    min-width: 80% !important; 
+    max-width: 80% !important;
+    min-height: 80% !important; 
+    max-height: 80% !important; 
+    padding: 5%; 
+  }
+
+  .section-title{
+    padding-left: 11%;
+  }
+
+  .item-title{
+    font-size: 1.1rem; 
+  }
+
+  .item-subtitle{
+    font-size: 0.9rem; 
+  }
+
+
+  .modal-content {
+    min-width: 60%;
+    max-width: 60%;
+  }
+
+  .logo, .github-grey, .headshot {
+    height: auto;
+    width: auto; 
+  }
+
+  .bottom-icons img {
+    max-width: 40px;
+    max-height: 40px;
+  }
+
+  .logo{
+    max-width: 60px;
+    max-height: 60px;
+  }
+
+  .github-grey{
+    max-width: 60px;
+    max-height: 60px;
+  }
+}
+
+
 @media only screen and (max-width: 481px) {
   
 
   body::before{
     font-size: 14px; 
-    background-image: url('toronto.jpg'); /* Make sure the path is correct */
+    background-image: url('toronto.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: scroll; /* Change to scroll for better mobile support */
+    background-attachment: scroll; 
     background-position: center center;
   }
   
@@ -573,24 +693,25 @@ a {
   }
 
   .modal {
-    z-index: 10000; /* Ensure this is higher than the z-index of other elements */
-  position: fixed; /* Fixed or absolute positioning */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    z-index: 10000; 
+    position: absolute;
+    opacity: 1;
+    visibility:visible;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
   }
   
 
   .modal-content{
-    width: 90%; /* Adjust width for mobile devices */
+    position: fixed;
+    width: 90%; 
     max-width: 500px;
-    z-index: 10001; /* Ensure this is higher than the .modal z-index */
-  position: relative;
+    z-index: 10001; 
+    position: relative;
   }
 
   .headshot {
@@ -660,8 +781,6 @@ a {
     box-shadow: none;
   }
 
-
-
   .skills-section .item-container {
     flex-basis: calc(33% - 10px); 
   }
@@ -688,9 +807,10 @@ a {
     min-width: 78% !important; 
     min-height: 120px !important;
     max-height: 120px !important;
-    padding-left: 2%;
+    padding-left: 5%;
     padding-right: 2%;
     margin: 5%;
+    border: none;
   }
 
   .flowchart-img{
