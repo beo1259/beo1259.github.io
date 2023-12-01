@@ -118,12 +118,12 @@ function Header({ currentSection, setCurrentSection }) {
           PROJECTS
         </button>
         <a
-  href={resume}
-  className={getButtonClass('resume')}
-  target="_blank" // Optional: open in a new tab
-  rel="noopener noreferrer" // Security for opening new tabs
->
-  RESUME
+          href={resume}
+          className={getButtonClass('resume')}
+          target="_blank" 
+          rel="noopener noreferrer" 
+        >
+          RESUME
 </a>
       </div>
     </header>
@@ -597,7 +597,7 @@ function App() {
     <button className='item-container fade in' >
 
       <div style={{ display: 'flex', alignItems: 'center' }}>
-      <a href="https://github.com/beo1259?tab=repositories" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/beo1259/beo1259.github.io" target="_blank" rel="noopener noreferrer">
       <img src={githubgrey} alt="github grey" className='github-grey'/>
       </a>
         <h2 className='item-title'>My Personal Portfolio Website<div className='item-subtitle'> (2023 - Present) </div></h2>
