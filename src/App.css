@@ -127,6 +127,8 @@ body::before {
 
 
 .item-container {
+  vertical-align: top;
+
   margin: 1%;
   border-radius: 1.75rem;
   padding-top: 2%;
