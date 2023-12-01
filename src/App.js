@@ -22,6 +22,7 @@ import pcyc from './pcyc.png'
 import githubgrey from './githubgrey.png';
 import email from './email.png';
 import resume from './resume.pdf';
+import flowchart from './flowchart.jpg';
 
 function equalizeContainerHeights() {
   let maxHeight = 0;
@@ -132,10 +133,25 @@ function Header({ currentSection, setCurrentSection }) {
 
 function App() {
 
+  const [modal, setModal] = useState(false);
   const [currentSection, setCurrentSection] = useState('about-me'); 
+  const [activeModal, setActiveModal] = useState(null);
 
+
+  const toggleModal = (modalId) => {
+    if (activeModal === modalId) {
+      setActiveModal(null); 
+      enableScrolling(); // Call to enable scrolling when modal is closed
+    } else {
+      setActiveModal(modalId); 
+    }
+  };
+
+  const enableScrolling = () => document.body.classList.remove('no-scroll');
+  const disableScrolling = () => document.body.classList.add('no-scroll');
   useEffect(() => {
     
+
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
     }
@@ -175,8 +191,11 @@ function App() {
     sections.forEach((section) => {
       observer.observe(section);
     });
+    
+    
 
     return () => {
+      document.body.classList.remove('no-scroll');
       sections.forEach((section) => {
         observer.unobserve(section);
       });
@@ -224,7 +243,8 @@ function App() {
       <section id='skills' className='section-container fade in skills-section'>
       <div class="section-title">Languages...</div>
       
-        <button id='experiences' className='item-container fade in'>
+        <button id='experiences' className='item-container fade in'
+        >
           
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <img src={python} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
@@ -449,7 +469,8 @@ function App() {
       <section id='experience' className='section-container fade-in'>
       <div className="section-title">Experience...</div>
 
-    <button id='experiences' className='item-container fade in'>
+      <button onClick={() => toggleModal('toggleExperience')} id='experiences' className='item-container fade in'>
+
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <img src={toggle} alt="Toggle Logo" className='logo'/>
             <h2 className='item-title'>Toggle<div className='item-subtitle'>Full-Stack Software Engineer Intern: (2022 - 2023, 2023 - Present) </div></h2>
@@ -467,7 +488,33 @@ function App() {
         </ul>
       </button>
 
-    <button id='experiences' className='item-container fade in'>
+       {activeModal === 'toggleExperience' && (
+        <div className="modal">
+          <div className="overlay"></div>
+          <div className="modal-content">
+            <h2 className='item-title'>My Experience at Toggle</h2>
+            <button className='close-modal' onClick={() => toggleModal(null)}>
+              X
+            </button>
+            <p className='modal-text'>At toggle, I was priviledged with working with a capable team of Software Engineers who I was able to learn a lot from.</p>
+            <p></p>
+            <p className='modal-text'>I became experienced with frameworks like React and React Native, as I was tasked with developing a website and 
+            mobile app built upon these structures. I enhanced my previous knowledge of JavaScript, HTML, and CSS for front-end, and learned Backend for the first
+            time where a coworker and I built a SQL database and REST API with the use of Express and NodeJS. We incoroporated Open AI's GPT-4 API where we would provide a
+            user's email as a pdf and allow the user to ask questions that pertain to the information. Google's Tesseact OCR was used as the PDF would be converted to an
+            image, and then it's contents would would be read by Tesseract and given to GPT-4
+            </p>
+            <p></p>
+            <p className='modal-text'>
+              Outside of technical expereince, I was able to learn how a group environment functions and what must be done to ensure proper collaboration.
+              I gained expereince with Git, and frequently helped the UI/UX team come up with designs for the website with Figma. The skills I've learned about working
+              with others throught this position are invaluable, and I am grateful that I was given the oppurtunity to blossom among talented minds.
+            </p>
+          </div>
+        </div>
+      )}
+
+<button onClick={() => toggleModal('waiExperience')} id='experiences' className='item-container fade in'>
     <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src={wai} alt="WAI Logo" className='logo'/>
           <h2 className='item-title'>Western AI Case Compeition Finalist<div className='item-subtitle'> (2023) </div></h2>
@@ -484,7 +531,31 @@ function App() {
         <li>Awarded Top 3 Finalist among 35 teams, received a cash prize for innovative approach.</li>
       </ul>
     </button>
-
+    {activeModal === 'waiExperience' && (
+      <div className="modal">
+        <div className="overlay"></div>
+        <div className="modal-content">
+            <h2 className='item-title'>My Experience Competing in Western AI's 2023 Case Compeition</h2>
+            <button className='close-modal' onClick={() => toggleModal(null)}>
+              X
+            </button>
+            <p className='modal-text'>At this year's Wetsern AI Case Compeition, groups were tasked with creating an innovative product using AI, a very general instruction which
+            left very much room for interpretation. My group placed 3rd out of 5 finalists, and 35 teams overall.</p>
+            <p></p>
+            <p className='modal-text'> I was lucky enough to be paired with 3 other very competent and creative group members, and we came up with an idea to solve the problem of low quality
+            video calls, and the lack of human conncetion that is felt when this occurs. Our process included using a submitted 3D scan of the user's face, which most of today's smartphones are capable
+            of. Through the use of that, and various AI technologies we would construct a mapping of the user's constructed face on top of the low quality image. Please view the flowchart I Created
+            to see the full process:
+            <img src={flowchart} className='flowchart-img'/>
+            </p>
+            <p></p>
+            <p className='modal-text'> This 48 hour project greatly enhanced my ability to work under pressure with a team, and having to be creative in such a short time helped me understand
+            the way that my brain works in a time of stress, and how to maintain composure. 
+            </p>
+              
+          </div>
+        </div>
+      )}
 
 
   <button id='experiences' className='item-container fade in'>
