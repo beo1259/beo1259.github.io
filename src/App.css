@@ -199,7 +199,24 @@ body::before {
 @media only screen and (max-width: 600px) {
   body {
     font-size: 14px; 
-    background-color: 20px;
+  }
+
+  .headshot {
+    height: 200px; /* Adjust to your preference */
+    width: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular shape */
+  }
+
+  .section-title {
+    font-size: 1.5rem; /* Smaller size for mobile */
+  }
+
+  .section-text {
+    font-size: 0.9em; /* Smaller size for mobile */
+  }
+
+  body:before{
+    background-color: rgb(14, 14, 14);
   }
   
   .section-text{
@@ -210,10 +227,16 @@ body::before {
   }
 
   #skills .item-container {
-    margin: 1px;
+    margin: 8px;
     border: none;
     box-shadow: none;
     background-color: transparent;
+  }
+
+  .item-container:hover {
+    border: 5px solid transparent;
+    box-shadow: none;
+    transform: none;
   }
 
   .skills-section .item-container {
