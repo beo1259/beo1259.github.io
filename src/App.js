@@ -425,7 +425,7 @@ function App() {
 
             <button id='skills' className='item-container fade in'>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={expressLogo} alt="Express.js logo" style={{ width: '85px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+                <img src={expressLogo} alt="Express.js logo" style={{ width: '85px', height: '60px', marginRight: '10px', borderRadius: '10px' }} />
                 <h2 className='item-title'>Express/NodeJS</h2>
               </div>
               <ul className='item-text'>
