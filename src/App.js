@@ -544,7 +544,7 @@ function App() {
             video calls, and the lack of human conncetion that is felt when this occurs. Our process included using a submitted 3D scan of the user's face, which most of today's smartphones are capable
             of. Through the use of that, and various AI technologies we would construct a mapping of the user's constructed face on top of the low quality image. Please view the flowchart I Created
             to see the full process:
-            <img src={flowchart} alt='flowchart image' className='flowchart-img'/>
+            <img src={flowchart} alt='flowchart' className='flowchart-img'/>
             </p>
             <p></p>
             <p className='modal-text'> This 48 hour project greatly enhanced my ability to work under pressure with a team, and having to be creative in such a short time helped me understand
