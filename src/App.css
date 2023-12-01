@@ -550,26 +550,48 @@ a {
 }
 
 @media only screen and (max-width: 481px) {
+  
   body {
     font-size: 14px; 
-    background-image: ('./toronto.jpg');
+    background-image: url('toronto.jpg'); /* Make sure the path is correct */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* Change to scroll for better mobile support */
+    background-position: center center;
+  }
+
+  body::before{
+    font-size: 14px; 
+    background-image: url('toronto.jpg'); /* Make sure the path is correct */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* Change to scroll for better mobile support */
+    background-position: center center;
+  }
+  
+  #skills .item-title{
+    text-shadow: 1px 1px 2px black;
   }
 
   .modal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    z-index: 10000; /* Ensure this is higher than the z-index of other elements */
+  position: fixed; /* Fixed or absolute positioning */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
   }
+  
 
   .modal-content{
     width: 90%; /* Adjust width for mobile devices */
     max-width: 500px;
+    z-index: 10001; /* Ensure this is higher than the .modal z-index */
+  position: relative;
   }
 
   .headshot {
@@ -613,7 +635,9 @@ a {
   }
 
   #skills .item-container {
-    margin: 8px;
+    
+    margin: 3px;
+    margin-left: 20px;
     border: none;
     min-height: 80px !important;
     max-height: 80px !important;
