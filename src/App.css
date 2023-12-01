@@ -199,6 +199,7 @@ body::before {
 @media only screen and (max-width: 600px) {
   body {
     font-size: 14px; 
+    background-color: 20px;
   }
   
   .section-text{
@@ -216,13 +217,9 @@ body::before {
   }
 
   .skills-section .item-container {
-    flex-basis: calc(33% - 10px); /* Adjust percentage as per layout */
+    flex-basis: calc(33% - 10px); 
   }
   
-
-
-  
-
   .header {
     display: none;
   }
