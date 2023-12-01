@@ -157,13 +157,13 @@ function App() {
     }, 500); 
     //enableScrolling();
   };
-      const enableScrolling = () => {
-        document.body.classList.remove('no-scroll');
-      };
+      // const enableScrolling = () => {
+      //   document.body.classList.remove('no-scroll');
+      // };
       
-      const disableScrolling = () => {
-        document.body.classList.add('no-scroll');
-      };
+      // const disableScrolling = () => {
+      //   document.body.classList.add('no-scroll');
+      // };
   
 
   useEffect(() => {
