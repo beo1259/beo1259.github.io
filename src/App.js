@@ -165,7 +165,7 @@ function App() {
         });
       },
       {
-        threshold: 0.15,
+        threshold: 0
       }
     );
   
@@ -207,11 +207,10 @@ function App() {
       </section>
       <section id='about-me' className='section-container fade-in'>
         <div className='about-me-content'>
-          <img src={headshot} className="headshot" alt="Headshot" height="400" />
-          <div class='section-text'>
+          <img src={headshot} className="headshot" alt="Headshot"/>
+          <div>
             <div class='section-title' style={{paddingLeft: '10px'}}>HELLO!</div>
-            <div className='gif-container'></div>
-            <p>I'm Brayden! I am a hardworking Computer Science student, who enjoys pursuing hard-to-reach goals
+            <p  class='section-text'>I'm Brayden! I am a hardworking Computer Science student, who enjoys pursuing hard-to-reach goals
             that require critical thinking and problem solving. I pursue these goals through the use
             of cutting edge technology that I find interesting, and maintain an optimistic attitude
             when faced with adversity.</p>
@@ -219,10 +218,10 @@ function App() {
           
         </div>
       </section>
-      <section id='skills' className='section-container fade in'>
+      <section id='skills' className='section-container fade in skills-section'>
       <div class="section-title">Languages...</div>
       
-        <button id='skills' className='item-container fade in'>
+        <button id='experiences' className='item-container fade in'>
           
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <img src={python} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
@@ -446,8 +445,8 @@ function App() {
       <section id='experience' className='section-container fade-in'>
   <div className="section-title">Experiences...</div>
 
-  <button id='experiences' className='item-container fade in'>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+ <button id='experiences' className='item-container fade in'>
+       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img src={toggle} alt="Toggle Logo" style={{ width: '50px', height: '47px', marginRight: '10px' }} />
         <h2 className='item-title'>Full Stack Software Engineer Intern (2022 - 2023)</h2>
       </div>
