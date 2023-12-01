@@ -209,15 +209,16 @@ body::before {
   }
 
   .skills-section .item-container {
+    /* Make container background transparent */
     background: none;
     border: none;
     box-shadow: none;
     align-items: center;
     justify-content: center;
-    margin: 5px 0; 
-    padding: 10px;
+    /* Adjust margins and padding to reduce space */
+    margin: 5px 0; /* Adjust top and bottom margin as needed */
+    padding: 10px; /* Adjust padding as needed */
   }
-
 
   .header {
     display: none;
