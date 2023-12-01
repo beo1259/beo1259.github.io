@@ -133,7 +133,6 @@ function Header({ currentSection, setCurrentSection }) {
 
 function App() {
 
-  const [modal, setModal] = useState(false);
   const [currentSection, setCurrentSection] = useState('about-me'); 
   const [activeModal, setActiveModal] = useState(null);
 
@@ -141,14 +140,13 @@ function App() {
   const toggleModal = (modalId) => {
     if (activeModal === modalId) {
       setActiveModal(null); 
-      enableScrolling(); // Call to enable scrolling when modal is closed
+      enableScrolling(); 
     } else {
       setActiveModal(modalId); 
     }
   };
 
   const enableScrolling = () => document.body.classList.remove('no-scroll');
-  const disableScrolling = () => document.body.classList.add('no-scroll');
   useEffect(() => {
     
 
