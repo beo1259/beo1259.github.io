@@ -65,9 +65,9 @@ a {
 .github-grey {
   z-index: 100000 !important;
   float: left;
-  height: 50px;
-  width: 50px;
-  margin-right: 10px;
+  height: 48px;
+  width: 48px;
+  margin-right: 15px;
   transition: transform 0.15s ease-in;
 }
 
@@ -102,7 +102,7 @@ a {
 }
 
 .name-button {
-  font-size: 150%;
+  font-size: 1.6em;
   font-family: 'lato';
   border: none;
   background-color: transparent;
@@ -124,7 +124,7 @@ a {
 }
 
 .button {
-  font-size: 112%;
+  font-size: 1.25em;
   font-family: 'lato';
   border: none;
   background-color: transparent;
@@ -312,7 +312,7 @@ a {
   text-align: left;
   padding-left: 2.5px;
   padding-top: 2%;
-  font-size: 1.7vh;
+  font-size: 0.8em;
 }
 
 .projects-title {
@@ -649,7 +649,7 @@ a {
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
 
   .item-text {
-    font-size: 1.2rem;
+    font-size: 1.35em !important;
   }
 
   .header {
@@ -678,9 +678,11 @@ a {
 
   }
 
-  .name-button,
+  .name-button{
+    font-size: 0%;
+  }
   .button {
-    font-size: 80%;
+    font-size: 90%;
   }
 
   #about-me .section-title {
@@ -724,7 +726,7 @@ a {
   }
 
   .item-subtitle {
-    font-size: 0.9rem;
+    font-size: 0.9em;
   }
 
 
@@ -751,13 +753,14 @@ a {
   }
 
   .github-grey {
-    max-width: 60px;
-    max-height: 60px;
+    max-width: 7vh;
+    max-height: 7vh;
   }
 }
 
 
 @media only screen and (max-width: 481px) {
+
 
   .lang-container {
     padding-top: 20px;
