@@ -17,6 +17,12 @@
   font-weight: bold;
 }
 
+.chrome-img{
+  height: 30%;
+  width: 30%;
+  margin-top: 20px;
+  border-radius: 15px;
+}
 
 body {
   margin: 0;

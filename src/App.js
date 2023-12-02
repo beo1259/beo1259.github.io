@@ -25,6 +25,8 @@ import resume from './resume.pdf';
 import flowchart from './flowchart.jpg';
 import travellift from './travellift.jpg';
 import alarmcar from './alarmcar.jpg';
+import nbaplayer from './nbaplayer.jpg';
+import study from './chromext.png';
 
 function equalizeContainerHeights() {
   let maxHeight = 0;
@@ -724,6 +726,7 @@ function App() {
                   I delivered an analytical tool that fills a gap in the current internet offerings. This tool allows for the comparison of NBA players across different
                   eras in a simplified manner, catering to fans and analysts alike. My approach was to create a simple yet powerful tool that could bring complex
                   statistical insights into a more digestible format for the average user.
+                  <img src={nbaplayer} alt='nbaplayer' className='flowchart-img' />
                 </p>
 
               </div>
@@ -758,23 +761,30 @@ function App() {
                   X
                 </button>
                 <p className='modal-text'>
-                  The Chrome extension I developed serves as an innovative solution for managing study sessions. Its creation was motivated by the need for improved organizational tools that cater specifically to the unique rhythms of focused study and rest periods.
+                  The Chrome extension I developed serves as an innovative solution for managing study sessions. Its creation was motivated by the need for improved 
+                  organizational tools that cater specifically to the unique rhythms of focused study and rest periods.
                 </p>
                 <p></p>
                 <p className='modal-text'>
-                  The extension features customizable timers that allow users to define periods of concentrated study along with scheduled breaks. This functionality supports the Pomodoro Technique and similar time management methods that have been proven to boost productivity.
+                  The extension features customizable timers that allow users to define periods of concentrated study along with scheduled breaks. This functionality 
+                  supports the Pomodoro Technique and similar time management methods that have been proven to boost productivity.
                 </p>
                 <p></p>
                 <p className='modal-text'>
-                  By facilitating a balanced study routine, the extension helps users to optimize their learning while also preventing burnout. Recognizing the importance of regular breaks for mental health and sustained focus, it encourages a healthier approach to study habits.
+                  By facilitating a balanced study routine, the extension helps users to optimize their learning while also preventing burnout. Recognizing the 
+                  importance of regular breaks for mental health and sustained focus, it encourages a healthier approach to study habits.
                 </p>
                 <p></p>
                 <p className='modal-text'>
-                  Accessibility was a key consideration in the design of the extension’s interface. It offers a simple, intuitive UI that allows for quick session planning and time management, enabling users to start their study sessions with minimal setup time.
+                  Accessibility was a key consideration in the design of the extension’s interface. It offers a simple, intuitive UI that allows for quick session 
+                  planning and time management, enabling users to start their study sessions with minimal setup time.
                 </p>
                 <p></p>
                 <p className='modal-text'>
-                  With this extension, I addressed a gap in the Chrome Web Store for efficient and user-friendly study planning tools. It stands out by providing a streamlined solution that helps students and professionals alike to organize their study sessions more effectively.
+                  With this extension, I addressed a gap in the Chrome Web Store for efficient and user-friendly study planning tools. It stands out by providing a
+                  streamlined solution that helps students and professionals alike to organize their study sessions more effectively.
+                  <p></p>
+                   <img src={study} alt='study' className='chrome-img' />
                 </p>
 
 
