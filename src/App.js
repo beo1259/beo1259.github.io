@@ -149,7 +149,7 @@ function App() {
     setTimeout(() => {
       setModalFadeIn(true);
     }, 10);
-    //disableScrolling();
+    disableScrolling();
   };
 
   const closeModal = () => {
@@ -158,15 +158,16 @@ function App() {
       setIsModalVisible(false);
       setActiveModal(null);
     }, 500);
-    //enableScrolling();
+    enableScrolling();
   };
-  // const enableScrolling = () => {
-  //   document.body.classList.remove('no-scroll');
-  // };
+  
+  const enableScrolling = () => {
+    document.body.classList.remove('no-scroll');
+  };
 
-  // const disableScrolling = () => {
-  //   document.body.classList.add('no-scroll');
-  // };
+  const disableScrolling = () => {
+    document.body.classList.add('no-scroll');
+  };
 
 
   useEffect(() => {
