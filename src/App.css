@@ -772,7 +772,6 @@ a {
 
   .section-text {
     display: none;
-    /* Hide the original text on mobile */
   }
 
   .frameworks-title {
@@ -803,23 +802,23 @@ a {
   }
 
   body {
-    background: transparent;
+    background: black;
   }
 
   body::before {
     content: '';
-    position: fixed; /* Fixed positioning */
+    position: fixed; 
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1; /* Place it behind the content */
+    z-index: -1; 
     
     display: block;
     background-image: url('toronto.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: scroll; /* Change to scroll */
+    background-attachment: scroll; 
   }
   #skills .item-title {
     text-shadow: 1px 1px 2px black;
