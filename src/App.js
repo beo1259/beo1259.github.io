@@ -248,7 +248,9 @@ function App() {
         </section>
         <section id='about-me' className='section-container fade-in'>
           <div className='about-me-content'>
+          <div className='headshot-container'>
             <img src={headshot} className="headshot" alt="Headshot" />
+          </div>
             <div>
               <div class="about-me-title">HELLO!</div>
               <p class='section-text'>I'm Brayden! I am a hardworking Computer Science student, who enjoys pursuing hard-to-reach goals
