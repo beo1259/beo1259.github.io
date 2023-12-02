@@ -63,7 +63,7 @@ a {
 }
 
 .github-grey {
-
+  z-index: 100000 !important;
   float: left;
   height: 50px;
   width: 50px;
