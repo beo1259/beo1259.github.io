@@ -791,18 +791,25 @@ a {
     min-width: 80% !important;
   }
 
-
   body {
-    background-attachment: scroll;
+    background: transparent;
   }
 
-
   body::before {
+    content: '';
+    position: fixed; /* Fixed positioning */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Place it behind the content */
+    
+    display: block;
     background-image: url('toronto.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: scroll; /* Change to scroll */
   }
-
   #skills .item-title {
     text-shadow: 1px 1px 2px black;
   }
