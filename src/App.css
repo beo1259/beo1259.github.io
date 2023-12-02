@@ -801,7 +801,6 @@ a {
     background-image: url('toronto.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
   }
 
   #skills .item-title {
