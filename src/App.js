@@ -257,7 +257,7 @@ function App() {
                 when faced with adversity.
               </p>
               <p className='section-text-mobile'>
-               Hardworking Computer Science student passionate about tech and innovation!
+               Welcome to my portfolio! My name is Brayden, I'm a hardworking Computer Science student passionate about tech and innovation!
               </p>
             </div>
 
