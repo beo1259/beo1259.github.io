@@ -711,14 +711,6 @@ a {
     background-attachment: scroll; 
     background-position: center center;
   }
-
-  body::before {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-  }
   
   #skills .item-title{
     text-shadow: 1px 1px 2px black;
