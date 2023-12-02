@@ -824,7 +824,7 @@ function App() {
             <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
               <div className="overlay" onClick={closeModal}></div>
               <div className="modal-content">
-                <h2 className='item-title'>My Study Helper Chrome Extension</h2>
+                <h2 className='item-title'>This Website</h2>
                 <button className='close-modal' onClick={closeModal}>
                   X
                 </button>
