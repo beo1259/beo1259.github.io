@@ -763,11 +763,17 @@ a {
 
 
   .lang-container {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    justify-content: center;
+    min-width: 78% !important;
+    max-width: 78% !important;
     padding-top: 20px;
     background: rgba(17, 17, 17, 0.9);
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
-    margin: 20px;
   }
 
   .section-text {
@@ -863,12 +869,13 @@ a {
 
 
   #skills .item-container {
-
+    width: 1000px;
     margin: 3px;
     margin-left: 20px;
     border: none;
     min-height: 80px !important;
     max-height: 80px !important;
+
     box-shadow: none;
     background-color: transparent;
   }
