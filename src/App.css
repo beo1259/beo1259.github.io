@@ -158,7 +158,7 @@ a {
 .item-text{
   font-family: 'lato';
   font-weight: 100;
-  font-size: 1.16em;
+  font-size: 1.5em;
   text-align: left;
   z-index: 1000 !important;
 }
@@ -177,10 +177,10 @@ a {
   padding-left: 2%;
   min-width: 40%;
   max-width: 40%;
-  min-height: 260px !important;
-  max-height: 260px !important;
-  background: rgba(17, 17, 17, 0.8);
-  border: 5px solid rgb(37, 37, 37);
+  min-height: 340px !important;
+  max-height: 340px !important;
+  background: rgba(17, 17, 17, 0.9);
+  border: none;
   z-index: 1000 !important;
   opacity: 1; 
   position: relative; 
@@ -191,9 +191,24 @@ a {
   transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
 }
 
+#skills .item-container:before {
+  
+  z-index: -5;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  border-radius: inherit; 
+}
+
 #skills .item-container:hover {
   transform: scale(1.01);
-  border: 5px solid rgba(255, 215, 0, 0.8);
+
   box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.03);
   z-index: -1;
 }
@@ -209,9 +224,9 @@ a {
   padding-left: 2%;
   min-width: 40%;
   max-width: 40%;
-  min-height: 380px !important;
-  max-height: 380px !important;
-  background: rgba(17, 17, 17, 0.8);
+  min-height: 430px !important;
+  max-height: 430px !important;
+  background: rgba(17, 17, 17, 0.9);
   border: 5px solid rgb(37, 37, 37);
   z-index: 1;
   opacity: 1; 
@@ -221,6 +236,7 @@ a {
   flex-shrink: 0;
   transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
 }
+
 
 
 .item-container:hover {
@@ -314,10 +330,9 @@ a {
 .section-text {
   padding-left: 5%;
   padding-right: 5%;
-  
   text-align: center;
   font-family: 'Lato';
-  font-weight: 100;
+  font-weight: 800;
   font-size: 1.75em;
   text-shadow: 10px 10px 3px black; /* Increased shadow size and blur */
 
@@ -325,7 +340,8 @@ a {
 
 .static-txt{
   margin-top: 15%;
-  text-align: centerr;
+  text-align: center;
+  margin-right: 3%;
   z-index: 1;
   font-family: 'lato';
   font-size: 4rem;
@@ -400,7 +416,7 @@ a {
   -webkit-text-fill-color: transparent;
   font-family: 'lato';
   font-weight: 800;
-  font-size: 2.25rem;
+  font-size: 3.5rem;
 }
 
 .about-me-content {
@@ -583,7 +599,7 @@ a {
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
 
   .item-text{
-    font-size: 0.85rem;
+    font-size: 1.2rem;
   }
   
   .header {
