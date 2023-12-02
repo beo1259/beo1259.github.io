@@ -24,6 +24,12 @@
   border-radius: 15px;
 }
 
+.lang-img{
+  max-width: 50px;
+  max-width: 50px;
+  margin-right: 10px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -43,7 +49,6 @@ body::before {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   content: '';
-  z-index: -1; 
 }
 
 a {
@@ -55,7 +60,6 @@ a {
   height: 50px;
   width: 50px;
   margin-right: 10px;
-  z-index: 10000;
 }
 
 .github-grey{
@@ -72,6 +76,7 @@ a {
 }
 
 .header {
+  z-index: 1000 !important;
   background-color: black;
   width: 100%;
   height: 55px;
@@ -81,6 +86,10 @@ a {
   align-items: center;
   z-index: 10;
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.section-text-mobile {
+  display: none; 
 }
 
 .button-container {
@@ -135,8 +144,6 @@ a {
   color: white;
 }
 
-
-
 .section-container {
   align-items: center;
   justify-content: center;
@@ -147,7 +154,6 @@ a {
   position: relative;
   color: white;
   text-align: center;
-  z-index: 4;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
@@ -187,7 +193,7 @@ a {
   max-height: 340px !important;
   background: rgba(17, 17, 17, 0.9);
   border: none;
-  z-index: 1000 !important;
+  z-index: 1 !important;
   opacity: 1; 
   position: relative; 
   color: white;
@@ -220,7 +226,6 @@ a {
 }
 
 .item-container {
-  z-index: 2;
   vertical-align: top;
   overflow: hidden;
   margin: 1%;
@@ -234,7 +239,6 @@ a {
   max-height: 430px !important;
   background: rgba(17, 17, 17, 0.9);
   border: 5px solid rgb(37, 37, 37);
-  z-index: 1;
   opacity: 1; 
   position: relative; 
   color: white;
@@ -292,7 +296,6 @@ a {
   text-align: left;
   padding-left: 2.5px;
   font-size: 1.3rem;
-  z-index: 10000;
 }
 
 .item-subtitle{
@@ -304,9 +307,38 @@ a {
   font-size: 1.7vh;
 }
 
+.projects-title{
+  margin-top: 20%;
+  margin-bottom: 1%;
+  padding-left: 9.5%;
+  text-align: left;
+  background: linear-gradient(90deg, rgb(255, 153, 0) 0%, rgb(255, 242, 0) 35%, rgb(255, 60, 0) 100%);
+  -webkit-background-clip: text;
+  background-size: 300% 300%;
+  animation: gradient 7s ease infinite;
+  -webkit-text-fill-color: transparent;
+  font-family: 'lato';
+  font-weight: 800;
+  font-size: 2.25rem;
+}
+
+.frameworks-title{
+  margin-top: 120px;
+  margin-bottom: 1%;
+  padding-left: 9.5%;
+  text-align: left;
+  background: linear-gradient(90deg, rgb(255, 153, 0) 0%, rgb(255, 242, 0) 35%, rgb(255, 60, 0) 100%);
+  -webkit-background-clip: text;
+  background-size: 300% 300%;
+  animation: gradient 7s ease infinite;
+  -webkit-text-fill-color: transparent;
+  font-family: 'lato';
+  font-weight: 800;
+  font-size: 2.25rem;
+}
+
 .section-title {
   margin-bottom: 1%;
-  
   padding-left: 9.5%;
   text-align: left;
   background: linear-gradient(90deg, rgb(255, 153, 0) 0%, rgb(255, 242, 0) 35%, rgb(255, 60, 0) 100%);
@@ -340,7 +372,7 @@ a {
   font-family: 'Lato';
   font-weight: 800;
   font-size: 1.75em;
-  text-shadow: 10px 10px 3px black; /* Increased shadow size and blur */
+  text-shadow: 10px 10px 3px black; 
 
 }
 
@@ -412,6 +444,7 @@ a {
 }
 
 .about-me-title{
+  text-shadow: 0 0 10px 10px black;
   margin-bottom: 1%;
   padding-right: 4%;
   text-align: center;
@@ -421,8 +454,8 @@ a {
   animation: gradient 7s ease infinite;
   -webkit-text-fill-color: transparent;
   font-family: 'lato';
-  font-weight: 800;
-  font-size: 3.5rem;
+  font-weight: 400;
+  font-size: 2rem;
 }
 
 .about-me-content {
@@ -462,9 +495,10 @@ a {
 }
 
 .modal {
+  z-index: 1000 !important;
   align-items: center;
   justify-content: center;
-  position: fixed !important;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -506,9 +540,8 @@ a {
 }
 
 .modal-content {
-
-  position: relative;
-  z-index: 6000 !important;
+  z-index: 1000 !important;
+  position: fixed;
   padding: 20px;
   min-height: 20%;
   max-height: 70%;
@@ -521,7 +554,6 @@ a {
   animation: gradient 20s ease infinite;
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
   overflow-y: scroll;
-  z-index: 1001; 
   transition: transform 0.3s ease-in-out;
   transition: opacity 1s ease-in-out;
 }
@@ -553,7 +585,6 @@ a {
 }
 
 .close-modal {
-  z-index: 6001 !important;
   position: absolute;
   font-family: 'lato';
   font-weight: 800;
@@ -587,11 +618,12 @@ a {
 }
 
 .copyright-text{
+  z-index: 1000 !important;
   text-align: center;
   margin-bottom: 10px;
   margin-top: 5px;
   font-family: 'lato';
-  font-size: 10px;
+  font-size: 1rem;
   color: gold;
 }
 
@@ -712,6 +744,29 @@ a {
 
 @media only screen and (max-width: 481px) {
 
+  .lang-container{
+    padding-top: 20px;
+    background: rgba(17, 17, 17, 0.9);
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    margin: 20px;
+  }
+
+  .section-text {
+    display: none; /* Hide the original text on mobile */
+  }
+
+  .frameworks-title{
+    margin-top: 0px;
+    padding-left: 18%;
+    font-size: 1.5rem !important;
+  }
+
+  .lang-img{
+    max-width: 30px;
+    max-width: 30px;
+    margin-right: 10px;
+  }
   
   .modal-text{
     font-family: 'lato';
@@ -739,7 +794,7 @@ a {
   }
 
   .headshot {
-    height: 100px !important; 
+    height: 100px; 
     margin-left: 5px;
     width: auto !important;
     border-radius: 30% !important; 
@@ -763,21 +818,15 @@ a {
     font-size: 1.5rem !important;
   }
 
-  .section-text {
-    background: rgba(17, 17, 17, 0.8);
-    padding: 12px;
-    border: none;
-    border-radius: 30px;
-    font-size: 1.05em !important;
-    text-shadow: 0px 0px 2px black;
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
-  }
-
-  
-  
-  .section-text{
-    font-size: 1px;
-    margin-bottom: 80px;
+  .section-text-mobile {
+    font-family: 'lato';
+    font-weight: 100;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(17, 17, 17, 0.9);
+    padding: 20px;
+    border-radius: 20px;
+    display: block; 
+    
   }
 
  .item-text{
@@ -867,6 +916,7 @@ a {
 
   .copyright-text{
     position: relative;
+    font-size: 0.6rem;
     z-index: 5 !important;
   }
 

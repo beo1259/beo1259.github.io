@@ -254,20 +254,24 @@ function App() {
               <p class='section-text'>I'm Brayden! I am a hardworking Computer Science student, who enjoys pursuing hard-to-reach goals
                 that require critical thinking and problem solving. I pursue these goals through the use
                 of cutting edge technology that I find interesting, and maintain an optimistic attitude
-                when faced with adversity.</p>
+                when faced with adversity.
+              </p>
+              <p className='section-text-mobile'>
+               Hardworking Computer Science student passionate about tech and innovation!
+              </p>
             </div>
 
           </div>
         </section>
         <div className="skills-section">
           <section id='skills' className='section-container fade in skills-section'>
+          <div className='lang-container'>
             <div class="section-title">Languages...</div>
-
-            <button id='experiences' className='item-container fade in'
-            >
-
+            
+            <button id='experiences' className='item-container fade in'>
+            
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={python} alt="Python logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+                <img src={python} alt="Python logo" className='lang-img' />
                 <h2 className='item-title'>Python</h2>
               </div>
               <ul className='item-text'>
@@ -284,7 +288,7 @@ function App() {
 
             <button id='skills' className='item-container fade in'>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={java} alt="Java logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+                <img src={java} alt="Java logo" className='lang-img' />
                 <h2 className='item-title'>Java</h2>
               </div>
               <ul className='item-text'>
@@ -299,7 +303,7 @@ function App() {
 
             <button id='skills' className='item-container fade in'>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={js} alt="JavaScript logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '4px' }} />
+                <img src={js} alt="JavaScript logo" className='lang-img' />
                 <h2 className='item-title'>JavaScript</h2>
               </div>
               <ul className='item-text'>
@@ -312,10 +316,10 @@ function App() {
               </ul>
 
             </button>
-
+          
             <button id='skills' className='item-container fade in'>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={typescript} alt="TypeScript logo" style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+                <img src={typescript} alt="TypeScript logo" className='lang-img' />
                 <h2 className='item-title'>TypeScript</h2>
               </div>
               <ul className='item-text'>
@@ -331,7 +335,7 @@ function App() {
 
             <button id='skills' className='item-container fade in'>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={htmlcss} alt="HTML/CSS logo" style={{ width: '60px', height: '50px', marginRight: '10px' }} />
+                <img src={htmlcss} alt="HTML/CSS logo" className='lang-img' />
                 <h2 className='item-title'>HTML/CSS</h2>
               </div>
               <ul className='item-text'>
@@ -346,7 +350,7 @@ function App() {
 
             <button id='skills' className='item-container fade in'>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={csharp} alt="C# logo" style={{ width: '50px', height: '55px', marginRight: '10px' }} />
+                <img src={csharp} alt="C# logo" className='lang-img' />
                 <h2 className='item-title'>C#</h2>
               </div>
               <ul className='item-text'>
@@ -360,7 +364,7 @@ function App() {
             </button>
             <button id='skills' className='item-container fade in'>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={cpp} alt="C++ Logo" style={{ width: '50px', height: '55px', marginRight: '10px' }} />
+                <img src={cpp} alt="C++ Logo" className='lang-img' />
                 <h2 className='item-title'>C/C++</h2>
               </div>
               <ul className='item-text'>
@@ -374,7 +378,7 @@ function App() {
             </button>
             <button id='skills' className='item-container fade in'>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={sql} alt="SQL logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+                <img src={sql} alt="SQL logo" className='lang-img' />
                 <h2 className='item-title'>SQL</h2>
               </div>
               <ul className='item-text'>
@@ -386,12 +390,14 @@ function App() {
                 </li>
               </ul>
             </button>
-            <div class="section-title" style={{ paddingTop: '120px' }}>Frameworks...</div>
+            </div>
+            <div className='lang-container'>
+            <div class="frameworks-title" >Frameworks...</div>
 
             <button id='skills' className='item-container fade in'>
 
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={react} alt="React logo" style={{ width: '47px', height: '47px', marginRight: '10px', borderRadius: '10px' }} />
+                <img src={react} alt="React logo" className='lang-img' />
                 <h2 className='item-title'>React</h2>
               </div>
               <ul className='item-text'>
@@ -406,7 +412,7 @@ function App() {
 
             <button id='skills' className='item-container fade in'>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={reactnative} alt="Native logo" style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+                <img src={reactnative} alt="Native logo" className='lang-img' />
                 <h2 className='item-title'>React Native</h2>
               </div>
               <ul className='item-text'>
@@ -421,7 +427,7 @@ function App() {
 
             <button id='skills' className='item-container fade in'>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={flutter} alt="Flutter logo" style={{ width: '47px', height: '50px', marginRight: '10px', borderRadius: '10px' }} />
+                <img src={flutter} alt="Flutter logo" className='lang-img' />
                 <h2 className='item-title'>Flutter and Dart</h2>
               </div>
               <ul className='item-text'>
@@ -437,7 +443,7 @@ function App() {
 
             <button id='skills' className='item-container fade in'>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={expressLogo} alt="Express.js logo" style={{ width: '85px', height: '60px', marginRight: '10px', borderRadius: '10px' }} />
+                <img src={expressLogo} alt="Express.js logo" className='lang-img' />
                 <h2 className='item-title'>Express/NodeJS</h2>
               </div>
               <ul className='item-text'>
@@ -449,6 +455,7 @@ function App() {
                 </li>
               </ul>
             </button>
+            </div>
 
           </section>
         </div>
@@ -761,22 +768,22 @@ function App() {
                   X
                 </button>
                 <p className='modal-text'>
-                  The Chrome extension I developed serves as an innovative solution for managing study sessions. Its creation was motivated by the need for improved 
+                  The Chrome extension I developed serves as an innovative solution for managing study sessions. Its creation was motivated by the need for improved
                   organizational tools that cater specifically to the unique rhythms of focused study and rest periods.
                 </p>
                 <p></p>
                 <p className='modal-text'>
-                  The extension features customizable timers that allow users to define periods of concentrated study along with scheduled breaks. This functionality 
+                  The extension features customizable timers that allow users to define periods of concentrated study along with scheduled breaks. This functionality
                   supports the Pomodoro Technique and similar time management methods that have been proven to boost productivity.
                 </p>
                 <p></p>
                 <p className='modal-text'>
-                  By facilitating a balanced study routine, the extension helps users to optimize their learning while also preventing burnout. Recognizing the 
+                  By facilitating a balanced study routine, the extension helps users to optimize their learning while also preventing burnout. Recognizing the
                   importance of regular breaks for mental health and sustained focus, it encourages a healthier approach to study habits.
                 </p>
                 <p></p>
                 <p className='modal-text'>
-                  Accessibility was a key consideration in the design of the extension’s interface. It offers a simple, intuitive UI that allows for quick session 
+                  Accessibility was a key consideration in the design of the extension’s interface. It offers a simple, intuitive UI that allows for quick session
                   planning and time management, enabling users to start their study sessions with minimal setup time.
                 </p>
                 <p></p>
@@ -784,7 +791,7 @@ function App() {
                   With this extension, I addressed a gap in the Chrome Web Store for efficient and user-friendly study planning tools. It stands out by providing a
                   streamlined solution that helps students and professionals alike to organize their study sessions more effectively.
                   <p></p>
-                   <img src={study} alt='study' className='chrome-img' />
+                  <img src={study} alt='study' className='chrome-img' />
                 </p>
 
 
