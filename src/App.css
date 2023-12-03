@@ -834,6 +834,12 @@ a {
     display: none;
   }
 
+  .headshot-modal {
+    height: 30vh;
+    border-radius: 60px;
+  }
+
+
   .static-txt {
     display: none;
   }
@@ -854,9 +860,11 @@ a {
 
   .section-text-mobile {
     font-family: 'lato';
+    color: white;
     font-weight: 100;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
     background-color: rgba(17, 17, 17, 0.9);
+    border: 5px solid rgb(37, 37, 37);
     padding: 20px;
     border-radius: 20px;
     display: block;
