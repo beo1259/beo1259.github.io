@@ -20,7 +20,6 @@ import reactnative from './reactnative.png';
 import flutter from './flutter.png';
 import pcyc from './pcyc.png'
 import githubgrey from './githubgrey.png';
-import email from './email.png';
 import resume from './resume.pdf';
 import flowchart from './flowchart.jpg';
 import travellift from './travellift.jpg';
