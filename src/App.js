@@ -827,7 +827,7 @@ function App() {
 </div>
 
 <ul className='item-text'>
-  <li>The website you're currently on,<a href="braydenoneil.com" target="_blank" rel="noopener noreferrer"> <span style={{ color: 'gold', textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073' }}>welcome!</span></a></li>
+  <li>The website you're currently on, <span style={{ color: 'gold', textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073' }}>welcome!</span></li>
   <p></p>
   <li>Included JavaScript functions to work in conjunction with my HTML and CSS designs.</li>
   <p></p>
