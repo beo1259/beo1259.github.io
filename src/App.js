@@ -553,7 +553,7 @@ function App() {
               <li>Dealt with conflict among employees and members, resolving situations swiftly.</li>
               <p></p>
 
-              <li>Accessed member data in a database, learning about company backend strcutre.</li>
+              <li>Accessed member data in a database, learning how company's backend is structured.</li>
               <p></p>
               <li>Worked on/fixed the docks, maintaining a high level of club preservation.</li>
             </ul>
@@ -865,9 +865,7 @@ function App() {
             <img src={linkedin} alt='Linkedin Icon' className="hyperlink-imgs" />
           </a>
 
-          <a href="oneilb123@gmail.com" target="_blank" rel="noopener noreferrer">
-            <img src={email} alt='Email Icon' className="hyperlink-imgs" />
-          </a>
+
         </div>
 
 
