@@ -714,11 +714,11 @@ function App() {
             </div>
 
             <ul className='item-text'>
-              <li>Engineered a mobile alarm clock to ensure waking through physical interaction.</li>
+              <li>Note Taking App for the visually impaired, made possible with the use of various APIs for specific faetuers.</li>
               <p></p>
-              <li>Assembled a custom car with a Raspberry Pi for programmable control.</li>
+              <li>Our goal was to create an accesible application plus a generally inclusive browsing experience.</li>
               <p></p>
-              <li>Developed a Python script for random movement upon alarm activation.</li>
+              <li>Developed a full front-end and back-end, furthered my understanding of front-end languages and MySQL with NodeJS and Express.</li>
 
             </ul>
           </button>
