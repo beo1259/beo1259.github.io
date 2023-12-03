@@ -563,8 +563,7 @@ function App() {
                   hackathon.</p>
                 <p></p>
                 <p className='modal-text'>
-                  This project wasn't just a technical journey; it was a lesson in teamwork and collaboration. I honed my skills in Git and worked closely with the
-                  UI/UX team to ensure our app was not only functional but also user-friendly. We focused on accessibility features like font resizing to cater to a
+                  This project wasn't just a technical journey; it was a lesson in teamwork and collaboration. I honed my skills in Git and ensured our web-app was not only functional but also user-friendly. We focused on accessibility features like font resizing to cater to a
                   broader range of users. The experience of working in such a dynamic group and achieving second place at the hackathon has been incredibly valuable,
                   teaching me the importance of teamwork in bringing innovative ideas to life.
                 </p>
