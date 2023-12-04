@@ -859,6 +859,7 @@ a {
 
   .section-text-mobile {
     font-family: 'lato';
+    font-size: 1.2em;
     color: white;
     font-weight: 100;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
