@@ -714,7 +714,7 @@ function App() {
             </div>
 
             <ul className='item-text'>
-              <li>Note Taking App for the visually impaired, made possible with the use of various APIs for specific faetuers.</li>
+              <li>Note Taking App for the visually impaired, made possible with the use of various APIs for specific features.</li>
               <p></p>
               <li>Our goal was to create an accesible application plus a generally inclusive browsing experience.</li>
               <p></p>
