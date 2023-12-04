@@ -534,7 +534,7 @@ function App() {
 
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <img src={westerndev} alt="Western Dev Logo" className='logo' style={{ borderRadius: '10px' }} />
-              <h2 className='item-title'>Western Dev Society Overhaul Hackathon - 2nd Place<div className='item-subtitle'>(2023)</div></h2>
+              <h2 className='item-title'>Western Dev Society Overhaul Hackathon - 2nd Place<div className='item-subtitle'>(December 3, 2023)</div></h2>
             </div>
             <ul className='item-text'>
               <li>Created a note taking web-app optimized for those with impairments.</li>
@@ -586,7 +586,7 @@ function App() {
           <button onClick={() => openModal('waiExperience')} id='experiences' className='item-container fade in'>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <img src={wai} alt="WAI Logo" className='logo' />
-              <h2 className='item-title'>Western AI Case Competition - 3rd Place<div className='item-subtitle'> (2023) </div></h2>
+              <h2 className='item-title'>Western AI Case Competition - 3rd Place<div className='item-subtitle'> (November 19, 2023) </div></h2>
             </div>
             <ul className='item-text'>
               <li>Conceptualized an AI-based solution to improve human connection in video calls, involing replacing the low quality face with a 3D rendered version</li>
