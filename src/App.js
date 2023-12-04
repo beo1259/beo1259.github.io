@@ -537,7 +537,7 @@ function App() {
               <h2 className='item-title'>Western Dev Society Overhaul Hackathon - 2nd Place<div className='item-subtitle'>(2023)</div></h2>
             </div>
             <ul className='item-text'>
-              <li>Creating a note taking web-app optimized for those with impaiments.</li>
+              <li>Created a note taking web-app optimized for those with impaiments.</li>
               <p></p>
               <li>Used various APIs for accessibility, such javascript's text-to-speech and speech-to-text built in APIs, and the Google Cloud Translation API.</li>
               <p></p>
@@ -754,9 +754,14 @@ function App() {
                   application not just functional but also truly accommodating for all users, thereby enriching the note-taking experience for the impaired community.
                 </p>
                 <p></p>
+                
                 <img src={devsociety1} alt="Inklink Demo 1" className='flowchart-img'/>
                 <img src={devsociety2} alt="Inklink Demo 2" className='flowchart-img'/>
-
+                <p></p>
+                <p className='modal-text'>
+                  This was done as a part of Western Developer Society's 2023 Overhaul hackathon, where my team took second place. See experience section
+                  to learn more.
+                </p>
 
               </div>
             </div>
