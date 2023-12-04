@@ -389,7 +389,6 @@ a {
 .static-txt {
   margin-top: 15%;
   text-align: center;
-  margin-right: 3%;
   z-index: 1;
   font-family: 'lato';
   font-size: 4rem;
@@ -405,7 +404,7 @@ a {
 
 .dynamic-txts li {
   z-index: 1;
-  padding-right: 4.5%;
+  padding-right: 2%;
   list-style: none;
   color: gold;
   font-family: 'lato';
