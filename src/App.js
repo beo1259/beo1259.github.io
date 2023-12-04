@@ -718,7 +718,7 @@ function App() {
               <p></p>
               <li>Our goal was to create an accesible application plus a generally inclusive browsing experience.</li>
               <p></p>
-              <li>Developed a full front-end and back-end, furthered my understanding of front-end languages and MySQL with NodeJS and Express.</li>
+              <li>Developed a full front-end and back-end, furthering my understanding of both.</li>
 
             </ul>
           </button>
