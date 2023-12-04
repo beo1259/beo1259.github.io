@@ -537,7 +537,7 @@ function App() {
               <h2 className='item-title'>Western Dev Society Overhaul Hackathon - 2nd Place<div className='item-subtitle'>(2023)</div></h2>
             </div>
             <ul className='item-text'>
-              <li>Created a note taking web-app optimized for those with impaiments.</li>
+              <li>Created a note taking web-app optimized for those with impairments.</li>
               <p></p>
               <li>Used various APIs for accessibility, such javascript's text-to-speech and speech-to-text built in APIs, and the Google Cloud Translation API.</li>
               <p></p>
