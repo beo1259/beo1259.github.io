@@ -29,7 +29,7 @@ import study from './chromext.png';
 import westerndev from './westerndev.jpg';
 import devsociety1 from './devsocietyimg1.JPG'
 import devsociety2 from './devsocietyimg2.JPG'
-
+import recommendation from './recommendation.png';
 
 function equalizeContainerHeights() {
   let maxHeight = 0;
@@ -525,6 +525,11 @@ function App() {
                   with others throught this position are invaluable, and I am grateful that I was given the oppurtunity to blossom among talented minds.
                 </p>
                 <p></p>
+                <p className='modal-text'>
+                  Please view this letter of recommendation from my previous boss, and CEO of Toggle, Gyu Tae Bae:
+                </p>
+                <p></p>
+                <p><img src={recommendation} alt='flowchart' className='flowchart-img' /></p>
 
               </div>
             </div>
@@ -582,7 +587,6 @@ function App() {
               </div>
             </div>
           )}
-
           <button onClick={() => openModal('waiExperience')} id='experiences' className='item-container fade in'>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <img src={wai} alt="WAI Logo" className='logo' />
