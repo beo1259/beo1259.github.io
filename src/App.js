@@ -854,7 +854,7 @@ function App() {
       X
     </button>
     <p className='modal-text'>
-    <span style={{ color: 'gold', textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073' }}>The website that you're currently navigating, </span> is a testament to my passion for web development and design.
+    <span style={{ color: 'gold', textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073' }}>The website that you're currently navigating </span> is a testament to my passion for web development and design.
     </p>
     <p></p>
     <p className='modal-text'>
