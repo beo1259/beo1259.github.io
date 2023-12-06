@@ -417,7 +417,7 @@ function App() {
               </button>
             </div>
             <div className='lang-container'>
-              <div class="frameworks-title" >Frameworks...</div>
+              <div class="frameworks-title" >Frameworks and technologies...</div>
 
               <button id='skills' className='item-container fade in'>
 
