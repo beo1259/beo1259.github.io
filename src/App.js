@@ -104,13 +104,7 @@ function Header({ currentSection, setCurrentSection }) {
         >
           ABOUT ME
         </button>
-        <button
-          type="button"
-          className={getButtonClass('skills')}
-          onClick={() => scrollToSection('skills')}
-        >
-          SKILLS
-        </button>
+        
         <button
           type="button"
           className={getButtonClass('experience')}
@@ -124,6 +118,13 @@ function Header({ currentSection, setCurrentSection }) {
           onClick={() => scrollToSection('projects')}
         >
           PROJECTS
+        </button>
+        <button
+          type="button"
+          className={getButtonClass('skills')}
+          onClick={() => scrollToSection('skills')}
+        >
+          SKILLS
         </button>
         <a
           href={resume}
@@ -180,6 +181,34 @@ function App() {
       window.scrollTo(0, 0);
     }
 
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        document.querySelector('.header').classList.add('header-hidden');
+      } else {
+        document.querySelector('.header').classList.remove('header-hidden');
+        
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    const handleMouseMove = (e) => {
+      if (e.clientY < 50) { // 50px from the top
+        document.querySelector('.header').classList.remove('header-hidden');
+      }
+    };
+  
+    window.addEventListener('mousemove', handleMouseMove);
+  
+
+
+
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -187,6 +216,11 @@ function App() {
           if (entry.isIntersecting) {
             setCurrentSection(entry.target.id);
             entry.target.classList.add('visible');
+
+            const title = entry.target.querySelector('.section-title');
+            if (title) {
+              title.classList.add('title-visible');
+            }
             if (entry.target.id === 'about-me') {
               document.querySelector('.headshot').classList.add('headshot-visible');
             }
@@ -196,6 +230,12 @@ function App() {
             });
           } else {
             entry.target.classList.remove('visible');
+
+            const title = entry.target.querySelector('.section-title');
+            if (title) {
+              title.classList.remove('title-visible');
+            }
+
             if (entry.target.id === 'about-me') {
               document.querySelector('.headshot').classList.remove('headshot-visible');
             }
@@ -219,6 +259,8 @@ function App() {
 
 
     return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
       document.body.classList.remove('no-scroll');
       sections.forEach((section) => {
         observer.unobserve(section);
@@ -266,224 +308,29 @@ function App() {
                 Welcome to my portfolio! My name is Brayden, I'm a hardworking Computer Science student passionate about tech and innovation!
               </button>
               {isModalVisible && activeModal === 'aboutmeModal' && (
-            <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
-              <div className="overlay" onClick={closeModal}></div>
-              <div className="modal-content">
-                <h2 className='item-title'>Who am I?</h2>
-                <button className='close-modal' onClick={closeModal}>
-                  X
-                </button>
-                <p className='modal-text'>I'm Brayden! I am a hardworking Computer Science student, who enjoys pursuing hard-to-reach goals
-                that require critical thinking and problem solving. I pursue these goals through the use
-                of cutting edge technology that I find interesting, and maintain an optimistic attitude
-                when faced with adversity.
-              </p>
-              
-                <p><img src={headshot} alt="headshot" className='headshot-modal'/></p>
+                <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
+                  <div className="overlay" onClick={closeModal}></div>
+                  <div className="modal-content">
+                    <h2 className='item-title'>Who am I?</h2>
+                    <button className='close-modal' onClick={closeModal}>
+                      X
+                    </button>
+                    <p className='modal-text'>I'm Brayden! I am a hardworking Computer Science student, who enjoys pursuing hard-to-reach goals
+                      that require critical thinking and problem solving. I pursue these goals through the use
+                      of cutting edge technology that I find interesting, and maintain an optimistic attitude
+                      when faced with adversity.
+                    </p>
 
-              </div>
-            </div>
-          )}
+                    <p><img src={headshot} alt="headshot" className='headshot-modal' /></p>
+
+                  </div>
+                </div>
+              )}
             </div>
 
           </div>
         </section>
-        <div className="skills-section">
-          <section id='skills' className='section-container fade in skills-section'>
-            <div className='lang-container'>
-              <div class="section-title">Languages...</div>
-
-              <button id='experiences' className='item-container fade in'>
-
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={python} alt="Python logo" className='lang-img' />
-                  <h2 className='item-title'>Python</h2>
-                </div>
-                <ul className='item-text'>
-                  <li style={{ paddingBottom: '7px' }}>
-                    I have been using python since I was 14 years old, and am very well versed in this language. I frequently practice Leetcode problems using python
-                    as I find it to be the closest to pseudocode.
-                  </li>
-                  <li>
-                    I have also used it for my Alarm Car project;
-                    the entire script for its movement and behaviour is written in python.
-                  </li>
-                </ul>
-              </button>
-
-              <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={java} alt="Java logo" className='lang-img' />
-                  <h2 className='item-title'>Java</h2>
-                </div>
-                <ul className='item-text'>
-                  <li style={{ paddingBottom: '7px' }}>
-                    I have been using Java since high school, and it is currently my strongest language.
-                  </li>
-                  <li>
-                    Java provides an  Object-Oriented programming experience, which makes it easy to bring the ideal structure of my projects into fruition
-                  </li>
-                </ul>
-              </button>
-
-              <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={js} alt="JavaScript logo" className='lang-img' />
-                  <h2 className='item-title'>JavaScript</h2>
-                </div>
-                <ul className='item-text'>
-                  <li style={{ paddingBottom: '7px' }}>
-                    JavaScript is essential for creating an entertaining user experience for web apps, and I have been honing on it while building this website!
-                  </li>
-                  <li>
-                    I enjoy this aspect of web development, as it enables me to employ my problem solving skills and strategize approaches to different issues I may face while developing a website.
-                  </li>
-                </ul>
-
-              </button>
-
-              <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={typescript} alt="TypeScript logo" className='lang-img' />
-                  <h2 className='item-title'>TypeScript</h2>
-                </div>
-                <ul className='item-text'>
-                  <li style={{ paddingBottom: '7px' }}>
-                    I first used TypeScript at my most recent internship with Toggle, and picked it up rather quickly due to my previous experience with JavaScript.
-                  </li>
-                  <li>
-                    I think TypeScript is a great choice for scalable websites worked on by a large group of people, as it outshines JavaScript in its maintainability and readability.
-                  </li>
-                </ul>
-              </button>
-
-
-              <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={htmlcss} alt="HTML/CSS logo" className='lang-img' />
-                  <h2 className='item-title'>HTML/CSS</h2>
-                </div>
-                <ul className='item-text'>
-                  <li style={{ paddingBottom: '7px' }}>
-                    I have become very fluent in HTML while experimenting with web development over the past few years, I'm able to quickly turn a visualized website structure into what I want.
-                  </li>
-                  <li>
-                    CSS has many styles, however its structure is simple. I'm able to consistently apply my desired design after of years of experience.
-                  </li>
-                </ul>
-              </button>
-
-              <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={csharp} alt="C# logo" className='lang-img' />
-                  <h2 className='item-title'>C#</h2>
-                </div>
-                <ul className='item-text'>
-                  <li style={{ paddingBottom: '7px' }}>
-                    Syntatically, I was able to pick C# up pretty quickly due to my abilities with Java; however I find the process of coding with C# more efficient than the latter.
-                  </li>
-                  <li>
-                    C# is extremely scalable and used very widely, so I am currently practicing and learning its ins and outs by the day.
-                  </li>
-                </ul>
-              </button>
-              <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={cpp} alt="C++ Logo" className='lang-img' />
-                  <h2 className='item-title'>C/C++</h2>
-                </div>
-                <ul className='item-text'>
-                  <li style={{ paddingBottom: '7px' }}>
-                    I am currently taking an Operating Systems course, and the assignments are done in C, which has allowed me to hone in on my low-level skills.
-                  </li>
-                  <li>
-                    Being that C++ is very similar syntatically, but used on a much higher-level, I certainly plan to incorporate it into one of my future projects.
-                  </li>
-                </ul>
-              </button>
-              <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={sql} alt="SQL logo" className='lang-img' />
-                  <h2 className='item-title'>SQL</h2>
-                </div>
-                <ul className='item-text'>
-                  <li style={{ paddingBottom: '7px' }}>
-                    In my intership at Toggle, a coworker an I managed a SQL database, where I leared how to write queries and the structure of MySQL.
-                  </li>
-                  <li>
-                    I frequently practice writing queries with Leetcode SQL questions, as SQL is an ever present language, and every back-end engineer will work with it at some point.
-                  </li>
-                </ul>
-              </button>
-            </div>
-            <div className='lang-container'>
-              <div class="frameworks-title" >Frameworks and technologies...</div>
-
-              <button id='skills' className='item-container fade in'>
-
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={react} alt="React logo" className='lang-img' />
-                  <h2 className='item-title'>React</h2>
-                </div>
-                <ul className='item-text'>
-                  <li style={{ paddingBottom: '7px' }}>
-                    In my intership at Toggle, React was the main framework I worked with for the front-end of the web-app, gaining invaluable experience with it.
-                  </li>
-                  <li>
-                    I was able to learn from my coworkers how frameworks are used to structure web-apps, and it boosted my conceptual and technical understanding of front-end development.
-                  </li>
-                </ul>
-              </button>
-
-              <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={reactnative} alt="Native logo" className='lang-img' />
-                  <h2 className='item-title'>React Native</h2>
-                </div>
-                <ul className='item-text'>
-                  <li style={{ paddingBottom: '7px' }}>
-                    Being that React Native is extremely similar to React, it wasn't as hard to pick up and was a smooth transition for me.
-                  </li>
-                  <li>
-                    I learned how mobile devleopment frameworks work in conjunction with Android Studio, which I previously had no knowledge of.
-                  </li>
-                </ul>
-              </button>
-
-              <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={flutter} alt="Flutter logo" className='lang-img' />
-                  <h2 className='item-title'>Flutter and Dart</h2>
-                </div>
-                <ul className='item-text'>
-                  <li style={{ paddingBottom: '7px' }}>
-                    I have been using Flutter for a personal project, and at my internship with Toggle, where I helped build the front-end of a desktop app for Windows and MacOS.
-                  </li>
-                  <li>
-                    This came with an understanding of dart, the language used with flutter. I find dart to be an interesting approach to the structure of code in web development, and I am excited keep using it.
-                  </li>
-                </ul>
-              </button>
-
-
-              <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={expressLogo} alt="Express.js logo" className='lang-img' />
-                  <h2 className='item-title'>Express/NodeJS</h2>
-                </div>
-                <ul className='item-text'>
-                  <li style={{ paddingBottom: '7px' }}>
-                    Express and Node JS is what a coworker and I at Toggle used to engineer the REST API to connect our front-end to our back-end SQL database.
-                  </li>
-                  <li>
-                    Though it took some time to pickup, the use of NodeJS to write the REST API has not only taught me how to use Express/NodeJS, but given me and understanding of a back-end is structured to its core.
-                  </li>
-                </ul>
-              </button>
-            </div>
-
-          </section>
-        </div>
+        
         <section id='experience' className='section-container fade-in'>
           <div className="section-title">Experience...</div>
 
@@ -735,32 +582,32 @@ function App() {
                   X
                 </button>
                 <p className='modal-text'>
-                  Our project's mission was to develop a note-taking application specifically designed for impaired users. This endeavor aimed to revolutionize digital 
-                  accessibility, allowing individuals with various impairments to interact more effectively with digital content. We focused on creating a tool that 
+                  Our project's mission was to develop a note-taking application specifically designed for impaired users. This endeavor aimed to revolutionize digital
+                  accessibility, allowing individuals with various impairments to interact more effectively with digital content. We focused on creating a tool that
                   would simplify the process of capturing and organizing thoughts, making digital note-taking a seamless experience for all users, regardless of their
-                   physical or cognitive abilities.
+                  physical or cognitive abilities.
                 </p>
                 <p className='modal-text'>
-                  In developing the application, we incorporated advanced features like Text-to-Speech (TTS) and Speech-to-Text (STT). These technologies were pivotal 
-                  in ensuring the app was accessible. TTS allowed visually impaired users to hear the text read aloud, making it easier for them to comprehend and 
+                  In developing the application, we incorporated advanced features like Text-to-Speech (TTS) and Speech-to-Text (STT). These technologies were pivotal
+                  in ensuring the app was accessible. TTS allowed visually impaired users to hear the text read aloud, making it easier for them to comprehend and
                   interact with the content. Conversely, STT enabled users with mobility or dexterity challenges to dictate their notes, breaking down barriers in the
                   note-taking process.
                 </p>
                 <p className='modal-text'>
-                  A standout feature of our app was its live translation capability, powered by the Google Cloud API. This functionality was a game-changer, 
-                  particularly for non-native speakers and those with hearing impairments. It allowed for real-time translation of spoken or written text, facilitating 
+                  A standout feature of our app was its live translation capability, powered by the Google Cloud API. This functionality was a game-changer,
+                  particularly for non-native speakers and those with hearing impairments. It allowed for real-time translation of spoken or written text, facilitating
                   better comprehension and engagement with content in various languages, thereby enhancing the inclusivity and utility of the note-taking process.
                 </p>
                 <p className='modal-text'>
-                  For the front-end, we employed HTML, CSS, and JavaScript to craft an intuitive and accessible user interface, designed to be navigable and 
-                  understandable for users with different impairments. The backend, supported by Express, NodeJS, and a SQL database, ensured robust data management 
-                  and responsiveness. We meticulously integrated accessibility features, such as adjustable font sizes and straightforward navigation, to make the 
+                  For the front-end, we employed HTML, CSS, and JavaScript to craft an intuitive and accessible user interface, designed to be navigable and
+                  understandable for users with different impairments. The backend, supported by Express, NodeJS, and a SQL database, ensured robust data management
+                  and responsiveness. We meticulously integrated accessibility features, such as adjustable font sizes and straightforward navigation, to make the
                   application not just functional but also truly accommodating for all users, thereby enriching the note-taking experience for the impaired community.
                 </p>
                 <p></p>
-                
-                <img src={devsociety1} alt="Inklink Demo 1" className='flowchart-img'/>
-                <img src={devsociety2} alt="Inklink Demo 2" className='flowchart-img'/>
+
+                <img src={devsociety1} alt="Inklink Demo 1" className='flowchart-img' />
+                <img src={devsociety2} alt="Inklink Demo 2" className='flowchart-img' />
                 <p></p>
                 <p className='modal-text'>
                   This was done as a part of Western Developer Society's 2023 Overhaul hackathon, where my team took second place. See experience section
@@ -826,57 +673,57 @@ function App() {
             </div>
           )}
 
-<button onClick={() => openModal('portfolioModal')} className='item-container fade in' >
+          <button onClick={() => openModal('portfolioModal')} className='item-container fade in' >
 
-<div style={{ display: 'flex', alignItems: 'center' }}>
-  <a href="https://github.com/beo1259/beo1259.github.io" target="_blank" rel="noopener noreferrer">
-    <img src={githubgrey} alt="github grey" className='github-grey' />
-  </a>
-  <h2 className='item-title'>My Personal Portfolio Website<div className='item-subtitle'> (2023 - Present) </div></h2>
-</div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <a href="https://github.com/beo1259/beo1259.github.io" target="_blank" rel="noopener noreferrer">
+                <img src={githubgrey} alt="github grey" className='github-grey' />
+              </a>
+              <h2 className='item-title'>My Personal Portfolio Website<div className='item-subtitle'> (2023 - Present) </div></h2>
+            </div>
 
-<ul className='item-text'>
-  <li>The website you're currently on, <span style={{ color: 'gold', textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073' }}>welcome!</span></li>
-  <p></p>
-  <li>Included JavaScript functions to work in conjunction with my HTML and CSS designs.</li>
-  <p></p>
-  <li>Emphasized a focus on simplicity to focus on a smooth experience.</li>
+            <ul className='item-text'>
+              <li>The website you're currently on, <span style={{ color: 'gold', textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073' }}>welcome!</span></li>
+              <p></p>
+              <li>Included JavaScript functions to work in conjunction with my HTML and CSS designs.</li>
+              <p></p>
+              <li>Emphasized a focus on simplicity to focus on a smooth experience.</li>
 
-</ul>
-</button>
+            </ul>
+          </button>
 
-{isModalVisible && activeModal === 'portfolioModal' && (
-<div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
-  <div className="overlay" onClick={closeModal}></div>
-  <div className="modal-content">
-    <h2 className='item-title'>This Website</h2>
-    <button className='close-modal' onClick={closeModal}>
-      X
-    </button>
-    <p className='modal-text'>
-    <span style={{ color: 'gold', textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073' }}>The website that you're currently navigating </span> is a testament to my passion for web development and design.
-    </p>
-    <p></p>
-    <p className='modal-text'>
-      It integrates JavaScript functions seamlessly with my HTML and CSS designs, demonstrating my technical skill in creating dynamic, interactive web elements.
-    </p>
-    <p></p>
-    <p className='modal-text'>
-      Throughout the development process, I placed a strong emphasis on simplicity to ensure a smooth and intuitive user experience, focusing on the ease of navigating through the content.
-    </p>
-    <p></p>
-    <p className='modal-text'>
-      This project serves as a personal playground for showcasing my design ideas and capabilities, reflecting my creativity and the breadth of my web development skills.
-    </p>
-    <p></p>
-    <p className='modal-text'>
-      Working on this site allowed me to refresh and reinforce my knowledge of web development fundamentals, broadening my expertise and enhancing my ability to craft well-structured, aesthetically pleasing websites.
-    </p>
+          {isModalVisible && activeModal === 'portfolioModal' && (
+            <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
+              <div className="overlay" onClick={closeModal}></div>
+              <div className="modal-content">
+                <h2 className='item-title'>This Website</h2>
+                <button className='close-modal' onClick={closeModal}>
+                  X
+                </button>
+                <p className='modal-text'>
+                  <span style={{ color: 'gold', textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073' }}>The website that you're currently navigating </span> is a testament to my passion for web development and design.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  It integrates JavaScript functions seamlessly with my HTML and CSS designs, demonstrating my technical skill in creating dynamic, interactive web elements.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  Throughout the development process, I placed a strong emphasis on simplicity to ensure a smooth and intuitive user experience, focusing on the ease of navigating through the content.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  This project serves as a personal playground for showcasing my design ideas and capabilities, reflecting my creativity and the breadth of my web development skills.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  Working on this site allowed me to refresh and reinforce my knowledge of web development fundamentals, broadening my expertise and enhancing my ability to craft well-structured, aesthetically pleasing websites.
+                </p>
 
 
-  </div>
-</div>
-)}
+              </div>
+            </div>
+          )}
           <button onClick={() => openModal('nbaModal')} className='item-container fade in' >
 
             <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -999,10 +846,206 @@ function App() {
 
 
         </section>
+        <div className="skills-section">
+          <section id='skills' className='section-container fade in skills-section'>
+            <div className='lang-container'>
+              <div class="section-title">Languages...</div>
+
+              <button id='experiences' className='item-container fade in'>
+
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img src={python} alt="Python logo" className='lang-img' />
+                  <h2 className='item-title'>Python</h2>
+                </div>
+                <ul className='item-text'>
+                  <li style={{ paddingBottom: '7px' }}>
+                    I have been using python since I was 14 years old, and am very well versed in this language. I frequently practice Leetcode problems using python
+                    as I find it to be the closest to pseudocode.
+                  </li>
+                  <li>
+                    I have also used it for my Alarm Car project;
+                    the entire script for its movement and behaviour is written in python.
+                  </li>
+                </ul>
+              </button>
+
+              <button id='skills' className='item-container fade in'>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img src={java} alt="Java logo" className='lang-img' />
+                  <h2 className='item-title'>Java</h2>
+                </div>
+                <ul className='item-text'>
+                  <li style={{ paddingBottom: '7px' }}>
+                    I have been using Java since high school, and it is currently my strongest language.
+                  </li>
+                  <li>
+                    Java provides an  Object-Oriented programming experience, which makes it easy to bring the ideal structure of my projects into fruition
+                  </li>
+                </ul>
+              </button>
+
+              <button id='skills' className='item-container fade in'>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img src={js} alt="JavaScript logo" className='lang-img' />
+                  <h2 className='item-title'>JavaScript</h2>
+                </div>
+                <ul className='item-text'>
+                  <li style={{ paddingBottom: '7px' }}>
+                    JavaScript is essential for creating an entertaining user experience for web apps, and I have been honing on it while building this website!
+                  </li>
+                  <li>
+                    I enjoy this aspect of web development, as it enables me to employ my problem solving skills and strategize approaches to different issues I may face while developing a website.
+                  </li>
+                </ul>
+
+              </button>
+
+              <button id='skills' className='item-container fade in'>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img src={typescript} alt="TypeScript logo" className='lang-img' />
+                  <h2 className='item-title'>TypeScript</h2>
+                </div>
+                <ul className='item-text'>
+                  <li style={{ paddingBottom: '7px' }}>
+                    I first used TypeScript at my most recent internship with Toggle, and picked it up rather quickly due to my previous experience with JavaScript.
+                  </li>
+                  <li>
+                    I think TypeScript is a great choice for scalable websites worked on by a large group of people, as it outshines JavaScript in its maintainability and readability.
+                  </li>
+                </ul>
+              </button>
+
+
+              <button id='skills' className='item-container fade in'>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img src={htmlcss} alt="HTML/CSS logo" className='lang-img' />
+                  <h2 className='item-title'>HTML/CSS</h2>
+                </div>
+                <ul className='item-text'>
+                  <li style={{ paddingBottom: '7px' }}>
+                    I have become very fluent in HTML while experimenting with web development over the past few years, I'm able to quickly turn a visualized website structure into what I want.
+                  </li>
+                  <li>
+                    CSS has many styles, however its structure is simple. I'm able to consistently apply my desired design after of years of experience.
+                  </li>
+                </ul>
+              </button>
+
+              <button id='skills' className='item-container fade in'>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img src={csharp} alt="C# logo" className='lang-img' />
+                  <h2 className='item-title'>C#</h2>
+                </div>
+                <ul className='item-text'>
+                  <li style={{ paddingBottom: '7px' }}>
+                    Syntatically, I was able to pick C# up pretty quickly due to my abilities with Java; however I find the process of coding with C# more efficient than the latter.
+                  </li>
+                  <li>
+                    C# is extremely scalable and used very widely, so I am currently practicing and learning its ins and outs by the day.
+                  </li>
+                </ul>
+              </button>
+              <button id='skills' className='item-container fade in'>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img src={cpp} alt="C++ Logo" className='lang-img' />
+                  <h2 className='item-title'>C/C++</h2>
+                </div>
+                <ul className='item-text'>
+                  <li style={{ paddingBottom: '7px' }}>
+                    I am currently taking an Operating Systems course, and the assignments are done in C, which has allowed me to hone in on my low-level skills.
+                  </li>
+                  <li>
+                    Being that C++ is very similar syntatically, but used on a much higher-level, I certainly plan to incorporate it into one of my future projects.
+                  </li>
+                </ul>
+              </button>
+              <button id='skills' className='item-container fade in'>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img src={sql} alt="SQL logo" className='lang-img' />
+                  <h2 className='item-title'>SQL</h2>
+                </div>
+                <ul className='item-text'>
+                  <li style={{ paddingBottom: '7px' }}>
+                    In my intership at Toggle, a coworker an I managed a SQL database, where I leared how to write queries and the structure of MySQL.
+                  </li>
+                  <li>
+                    I frequently practice writing queries with Leetcode SQL questions, as SQL is an ever present language, and every back-end engineer will work with it at some point.
+                  </li>
+                </ul>
+              </button>
+            </div>
+            <div className='lang-container'>
+              <div class="frameworks-title" >Frameworks...</div>
+
+              <button id='skills' className='item-container fade in'>
+
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img src={react} alt="React logo" className='lang-img' />
+                  <h2 className='item-title'>React</h2>
+                </div>
+                <ul className='item-text'>
+                  <li style={{ paddingBottom: '7px' }}>
+                    In my intership at Toggle, React was the main framework I worked with for the front-end of the web-app, gaining invaluable experience with it.
+                  </li>
+                  <li>
+                    I was able to learn from my coworkers how frameworks are used to structure web-apps, and it boosted my conceptual and technical understanding of front-end development.
+                  </li>
+                </ul>
+              </button>
+
+              <button id='skills' className='item-container fade in'>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img src={reactnative} alt="Native logo" className='lang-img' />
+                  <h2 className='item-title'>React Native</h2>
+                </div>
+                <ul className='item-text'>
+                  <li style={{ paddingBottom: '7px' }}>
+                    Being that React Native is extremely similar to React, it wasn't as hard to pick up and was a smooth transition for me.
+                  </li>
+                  <li>
+                    I learned how mobile devleopment frameworks work in conjunction with Android Studio, which I previously had no knowledge of.
+                  </li>
+                </ul>
+              </button>
+
+              <button id='skills' className='item-container fade in'>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img src={flutter} alt="Flutter logo" className='lang-img' />
+                  <h2 className='item-title'>Flutter and Dart</h2>
+                </div>
+                <ul className='item-text'>
+                  <li style={{ paddingBottom: '7px' }}>
+                    I have been using Flutter for a personal project, and at my internship with Toggle, where I helped build the front-end of a desktop app for Windows and MacOS.
+                  </li>
+                  <li>
+                    This came with an understanding of dart, the language used with flutter. I find dart to be an interesting approach to the structure of code in web development, and I am excited keep using it.
+                  </li>
+                </ul>
+              </button>
+
+
+              <button id='skills' className='item-container fade in'>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <img src={expressLogo} alt="Express.js logo" className='lang-img' />
+                  <h2 className='item-title'>Express/NodeJS</h2>
+                </div>
+                <ul className='item-text'>
+                  <li style={{ paddingBottom: '7px' }}>
+                    Express and Node JS is what a coworker and I at Toggle used to engineer the REST API to connect our front-end to our back-end SQL database.
+                  </li>
+                  <li>
+                    Though it took some time to pickup, the use of NodeJS to write the REST API has not only taught me how to use Express/NodeJS, but given me and understanding of a back-end is structured to its core.
+                  </li>
+                </ul>
+              </button>
+            </div>
+
+          </section>
+        </div>
 
         <div className='bottom-icons'>
           <a href="https://github.com/beo1259" target="_blank" rel="noopener noreferrer">
-            <img src={github} alt='Github icon' className="hyperlink-imgs" style={{filter: "hue-rotate(-15deg)"}}/>
+            <img src={github} alt='Github icon' className="hyperlink-imgs" style={{ filter: "hue-rotate(-15deg)" }} />
           </a>
 
           <a href="https://www.linkedin.com/in/brayden-o-neil-32b405205/" target="_blank" rel="noopener noreferrer">
