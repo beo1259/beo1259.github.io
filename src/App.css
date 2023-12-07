@@ -167,7 +167,7 @@ a {
   position: relative;
   color: white;
   text-align: center;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
 
@@ -205,7 +205,7 @@ a {
 
 #skills .item-container {
   vertical-align: top;
-
+  border: white solid 2px;
   border-radius: 1.75rem;
   padding-left: 2%;
   min-width: 40%;
@@ -218,10 +218,11 @@ a {
   opacity: 1;
   position: relative;
   color: white;
+  border: white solid 1px;
   flex-grow: 0;
   flex-shrink: 0;
   overflow: hidden;
-  transition: transform 0.2s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+  transition: transform 0.5s ease, border 0.2s ease-in-out, box-shadow 0.2s ease, background 0.2s ease-in-out;
 }
 
 #skills .item-container:before {
@@ -241,8 +242,7 @@ a {
 
 #skills .item-container:hover {
   transform: scale(1.01);
-
-  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.13);
   z-index: -1;
 }
 
@@ -266,7 +266,7 @@ a {
   flex-grow: 0;
   flex-shrink: 0;
   transform: scale(0);
-  transition: transform 0.5s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+  transition: transform 0.5s ease, border 0.2s ease, box-shadow 0.2s ease-in-out, background 0.2s ease;
 }
 
 .item-container.item-container-visible{
@@ -375,13 +375,13 @@ a {
   font-family: 'lato';
   font-weight: 800;
   font-size: 2.25rem;
-  opacity: 0;
+  opacity: 1;
   transform: translateX(-350px);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease;
 }
 
+
 .title-visible {
-  opacity: 1;
   transform: translateX(0px);
 
 }
