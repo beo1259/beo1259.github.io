@@ -508,6 +508,7 @@ a {
   font-family: 'lato';
   font-size: 4rem;
   text-shadow: 1px 10px 10px 10px black;
+  z-index: 1000000000000;
 }
 
 .wrapper .dynamic-txts {
@@ -515,6 +516,8 @@ a {
   height: 105px;
   line-height: 91px;
   overflow: hidden;
+  z-index: 100000000000000000;
+  margin-bottom: 20%;
 }
 
 
