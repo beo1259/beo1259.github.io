@@ -103,7 +103,7 @@ function Header({ currentSection, setCurrentSection }) {
           className={getButtonClass('about-me')}
           onClick={() => scrollToSection('about-me')}
         >
-          ABOUT ME
+          ABOUT
         </button>
         
         <button
