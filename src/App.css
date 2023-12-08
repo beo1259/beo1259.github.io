@@ -977,15 +977,14 @@ a {
   }
 
   body {
-    background: black;
+    background-image: url('skyline.jpg');
     height: 100vh;
   }
 
   body::before {
     content: '';
-
+    height: 100vh;
     z-index: -1; 
-    background-image: url('skyline.jpg');
     background-size: cover;
   }
   #skills .item-title {
