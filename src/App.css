@@ -138,7 +138,7 @@ a {
 }
 
 .button {
-  font-size: 1.25em;
+  font-size: 1.1em;
   font-family: 'lato';
   border: none;
   background-color: transparent;
@@ -163,9 +163,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 30vh;
+  min-height: 40vh;
   max-height: 100vh;
   margin-bottom: 3%;
+  margin-top: 2%;
   position: relative;
   color: white;
   text-align: center;
@@ -187,6 +188,22 @@ a {
   opacity: 1;
   overflow: hidden;
 }
+
+#skills .section-container {
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  max-height: 100%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  position: relative;
+  color: white;
+  text-align: center;
+  opacity: 1;
+  overflow: hidden;
+}
+
+
 
 
 #about-me .section-container {
@@ -434,23 +451,6 @@ a {
   font-size: 2.25rem;
 }
 
-.frameworks-title {
-  margin-top: 120px;
-  margin-bottom: 1%;
-  padding-left: 9.5%;
-  text-align: left;
-  background: linear-gradient(90deg, rgb(255, 153, 0) 0%, rgb(255, 242, 0) 35%, rgb(255, 60, 0) 100%);
-  -webkit-background-clip: text;
-  background-size: 300% 300%;
-  animation: gradient 7s ease infinite;
-  -webkit-text-fill-color: transparent;
-  font-family: 'lato';
-  font-weight: 800;
-  font-size: 2.25rem;
-}
-
-
-
 .section-title {
   margin-bottom: 1%;
   padding-left: 9.5%;
@@ -468,8 +468,31 @@ a {
   transition: all 0.5s ease;
 }
 
+#frameworks .section-title {
+  margin-top: 8%;
+  margin-bottom: 1%;
+  padding-left: 9.5%;
+  text-align: left;
+  background: linear-gradient(90deg, rgb(255, 153, 0) 0%, rgb(255, 242, 0) 35%, rgb(255, 60, 0) 100%);
+  -webkit-background-clip: text;
+  background-size: 300% 300%;
+  animation: gradient 7s ease infinite;
+  -webkit-text-fill-color: transparent;
+  font-family: 'lato';
+  font-weight: 800;
+  font-size: 2.25rem;
+  opacity: 1;
+  transform: translateX(-800px);
+  transition: all 0.5s ease;
+}
+
 
 .title-visible {
+  transform: translateX(0px);
+
+}
+
+#frameworks .title-visible {
   transform: translateX(0px);
 
 }
@@ -806,7 +829,7 @@ a {
   }
 
   .button {
-    font-size: 90%;
+    font-size: 1em;
   }
 
 
@@ -821,10 +844,10 @@ a {
 
   .name-container {
     display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 30vh;
-  max-height: 80vh;
+    align-items: center;
+    justify-content: center;
+    min-height: 30vh;
+    max-height: 80vh;
     margin-top: 7%;
     margin-bottom: 12em;
   }

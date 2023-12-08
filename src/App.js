@@ -288,7 +288,7 @@ function App() {
               <li><span>Student</span></li>
               <li><span>Creative</span></li>
               <li><span>Hardworker</span></li>
-              <li><span>Compulsive Learner</span></li>
+              <li><span>Learner</span></li>
               <li><span>Curious Person</span></li>
               <li><span>Programmer</span></li>
             </ul>
@@ -978,8 +978,9 @@ function App() {
                 </ul>
               </button>
             </div>
+            <div id="frameworks" className='section-container'>
             <div className='lang-container'>
-              <div class="frameworks-title" >Frameworks...</div>
+              <div id="frameworks" class="section-title" >Frameworks and Technologies...</div>
 
               <button id='skills' className='item-container fade in'>
 
@@ -1043,7 +1044,7 @@ function App() {
                 </ul>
               </button>
             </div>
-
+            </div>
           </section>
         </div>
 
