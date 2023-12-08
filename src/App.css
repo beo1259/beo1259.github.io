@@ -461,9 +461,9 @@ a {
   font-family: 'lato';
   font-weight: 800;
   font-size: 2.25rem;
-  opacity: 1;
+  opacity: 0;
   transform: translateX(-350px);
-  transition: all 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.1s ease;
 }
 
 #frameworks .section-title {
@@ -479,20 +479,20 @@ a {
   font-family: 'lato';
   font-weight: 800;
   font-size: 2.25rem;
-  opacity: 1;
-  transform: translateX(-800px);
-  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateX(-350px);
+  transition: transform 0.5s ease, opacity 0.1s ease;
 }
 
 
 .title-visible {
   transform: translateX(0px);
-
+  opacity: 1;
 }
 
 #frameworks .title-visible {
   transform: translateX(0px);
-
+  opacity: 1;
 }
 
 
