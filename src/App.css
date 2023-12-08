@@ -511,15 +511,18 @@ a {
   z-index: 1000000000000;
 }
 
+.wrapper{
+  margin-top: 20%;
+  margin-bottom: 30%;
+}
+
 .wrapper .dynamic-txts {
   z-index: 1;
   height: 105px;
   line-height: 91px;
   overflow: hidden;
   z-index: 100000000000000000;
-  margin-bottom: 20%;
 }
-
 
 
 .dynamic-txts li {

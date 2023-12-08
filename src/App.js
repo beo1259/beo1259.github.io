@@ -279,9 +279,9 @@ function App() {
       <div className='App'>
 
         <section id='name' className='name-container'>
-          <div class="wrapper">
-            <div class="static-txt">I'm a</div>
-            <ul class="dynamic-txts">
+          <div className="wrapper">
+            <div className="static-txt">I'm a</div>
+            <ul className="dynamic-txts">
               <li><span>Software Engineer</span></li>
               <li><span>Self Starter</span></li>
               <li><span>Student</span></li>
