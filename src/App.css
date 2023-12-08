@@ -982,24 +982,15 @@ a {
   }
 
   body {
-    overflow: scroll;
-    -webkit-overflow-scrolling:touch;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 150vh;
-    background-color: black;
-  }
-
-  body::before {
     background-image: url('skyline.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     height: 100vh;
     z-index: -1; 
-    
   }
+
+
   #skills .item-title {
     text-shadow: 1px 1px 2px black;
   }
