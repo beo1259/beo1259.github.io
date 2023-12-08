@@ -979,7 +979,9 @@ a {
   body {
     overflow: scroll;
     -webkit-overflow-scrolling:touch;
-
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     height: 150vh;
     background-color: black;
   }
