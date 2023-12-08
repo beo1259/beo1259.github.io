@@ -286,11 +286,12 @@ function App() {
               <li><span>Software Engineer</span></li>
               <li><span>Self Starter</span></li>
               <li><span>Student</span></li>
-              <li><span>Creative</span></li>
+              <li><span>Creative Person</span></li>
               <li><span>Hardworker</span></li>
-              <li><span>Learner</span></li>
-              <li><span>Curious Person</span></li>
               <li><span>Programmer</span></li>
+              <li><span>Compulsive Learner</span></li>
+              <li><span>Curious Person</span></li>
+              
             </ul>
           </div>
         </section>
