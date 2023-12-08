@@ -590,7 +590,6 @@ a {
 
 .headshot {
   height: 400px !important;
-  border-radius: 6rem;
   transition: box-shadow 2.5s ease-in-out, border 2.5s ease-in-out;
 }
 
