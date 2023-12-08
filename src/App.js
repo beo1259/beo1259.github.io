@@ -55,6 +55,7 @@ equalizeContainerHeights();
 window.addEventListener('resize', equalizeContainerHeights);
 
 
+
 function Header({ currentSection, setCurrentSection }) {
   const scrollToSection = (sectionId) => {
     setCurrentSection(sectionId);
