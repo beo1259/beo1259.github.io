@@ -161,9 +161,8 @@ a {
 .name-container {
   align-items: center;
   justify-content: center;
-  min-height: 0% !important;
-  max-height: 0% !important;
-  margin-top: 4%;
+  min-height: 30em;
+  max-height: 30em;
   margin-bottom: 3%;
   position: relative;
   color: white;

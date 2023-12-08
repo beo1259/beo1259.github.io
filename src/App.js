@@ -278,7 +278,7 @@ function App() {
 
       <div className='App'>
 
-        <section id='name' className='section-container'>
+        <section id='name' className='name-container'>
           <div className="wrapper">
             <div className="static-txt">I'm a</div>
             <ul className="dynamic-txts">
