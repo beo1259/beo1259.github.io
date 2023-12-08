@@ -248,7 +248,7 @@ function App() {
         });
       },
       {
-        threshold: 0.07
+        threshold: 0.09
       }
     );
 
@@ -278,7 +278,7 @@ function App() {
 
       <div className='App'>
 
-        <section id='name' className='section-container'>
+        <section id='name' className='name-container'>
           <div class="wrapper">
             <div class="static-txt">I'm a</div>
             <ul class="dynamic-txts">
@@ -294,7 +294,7 @@ function App() {
           </div>
         </section>
         <section id='about-me' className='section-container fade-in'>
-          <div className='about-me-content'>
+          <div className='item-container'>
             <div className='headshot-container'>
               <img src={headshot} className="headshot" alt="Headshot" />
             </div>
@@ -305,7 +305,11 @@ function App() {
                 of cutting edge technology that I find interesting, and maintain an optimistic attitude
                 when faced with adversity.
               </p>
+              </div>
+              </div>
+
               <button onClick={() => openModal('aboutmeModal')} className='section-text-mobile'>
+              <div class="about-me-title">HELLO!</div>
                 Welcome to my portfolio! My name is Brayden, I'm a hardworking Computer Science student passionate about tech and innovation!
               </button>
               {isModalVisible && activeModal === 'aboutmeModal' && (
@@ -327,9 +331,7 @@ function App() {
                   </div>
                 </div>
               )}
-            </div>
 
-          </div>
         </section>
         
         <section id='experience' className='section-container fade-in'>
