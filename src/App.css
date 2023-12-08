@@ -79,7 +79,6 @@ a {
 .header {
   z-index: 1000 !important;
   background-image: url('skyline.jpg');
-  ;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -707,7 +706,7 @@ a {
   max-height: 70%;
   min-width: 50%;
   max-width: 50%;
-  border-radius: 20px;
+  border-radius: 15px;
   background-color: rgb(14, 14, 14);
   border: 2px solid white;
   background-size: 400% 400%;
@@ -720,7 +719,7 @@ a {
 
 .modal-content::-webkit-scrollbar {
   width: 4px;
-  padding-left: 40px;
+  
 }
 
 .modal-content::-webkit-scrollbar-track {
@@ -728,12 +727,12 @@ a {
 }
 
 .modal-content::-webkit-scrollbar-thumb {
-  background: #888;
+  background: rgb(139, 139, 139);
   border-radius: 30px;
 }
 
 .modal-content::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: white;
 }
 
 .overlay {
@@ -762,21 +761,29 @@ a {
 
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
   z-index: -1000;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(20, 20, 20);
+  background-image: url('./skyline.jpg');
+
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: black;
+  z-index: -1000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: grey;
+  background: rgb(191, 191, 191);
   border-radius: 30px;
+  z-index: -1000;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: white;
+  z-index: -1000;
 }
 
 .copyright-text {
@@ -1024,6 +1031,16 @@ a {
     z-index: -1;
   }
 
+  body::before{
+    background-image: url('skyline.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: black;
+    height: 100vh;
+    z-index: -1;
+  }
+
 
   #skills .item-title {
     text-shadow: 1px 1px 2px black;
@@ -1046,6 +1063,8 @@ a {
   .wrapper {
     display: none !important;
   }
+
+  
 
   .logo {
     height: 40px !important;
