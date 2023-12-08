@@ -990,6 +990,7 @@ a {
     height: 100vh;
     z-index: -1; 
     overflow-x: hidden;
+    background-color: black;
   }
 
 
