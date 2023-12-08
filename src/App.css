@@ -986,8 +986,8 @@ a {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 200vh;
+    background-attachment:scroll;
+    height: 400vh;
     z-index: -1; 
     overflow-x: hidden;
     background-color: black;
