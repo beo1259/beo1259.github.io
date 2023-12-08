@@ -983,7 +983,7 @@ a {
 
   body {
     background-image: url('skyline.jpg');
-    background-size: cover;
+    background-size:auto;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
