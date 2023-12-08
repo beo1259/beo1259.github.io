@@ -311,7 +311,7 @@ function App() {
               </div>
 
               <button onClick={() => openModal('aboutmeModal')} className='section-text-mobile'>
-              <div className="about-me-title">HELLO!</div>
+              <div class="about-me-title">HELLO!</div>
                 Welcome to my portfolio! My name is Brayden, I'm a hardworking Computer Science student passionate about tech and innovation!
               </button>
               {isModalVisible && activeModal === 'aboutmeModal' && (
@@ -854,7 +854,7 @@ function App() {
         <div className="skills-section">
           <section id='skills' className='section-container fade in skills-section'>
             <div className='lang-container'>
-              <div className="section-title">Languages...</div>
+              <div class="section-title">Languages...</div>
 
               <button id='experiences' className='item-container fade in'>
 
@@ -979,6 +979,7 @@ function App() {
                 </ul>
               </button>
             </div>
+          
             <div id="frameworks" className='section-container'>
             <div className='lang-container'>
               <div id="frameworks" class="section-title" >Frameworks and Technologies...</div>
