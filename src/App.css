@@ -1058,6 +1058,10 @@ a {
     display: none;
   }
 
+  .name-container{
+    display: none;
+  }
+
 
   #skills .item-container {
     width: 1000px;
