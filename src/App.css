@@ -1379,8 +1379,11 @@ a {
 
 
   .headshot-modal {
-    height: 30vh;
+    height: 35vh;
     border-radius: 60px;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
   }
 
 
@@ -1415,6 +1418,7 @@ a {
     font-family: 'lato';
     font-size: 1.2em;
     color: white;
+    align-items: center;
     min-width: 78% !important;
     max-width: 78% !important;
     min-height: 50% !important;
