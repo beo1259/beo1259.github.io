@@ -874,6 +874,8 @@ function App() {
 
             </div>
             <p>
+            <p className='course-text-mobile'>Third Year Computer Science</p>
+            <p className='course-text-mobile' style={{fontWeight: '800'}}>Expected Graduation - May 2025</p>
               <p className='item-text' style={{fontWeight: '800'}}>Third Year Computer Science - Expected Gradiation May 2025</p>
             <ul>
               <li className='item-text' style={{ fontWeight: '100', marginBottom: '10px'}}>Most Relevant Coursework</li>

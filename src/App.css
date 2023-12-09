@@ -214,6 +214,9 @@ a {
   overflow: hidden;
 }
 
+.course-text-mobile{
+  display: none;
+}
 
 #skills .section-container {
   align-items: center;
@@ -528,6 +531,8 @@ a {
   flex-shrink: 0;
   overflow: hidden;
   transition: transform 0.5s ease, box-shadow 0.2s ease, background 0.2s ease, text-shadow 0.2s ease, border 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -548,11 +553,12 @@ a {
   -webkit-filter: drop-shadow(2px 2px 0px #ffffff);
   filter: drop-shadow(2px 2px 0px #ffffff);
   position: absolute;
-  top: 30px;
-  left: 35px;
-  height: calc(39% - 50px);
+  display: flex;
+  left: 100px;
+  top: 60px;
+  height: calc(39% - 90px);
   width: calc(75% - 50px);
-  object-fit: contain; /* Add this line */
+  object-fit: contain; 
 }
 
 
@@ -1059,6 +1065,7 @@ a {
     transform: translateX(40px);
   }
 
+
   .item-text {
     font-size: 1.35em !important;
   }
@@ -1207,6 +1214,8 @@ a {
 
 
   #education .item-container{
+    margin-left: auto;
+    margin-right: auto;
     min-height: 550px !important;
     max-height: 550px !important; 
   }
@@ -1242,6 +1251,11 @@ a {
     width: auto;
   }
 
+  #education .section-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .bottom-icons img {
     max-width: 40px;
@@ -1503,7 +1517,10 @@ a {
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
   }
 
-  #education .item-text{
+  .course-text-mobile{
+
+    margin-bottom: -10px;
+    font-family: 'lato';
     display:block;
     font-size: 1em;
     font-weight: 100 !important;
@@ -1536,13 +1553,12 @@ a {
     filter: drop-shadow(1px 1px 0px #ffffff);
     position: absolute;
     top: 10px;
-    left: 70px;
+    left: 80px;
     height: 50%;
     width: 50%;
     object-fit: contain; 
   }
   
-
   .flowchart-img {
     align-items: center;
     margin-top: 15px;
@@ -1550,7 +1566,6 @@ a {
     width: 100% !important;
     border-radius: 20px;
   }
-
 
   .about-me-content {
     display: flex;
@@ -1563,7 +1578,6 @@ a {
     justify-content: center;
   }
 
-
   .about-me-title {
     font-weight: 100;
     font-size: 2rem;
@@ -1572,16 +1586,12 @@ a {
     margin-bottom: 5vh;
   }
 
-
   .headshot-container {
     display: flex;
     justify-content: center;
     width: 100%;
     margin-top: 5vh;
   }
-
-
-
 
   .bottom-icons img {
     position: relative;
