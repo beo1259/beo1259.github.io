@@ -886,7 +886,7 @@ function App() {
 
                 <ul>
                   <li className='course-text'><a href="https://www.csd.uwo.ca/misc/outlines/2021/2021-CS2210-B.pdf" className='course-text'>Data Structures and Algorithms</a></li>
-                  <li className='course-text'><a href="https://www.csd.uwo.ca/misc/outlines/2021/2021-CS2210-B.pdf" className='course-text'>Operating Systems</a></li>
+                  <li className='course-text'><a href="https://www.csd.uwo.ca/misc/outlines/2021/2021-CS3305-A.pdf" className='course-text'>Operating Systems</a></li>
                   <li className='course-text'><a href="https://www.csd.uwo.ca/misc/outlines/2022-Summer/CS1026-A-SUMMER-2022.pdf" className='course-text'>Computer Science Fundamentals I</a></li>
                   <li className='course-text'><a href="https://www.csd.uwo.ca/misc/outlines/2021/2021-CS1027-B.pdf" className='course-text'>Computer Science Fundamentals II</a></li>
                   <li className='course-text'><a href="https://www.csd.uwo.ca/courses/CS2211a/htmls/outlineSept18.html" className='course-text'>Software Tools and Systems Programming</a></li>
