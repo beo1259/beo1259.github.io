@@ -241,6 +241,7 @@ a {
   font-weight: 100;
   font-size: 1.15em;
   text-align: left;
+  color: white;
 }
 
 #about-me .item-container {
@@ -709,6 +710,7 @@ a {
   background-color: rgb(14, 14, 14);
   border: 2px solid white;
   background-size: 400% 400%;
+  color: white;
   animation: gradient 20s ease infinite;
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
   overflow-y: scroll;
