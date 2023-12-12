@@ -30,6 +30,7 @@ import westerndev from './images/westerndev.jpg';
 import devsociety1 from './images/devsocietyimg1.JPG'
 import devsociety2 from './images/devsocietyimg2.JPG'
 import recommendation from './images/recommendation.png';
+import western from './images/western.png';
 
 function equalizeContainerHeights() {
   let maxHeight = 0;
@@ -119,6 +120,13 @@ function Header({ currentSection, setCurrentSection }) {
           onClick={() => scrollToSection('projects')}
         >
           PROJECTS
+        </button>
+        <button
+          type="button"
+          className={getButtonClass('education')}
+          onClick={() => scrollToSection('education')}
+        >
+          EDUCATION
         </button>
         <button
           type="button"
@@ -422,7 +430,9 @@ function App() {
                   fixing docks and building new additions to the club, and I really developed an appreciation for seeing work that I had a hand in completed to the highest degree. At the beginning
                   and end of the boating season, I was launching, and hauling boats in and out of the water. This required a great deal of responsiblity, as one slip up could have resulted in the the boat
                   slipping out of the slings. This image is an example of what we used to launch/haulout boats:
-                  <img src={travellift} alt='travellift' className='flowchart-img' />
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <img src={travellift} alt='travellift' className='flowchart-img' />
+                  </div>
                 </p>
 
               </div>
@@ -473,7 +483,7 @@ function App() {
                 Please view this letter of recommendation from my previous boss, and CEO of Toggle, Gyu Tae Bae:
               </p>
               <p></p>
-              <p><img src={recommendation} alt='flowchart' className='flowchart-img' /></p>
+              <div style={{ display: 'flex', justifyContent: 'center' }}><img src={recommendation} alt='flowchart' className='flowchart-img' /></div>
 
             </div>
           </div>
@@ -817,7 +827,9 @@ function App() {
                 With this extension, I addressed a gap in the Chrome Web Store for efficient and user-friendly study planning tools. It stands out by providing a
                 streamlined solution that helps students and professionals alike to organize their study sessions more effectively.
                 <p></p>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <img src={study} alt='study' className='chrome-img' />
+                </div>
               </p>
 
 
@@ -857,6 +869,35 @@ function App() {
             </div>
           </div>
         )}
+        <section id='education' className='section-container'>
+          <div id='education' className='section-title'>Education...</div>
+          <button id='education' className='item-container'>
+
+            <div class="western-container">
+              <img src={western} alt="Western logo" className='western-img' />
+
+            </div>
+            <p>
+              <p className='course-text-mobile'>Third Year Computer Science</p>
+              <p className='course-text-mobile' style={{ fontWeight: '800' }}>Expected Graduation - May 2025</p>
+              <p className='item-text' style={{ fontWeight: '800' }}>Third Year Computer Science - Expected Gradiation May 2025</p>
+              <ul>
+                <li className='item-text' style={{ fontWeight: '100', marginBottom: '10px' }}>Most Relevant Coursework</li>
+
+                <ul>
+                  <li className='course-text'><a href="https://www.csd.uwo.ca/misc/outlines/2021/2021-CS2210-B.pdf" className='course-text'>Data Structures and Algorithms</a></li>
+                  <li className='course-text'><a href="https://www.csd.uwo.ca/misc/outlines/2021/2021-CS3305-A.pdf" className='course-text'>Operating Systems</a></li>
+                  <li className='course-text'><a href="https://www.csd.uwo.ca/misc/outlines/2022-Summer/CS1026-A-SUMMER-2022.pdf" className='course-text'>Computer Science Fundamentals I</a></li>
+                  <li className='course-text'><a href="https://www.csd.uwo.ca/misc/outlines/2021/2021-CS1027-B.pdf" className='course-text'>Computer Science Fundamentals II</a></li>
+                  <li className='course-text'><a href="https://www.csd.uwo.ca/courses/CS2211a/htmls/outlineSept18.html" className='course-text'>Software Tools and Systems Programming</a></li>
+
+                </ul>
+              </ul>
+            </p>
+          </button>
+        </section>
+
+
 
         <div className="skills-section">
           <section id='skills' className='section-container fade in skills-section'>
