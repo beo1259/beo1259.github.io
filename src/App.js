@@ -697,7 +697,7 @@ function App() {
           <button onClick={() => openModal('studyModal')} className='item-container fade in' >
 
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <a href="https://github.com/beo1259/Study-Helper-Chrome-Extension" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/beo1259/Study-Helper-Chrome-Ext" target="_blank" rel="noopener noreferrer">
                 <img src={githubgrey} alt="github grey" className='github-grey' />
               </a>
               <h2 className='item-title'>Study Helper Chrome Extension<div className='item-subtitle'> (2023 - Present) </div></h2>
