@@ -31,6 +31,7 @@ import devsociety1 from './images/devsocietyimg1.JPG'
 import devsociety2 from './images/devsocietyimg2.JPG'
 import recommendation from './images/recommendation.png';
 import western from './images/western.png';
+import demo from './images/chromdemo.png';
 
 function equalizeContainerHeights() {
   let maxHeight = 0;
@@ -707,7 +708,7 @@ function App() {
               <p></p>
               <li>Enabled customizable timers for focused study periods and planned breaks.</li>
               <p></p>
-              <li>Offered a simple, accessible interface for session planning and time management.</li>
+              <li>Sends a text to the user when their current task is complete.</li>
 
             </ul>
           </button>
@@ -814,8 +815,8 @@ function App() {
               </p>
               <p></p>
               <p className='modal-text'>
-                By facilitating a balanced study routine, the extension helps users to optimize their learning while also preventing burnout. Recognizing the
-                importance of regular breaks for mental health and sustained focus, it encourages a healthier approach to study habits.
+                Using the Twilio API, I was able to implement a backend that sends a text to the user that their current task is complete, telling them that they should
+                check back with the extension to confirm the start of their next task.
               </p>
               <p></p>
               <p className='modal-text'>
@@ -829,6 +830,7 @@ function App() {
                 <p></p>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <img src={study} alt='study' className='chrome-img' />
+                <img src={demo} alt='study' className='chrome-img' />
                 </div>
               </p>
 
