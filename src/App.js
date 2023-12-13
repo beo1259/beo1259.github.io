@@ -32,6 +32,8 @@ import devsociety2 from './images/devsocietyimg2.JPG'
 import recommendation from './images/recommendation.png';
 import western from './images/western.png';
 import demo from './images/chromdemo.png';
+import hamburger from './images/hamburger.png';
+import exit from './images/exit.png';
 
 function equalizeContainerHeights() {
   let maxHeight = 0;
@@ -59,6 +61,12 @@ window.addEventListener('resize', equalizeContainerHeights);
 
 
 function Header({ currentSection, setCurrentSection }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   const scrollToSection = (sectionId) => {
     setCurrentSection(sectionId);
     const headerOffset = document.querySelector('.header').offsetHeight;
@@ -70,12 +78,23 @@ function Header({ currentSection, setCurrentSection }) {
     const centerOffset = (windowHeight - sectionHeight) / 2;
 
     const offsetPosition = sectionTop - Math.max(headerOffset, centerOffset);
+    if (sectionId !== 'education') {
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth',
-    });
+    if (sectionId === 'education') {
+      window.scrollTo({
+        top: offsetPosition + 80,
+        behavior: 'smooth',
+      });
+    }
+    setIsMenuOpen(false);
   };
+
+
 
   const getButtonClass = (sectionName) => {
     return `button ${currentSection === sectionName ? 'active' : ''}`;
@@ -91,7 +110,64 @@ function Header({ currentSection, setCurrentSection }) {
 
 
   return (
+
     <header className="header">
+      <button onClick={toggleMenu} className="hamburger-menu" >
+        <img src={hamburger}  alt="menu icon" style={{ height: '20px' }} />
+      </button>
+      {isMenuOpen && (
+        <div id='mobile-menu' className={`menu-overlay ${isMenuOpen ? 'active' : ''}`}>
+          <button onClick={toggleMenu} className="exit-icon">
+          <img src={exit} alt="menu icon" style={{ height: '20px' }} />
+          </button>
+        <div className='mobile-buttons'>
+          <button
+          type="button"
+          className={getButtonClass('about-me')}
+          onClick={() => scrollToSection('about-me')}
+        >
+          ABOUT
+        </button>
+
+        <button
+          type="button"
+          className={getButtonClass('experience')}
+          onClick={() => scrollToSection('experience')}
+        >
+          EXPERIENCE
+        </button>
+        <button
+          type="button"
+          className={getButtonClass('projects')}
+          onClick={() => scrollToSection('projects')}
+        >
+          PROJECTS
+        </button>
+        <button
+          type="button"
+          className={getButtonClass('education')}
+          onClick={() => scrollToSection('education')}
+        >
+          EDUCATION
+        </button>
+        <button
+          type="button"
+          className={getButtonClass('skills')}
+          onClick={() => scrollToSection('skills')}
+        >
+          SKILLS
+        </button>
+        <a
+          href={resume}
+          className={getButtonClass('resume')}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          RESUME
+        </a>
+        </div>
+        </div>
+      )}
       <button type="name-button"
         className='name-button'
         onClick={() => scrollToTop()}
@@ -829,8 +905,8 @@ function App() {
                 streamlined solution that helps students and professionals alike to organize their study sessions more effectively.
                 <p></p>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <img src={study} alt='study' className='chrome-img' />
-                <img src={demo} alt='study' className='chrome-img' />
+                  <img src={study} alt='study' className='chrome-img' />
+                  <img src={demo} alt='study' className='chrome-img' />
                 </div>
               </p>
 

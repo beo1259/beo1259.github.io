@@ -129,6 +129,7 @@ a {
   align-items: center;
   flex-grow: 1;
   margin-left: 40%;
+  margin-right: 1.5%;
   gap: 1%;
 }
 
@@ -215,7 +216,7 @@ a {
   overflow: hidden;
 }
 
-.course-text-mobile{
+.course-text-mobile {
   display: none;
 }
 
@@ -249,8 +250,6 @@ a {
 }
 
 
-
-
 #about-me .section-container {
   align-items: center;
   justify-content: center;
@@ -275,7 +274,7 @@ a {
   z-index: 1000 !important;
 }
 
-.course-text{
+.course-text {
   color: #ADD8E6;
   font-family: 'lato';
   font-weight: 100;
@@ -287,7 +286,7 @@ a {
 }
 
 
-.course-text a{
+.course-text a {
   color: #ADD8E6;
   font-family: 'lato';
   font-weight: 100;
@@ -563,12 +562,12 @@ a {
 
 .western-container {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: flex-start;
   height: 140px;
 }
 
-.education-title{
+.education-title {
   font-family: 'lato';
   font-size: 4em;
   vertical-align: top;
@@ -583,7 +582,7 @@ a {
   top: 60px;
   height: calc(39% - 90px);
   width: calc(75% - 50px);
-  object-fit: contain; 
+  object-fit: contain;
 }
 
 
@@ -1007,19 +1006,15 @@ a {
 
 }
 
-
-
-
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
   z-index: -1000;
+  background-color: black;
 }
 
 
 ::-webkit-scrollbar-track {
-  background-image: url('./skyline.jpg');
-
-
+  width: inherit;
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
@@ -1032,6 +1027,7 @@ a {
   background: rgb(191, 191, 191);
   border-radius: 30px;
   z-index: -1000;
+  
 }
 
 
@@ -1062,16 +1058,31 @@ a {
   margin-left: auto;
 }
 
+.hamburger-menu {
+  display: none;
+}
+
+.menu-overlay {
+  display: none;
+}
+
+.menu-overlay.active {
+  display: block;
+}
+
+.mobile-buttons{
+  display: none;
+}
 
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
 
-  #education .section-title{
+  #education .section-title {
     transform: translateX(-400px);
     margin-bottom: -80px;
     z-index: 100000000000000;
   }
 
-  #education .title-visible{
+  #education .title-visible {
     transform: translateX(40px);
   }
 
@@ -1223,11 +1234,11 @@ a {
 
 
 
-  #education .item-container{
+  #education .item-container {
     margin-left: auto;
     margin-right: auto;
     min-height: 550px !important;
-    max-height: 550px !important; 
+    max-height: 550px !important;
   }
 
 
@@ -1261,7 +1272,7 @@ a {
     width: auto;
   }
 
-  #education .section-container{
+  #education .section-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1313,7 +1324,7 @@ a {
     display: none;
   }
 
-  .course-text{
+  .course-text {
     display: none;
   }
 
@@ -1386,7 +1397,7 @@ a {
   .headshot-modal {
     height: 35vh;
     border-radius: 60px;
-    display: block; 
+    display: block;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1487,9 +1498,89 @@ a {
 
 
   .header {
+    background-image: none;
+    display: block;
+    height: 30px;
+    background-color: rgba(17, 17, 17, 1);
+    padding: 10px 20px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .header-hidden{
+    transform: none !important;
+  }
+
+  .mobile-buttons{
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hamburger-menu {
+    background-color: transparent;
+    border: none;
+    display: block; 
+    position: absolute;
+    right: 20px;
+    top: 15px; 
+    margin-right: 30px;
+  }
+
+  .exit-icon {
+    background-color: transparent;
+    border: none;
+    display: block; 
+    position: absolute;
+    right: 15px;
+    top: 15px; 
+  }
+
+  .header .logo,
+  .header .button-container,
+  .header .name-button {
     display: none;
   }
 
+  .menu-overlay {
+    border: white solid 2px;
+    border-radius: 20px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: rgba(17, 17, 17, 1);
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s ease;
+  }
+
+  .menu-overlay.active{
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s; 
+  }
+
+  #mobile-menu .button{
+    margin-bottom: 20px;
+  }
+
+
+  ::-webkit-scrollbar{
+    display: none;
+  }
+
+  .menu-overlay .menu-item {
+    display: block;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
 
   .section-container {
     margin-top: 10%;
@@ -1536,13 +1627,12 @@ a {
     border: none;
     box-shadow: 0 0 70px 10px rgba(255, 103, 247, 0.4);
   }
-  
 
-  .course-text-mobile{
+  .course-text-mobile {
 
     margin-bottom: -10px;
     font-family: 'lato';
-    display:block;
+    display: block;
     margin-right: 10px;
     font-size: 1em;
     font-weight: 100 !important;
@@ -1550,26 +1640,26 @@ a {
 
   .western-container {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: flex-start;
     height: 50px;
   }
-  
-  .education-title{
+
+  .education-title {
     font-family: 'lato';
     font-size: 4em;
     vertical-align: top;
   }
 
-  #education .section-title{
+  #education .section-title {
     transform: translateX(-350px);
   }
 
-  #education .title-visible{
+  #education .title-visible {
     transform: translateX(20px);
     margin-bottom: 7px;
   }
-  
+
   .western-img {
     -webkit-filter: drop-shadow(1px 1px 0px #ffffff);
     filter: drop-shadow(1px 1px 0px #ffffff);
@@ -1578,9 +1668,9 @@ a {
     left: 80px;
     height: 50%;
     width: 50%;
-    object-fit: contain; 
+    object-fit: contain;
   }
-  
+
   .flowchart-img {
     align-items: center;
     margin-top: 15px;
