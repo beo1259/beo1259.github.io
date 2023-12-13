@@ -61,11 +61,11 @@ window.addEventListener('resize', equalizeContainerHeights);
 
 
 function Header({ currentSection, setCurrentSection }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
 
 
   const toggleMenu = () => {
-    setIsMenuOpen(prevState => !prevState);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   window.onbeforeunload = function () {
