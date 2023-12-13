@@ -121,8 +121,8 @@ function Header({ currentSection, setCurrentSection }) {
       <button onClick={toggleMenu} className="hamburger-menu" >
         <img src={hamburger}  alt="menu icon" style={{ height: '15px' }} />
       </button>
-
-      {isMenuOpen && (
+      
+      
         <div id='mobile-menu' className={`menu-overlay ${isMenuOpen ? 'active' : ''}`}>
         <button onClick={toggleMenu} className="exit-icon">
           <img src={exit} alt="menu icon" style={{ height: '15px' }} />
@@ -174,7 +174,7 @@ function Header({ currentSection, setCurrentSection }) {
         </a>
         </div>
         </div>
-      )}
+      
       <button type="name-button"
         className='name-button'
         onClick={() => scrollToTop()}
