@@ -63,9 +63,9 @@ window.addEventListener('resize', equalizeContainerHeights);
 function Header({ currentSection, setCurrentSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-      setIsMenuOpen(!isMenuOpen);
-    };
+  const toggleMenu = () => {
+    setIsMenuOpen(prevState => !prevState);
+  };
 
   const scrollToSection = (sectionId) => {
     setCurrentSection(sectionId);
@@ -114,7 +114,6 @@ function Header({ currentSection, setCurrentSection }) {
     <header className="header">
       <p className='name'>BRAYDEN O'NEIL</p>
       <button onClick={toggleMenu} className="hamburger-menu" >
-        
         <img src={hamburger}  alt="menu icon" style={{ height: '15px' }} />
       </button>
 
@@ -318,6 +317,10 @@ function App() {
             containers.forEach(container => {
               container.classList.add('item-container-visible');
             });
+            const lang = entry.target.querySelectorAll('.lang-container');
+            lang.forEach(container => {
+              container.classList.add('lang-container-visible');
+            });
           } else {
             entry.target.classList.remove('visible');
 
@@ -333,6 +336,11 @@ function App() {
             containers.forEach(container => {
               container.classList.remove('item-container-visible');
             });
+
+            const lang = entry.target.querySelectorAll('.lang-container');
+            lang.forEach(container => {
+              container.classList.remove('lang-container-visible');
+            });
           }
         });
       },
@@ -347,14 +355,11 @@ function App() {
     });
 
 
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('mousemove', handleMouseMove);
       //document.body.classList.remove('no-scroll');
-      sections.forEach((section) => {
-        observer.unobserve(section);
-      });
+
     };
   }, []);
 

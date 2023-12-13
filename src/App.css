@@ -1321,8 +1321,13 @@ a {
     background: rgba(17, 17, 17, 0.9);
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
+    transform: scale(0);
+    transition: transform 0.5s ease;
   }
 
+  .lang-container-visible{
+    transform: scale(1);
+  }
 
   .section-text {
     display: none;
@@ -1539,7 +1544,7 @@ a {
 
   .name {
     position: absolute;
-    left: 5%; 
+    left: 5%;
     display: inline;
     font-family: lato;
     background: linear-gradient(280deg, rgb(255, 153, 0) 0%, rgb(255, 242, 0) 35%, rgb(255, 60, 0) 100%);
@@ -1547,6 +1552,10 @@ a {
     background-size: 300% 300%;
     animation: gradient 8s ease infinite;
     -webkit-text-fill-color: transparent;
+  }
+
+  #mobile-menu .button {
+    margin-bottom: 20px;
   }
 
   .menu-overlay {
@@ -1562,31 +1571,22 @@ a {
     height: 50%;
     background-color: rgba(17, 17, 17, 1);
     z-index: 2;
-    visibility: hidden;
+    opacity: 1;
+    transition: opacity 0.5s ease, visibility 0.5s;
+    pointer-events: none;
+
   }
 
   .menu-overlay.active {
-    transition: visibility 1s ease;
-    visibility: visible;
-  }
-  
+    opacity: 1;
+    pointer-events: auto;
 
-  #mobile-menu .button {
-    margin-bottom: 20px;
   }
-
 
   ::-webkit-scrollbar {
     display: none;
   }
 
-  .menu-overlay .menu-item {
-    display: block;
-    padding: 20px;
-    color: white;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-  }
 
   .section-container {
     margin-top: 10%;
@@ -1601,8 +1601,6 @@ a {
 
   .item-subtitle {
     font-size: 0.7rem;
-
-
   }
 
 
