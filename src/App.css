@@ -1512,8 +1512,8 @@ a {
 
   .header {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     background-image: none;
     height: 30px;
     background-color: rgba(17, 17, 17, 1);
@@ -1560,8 +1560,9 @@ a {
   }
 
   .name {
+    flex-grow: 1;
     border: none;
-    font-size: 1em;
+    font-size: 1.1em;
     position: absolute;
     left: 2%;
     display: inline;
@@ -1578,14 +1579,13 @@ a {
   }
 
   .menu-overlay {
-    border-radius: 9px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
     top: 0;
-    left: 43%;
-    width: 57%;
+    left: 48%;
+    width: 53%;
     height: 100%;
     background-color: rgba(17, 17, 17, 1);
     z-index: 2;
@@ -1732,32 +1732,32 @@ a {
   }
 
   .bottom-icons  {
-    
+    left: 47%;
     position: relative;
-    z-index: 5 !important;
+    z-index: 0 !important;
     max-width: 5vh;
-    max-height: 4vh;
+    max-height: 3.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: auto;
     height: auto;
-    z-index: 0 !important;
+    display: flex;
+    flex-shrink: 0; 
+    gap: 15px;
   }
 
-  .bottom-icons img {
-    z-index: 0 !important;
 
+  .bottom-icons img {
     position: relative;
     z-index: 5 !important;
     max-width: 5vh;
-    max-height: 4vh;
+    max-height: 3.1vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: auto;
     height: auto;
-    margin-right: 14px;
   }
 
   .copyright-text {
