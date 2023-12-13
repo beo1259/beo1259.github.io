@@ -81,7 +81,7 @@ useOutsideAlerter(menuRef);
     const offsetPosition = sectionTop - Math.max(headerOffset, centerOffset);
     if (sectionId !== 'education') {
       window.scrollTo({
-        top: offsetPosition,
+        top: offsetPosition - 15,
         behavior: 'smooth',
       });
     }
