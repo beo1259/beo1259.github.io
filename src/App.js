@@ -94,8 +94,6 @@ function Header({ currentSection, setCurrentSection }) {
     setIsMenuOpen(false);
   };
 
-
-
   const getButtonClass = (sectionName) => {
     return `button ${currentSection === sectionName ? 'active' : ''}`;
   };
@@ -107,12 +105,19 @@ function Header({ currentSection, setCurrentSection }) {
     });
   };
 
-
-
   return (
 
     <header className="header">
       <p className='name'>BRAYDEN O'NEIL</p>
+      <div className='bottom-icons'>
+      <a href="https://github.com/beo1259" target="_blank" rel="noopener noreferrer">
+            <img src={github} alt='Github icon' className="hyperlink-imgs" style={{ height: "3.9vh", filter: "hue-rotate(-15deg)" }} />
+          </a>
+
+          <a href="https://www.linkedin.com/in/brayden-o-neil-32b405205/" target="_blank" rel="noopener noreferrer">
+            <img src={linkedin} alt='Linkedin Icon' className="hyperlink-imgs" />
+          </a>
+          </div>
       <button onClick={toggleMenu} className="hamburger-menu" >
         <img src={hamburger}  alt="menu icon" style={{ height: '15px' }} />
       </button>
@@ -1184,9 +1189,9 @@ function App() {
           </section>
         </div>
 
-        <div className='bottom-icons'>
+        <div className='bottom-icons1'>
           <a href="https://github.com/beo1259" target="_blank" rel="noopener noreferrer">
-            <img src={github} alt='Github icon' className="hyperlink-imgs" style={{ filter: "hue-rotate(-15deg)" }} />
+            <img src={github} alt='Github icon' className="hyperlink-imgs" style={{ height: "6.5vh", filter: "hue-rotate(-15deg)" }} />
           </a>
 
           <a href="https://www.linkedin.com/in/brayden-o-neil-32b405205/" target="_blank" rel="noopener noreferrer">

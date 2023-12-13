@@ -183,6 +183,9 @@ a {
   color: white;
 }
 
+.bottom-icons{
+  display: none;
+}
 
 .name-container {
   display: flex;
@@ -862,7 +865,7 @@ a {
 }
 
 
-.bottom-icons {
+.bottom-icons1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -871,7 +874,7 @@ a {
 }
 
 
-.bottom-icons img {
+.bottom-icons1 img {
   max-width: 50px;
   max-height: 50px;
   width: auto;
@@ -1560,7 +1563,7 @@ a {
 
   .menu-overlay {
     border: white solid 2px;
-    border-radius: 7px;
+    border-radius: 9px;
     display: block;
     align-items: center;
     justify-content: center;
@@ -1571,7 +1574,7 @@ a {
     height: 50%;
     background-color: rgba(17, 17, 17, 1);
     z-index: 2;
-    opacity: 1;
+    opacity: 0;
     transition: opacity 0.5s ease, visibility 0.5s;
     pointer-events: none;
 
@@ -1709,18 +1712,38 @@ a {
     margin-top: 5vh;
   }
 
-  .bottom-icons img {
+  .bottom-icons1{
+    display: none;
+  }
+
+  .bottom-icons  {
+    
     position: relative;
     z-index: 5 !important;
     max-width: 5vh;
-    max-height: 5vh;
+    max-height: 4vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: auto;
     height: auto;
+    z-index: 0 !important;
   }
 
+  .bottom-icons img {
+    z-index: 0 !important;
+
+    position: relative;
+    z-index: 5 !important;
+    max-width: 5vh;
+    max-height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin-right: 14px;
+  }
 
   .copyright-text {
     position: relative;
