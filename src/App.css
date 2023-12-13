@@ -1018,7 +1018,7 @@ a {
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
-  background-color: black;
+  background-color: rgb(20, 20, 20);
   z-index: -1000;
 }
 
