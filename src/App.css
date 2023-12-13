@@ -1065,6 +1065,10 @@ a {
   display: none;
 }
 
+.exit-icon{
+  display: none;
+}
+
 .menu-overlay {
   display: none;
 }
