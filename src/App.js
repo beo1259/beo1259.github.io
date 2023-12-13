@@ -63,9 +63,9 @@ window.addEventListener('resize', equalizeContainerHeights);
 function Header({ currentSection, setCurrentSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+    const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+    };
 
   const scrollToSection = (sectionId) => {
     setCurrentSection(sectionId);
@@ -112,13 +112,16 @@ function Header({ currentSection, setCurrentSection }) {
   return (
 
     <header className="header">
+      <p className='name'>BRAYDEN O'NEIL</p>
       <button onClick={toggleMenu} className="hamburger-menu" >
-        <img src={hamburger}  alt="menu icon" style={{ height: '20px' }} />
+        
+        <img src={hamburger}  alt="menu icon" style={{ height: '15px' }} />
       </button>
+
       {isMenuOpen && (
         <div id='mobile-menu' className={`menu-overlay ${isMenuOpen ? 'active' : ''}`}>
-          <button onClick={toggleMenu} className="exit-icon">
-          <img src={exit} alt="menu icon" style={{ height: '20px' }} />
+        <button onClick={toggleMenu} className="exit-icon">
+          <img src={exit} alt="menu icon" style={{ height: '15px' }} />
           </button>
         <div className='mobile-buttons'>
           <button
