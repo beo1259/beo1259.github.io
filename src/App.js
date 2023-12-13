@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import python from './images/python.png';
 import js from './images/js.png';
 import java from './images/java.png';
@@ -35,32 +35,28 @@ import demo from './images/chromdemo.png';
 import hamburger from './images/hamburger.png';
 import exit from './images/exit.png';
 
-function equalizeContainerHeights() {
-  let maxHeight = 0;
-  const containers = document.querySelectorAll('.item-container');
-
-  containers.forEach(container => {
-    container.style.height = 'auto';
-  });
-
-  containers.forEach(container => {
-    if (container.offsetHeight > maxHeight) {
-      maxHeight = container.offsetHeight;
-    }
-  });
-
-  containers.forEach(container => {
-    container.style.height = `${maxHeight}px`;
-  });
-}
-
-equalizeContainerHeights();
-
-window.addEventListener('resize', equalizeContainerHeights);
 
 
 
 function Header({ currentSection, setCurrentSection }) {
+
+  function useOutsideAlerter(ref) {
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (ref.current && !ref.current.contains(event.target)) {
+                setIsMenuOpen(true); 
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [ref]);
+}
+  
+const menuRef = useRef(null);
+useOutsideAlerter(menuRef);
+
   const [isMenuOpen, setIsMenuOpen] = useState(true);
 
 
@@ -134,7 +130,7 @@ function Header({ currentSection, setCurrentSection }) {
       </button>
 
 
-      <div id='mobile-menu' className={`menu-overlay ${isMenuOpen ? 'active' : ''}`}>
+      <div ref={menuRef} id='mobile-menu' className={`menu-overlay ${isMenuOpen ? 'active' : ''}`}>
         <button onClick={toggleMenu} className="exit-icon">
           <img src={exit} alt="menu icon" style={{ height: '15px' }} />
         </button>
