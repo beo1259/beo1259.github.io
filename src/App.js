@@ -63,9 +63,14 @@ window.addEventListener('resize', equalizeContainerHeights);
 function Header({ currentSection, setCurrentSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+
   const toggleMenu = () => {
     setIsMenuOpen(prevState => !prevState);
   };
+
+  window.onbeforeunload = function () {
+    setIsMenuOpen(false);
+  }
 
   const scrollToSection = (sectionId) => {
     setCurrentSection(sectionId);
@@ -116,73 +121,80 @@ function Header({ currentSection, setCurrentSection }) {
       </button>
 
       <div className='bottom-icons'>
-      <a href="https://github.com/beo1259" target="_blank" rel="noopener noreferrer">
-            <img src={github} alt='Github icon' className="hyperlink-imgs" style={{ height: "3.9vh", filter: "hue-rotate(-15deg)" }} />
-          </a>
+        <a href="https://github.com/beo1259" target="_blank" rel="noopener noreferrer">
+          <img src={github} alt='Github icon' className="hyperlink-imgs" style={{ height: "3.9vh", filter: "hue-rotate(-15deg)" }} />
+        </a>
 
-          <a href="https://www.linkedin.com/in/brayden-o-neil-32b405205/" target="_blank" rel="noopener noreferrer">
-            <img src={linkedin} alt='Linkedin Icon' className="hyperlink-imgs" />
-          </a>
-          </div>
+        <a href="https://www.linkedin.com/in/brayden-o-neil-32b405205/" target="_blank" rel="noopener noreferrer">
+          <img src={linkedin} alt='Linkedin Icon' className="hyperlink-imgs" />
+        </a>
+      </div>
       <button onClick={toggleMenu} className="hamburger-menu" >
-        <img src={hamburger}  alt="menu icon" style={{ height: '15px' }} />
+        <img src={hamburger} alt="menu icon" style={{ height: '15px' }} />
       </button>
-      
-      
-        <div id='mobile-menu' className={`menu-overlay ${isMenuOpen ? 'active' : ''}`}>
+
+
+      <div id='mobile-menu' className={`menu-overlay ${isMenuOpen ? 'active' : ''}`}>
         <button onClick={toggleMenu} className="exit-icon">
           <img src={exit} alt="menu icon" style={{ height: '15px' }} />
-          </button>
+        </button>
         <div className='mobile-buttons'>
           <button
-          type="button"
-          className={getButtonClass('about-me')}
-          onClick={() => {scrollToSection('about-me'); toggleMenu();}}
-        >
-          ABOUT
-        </button>
+            type="button"
+            className={getButtonClass('about-me')}
+            onClick={() => { scrollToSection('about-me'); toggleMenu(); }}
+          >
+            ABOUT
+          </button>
 
-        <button
-          type="button"
-          className={getButtonClass('experience')}
-          onClick={() => {scrollToSection('experience'); toggleMenu();}}
-        >
-          EXPERIENCE
-        </button>
-        <button
-          type="button"
-          className={getButtonClass('projects')}
-          onClick={() => {scrollToSection('projects'); toggleMenu();}}
-        >
-          PROJECTS
-        </button>
-        <button
-          type="button"
-          className={getButtonClass('education')}
-          onClick={() => {scrollToSection('education'); toggleMenu();}}
-        >
-          EDUCATION
-        </button>
-        <button
-          type="button"
-          className={getButtonClass('skills')}
-          onClick={() => {scrollToSection('skills'); toggleMenu();}}
-        >
-          SKILLS
-        </button>
-        <a
-          href={resume}
-          className={getButtonClass('resume')}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          RESUME
-        </a>
+          <button
+            type="button"
+            className={getButtonClass('experience')}
+            onClick={() => { scrollToSection('experience'); toggleMenu(); }}
+          >
+            EXPERIENCE
+          </button>
+          <button
+            type="button"
+            className={getButtonClass('projects')}
+            onClick={() => { scrollToSection('projects'); toggleMenu(); }}
+          >
+            PROJECTS
+          </button>
+          <button
+            type="button"
+            className={getButtonClass('education')}
+            onClick={() => { scrollToSection('education'); toggleMenu(); }}
+          >
+            EDUCATION
+          </button>
+          <button
+            type="button"
+            className={getButtonClass('skills')}
+            onClick={() => { scrollToSection('skills'); toggleMenu(); }}
+          >
+            SKILLS
+          </button>
+          <a
+            href={resume}
+            className={getButtonClass('resume')}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            RESUME
+          </a>
         </div>
-        </div>
-      
-      
+      </div>
+
+      <button type="name-button"
+        className='name-button'
+        onClick={() => scrollToTop()}
+      >
+        BRAYDEN O'NEIL
+      </button>
+
       <div className="button-container">
+     
         <button
           type="button"
           className={getButtonClass('about-me')}
