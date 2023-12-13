@@ -108,7 +108,13 @@ function Header({ currentSection, setCurrentSection }) {
   return (
 
     <header className="header">
-      <p className='name'>BRAYDEN O'NEIL</p>
+      <button type="name"
+        className='name'
+        onClick={() => scrollToTop()}
+      >
+        BRAYDEN O'NEIL
+      </button>
+
       <div className='bottom-icons'>
       <a href="https://github.com/beo1259" target="_blank" rel="noopener noreferrer">
             <img src={github} alt='Github icon' className="hyperlink-imgs" style={{ height: "3.9vh", filter: "hue-rotate(-15deg)" }} />
@@ -131,7 +137,7 @@ function Header({ currentSection, setCurrentSection }) {
           <button
           type="button"
           className={getButtonClass('about-me')}
-          onClick={() => scrollToSection('about-me')}
+          onClick={() => {scrollToSection('about-me'); toggleMenu();}}
         >
           ABOUT
         </button>
@@ -139,28 +145,28 @@ function Header({ currentSection, setCurrentSection }) {
         <button
           type="button"
           className={getButtonClass('experience')}
-          onClick={() => scrollToSection('experience')}
+          onClick={() => {scrollToSection('experience'); toggleMenu();}}
         >
           EXPERIENCE
         </button>
         <button
           type="button"
           className={getButtonClass('projects')}
-          onClick={() => scrollToSection('projects')}
+          onClick={() => {scrollToSection('projects'); toggleMenu();}}
         >
           PROJECTS
         </button>
         <button
           type="button"
           className={getButtonClass('education')}
-          onClick={() => scrollToSection('education')}
+          onClick={() => {scrollToSection('education'); toggleMenu();}}
         >
           EDUCATION
         </button>
         <button
           type="button"
           className={getButtonClass('skills')}
-          onClick={() => scrollToSection('skills')}
+          onClick={() => {scrollToSection('skills'); toggleMenu();}}
         >
           SKILLS
         </button>
@@ -175,13 +181,7 @@ function Header({ currentSection, setCurrentSection }) {
         </div>
         </div>
       
-      <button type="name-button"
-        className='name-button'
-        onClick={() => scrollToTop()}
-      >
-        BRAYDEN O'NEIL
-      </button>
-
+      
       <div className="button-container">
         <button
           type="button"
