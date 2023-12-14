@@ -1317,7 +1317,7 @@ a {
 
   .button.active {
     transform: scale(1.04);
-    color: white;
+    color: gold;
   }
 
   .button:hover {
@@ -1326,7 +1326,7 @@ a {
   }
 
   .lang-container {
-    margin-top: 20px;
+    margin-top: 80%;
     margin-left: auto;
     margin-right: auto;
     align-self: center;
@@ -1611,7 +1611,6 @@ a {
     margin-bottom: 40%;
   }
 
-
   .item-title {
     font-size: 0.9rem;
   }
@@ -1642,6 +1641,7 @@ a {
     margin: 5%;
     border: none;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 20%;
   }
 
   #education .item-container.item-container.item-container-visible:hover {
