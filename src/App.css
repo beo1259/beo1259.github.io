@@ -1332,7 +1332,7 @@ a {
   }
 
   .lang-container {
-    margin-top: 80%;
+    margin-top: 20%;
     margin-left: auto;
     margin-right: auto;
     align-self: center;
@@ -1345,6 +1345,10 @@ a {
     border-radius: 30px;
     transform: scale(0);
     transition: transform 0.5s ease;
+  }
+
+  #frameworks .lang-container{
+    margin-top: 20%;
   }
 
   .lang-container-visible{
@@ -1647,13 +1651,13 @@ a {
     margin: 5%;
     border: none;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
-    margin-top: 20%;
+    margin-top: 40%;
   }
 
   #education .item-container.item-container.item-container-visible:hover {
     transform: scale(1.02);
     border: none;
-    box-shadow: 0 0 70px 10px rgba(255, 103, 247, 0.4);
+    box-shadow: 0 0 20px 10px rgba(255, 103, 247, 0.4);
   }
 
   .course-text-mobile {
@@ -1685,7 +1689,7 @@ a {
 
   #education .title-visible {
     transform: translateX(20px);
-    margin-bottom: 7px;
+    margin-bottom: -30%;
   }
 
   .western-img {
