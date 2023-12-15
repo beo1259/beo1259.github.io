@@ -401,7 +401,7 @@ function App() {
             </ul>
           </div>
         </section>
-        <section id='about-me' className='section-container fade-in'>
+        <section id='about-me' className='section-container'>
           <div className='item-container'>
             <div className='headshot-container'>
               <img src={headshot} className="headshot" alt="Headshot" />
@@ -442,7 +442,7 @@ function App() {
           </div>
         )}
 
-        <section id='experience' className='section-container fade-in'>
+        <section id='experience' className='section-container'>
           <div className="section-title">Experience...</div>
 
           <button onClick={() => openModal('toggleExperience')} id='experiences' className='item-container fade in'>
@@ -632,10 +632,10 @@ function App() {
             </div>
           </div>
         )}
-        <section id='projects' className='section-container fade-in'>
+        <section id='projects' className='section-container'>
           <div className="section-title">Projects...</div>
 
-          <button onClick={() => openModal('inklinkModal')} className='item-container fade in' >
+          <button onClick={() => openModal('inklinkModal')} className='item-container' >
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <a href="https://github.com/beo1259/WDS-Overhaul-2023" target="_blank" rel="noopener noreferrer">
                 <img src={githubgrey} alt="github grey" className='github-grey' />
