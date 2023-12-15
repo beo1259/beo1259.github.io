@@ -968,7 +968,7 @@ function App() {
             </div>
           </div>
         )}
-        <section id='education' className='section-container'>
+        <section id='education' className='section-container' style={{marginBottom: '300px'}}>
           <div id='education' className='section-title'>Education...</div>
           <button id='education' className='item-container'>
 
