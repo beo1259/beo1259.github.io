@@ -873,6 +873,13 @@ a {
   gap: 20px;
 }
 
+.copyright-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 
 .bottom-icons1 img {
   max-width: 50px;

@@ -1208,9 +1208,10 @@ function App() {
 
 
         </div>
-
-
+        <div className='copyright-container'>
         <div className='copyright-text'>Copyright ©2023 | All rights reserved | Brayden O'Neil</div>
+
+        </div>
       </div>
     </>
   );
