@@ -34,7 +34,7 @@ import western from './images/western.png';
 import demo from './images/chromdemo.png';
 import hamburger from './images/hamburger.png';
 import exit from './images/exit.png';
-
+import pcl from './images/PCL.png';
 
 
 
@@ -445,6 +445,22 @@ function App() {
         <section id='experience' className='section-container'>
           <div className="section-title">Experience...</div>
 
+          <button onClick={() => openModal('pclExperience')} id='experiences' className='item-container fade in'>
+
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <img src={pcl} alt="PCL Logo" className='logo' style={{width: "70px"}}/>
+              <h2 className='item-title'>PCL Construction<div className='item-subtitle'>Incoming Software Developer Intern: (Summer 2024 - Winter 2025) </div></h2>
+            </div>
+            <ul className='item-text'>
+              <p></p>
+              <li>I have not yet started at this position, but am excited to grow with with a large team and even larger company!</li>
+              <p></p>
+              <li>I will be gaining experience with C#, .NET, Angular 2+, Typescript, REST APIs, SQL, Azure, Entity frameworks, and Xamarin Forms.</li>
+              <p></p>
+              <li>Check back here during the summer for updates!</li>
+            </ul>
+          </button>
+
           <button onClick={() => openModal('toggleExperience')} id='experiences' className='item-container fade in'>
 
             <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -484,7 +500,7 @@ function App() {
               <h2 className='item-title'>Western AI Case Competition - 3rd Place<div className='item-subtitle'> (November 19, 2023) </div></h2>
             </div>
             <ul className='item-text'>
-              <li>Conceptualized an AI-based solution to improve human connection in video calls, involing replacing the low quality face with a 3D rendered version</li>
+              <li>Conceptualized an AI-based solution to improve human connection in video calls, involving replacing the user's low quality face with a high quality 3D rendered version</li>
               <p></p>
 
               <li>Awarded Top 3 Finalist among 35 teams, received a cash prize for innovative approach.</li>
