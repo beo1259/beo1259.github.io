@@ -418,6 +418,16 @@ a {
   transform: scale(1.02);
   border: 5px solid rgba(255, 215, 0, 0.8);
   box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.03);
+  
+
+}
+
+#projects .item-container.item-container.item-container-visible:hover {
+  cursor:pointer;
+}
+
+#experience .item-container.item-container.item-container-visible:hover {
+  cursor:pointer;
 }
 
 
