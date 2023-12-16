@@ -408,10 +408,9 @@ function App() {
             </div>
             <div>
               <div className="about-me-title">HELLO!</div>
-              <p className='section-text'>I'm Brayden! I am a hardworking Computer Science student, who enjoys pursuing hard-to-reach goals
-                that require critical thinking and problem solving. I pursue these goals through the use
-                of cutting edge technology that I find interesting, and maintain an optimistic attitude
-                when faced with adversity.
+              <p className='section-text'>I'm Brayden! I love programming, and creating projects that make my life, and other peoples lives easier through my 
+                creativity and passion for learning. I pursue these goals with the use
+                of cutting edge technology that I find interesting, and absolutely love solving tough problems after working on a project tirelessly!
               </p>
             </div>
           </div>
@@ -570,6 +569,20 @@ function App() {
 
 
         </section>
+        {isModalVisible && activeModal === 'pclExperience' && (
+          <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
+            <div className="overlay" onClick={closeModal}></div>
+            <div className="modal-content">
+              <h2 className='item-title'>My Experience at PCL</h2>
+              <button className='close-modal' onClick={closeModal}>
+                X
+              </button>
+              <p className='modal-text' style={{marginTop: "5.5%"}}>Nothing yet... check back in the summer!</p>
+              
+
+            </div>
+          </div>
+        )}
         {isModalVisible && activeModal === 'toggleExperience' && (
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>

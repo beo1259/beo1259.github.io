@@ -965,9 +965,9 @@ a {
   max-height: 70%;
   min-width: 50%;
   max-width: 50%;
-  border-radius: 15px;
+  border-radius: 12px;
   background-color: rgb(14, 14, 14);
-  border: 2px solid white;
+  border: 3px solid white;
   background-size: 400% 400%;
   animation: gradient 20s ease infinite;
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
@@ -978,18 +978,18 @@ a {
 
 
 .modal-content::-webkit-scrollbar {
-  width: 4px;
+  width: 7px;
 
 }
 
 
 .modal-content::-webkit-scrollbar-track {
-  background: transparent;
+  background-color: rgb(14, 14, 14);
 }
 
 
 .modal-content::-webkit-scrollbar-thumb {
-  background: rgb(139, 139, 139);
+  background: rgb(105, 105, 105);
   border-radius: 30px;
 }
 
@@ -1344,7 +1344,7 @@ a {
   }
 
   .lang-container {
-    margin-top: 0%;
+    margin-top: 20%;
     margin-left: auto;
     margin-right: auto;
     align-self: center;
@@ -1508,8 +1508,6 @@ a {
     border: none;
     min-height: 80px !important;
     max-height: 80px !important;
-
-
     box-shadow: none;
     background-color: transparent;
   }
@@ -1524,6 +1522,7 @@ a {
     transform: scale(1.03);
     border: none;
     box-shadow: none;
+    background-color: transparent;
   }
 
 
@@ -1650,7 +1649,7 @@ a {
     padding-left: 5%;
     padding-right: 2%;
     margin: 5%;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
   }
 
@@ -1669,7 +1668,7 @@ a {
   #education .item-container.item-container.item-container-visible:hover {
     transform: scale(1.02);
     border: none;
-    box-shadow: 0 0 70px 10px rgba(255, 103, 247, 0.4);
+    box-shadow: 0 0 30px 10px rgba(255, 103, 247, 0.3);
   }
 
   .course-text-mobile {
