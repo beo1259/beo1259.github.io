@@ -203,7 +203,7 @@ a {
 }
 
 .button.active:hover::after {
-  background-color: gold; 
+  background-color: rgb(255, 95, 46); 
   width: 100%; 
 
 }
