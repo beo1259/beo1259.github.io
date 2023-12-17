@@ -35,8 +35,8 @@ import demo from './images/chromdemo.png';
 import hamburger from './images/hamburger.png';
 import exit from './images/exit.png';
 import pcl from './images/PCL.png';
-
-
+import video from './images/flashcards.mp4';
+import angular from './images/angular.png';
 
 function Header({ currentSection, setCurrentSection }) {
 
@@ -664,12 +664,30 @@ function App() {
         <section id='projects' className='section-container'>
           <div className="section-title">Projects...</div>
 
+          <button onClick={() => openModal('flashcardModal')} className='item-container' >
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <a href="https://github.com/beo1259/Infinite-Flashcards" target="_blank" rel="noopener noreferrer">
+                <img src={githubgrey} alt="github grey" className='github-grey' />
+              </a>
+              <h2 className='item-title'>Forever Flashcards: Learn Anything, Right Away<div className='item-subtitle'> (2023 - Present)  | Angular 2+, TypeScript, HTML, CSS</div></h2>
+            </div>
+
+            <ul className='item-text'>
+              <li>Generates flashcards about any topic without the requierment of any prior knowledge or information.</li>
+              <p></p>
+              <li>This web-app harnesses the power of AI through an LLM with the use of Open AI's API.</li>
+              <p></p>
+              <li>Coming soon: back-end for deck storage across devices, card editing</li>
+
+            </ul>
+          </button>
+
           <button onClick={() => openModal('inklinkModal')} className='item-container' >
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <a href="https://github.com/beo1259/WDS-Overhaul-2023" target="_blank" rel="noopener noreferrer">
                 <img src={githubgrey} alt="github grey" className='github-grey' />
               </a>
-              <h2 className='item-title'>INKLINK: Note Taking Made Acessible<div className='item-subtitle'> (2023) </div></h2>
+              <h2 className='item-title'>INKLINK: Note Taking Made Acessible<div className='item-subtitle'> (2023) | JavaScript, HTML, CSS, SQL, NodeJS, Express</div></h2>
             </div>
 
             <ul className='item-text'>
@@ -767,7 +785,7 @@ function App() {
               <a href="https://github.com/beo1259/Alarm-Car" target="_blank" rel="noopener noreferrer">
                 <img src={githubgrey} alt="github grey" className='github-grey' />
               </a>
-              <h2 className='item-title'>Alarm Car<div className='item-subtitle'> (2023 - Present) </div></h2>
+              <h2 className='item-title'>Alarm Car<div className='item-subtitle'> (2023 - Present) | RaspberryPi Python, C, C++</div></h2>
             </div>
 
             <ul className='item-text'>
@@ -786,7 +804,7 @@ function App() {
               <a href="https://github.com/beo1259/beo1259.github.io" target="_blank" rel="noopener noreferrer">
                 <img src={githubgrey} alt="github grey" className='github-grey' />
               </a>
-              <h2 className='item-title'>My Personal Portfolio Website<div className='item-subtitle'> (2023 - Present) </div></h2>
+              <h2 className='item-title'>My Personal Portfolio Website<div className='item-subtitle'> (2023 - Present) | React, JavaScript, CSS, HTML</div></h2>
             </div>
 
             <ul className='item-text'>
@@ -806,7 +824,7 @@ function App() {
               <a href="https://github.com/beo1259/nba-player-comparison" target="_blank" rel="noopener noreferrer">
                 <img src={githubgrey} alt="github grey" className='github-grey' />
               </a>
-              <h2 className='item-title'>NBA Player Comparison<div className='item-subtitle'> (2022 - 2023) </div></h2>
+              <h2 className='item-title'>NBA Player Comparison<div className='item-subtitle'> (2022 - 2023) | React, JavaScript, CSS, HTML</div></h2>
             </div>
 
             <ul className='item-text'>
@@ -826,7 +844,7 @@ function App() {
               <a href="https://github.com/beo1259/Study-Helper-Chrome-Ext" target="_blank" rel="noopener noreferrer">
                 <img src={githubgrey} alt="github grey" className='github-grey' />
               </a>
-              <h2 className='item-title'>Study Helper Chrome Extension<div className='item-subtitle'> (2023 - Present) </div></h2>
+              <h2 className='item-title'>Study Helper Chrome Extension<div className='item-subtitle'> (2023 - Present) | JavaScript, HTML, CSS, JSON</div></h2>
             </div>
 
             <ul className='item-text'>
@@ -843,7 +861,48 @@ function App() {
 
 
         </section>
+        {isModalVisible && activeModal === 'flashcardModal' && (
+          <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
+            <div className="overlay" onClick={closeModal}></div>
+            <div className="modal-content">
+              <h2 className='item-title'>My 'Forever Flashcards' Project</h2>
+              <button className='close-modal' onClick={closeModal}>
+                X
+              </button>
+              <p className='modal-text'>
+                Exam season is tough, and sometimes as the day approaches you realize that you have nowhere near enough time to cram every piece of content
+                from your professor's 800 slides with whatever else you may have going on in your life. This web-app generates 10-500 flashcards on any topic 
+                you can possibly think of, through the power of a AI with a Large Language Model (LLM).
+              </p>
+              <p></p>
+              <p className='modal-text'>
+                This summer I will be starting an internship where the web-development framework I will be working with is Angular 2+, so I knew I wanted to 
+                gain some experience with it before the internship started. This project gave me a chance to do so, as it was my absolute first time ever
+                working with the framework. I had a ton of fun learning it, and though I have been a fan of React, I greatly appreciate it's structured nature. I
+                certainly see how it's strict(er) structure would make large applications much easier to navigate while developing.
+              </p>
+              <p></p>
+              <p className='modal-text'>
+                It had also been a while since I had used TypeScript, and though all of those type errors get annoying at first, a hard to catch issue down the road 
+                is even worse, so it made it worth it. It was certainly nice to brush up on TypeScript and it has greatly increased my confidence when it comes to the 
+                use of the language. The HTML was also interesting, angular provides so much functionality in-line that made it much easier to work with. That is my favourite
+                part of Angular by far (as of right now).
+              </p>
+              <p></p>
+              <p className='modal-text'>
+                Ultimately, I just wanted to incorporate generative AI into a side project in a creative way, and as soon as this idea popped into my head I wrote it down and
+                and started working on it. In the VERY near future I plan to implement a full login system with a Firebase backend, as I would love to gain some experience with it,
+                and various other front-end features that I am still workshopping. 
+                <p></p>
+                Please check out this demo below:
+                <video src={video} alt='alarmcar' className='flowchart-img' controls muted/>
 
+              </p>
+
+
+            </div>
+          </div>
+        )}
         {isModalVisible && activeModal === 'alarmcarModal' && (
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
@@ -1159,6 +1218,22 @@ function App() {
             <div id="frameworks" className='section-container'>
               <div className='lang-container'>
                 <div id="frameworks" class="section-title" >Frameworks and Technologies...</div>
+
+                <button id='skills' className='item-container fade in'>
+
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <img src={angular} alt="React logo" className='lang-img' />
+                    <h2 className='item-title'>Angular 2+</h2>
+                  </div>
+                  <ul className='item-text'>
+                    <li style={{ paddingBottom: '7px' }}>
+                      In my most recent side project 'Forever Flashcards', I used Angular for the first time, getting a strong grasp on it's structural nature.
+                    </li>
+                    <li>
+                      I really enjoy Angular and certainly plan to use it in the future for large scale projects with team's of people, which is where I feel it performs best.
+                    </li>
+                  </ul>
+                </button>
 
                 <button id='skills' className='item-container fade in'>
 
