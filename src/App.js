@@ -669,7 +669,7 @@ function App() {
               <a href="https://github.com/beo1259/WDS-Overhaul-2023" target="_blank" rel="noopener noreferrer">
                 <img src={githubgrey} alt="github grey" className='github-grey' />
               </a>
-              <h2 className='item-title'>INKLINK; Note Taking Made Acessible<div className='item-subtitle'> (2023) </div></h2>
+              <h2 className='item-title'>INKLINK: Note Taking Made Acessible<div className='item-subtitle'> (2023) </div></h2>
             </div>
 
             <ul className='item-text'>
@@ -685,7 +685,7 @@ function App() {
             <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
               <div className="overlay" onClick={closeModal}></div>
               <div className="modal-content">
-                <h2 className='item-title'>My App Dedicated to Improving Note Taking for the Impaired</h2>
+                <h2 className='item-title'>INKLINK: A Web-App Dedicated to Improving Note Taking for the Impaired</h2>
                 <button className='close-modal' onClick={closeModal}>
                   X
                 </button>
