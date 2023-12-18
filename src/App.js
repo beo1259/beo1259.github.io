@@ -677,7 +677,7 @@ function App() {
               <p></p>
               <li>This web-app harnesses the power of AI through an LLM with the use of Open AI's API.</li>
               <p></p>
-              <li>Coming soon: back-end for deck storage across devices, card editing</li>
+              <li>Coming soon: back-end for deck storage across devices</li>
 
             </ul>
           </button>
@@ -871,7 +871,8 @@ function App() {
               <p className='modal-text'>
                 Exam season is tough, and sometimes as the day approaches you realize that you have nowhere near enough time to cram every piece of content
                 from your professor's 800 slides with whatever else you may have going on in your life. This web-app generates 10-500 flashcards on any topic 
-                you can possibly think of, through the power of a AI with a Large Language Model (LLM).
+                you can possibly think of, through the power of a AI with a Large Language Model (LLM), allowing you to use live dictation for the foundation of
+                your flashcards, the ability to modify the generated cards, and save the decks.
               </p>
               <p></p>
               <p className='modal-text'>
