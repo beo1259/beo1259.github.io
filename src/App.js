@@ -669,7 +669,7 @@ function App() {
               <a href="https://github.com/beo1259/Infinite-Flashcards" target="_blank" rel="noopener noreferrer">
                 <img src={githubgrey} alt="github grey" className='github-grey' />
               </a>
-              <h2 className='item-title'>Forever Flashcards: Learn Anything, Right Away<div className='item-subtitle'> (2023 - Present)  | Angular 2+, TypeScript, HTML, CSS</div></h2>
+              <h2 className='item-title'>Forever Flashcards: Learn Anything, Right Away<div className='item-subtitle'> (2023 - Present)  | <em>Angular 2+, TypeScript, HTML, CSS</em></div></h2>
             </div>
 
             <ul className='item-text'>
@@ -687,7 +687,7 @@ function App() {
               <a href="https://github.com/beo1259/WDS-Overhaul-2023" target="_blank" rel="noopener noreferrer">
                 <img src={githubgrey} alt="github grey" className='github-grey' />
               </a>
-              <h2 className='item-title'>INKLINK: Note Taking Made Acessible<div className='item-subtitle'> (2023) | JavaScript, HTML, CSS, SQL, NodeJS, Express</div></h2>
+              <h2 className='item-title'>INKLINK: Note Taking Made Acessible<div className='item-subtitle'> (2023) | <em>JavaScript, HTML, CSS, SQL, NodeJS, Express</em></div></h2>
             </div>
 
             <ul className='item-text'>
@@ -699,7 +699,86 @@ function App() {
 
             </ul>
           </button>
-          {isModalVisible && activeModal === 'inklinkModal' && (
+          
+          <button onClick={() => openModal('alarmcarModal')} className='item-container fade in' >
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <a href="https://github.com/beo1259/Alarm-Car" target="_blank" rel="noopener noreferrer">
+                <img src={githubgrey} alt="github grey" className='github-grey' />
+              </a>
+              <h2 className='item-title'>Alarm Car<div className='item-subtitle'> (2023 - Present) | <em>RaspberryPi Python, C, C++</em></div></h2>
+            </div>
+
+            <ul className='item-text'>
+              <li>Engineered a mobile alarm clock to ensure waking through physical interaction.</li>
+              <p></p>
+              <li>Assembled a custom car with a Raspberry Pi for programmable control.</li>
+              <p></p>
+              <li>Developed a Python script for random movement upon alarm activation.</li>
+
+            </ul>
+          </button>
+
+          <button onClick={() => openModal('portfolioModal')} className='item-container fade in' >
+
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <a href="https://github.com/beo1259/beo1259.github.io" target="_blank" rel="noopener noreferrer">
+                <img src={githubgrey} alt="github grey" className='github-grey' />
+              </a>
+              <h2 className='item-title'>My Personal Portfolio Website<div className='item-subtitle'> (2023 - Present) | <em>React, JavaScript, CSS, HTML</em></div></h2>
+            </div>
+
+            <ul className='item-text'>
+              <li>The website you're currently on, <span style={{ color: 'gold', textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073' }}>welcome!</span></li>
+              <p></p>
+              <li>Included JavaScript functions to work in conjunction with my HTML and CSS designs.</li>
+              <p></p>
+              <li>Emphasized a focus on simplicity to focus on a smooth experience.</li>
+
+            </ul>
+          </button>
+
+
+          <button onClick={() => openModal('nbaModal')} className='item-container fade in' >
+
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <a href="https://github.com/beo1259/nba-player-comparison" target="_blank" rel="noopener noreferrer">
+                <img src={githubgrey} alt="github grey" className='github-grey' />
+              </a>
+              <h2 className='item-title'>NBA Player Comparison<div className='item-subtitle'> (2022 - 2023) | <em>React, JavaScript, CSS, HTML</em></div></h2>
+            </div>
+
+            <ul className='item-text'>
+              <li>Analyzed NBA players' abilities with a statistical weight calculation.</li>
+              <p></p>
+              <li>Integrated data from an NBA API for historical and current player stats.</li>
+              <p></p>
+              <li>Implemented measures to ensure accuracy and consistency of player's stats.</li>
+
+            </ul>
+          </button>
+
+
+          <button onClick={() => openModal('studyModal')} className='item-container fade in' >
+
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <a href="https://github.com/beo1259/Study-Helper-Chrome-Ext" target="_blank" rel="noopener noreferrer">
+                <img src={githubgrey} alt="github grey" className='github-grey' />
+              </a>
+              <h2 className='item-title'>Study Helper Chrome Extension<div className='item-subtitle'> (2023 - Present) | <em>JavaScript, HTML, CSS, JSON</em></div></h2>
+            </div>
+
+            <ul className='item-text'>
+              <li>Created a Chrome extension for improved study session organization.</li>
+              <p></p>
+              <li>Enabled customizable timers for focused study periods and planned breaks.</li>
+              <p></p>
+              <li>Sends a text to the user when their current task is complete.</li>
+
+            </ul>
+          </button>
+
+        </section>
+        {isModalVisible && activeModal === 'inklinkModal' && (
             <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
               <div className="overlay" onClick={closeModal}></div>
               <div className="modal-content">
@@ -780,87 +859,7 @@ function App() {
               </div>
             </div>
           )}
-          <button onClick={() => openModal('alarmcarModal')} className='item-container fade in' >
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <a href="https://github.com/beo1259/Alarm-Car" target="_blank" rel="noopener noreferrer">
-                <img src={githubgrey} alt="github grey" className='github-grey' />
-              </a>
-              <h2 className='item-title'>Alarm Car<div className='item-subtitle'> (2023 - Present) | RaspberryPi Python, C, C++</div></h2>
-            </div>
 
-            <ul className='item-text'>
-              <li>Engineered a mobile alarm clock to ensure waking through physical interaction.</li>
-              <p></p>
-              <li>Assembled a custom car with a Raspberry Pi for programmable control.</li>
-              <p></p>
-              <li>Developed a Python script for random movement upon alarm activation.</li>
-
-            </ul>
-          </button>
-
-          <button onClick={() => openModal('portfolioModal')} className='item-container fade in' >
-
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <a href="https://github.com/beo1259/beo1259.github.io" target="_blank" rel="noopener noreferrer">
-                <img src={githubgrey} alt="github grey" className='github-grey' />
-              </a>
-              <h2 className='item-title'>My Personal Portfolio Website<div className='item-subtitle'> (2023 - Present) | React, JavaScript, CSS, HTML</div></h2>
-            </div>
-
-            <ul className='item-text'>
-              <li>The website you're currently on, <span style={{ color: 'gold', textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073' }}>welcome!</span></li>
-              <p></p>
-              <li>Included JavaScript functions to work in conjunction with my HTML and CSS designs.</li>
-              <p></p>
-              <li>Emphasized a focus on simplicity to focus on a smooth experience.</li>
-
-            </ul>
-          </button>
-
-
-          <button onClick={() => openModal('nbaModal')} className='item-container fade in' >
-
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <a href="https://github.com/beo1259/nba-player-comparison" target="_blank" rel="noopener noreferrer">
-                <img src={githubgrey} alt="github grey" className='github-grey' />
-              </a>
-              <h2 className='item-title'>NBA Player Comparison<div className='item-subtitle'> (2022 - 2023) | React, JavaScript, CSS, HTML</div></h2>
-            </div>
-
-            <ul className='item-text'>
-              <li>Analyzed NBA players' abilities with a statistical weight calculation.</li>
-              <p></p>
-              <li>Integrated data from an NBA API for historical and current player stats.</li>
-              <p></p>
-              <li>Implemented measures to ensure accuracy and consistency of player's stats.</li>
-
-            </ul>
-          </button>
-
-
-          <button onClick={() => openModal('studyModal')} className='item-container fade in' >
-
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <a href="https://github.com/beo1259/Study-Helper-Chrome-Ext" target="_blank" rel="noopener noreferrer">
-                <img src={githubgrey} alt="github grey" className='github-grey' />
-              </a>
-              <h2 className='item-title'>Study Helper Chrome Extension<div className='item-subtitle'> (2023 - Present) | JavaScript, HTML, CSS, JSON</div></h2>
-            </div>
-
-            <ul className='item-text'>
-              <li>Created a Chrome extension for improved study session organization.</li>
-              <p></p>
-              <li>Enabled customizable timers for focused study periods and planned breaks.</li>
-              <p></p>
-              <li>Sends a text to the user when their current task is complete.</li>
-
-            </ul>
-          </button>
-
-
-
-
-        </section>
         {isModalVisible && activeModal === 'flashcardModal' && (
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
