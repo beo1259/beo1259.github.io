@@ -759,7 +759,7 @@ a {
 .section-text {
   padding-left: 5%;
   padding-right: 5%;
-  text-align: center;
+  text-align: left;
   font-family: 'Lato';
   font-weight: 800;
   font-size: 1.75em;
