@@ -19,6 +19,13 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: 'Lato';
+  src: url('./font/Lato-ThinItalic.ttf');
+  font-weight: 100;
+  font-style: italic;
+}
+
 
 .chrome-img {
   margin-left: 5px;
