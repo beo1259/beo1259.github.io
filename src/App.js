@@ -1284,7 +1284,7 @@ function App() {
 
                 <button id='skills' className='item-container fade in'>
                   <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src={expressLogo} alt="Express.js logo" className='lang-img' />
+                    <img src={expressLogo} alt="Express.js logo" className='lang-img' style={{borderRadius: '7px'}}/>
                     <h2 className='item-title'>Express/NodeJS</h2>
                   </div>
                   <ul className='item-text'>
@@ -1292,7 +1292,7 @@ function App() {
                       Express and Node JS is what a coworker and I at Toggle used to engineer the REST API to connect our front-end to our back-end SQL database.
                     </li>
                     <li>
-                      Though it took some time to pickup, the use of NodeJS to write the REST API has not only taught me how to use Express/NodeJS, but given me and understanding of a back-end is structured to its core.
+                      Though it took some time to pickup, the use of NodeJS to write the REST API has not only taught me how to use Express/NodeJS, but given me and understanding of how aan application's back-end is structured at its core.
                     </li>
                   </ul>
                 </button>
