@@ -673,7 +673,7 @@ function App() {
             </div>
 
             <ul className='item-text'>
-              <li>Generates flashcards about any topic without the requierment of any prior knowledge or information.</li>
+              <li>Generates flashcards about any topic without the requirement of any prior knowledge or information.</li>
               <p></p>
               <li>This web-app harnesses the power of AI through an LLM with the use of Open AI's API.</li>
               <p></p>
