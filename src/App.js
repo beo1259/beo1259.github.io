@@ -436,9 +436,8 @@ function App() {
               </p>
 
               <p><img src={headshot} alt="headshot" className='headshot-modal' /></p>
-
-            </div>
           </div>
+            </div>
         )}
 
         <section id='experience' className='section-container'>
@@ -526,10 +525,13 @@ function App() {
             <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
               <div className="overlay" onClick={closeModal}></div>
               <div className="modal-content">
+            <button className='close-modal' onClick={closeModal}>
+                X
+              </button>
+            <div className="modal-content2">
+
                 <h2 className='item-title'>My Experience at Port Credit Yacht Club</h2>
-                <button className='close-modal' onClick={closeModal}>
-                  X
-                </button>
+                
                 <p className='modal-text'>I've worked at Port Credit Yacht Club for the past two summers, and it has been an incredible experience that has taught me valuable soft skills,
                   skills that I still apply to this day, and am eternally glad that I possess.</p>
                 <p></p>
@@ -547,7 +549,7 @@ function App() {
                     <img src={travellift} alt='travellift' className='flowchart-img' />
                   </div>
                 </p>
-
+            </div>
               </div>
             </div>
           )}
@@ -573,13 +575,16 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-              <h2 className='item-title'>My Experience at PCL</h2>
-              <button className='close-modal' onClick={closeModal}>
+            <button className='close-modal' onClick={closeModal}>
                 X
               </button>
+            <div className="modal-content2">
+
+              <h2 className='item-title'>My Experience at PCL</h2>
+              
               <p className='modal-text' style={{marginTop: "5.5%"}}>Nothing yet... check back in the summer!</p>
               
-
+          </div>
             </div>
           </div>
         )}
@@ -587,10 +592,13 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-              <h2 className='item-title'>My Experience at Toggle</h2>
-              <button className='close-modal' onClick={closeModal}>
+            <button className='close-modal' onClick={closeModal}>
                 X
               </button>
+            <div className="modal-content2">
+
+              <h2 className='item-title'>My Experience at Toggle</h2>
+              
               <p className='modal-text'>At toggle, I was priviledged with working with a capable team of Software Engineers who I was able to learn a lot from.</p>
               <p></p>
               <p className='modal-text'>I became experienced with frameworks like React and React Native, as I was tasked with developing a website and
@@ -611,7 +619,7 @@ function App() {
               </p>
               <p></p>
               <div style={{ display: 'flex', justifyContent: 'center' }}><img src={recommendation} alt='flowchart' className='flowchart-img' /></div>
-
+          </div>
             </div>
           </div>
         )}
@@ -619,10 +627,13 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-              <h2 className='item-title'>My Experience Competing in Western AI's 2023 Case Compeition</h2>
-              <button className='close-modal' onClick={closeModal}>
+            <button className='close-modal' onClick={closeModal}>
                 X
               </button>
+            <div className="modal-content2">
+
+              <h2 className='item-title'>My Experience Competing in Western AI's 2023 Case Compeition</h2>
+           
               <p className='modal-text'>At this year's Wetsern AI Case Compeition, groups were tasked with creating an innovative product using AI, a very general instruction which
                 left very much room for interpretation. My group placed 3rd out of 5 finalists, and 35 teams overall.</p>
               <p></p>
@@ -635,7 +646,7 @@ function App() {
               <p className='modal-text'> This 48 hour project greatly enhanced my ability to work under pressure with a team, and having to be creative in such a short time helped me understand
                 the way that my brain works in a time of stress, and how to maintain composure.
               </p>
-
+          </div>
             </div>
           </div>
         )}
@@ -643,10 +654,13 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-              <h2 className='item-title'>My Experience at McDonalds</h2>
-              <button className='close-modal' onClick={closeModal}>
+            <button className='close-modal' onClick={closeModal}>
                 X
               </button>
+            <div className="modal-content2">
+
+              <h2 className='item-title'>My Experience at McDonalds</h2>
+          
               <p className='modal-text'>At McDonalds, I was originally kitchen staff, and then promoted to Crew Trainer as a testament to my leadership and responsibility</p>
               <p></p>
               <p className='modal-text'>In my role as crew trainer, I frequently trained new employees and kept in mind their lack of knowledge pertaining to the way the kitchen
@@ -658,6 +672,7 @@ function App() {
                 promoted to Crew Trainer after only 2 months of working. I took this role seriously, as even though a job at McDonalds is not extremely difficult to obtain,
                 I am unable to put my name on something that isn't done with my best effort.
               </p>
+            </div>
             </div>
           </div>
         )}
@@ -782,10 +797,13 @@ function App() {
             <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
               <div className="overlay" onClick={closeModal}></div>
               <div className="modal-content">
+            <button className='close-modal' onClick={closeModal}>
+                X
+              </button>
+            <div className="modal-content2">
+
                 <h2 className='item-title'>INKLINK: A Web-App Dedicated to Improving Note Taking for the Impaired</h2>
-                <button className='close-modal' onClick={closeModal}>
-                  X
-                </button>
+
                 <p className='modal-text'>
                   Our project's mission was to develop a note-taking application specifically designed for impaired users. This endeavor aimed to revolutionize digital
                   accessibility, allowing individuals with various impairments to interact more effectively with digital content. We focused on creating a tool that
@@ -818,7 +836,7 @@ function App() {
                   This was done as a part of Western Developer Society's 2023 Overhaul hackathon, where my team took second place. See experience section
                   to learn more.
                 </p>
-
+</div>
               </div>
             </div>
           )}
@@ -826,10 +844,13 @@ function App() {
             <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
               <div className="overlay" onClick={closeModal}></div>
               <div className="modal-content">
+            <button className='close-modal' onClick={closeModal}>
+                X
+              </button>
+            <div className="modal-content2">
+
                 <h2 className='item-title'>My Experience at Western Dev Society's 2023 Overhaul Hackathon</h2>
-                <button className='close-modal' onClick={closeModal}>
-                  X
-                </button>
+                
                 <p className='modal-text'>At the hackathon, I was part of an incredible team that inspired me with their skills and knowledge. Our
                   collaboration led to an enriching learning experience.</p>
                 <p></p>
@@ -857,6 +878,7 @@ function App() {
                   If you'd like to learn more about this, please check the projects section!
                 </p>
               </div>
+              </div>
             </div>
           )}
 
@@ -864,10 +886,13 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-              <h2 className='item-title'>My 'Forever Flashcards' Project</h2>
-              <button className='close-modal' onClick={closeModal}>
+            <button className='close-modal' onClick={closeModal}>
                 X
               </button>
+            <div className="modal-content2">
+
+              <h2 className='item-title'>My 'Forever Flashcards' Project</h2>
+          
               <p className='modal-text'>
                 Exam season is tough, and sometimes as the day approaches you realize that you have nowhere near enough time to cram every piece of content
                 from your professor's 800 slides with whatever else you may have going on in your life. This web-app generates 10-500 flashcards on any topic 
@@ -899,7 +924,7 @@ function App() {
 
               </p>
 
-
+          </div>
             </div>
           </div>
         )}
@@ -907,10 +932,12 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-              <h2 className='item-title'>My Alarm Car Project</h2>
-              <button className='close-modal' onClick={closeModal}>
+            <button className='close-modal' onClick={closeModal}>
                 X
               </button>
+            <div className="modal-content2">
+              <h2 className='item-title'>My Alarm Car Project</h2>
+              
               <p className='modal-text'>
                 During my time working on this project, I've been able to expand my comptuer engineering skills, building an RC car completely from scratch,
                 and connecting it to a Raspberry Pi that runs a script to randomize its movement when the user-defined alarm time is reached.
@@ -936,7 +963,7 @@ function App() {
                 <img src={alarmcar} alt='alarmcar' className='flowchart-img' />
               </p>
 
-
+</div>
             </div>
           </div>
         )}
@@ -944,10 +971,12 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-              <h2 className='item-title'>My NBA Player Comparison Project</h2>
-              <button className='close-modal' onClick={closeModal}>
+            <button className='close-modal' onClick={closeModal}>
                 X
               </button>
+            <div className="modal-content2">
+              <h2 className='item-title'>My NBA Player Comparison Project</h2>
+          
               <p className='modal-text'>
                 My project analyzing NBA players' performance was a deep dive into the world of sports analytics. By calculating statistical weights for various
                 abilities, I was able to quantify the contributions of players to their teams. This process required a nuanced understanding of the game's mechanics
@@ -977,7 +1006,7 @@ function App() {
                 statistical insights into a more digestible format for the average user.
                 <img src={nbaplayer} alt='nbaplayer' className='flowchart-img' />
               </p>
-
+          </div>
             </div>
           </div>
         )}
@@ -985,10 +1014,12 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-              <h2 className='item-title'>My Study Helper Chrome Extension</h2>
-              <button className='close-modal' onClick={closeModal}>
+            <button className='close-modal' onClick={closeModal}>
                 X
               </button>
+            <div className="modal-content2">
+              <h2 className='item-title'>My Study Helper Chrome Extension</h2>
+            
               <p className='modal-text'>
                 The Chrome extension I developed serves as an innovative solution for managing study sessions. Its creation was motivated by the need for improved
                 organizational tools that cater specifically to the unique rhythms of focused study and rest periods.
@@ -1018,7 +1049,7 @@ function App() {
                   <img src={demo} alt='study' className='chrome-img' />
                 </div>
               </p>
-
+          </div>
 
             </div>
           </div>
@@ -1028,10 +1059,12 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-              <h2 className='item-title'>This Website</h2>
-              <button className='close-modal' onClick={closeModal}>
+            <button className='close-modal' onClick={closeModal}>
                 X
               </button>
+            <div className="modal-content2">
+              <h2 className='item-title'>This Website</h2>
+             
               <p className='modal-text'>
                 <span style={{ color: 'gold', textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073' }}>The website that you're currently navigating </span> is a testament to my passion for web development and design.
               </p>
@@ -1052,7 +1085,7 @@ function App() {
                 Working on this site allowed me to refresh and reinforce my knowledge of web development fundamentals, broadening my expertise and enhancing my ability to craft well-structured, aesthetically pleasing websites.
               </p>
 
-
+          </div>
             </div>
           </div>
         )}
