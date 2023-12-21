@@ -103,23 +103,38 @@ a {
   background-attachment: fixed;
   background-position: top center;
   width: 100%;
-  height: 55px;
+  height: 53px;
+  padding-bottom: 0.4%;
   position: fixed;
   top: 0;
   display: flex;
   align-items: center;
   z-index: 10;
   transition: height 0.3s ease, transform 0.3s ease;
-
-
 }
 
-
 .header-hidden {
-  transform: translateY(-100%);
+  transform: translateY(-93%);
   transition: transform 0.3s ease;
 }
 
+.progressMainWrapper {
+  background-color: black;
+  height: 4.5px;
+  position: sticky;
+  top: 100px;
+  left: 100px;
+  z-index: 1;
+  width: 100%;
+}
+
+.progressMainStyle {
+  position: absolute; 
+  bottom: 0;
+  height: 4px;
+  background-color: gold;
+  width: 15%;
+}
 
 .section-text-mobile {
   display: none;
@@ -1383,6 +1398,14 @@ a {
 @media only screen and (max-width: 481px) {
   #about-me .item-container {
     display: none;
+  }
+
+  .progressMainWrapper{
+    left: -4px;
+  }
+
+  .progressMainStyle{
+    left: -4px;
   }
 
   .modal-content2{
