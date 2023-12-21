@@ -125,7 +125,7 @@ a {
   top: 100px;
   left: 100px;
   z-index: 1;
-  width: 100%;
+  width:100%;
 }
 
 .progressMainStyle {
@@ -133,7 +133,7 @@ a {
   bottom: 0;
   height: 4px;
   background-color: gold;
-  width: 15%;
+  width:100%;
 }
 
 .section-text-mobile {
@@ -1402,10 +1402,13 @@ a {
 
   .progressMainWrapper{
     left: -4px;
+    width: 70%;
+
   }
 
   .progressMainStyle{
     left: -4px;
+    width: 70%;
   }
 
   .modal-content2{
