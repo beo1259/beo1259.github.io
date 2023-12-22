@@ -85,7 +85,8 @@ useOutsideAlerter(menuRef);
   }
 
   const scrollToSection = (sectionId) => {
-    setCurrentSection(sectionId);
+    setCurrentSection('skills');
+
     const headerOffset = document.querySelector('.header').offsetHeight;
     const section = document.getElementById(sectionId);
     const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
@@ -97,7 +98,7 @@ useOutsideAlerter(menuRef);
     const offsetPosition = sectionTop - Math.max(headerOffset, centerOffset);
     if (sectionId !== 'education') {
       window.scrollTo({
-        top: offsetPosition - 15,
+        top: offsetPosition - 8,
         behavior: 'smooth',
       });
     }
@@ -398,7 +399,6 @@ function App() {
   }, []);
 
   return (
-
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -1269,9 +1269,9 @@ function App() {
               </button>
             </div>
 
-            <div id="frameworks" className='section-container'>
+            <div id="skills" className='section-container'>
               <div className='lang-container'>
-                <div id="frameworks" class="section-title" >Frameworks and Technologies...</div>
+                <div id="skills" class="section-title" style={{paddingTop: '10%'}}>Frameworks and Technologies...</div>
 
                 <button id='skills' className='item-container fade in'>
 
