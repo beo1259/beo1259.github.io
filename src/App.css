@@ -390,9 +390,15 @@ a {
   border: transparent solid 2px;
   transform: scale(0);
   border-radius: 80px;
+  animation: sway 8s infinite;
+
   transition: transform 0.5s ease, box-shadow 0.2s ease, background 1.3s ease, text-shadow 0.2s ease, border 1.3s ease;
 }
 
+@keyframes sway {
+  0%, 100%{ transform: rotate(-1deg);}
+  50%{ transform: rotate(1deg); }
+}
 
 #about-me .item-container.item-container-visible {
   transform: scale(1);
@@ -865,7 +871,6 @@ a {
   height: 400px !important;
   transition: box-shadow 2.5s ease-in-out, border 2.5s ease-in-out;
 }
-
 
 .proj-img {
   border-radius: 30px;
@@ -1403,12 +1408,15 @@ a {
   .progressMainWrapper{
     left: -4px;
     width: 70%;
+    height: 3px;
 
   }
 
   .progressMainStyle{
     left: -4px;
     width: 70%;
+    height: 3px;
+
   }
 
   .modal-content2{
