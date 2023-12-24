@@ -1362,7 +1362,7 @@ function App() {
 
         <div className='bottom-icons1'>
           <a href="https://github.com/beo1259" target="_blank" rel="noopener noreferrer">
-            <img src={github} alt='Github icon' className="hyperlink-imgs" style={{ height: "6.5vh", filter: "hue-rotate(-15deg)" }} />
+            <img src={github} alt='Github icon' className="hyperlink-git"/>
           </a>
 
           <a href="https://www.linkedin.com/in/brayden-o-neil-32b405205/" target="_blank" rel="noopener noreferrer">

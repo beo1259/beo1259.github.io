@@ -936,16 +936,31 @@ a {
 .hyperlink-imgs {
 
 
-  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: all 0.3s ease;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 1));
 
+  filter: saturate(00%);
+}
+
+.hyperlink-git {
+
+
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 1));
+  height: 6.5vh;
+  filter: saturate(00%) hue-rotate(-10deg);
+  transition: all 0.3s ease;
+
+}
+
+.hyperlink-git:hover {
+  filter: saturate(100%) ;
 
 }
 
 
 .hyperlink-imgs:hover {
-  color: gold;
-  transform: scale(1.05);
+  filter: saturate(100%);
+
 }
 
 
@@ -1161,7 +1176,7 @@ a {
   margin-top: 5px;
   font-family: 'lato';
   font-size: 1rem;
-  color: gold;
+  color: rgb(233, 233, 233);
 }
 
 
@@ -1430,6 +1445,15 @@ a {
   #about-me .item-container {
     display: none;
   }
+
+  .hyperlink-imgs {
+
+
+  transition: all 0.3s ease;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 1));
+
+  filter: saturate(100%);
+}
 
   .progressMainWrapper{
     left: -4px;
