@@ -61,7 +61,7 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
   z-index: -1;
 }
 
@@ -157,6 +157,7 @@ a {
   bottom: 0;
   height: 4px;
   background-color: gold;
+  box-shadow: 0 0 15px 0 rgba(255, 215, 0, 0.9);
   width:100%;
 }
 
@@ -297,6 +298,7 @@ a {
   max-height: 100%;
   margin-top: 0%;
   margin-bottom: 0%;
+  padding-bottom: 10%;
   position: relative;
   color: white;
   text-align: center;
