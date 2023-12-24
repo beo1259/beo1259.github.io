@@ -807,7 +807,7 @@ a {
   padding-right: 5%;
   text-align: left;
   font-family: 'Lato';
-  font-weight: 800;
+  font-weight: 100;
   font-size: 1.75em;
 
 
@@ -856,6 +856,7 @@ a {
   color: gold;
   font-family: 'lato';
   font-size: 4.3rem;
+  font-weight: 800;
   position: relative;
   top: 0;
   animation: slide 24s steps(8) infinite;
