@@ -44,34 +44,34 @@ function Header({ currentSection, setCurrentSection }) {
     useEffect(() => {
       window.addEventListener("scroll", onScroll);
 
-        function handleClickOutside(event) {
-            if (ref.current && !ref.current.contains(event.target)) {
-                setIsMenuOpen(true); 
-            }
+      function handleClickOutside(event) {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setIsMenuOpen(true);
         }
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-          window.removeEventListener("scroll", onScroll);
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
+      }
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        window.removeEventListener("scroll", onScroll);
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
     }, [ref]);
-}
+  }
 
-const [scrollTop, setScrollTop] = useState(0);
+  const [scrollTop, setScrollTop] = useState(0);
 
-const onScroll = () => {
-  const winScroll = document.documentElement.scrollTop;
-  const height =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
+  const onScroll = () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
 
-  const scrolled = (winScroll / height) * 100;
+    const scrolled = (winScroll / height) * 100;
 
-  setScrollTop(scrolled);
-};
-  
-const menuRef = useRef(null);
-useOutsideAlerter(menuRef);
+    setScrollTop(scrolled);
+  };
+
+  const menuRef = useRef(null);
+  useOutsideAlerter(menuRef);
 
   const [isMenuOpen, setIsMenuOpen] = useState(true);
 
@@ -197,7 +197,7 @@ useOutsideAlerter(menuRef);
             RESUME
           </a>
         </div>
-        
+
       </div>
 
       <button type="name-button"
@@ -208,7 +208,7 @@ useOutsideAlerter(menuRef);
       </button>
 
       <div className="button-container">
-     
+
         <button
           type="button"
           className={getButtonClass('about-me')}
@@ -255,9 +255,9 @@ useOutsideAlerter(menuRef);
         </a>
       </div>
       <div
-          className="progressMainStyle"
-          style={{ width: `${scrollTop}%` }}
-        ></div>
+        className="progressMainStyle"
+        style={{ width: `${scrollTop}%` }}
+      ></div>
     </header>
   );
 }
@@ -268,6 +268,7 @@ function App() {
   const [activeModal, setActiveModal] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalFadeIn, setModalFadeIn] = useState(false);
+  const [isBlurred, setIsBlurred] = useState(false);
 
 
   const openModal = (modalId) => {
@@ -298,7 +299,7 @@ function App() {
 
 
   useEffect(() => {
-
+    const topSection = document.getElementById('name');
 
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
@@ -315,6 +316,9 @@ function App() {
         document.querySelector('.header').classList.remove('header-hidden');
 
       }
+
+      const shouldBlur = window.scrollY > topSection.offsetHeight;
+      setIsBlurred(shouldBlur);
 
       lastScrollY = currentScrollY;
     };
@@ -389,6 +393,7 @@ function App() {
       observer.observe(section);
     });
 
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -404,7 +409,7 @@ function App() {
 
       <Header currentSection={currentSection} setCurrentSection={setCurrentSection} />
 
-      <div className='App'>
+      <div className={`App ${isBlurred ? 'blur-active' : ''}`}>
 
         <section id='name' className='name-container'>
           <div className="wrapper">
@@ -429,7 +434,7 @@ function App() {
             </div>
             <div>
               <div className="about-me-title">HELLO!</div>
-              <p className='section-text'>I'm Brayden! I love programming, and creating projects that make my life, and other peoples lives easier through my 
+              <p className='section-text'>I'm Brayden! I love programming, and creating projects that make my life, and other peoples lives easier through my
                 creativity and passion for learning. I pursue these goals with the use
                 of cutting edge technology that I find interesting, and absolutely love solving tough problems after working on a project tirelessly!
               </p>
@@ -457,8 +462,8 @@ function App() {
               </p>
 
               <p><img src={headshot} alt="headshot" className='headshot-modal' /></p>
-          </div>
             </div>
+          </div>
         )}
 
         <section id='experience' className='section-container'>
@@ -467,7 +472,7 @@ function App() {
           <button onClick={() => openModal('pclExperience')} id='experiences' className='item-container fade in'>
 
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <img src={pcl} alt="PCL Logo" className='logo' style={{width: "70px"}}/>
+              <img src={pcl} alt="PCL Logo" className='logo' style={{ width: "70px" }} />
               <h2 className='item-title'>PCL Construction<div className='item-subtitle'>Incoming Software Developer Intern: (Summer 2024 - Winter 2025) </div></h2>
             </div>
             <ul className='item-text'>
@@ -546,31 +551,31 @@ function App() {
             <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
               <div className="overlay" onClick={closeModal}></div>
               <div className="modal-content">
-            <button className='close-modal' onClick={closeModal}>
-                X
-              </button>
-            <div className="modal-content2">
+                <button className='close-modal' onClick={closeModal}>
+                  X
+                </button>
+                <div className="modal-content2">
 
-                <h2 className='item-title'>My Experience at Port Credit Yacht Club</h2>
-                
-                <p className='modal-text'>I've worked at Port Credit Yacht Club for the past two summers, and it has been an incredible experience that has taught me valuable soft skills,
-                  skills that I still apply to this day, and am eternally glad that I possess.</p>
-                <p></p>
-                <p className='modal-text'> My role as Administrative Assistant consisted of me being put in charge of a dock office, where members would frequently come in and access our services, such as:
-                  buying ice, booking dock space to bring their boat, and requesting event information. In this position, I frequently worked with Microsoft Excel to create and modify spreadsheets that contained
-                  information such as: dock layouts, employee information, and member's boat launch and haulout dates. I also used Jonas Databases to access member information when a member needed to be contacted,
-                  whch helped me understand the way that the backends of companies are structured.
-                </p>
-                <p></p>
-                <p className='modal-text'> My role as Harbour Staff consisted of various tasks which helped to maintain the quality of the club, which I took pride in. My team and I were frequently
-                  fixing docks and building new additions to the club, and I really developed an appreciation for seeing work that I had a hand in completed to the highest degree. At the beginning
-                  and end of the boating season, I was launching, and hauling boats in and out of the water. This required a great deal of responsiblity, as one slip up could have resulted in the the boat
-                  slipping out of the slings. This image is an example of what we used to launch/haulout boats:
-                  <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <img src={travellift} alt='travellift' className='flowchart-img' />
-                  </div>
-                </p>
-            </div>
+                  <h2 className='item-title'>My Experience at Port Credit Yacht Club</h2>
+
+                  <p className='modal-text'>I've worked at Port Credit Yacht Club for the past two summers, and it has been an incredible experience that has taught me valuable soft skills,
+                    skills that I still apply to this day, and am eternally glad that I possess.</p>
+                  <p></p>
+                  <p className='modal-text'> My role as Administrative Assistant consisted of me being put in charge of a dock office, where members would frequently come in and access our services, such as:
+                    buying ice, booking dock space to bring their boat, and requesting event information. In this position, I frequently worked with Microsoft Excel to create and modify spreadsheets that contained
+                    information such as: dock layouts, employee information, and member's boat launch and haulout dates. I also used Jonas Databases to access member information when a member needed to be contacted,
+                    whch helped me understand the way that the backends of companies are structured.
+                  </p>
+                  <p></p>
+                  <p className='modal-text'> My role as Harbour Staff consisted of various tasks which helped to maintain the quality of the club, which I took pride in. My team and I were frequently
+                    fixing docks and building new additions to the club, and I really developed an appreciation for seeing work that I had a hand in completed to the highest degree. At the beginning
+                    and end of the boating season, I was launching, and hauling boats in and out of the water. This required a great deal of responsiblity, as one slip up could have resulted in the the boat
+                    slipping out of the slings. This image is an example of what we used to launch/haulout boats:
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                      <img src={travellift} alt='travellift' className='flowchart-img' />
+                    </div>
+                  </p>
+                </div>
               </div>
             </div>
           )}
@@ -596,16 +601,16 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-            <button className='close-modal' onClick={closeModal}>
+              <button className='close-modal' onClick={closeModal}>
                 X
               </button>
-            <div className="modal-content2">
+              <div className="modal-content2">
 
-              <h2 className='item-title'>My Experience at PCL</h2>
-              
-              <p className='modal-text' style={{marginTop: "5.5%"}}>Nothing yet... check back in the summer!</p>
-              
-          </div>
+                <h2 className='item-title'>My Experience at PCL</h2>
+
+                <p className='modal-text' style={{ marginTop: "5.5%" }}>Nothing yet... check back in the summer!</p>
+
+              </div>
             </div>
           </div>
         )}
@@ -613,34 +618,34 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-            <button className='close-modal' onClick={closeModal}>
+              <button className='close-modal' onClick={closeModal}>
                 X
               </button>
-            <div className="modal-content2">
+              <div className="modal-content2">
 
-              <h2 className='item-title'>My Experience at Toggle</h2>
-              
-              <p className='modal-text'>At toggle, I was priviledged with working with a capable team of Software Engineers who I was able to learn a lot from.</p>
-              <p></p>
-              <p className='modal-text'>I became experienced with frameworks like React and React Native, as I was tasked with developing a website and
-                mobile app built upon these structures. I enhanced my previous knowledge of JavaScript, HTML, and CSS for front-end, and learned Backend for the first
-                time where a coworker and I built a SQL database and REST API with the use of Express and NodeJS. We incoroporated Open AI's GPT-4 API where we would provide a
-                user's email as a pdf and allow the user to ask questions that pertain to the information. Google's Tesseact OCR was used as the PDF would be converted to an
-                image, and then it's contents would would be read by Tesseract and given to GPT-4
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                Outside of technical expereince, I was able to learn how a group environment functions and what must be done to ensure proper collaboration.
-                I gained expereince with Git, and frequently helped the UI/UX team come up with designs for the website with Figma. The skills I've learned about working
-                with others throught this position are invaluable, and I am grateful that I was given the oppurtunity to blossom among talented minds.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                Please view this letter of recommendation from my previous boss, and CEO of Toggle, Gyu Tae Bae:
-              </p>
-              <p></p>
-              <div style={{ display: 'flex', justifyContent: 'center' }}><img src={recommendation} alt='flowchart' className='flowchart-img' /></div>
-          </div>
+                <h2 className='item-title'>My Experience at Toggle</h2>
+
+                <p className='modal-text'>At toggle, I was priviledged with working with a capable team of Software Engineers who I was able to learn a lot from.</p>
+                <p></p>
+                <p className='modal-text'>I became experienced with frameworks like React and React Native, as I was tasked with developing a website and
+                  mobile app built upon these structures. I enhanced my previous knowledge of JavaScript, HTML, and CSS for front-end, and learned Backend for the first
+                  time where a coworker and I built a SQL database and REST API with the use of Express and NodeJS. We incoroporated Open AI's GPT-4 API where we would provide a
+                  user's email as a pdf and allow the user to ask questions that pertain to the information. Google's Tesseact OCR was used as the PDF would be converted to an
+                  image, and then it's contents would would be read by Tesseract and given to GPT-4
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  Outside of technical expereince, I was able to learn how a group environment functions and what must be done to ensure proper collaboration.
+                  I gained expereince with Git, and frequently helped the UI/UX team come up with designs for the website with Figma. The skills I've learned about working
+                  with others throught this position are invaluable, and I am grateful that I was given the oppurtunity to blossom among talented minds.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  Please view this letter of recommendation from my previous boss, and CEO of Toggle, Gyu Tae Bae:
+                </p>
+                <p></p>
+                <div style={{ display: 'flex', justifyContent: 'center' }}><img src={recommendation} alt='flowchart' className='flowchart-img' /></div>
+              </div>
             </div>
           </div>
         )}
@@ -648,26 +653,26 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-            <button className='close-modal' onClick={closeModal}>
+              <button className='close-modal' onClick={closeModal}>
                 X
               </button>
-            <div className="modal-content2">
+              <div className="modal-content2">
 
-              <h2 className='item-title'>My Experience Competing in Western AI's 2023 Case Compeition</h2>
-           
-              <p className='modal-text'>At this year's Wetsern AI Case Compeition, groups were tasked with creating an innovative product using AI, a very general instruction which
-                left very much room for interpretation. My group placed 3rd out of 5 finalists, and 35 teams overall.</p>
-              <p></p>
-              <p className='modal-text'> I was lucky enough to be paired with 3 other very competent and creative group members, and we came up with an idea to solve the problem of low quality
-                video calls, and the lack of human conncetion that is felt when this occurs. Our process included using a submitted 3D scan of the user's face, which most of today's smartphones are capable
-                of. Through the use of that, and various AI technologies we would construct a mapping of the user's constructed face on top of the low quality image. Please view the flowchart I created:
-                <img src={flowchart} alt='flowchart' className='flowchart-img' />
-              </p>
-              <p></p>
-              <p className='modal-text'> This 48 hour project greatly enhanced my ability to work under pressure with a team, and having to be creative in such a short time helped me understand
-                the way that my brain works in a time of stress, and how to maintain composure.
-              </p>
-          </div>
+                <h2 className='item-title'>My Experience Competing in Western AI's 2023 Case Compeition</h2>
+
+                <p className='modal-text'>At this year's Wetsern AI Case Compeition, groups were tasked with creating an innovative product using AI, a very general instruction which
+                  left very much room for interpretation. My group placed 3rd out of 5 finalists, and 35 teams overall.</p>
+                <p></p>
+                <p className='modal-text'> I was lucky enough to be paired with 3 other very competent and creative group members, and we came up with an idea to solve the problem of low quality
+                  video calls, and the lack of human conncetion that is felt when this occurs. Our process included using a submitted 3D scan of the user's face, which most of today's smartphones are capable
+                  of. Through the use of that, and various AI technologies we would construct a mapping of the user's constructed face on top of the low quality image. Please view the flowchart I created:
+                  <img src={flowchart} alt='flowchart' className='flowchart-img' />
+                </p>
+                <p></p>
+                <p className='modal-text'> This 48 hour project greatly enhanced my ability to work under pressure with a team, and having to be creative in such a short time helped me understand
+                  the way that my brain works in a time of stress, and how to maintain composure.
+                </p>
+              </div>
             </div>
           </div>
         )}
@@ -675,25 +680,25 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-            <button className='close-modal' onClick={closeModal}>
+              <button className='close-modal' onClick={closeModal}>
                 X
               </button>
-            <div className="modal-content2">
+              <div className="modal-content2">
 
-              <h2 className='item-title'>My Experience at McDonalds</h2>
-          
-              <p className='modal-text'>At McDonalds, I was originally kitchen staff, and then promoted to Crew Trainer as a testament to my leadership and responsibility</p>
-              <p></p>
-              <p className='modal-text'>In my role as crew trainer, I frequently trained new employees and kept in mind their lack of knowledge pertaining to the way the kitchen
-                works. This skill still comes in handy when working with people who are less versed on a specific topic.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                My managers saw that I always showed up on time, respected my coworkers, and put the efficiency and quality of the food first. As a show of appreciation, I was
-                promoted to Crew Trainer after only 2 months of working. I took this role seriously, as even though a job at McDonalds is not extremely difficult to obtain,
-                I am unable to put my name on something that isn't done with my best effort.
-              </p>
-            </div>
+                <h2 className='item-title'>My Experience at McDonalds</h2>
+
+                <p className='modal-text'>At McDonalds, I was originally kitchen staff, and then promoted to Crew Trainer as a testament to my leadership and responsibility</p>
+                <p></p>
+                <p className='modal-text'>In my role as crew trainer, I frequently trained new employees and kept in mind their lack of knowledge pertaining to the way the kitchen
+                  works. This skill still comes in handy when working with people who are less versed on a specific topic.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  My managers saw that I always showed up on time, respected my coworkers, and put the efficiency and quality of the food first. As a show of appreciation, I was
+                  promoted to Crew Trainer after only 2 months of working. I took this role seriously, as even though a job at McDonalds is not extremely difficult to obtain,
+                  I am unable to put my name on something that isn't done with my best effort.
+                </p>
+              </div>
             </div>
           </div>
         )}
@@ -735,7 +740,7 @@ function App() {
 
             </ul>
           </button>
-          
+
           <button onClick={() => openModal('alarmcarModal')} className='item-container fade in' >
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <a href="https://github.com/beo1259/Alarm-Car" target="_blank" rel="noopener noreferrer">
@@ -815,13 +820,13 @@ function App() {
 
         </section>
         {isModalVisible && activeModal === 'inklinkModal' && (
-            <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
-              <div className="overlay" onClick={closeModal}></div>
-              <div className="modal-content">
-            <button className='close-modal' onClick={closeModal}>
+          <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
+            <div className="overlay" onClick={closeModal}></div>
+            <div className="modal-content">
+              <button className='close-modal' onClick={closeModal}>
                 X
               </button>
-            <div className="modal-content2">
+              <div className="modal-content2">
 
                 <h2 className='item-title'>INKLINK: A Web-App Dedicated to Improving Note Taking for the Impaired</h2>
 
@@ -857,21 +862,21 @@ function App() {
                   This was done as a part of Western Developer Society's 2023 Overhaul hackathon, where my team took second place. See experience section
                   to learn more.
                 </p>
-</div>
               </div>
             </div>
-          )}
-          {isModalVisible && activeModal === 'devsocietyExperience' && (
-            <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
-              <div className="overlay" onClick={closeModal}></div>
-              <div className="modal-content">
-            <button className='close-modal' onClick={closeModal}>
+          </div>
+        )}
+        {isModalVisible && activeModal === 'devsocietyExperience' && (
+          <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
+            <div className="overlay" onClick={closeModal}></div>
+            <div className="modal-content">
+              <button className='close-modal' onClick={closeModal}>
                 X
               </button>
-            <div className="modal-content2">
+              <div className="modal-content2">
 
                 <h2 className='item-title'>My Experience at Western Dev Society's 2023 Overhaul Hackathon</h2>
-                
+
                 <p className='modal-text'>At the hackathon, I was part of an incredible team that inspired me with their skills and knowledge. Our
                   collaboration led to an enriching learning experience.</p>
                 <p></p>
@@ -899,53 +904,53 @@ function App() {
                   If you'd like to learn more about this, please check the projects section!
                 </p>
               </div>
-              </div>
             </div>
-          )}
+          </div>
+        )}
 
         {isModalVisible && activeModal === 'flashcardModal' && (
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-            <button className='close-modal' onClick={closeModal}>
+              <button className='close-modal' onClick={closeModal}>
                 X
               </button>
-            <div className="modal-content2">
+              <div className="modal-content2">
 
-              <h2 className='item-title'>My 'Forever Flashcards' Project</h2>
-          
-              <p className='modal-text'>
-                Exam season is tough, and sometimes as the day approaches you realize that you have nowhere near enough time to cram every piece of content
-                from your professor's 800 slides with whatever else you may have going on in your life. This web-app generates 10-500 flashcards on any topic 
-                you can possibly think of, through the power of a AI with a Large Language Model (LLM), allowing you to use live dictation for the foundation of
-                your flashcards, the ability to modify the generated cards, and save the decks.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                This summer I will be starting an internship where the web-development framework I will be working with is Angular 2+, so I knew I wanted to 
-                gain some experience with it before the internship started. This project gave me a chance to do so, as it was my absolute first time ever
-                working with the framework. I had a ton of fun learning it, and though I have been a fan of React, I greatly appreciate it's structured nature. I
-                certainly see how it's strict(er) structure would make large applications much easier to navigate while developing.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                It had also been a while since I had used TypeScript, and though all of those type errors get annoying at first, a hard to catch issue down the road 
-                is even worse, so it made it worth it. It was certainly nice to brush up on TypeScript and it has greatly increased my confidence when it comes to the 
-                use of the language. The HTML was also interesting, angular provides so much functionality in-line that made it much easier to work with. That is my favourite
-                part of Angular by far (as of right now).
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                Ultimately, I just wanted to incorporate generative AI into a side project in a creative way, and as soon as this idea popped into my head I wrote it down and
-                and started working on it. In the VERY near future I plan to implement a full login system with a Firebase backend, as I would love to gain some experience with it,
-                and various other front-end features that I am still workshopping. 
+                <h2 className='item-title'>My 'Forever Flashcards' Project</h2>
+
+                <p className='modal-text'>
+                  Exam season is tough, and sometimes as the day approaches you realize that you have nowhere near enough time to cram every piece of content
+                  from your professor's 800 slides with whatever else you may have going on in your life. This web-app generates 10-500 flashcards on any topic
+                  you can possibly think of, through the power of a AI with a Large Language Model (LLM), allowing you to use live dictation for the foundation of
+                  your flashcards, the ability to modify the generated cards, and save the decks.
+                </p>
                 <p></p>
-                Please check out this demo below:
-                <video src={video} alt='alarmcar' className='flowchart-img' controls muted/>
+                <p className='modal-text'>
+                  This summer I will be starting an internship where the web-development framework I will be working with is Angular 2+, so I knew I wanted to
+                  gain some experience with it before the internship started. This project gave me a chance to do so, as it was my absolute first time ever
+                  working with the framework. I had a ton of fun learning it, and though I have been a fan of React, I greatly appreciate it's structured nature. I
+                  certainly see how it's strict(er) structure would make large applications much easier to navigate while developing.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  It had also been a while since I had used TypeScript, and though all of those type errors get annoying at first, a hard to catch issue down the road
+                  is even worse, so it made it worth it. It was certainly nice to brush up on TypeScript and it has greatly increased my confidence when it comes to the
+                  use of the language. The HTML was also interesting, angular provides so much functionality in-line that made it much easier to work with. That is my favourite
+                  part of Angular by far (as of right now).
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  Ultimately, I just wanted to incorporate generative AI into a side project in a creative way, and as soon as this idea popped into my head I wrote it down and
+                  and started working on it. In the VERY near future I plan to implement a full login system with a Firebase backend, as I would love to gain some experience with it,
+                  and various other front-end features that I am still workshopping.
+                  <p></p>
+                  Please check out this demo below:
+                  <video src={video} alt='alarmcar' className='flowchart-img' controls muted />
 
-              </p>
+                </p>
 
-          </div>
+              </div>
             </div>
           </div>
         )}
@@ -953,38 +958,38 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-            <button className='close-modal' onClick={closeModal}>
+              <button className='close-modal' onClick={closeModal}>
                 X
               </button>
-            <div className="modal-content2">
-              <h2 className='item-title'>My Alarm Car Project</h2>
-              
-              <p className='modal-text'>
-                During my time working on this project, I've been able to expand my comptuer engineering skills, building an RC car completely from scratch,
-                and connecting it to a Raspberry Pi that runs a script to randomize its movement when the user-defined alarm time is reached.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                Working on this has been one of my most challenging, yet rewarding projects becuase
-                I had previously not worked as in depth with hardware. The goal was to create an alarm that necessitates
-                physical interaction to turn it off, ensuring that the user gets out of bed out of bed. This involved designing a mechanism that could move autonomously, integrating
-                it with an alarm system that would only deactivate with a specific level of physical interaction.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                I also assembled a custom car equipped with a Raspberry Pi for programmable control. This involved not only hardware assembly but also software
-                programming to enable the car to perform various tasks autonomously. It was an exercise in both engineering and computer science, providing a hands-on
-                experience with robotics and the Internet of Things (IoT).
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                To bring this projects to life, I developed a Python script capable of initiating random movements in the alarm clock upon activation. This script
-                was essential for the alarm clock's functionality, requiring an understanding of Python's programming logic and hardware interaction to successfully
-                create random, yet controlled, movement patterns.
-                <img src={alarmcar} alt='alarmcar' className='flowchart-img' />
-              </p>
+              <div className="modal-content2">
+                <h2 className='item-title'>My Alarm Car Project</h2>
 
-</div>
+                <p className='modal-text'>
+                  During my time working on this project, I've been able to expand my comptuer engineering skills, building an RC car completely from scratch,
+                  and connecting it to a Raspberry Pi that runs a script to randomize its movement when the user-defined alarm time is reached.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  Working on this has been one of my most challenging, yet rewarding projects becuase
+                  I had previously not worked as in depth with hardware. The goal was to create an alarm that necessitates
+                  physical interaction to turn it off, ensuring that the user gets out of bed out of bed. This involved designing a mechanism that could move autonomously, integrating
+                  it with an alarm system that would only deactivate with a specific level of physical interaction.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  I also assembled a custom car equipped with a Raspberry Pi for programmable control. This involved not only hardware assembly but also software
+                  programming to enable the car to perform various tasks autonomously. It was an exercise in both engineering and computer science, providing a hands-on
+                  experience with robotics and the Internet of Things (IoT).
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  To bring this projects to life, I developed a Python script capable of initiating random movements in the alarm clock upon activation. This script
+                  was essential for the alarm clock's functionality, requiring an understanding of Python's programming logic and hardware interaction to successfully
+                  create random, yet controlled, movement patterns.
+                  <img src={alarmcar} alt='alarmcar' className='flowchart-img' />
+                </p>
+
+              </div>
             </div>
           </div>
         )}
@@ -992,42 +997,42 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-            <button className='close-modal' onClick={closeModal}>
+              <button className='close-modal' onClick={closeModal}>
                 X
               </button>
-            <div className="modal-content2">
-              <h2 className='item-title'>My NBA Player Comparison Project</h2>
-          
-              <p className='modal-text'>
-                My project analyzing NBA players' performance was a deep dive into the world of sports analytics. By calculating statistical weights for various
-                abilities, I was able to quantify the contributions of players to their teams. This process required a nuanced understanding of the game's mechanics
-                and the factors that contribute to a player's success on the court.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                The integration of data from an NBA API was a crucial component of my analysis. It allowed me to access a vast repository of historical and current
-                player statistics, providing a rich dataset to inform my calculations. This step demonstrated my ability to work with complex datasets and extract
-                meaningful insights from them.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                Ensuring the accuracy and consistency of the players' stats was paramount. To achieve this, I implemented various measures, including data validation
-                and normalization techniques. These steps ensured that the statistical analysis was reliable and could be trusted by users of the analytical tool.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                The project also included the complete front-end development of a user-centric web application. This phase involved designing and coding the user
-                interface, ensuring that the application was not only functional but also intuitive to use. My focus was on providing a seamless user experience that
-                made the analysis accessible to all users.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                I delivered an analytical tool that fills a gap in the current internet offerings. This tool allows for the comparison of NBA players across different
-                eras in a simplified manner, catering to fans and analysts alike. My approach was to create a simple yet powerful tool that could bring complex
-                statistical insights into a more digestible format for the average user.
-                <img src={nbaplayer} alt='nbaplayer' className='flowchart-img' />
-              </p>
-          </div>
+              <div className="modal-content2">
+                <h2 className='item-title'>My NBA Player Comparison Project</h2>
+
+                <p className='modal-text'>
+                  My project analyzing NBA players' performance was a deep dive into the world of sports analytics. By calculating statistical weights for various
+                  abilities, I was able to quantify the contributions of players to their teams. This process required a nuanced understanding of the game's mechanics
+                  and the factors that contribute to a player's success on the court.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  The integration of data from an NBA API was a crucial component of my analysis. It allowed me to access a vast repository of historical and current
+                  player statistics, providing a rich dataset to inform my calculations. This step demonstrated my ability to work with complex datasets and extract
+                  meaningful insights from them.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  Ensuring the accuracy and consistency of the players' stats was paramount. To achieve this, I implemented various measures, including data validation
+                  and normalization techniques. These steps ensured that the statistical analysis was reliable and could be trusted by users of the analytical tool.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  The project also included the complete front-end development of a user-centric web application. This phase involved designing and coding the user
+                  interface, ensuring that the application was not only functional but also intuitive to use. My focus was on providing a seamless user experience that
+                  made the analysis accessible to all users.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  I delivered an analytical tool that fills a gap in the current internet offerings. This tool allows for the comparison of NBA players across different
+                  eras in a simplified manner, catering to fans and analysts alike. My approach was to create a simple yet powerful tool that could bring complex
+                  statistical insights into a more digestible format for the average user.
+                  <img src={nbaplayer} alt='nbaplayer' className='flowchart-img' />
+                </p>
+              </div>
             </div>
           </div>
         )}
@@ -1035,42 +1040,42 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-            <button className='close-modal' onClick={closeModal}>
+              <button className='close-modal' onClick={closeModal}>
                 X
               </button>
-            <div className="modal-content2">
-              <h2 className='item-title'>My Study Helper Chrome Extension</h2>
-            
-              <p className='modal-text'>
-                The Chrome extension I developed serves as an innovative solution for managing study sessions. Its creation was motivated by the need for improved
-                organizational tools that cater specifically to the unique rhythms of focused study and rest periods.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                The extension features customizable timers that allow users to define periods of concentrated study along with scheduled breaks. This functionality
-                supports the Pomodoro Technique and similar time management methods that have been proven to boost productivity.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                Using the Twilio API, I was able to implement a backend that sends a text to the user that their current task is complete, telling them that they should
-                check back with the extension to confirm the start of their next task.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                Accessibility was a key consideration in the design of the extension’s interface. It offers a simple, intuitive UI that allows for quick session
-                planning and time management, enabling users to start their study sessions with minimal setup time.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                With this extension, I addressed a gap in the Chrome Web Store for efficient and user-friendly study planning tools. It stands out by providing a
-                streamlined solution that helps students and professionals alike to organize their study sessions more effectively.
+              <div className="modal-content2">
+                <h2 className='item-title'>My Study Helper Chrome Extension</h2>
+
+                <p className='modal-text'>
+                  The Chrome extension I developed serves as an innovative solution for managing study sessions. Its creation was motivated by the need for improved
+                  organizational tools that cater specifically to the unique rhythms of focused study and rest periods.
+                </p>
                 <p></p>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                  <img src={study} alt='study' className='chrome-img' />
-                  <img src={demo} alt='study' className='chrome-img' />
-                </div>
-              </p>
-          </div>
+                <p className='modal-text'>
+                  The extension features customizable timers that allow users to define periods of concentrated study along with scheduled breaks. This functionality
+                  supports the Pomodoro Technique and similar time management methods that have been proven to boost productivity.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  Using the Twilio API, I was able to implement a backend that sends a text to the user that their current task is complete, telling them that they should
+                  check back with the extension to confirm the start of their next task.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  Accessibility was a key consideration in the design of the extension’s interface. It offers a simple, intuitive UI that allows for quick session
+                  planning and time management, enabling users to start their study sessions with minimal setup time.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  With this extension, I addressed a gap in the Chrome Web Store for efficient and user-friendly study planning tools. It stands out by providing a
+                  streamlined solution that helps students and professionals alike to organize their study sessions more effectively.
+                  <p></p>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <img src={study} alt='study' className='chrome-img' />
+                    <img src={demo} alt='study' className='chrome-img' />
+                  </div>
+                </p>
+              </div>
 
             </div>
           </div>
@@ -1080,37 +1085,37 @@ function App() {
           <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
             <div className="overlay" onClick={closeModal}></div>
             <div className="modal-content">
-            <button className='close-modal' onClick={closeModal}>
+              <button className='close-modal' onClick={closeModal}>
                 X
               </button>
-            <div className="modal-content2">
-              <h2 className='item-title'>This Website</h2>
-             
-              <p className='modal-text'>
-                <span style={{ color: 'gold', textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073' }}>The website that you're currently navigating </span> is a testament to my passion for web development and design.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                It integrates JavaScript functions seamlessly with my HTML and CSS designs, demonstrating my technical skill in creating dynamic, interactive web elements.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                Throughout the development process, I placed a strong emphasis on simplicity to ensure a smooth and intuitive user experience, focusing on the ease of navigating through the content.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                This project serves as a personal playground for showcasing my design ideas and capabilities, reflecting my creativity and the breadth of my web development skills.
-              </p>
-              <p></p>
-              <p className='modal-text'>
-                Working on this site allowed me to refresh and reinforce my knowledge of web development fundamentals, broadening my expertise and enhancing my ability to craft well-structured, aesthetically pleasing websites.
-              </p>
+              <div className="modal-content2">
+                <h2 className='item-title'>This Website</h2>
 
-          </div>
+                <p className='modal-text'>
+                  <span style={{ color: 'gold', textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073' }}>The website that you're currently navigating </span> is a testament to my passion for web development and design.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  It integrates JavaScript functions seamlessly with my HTML and CSS designs, demonstrating my technical skill in creating dynamic, interactive web elements.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  Throughout the development process, I placed a strong emphasis on simplicity to ensure a smooth and intuitive user experience, focusing on the ease of navigating through the content.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  This project serves as a personal playground for showcasing my design ideas and capabilities, reflecting my creativity and the breadth of my web development skills.
+                </p>
+                <p></p>
+                <p className='modal-text'>
+                  Working on this site allowed me to refresh and reinforce my knowledge of web development fundamentals, broadening my expertise and enhancing my ability to craft well-structured, aesthetically pleasing websites.
+                </p>
+
+              </div>
             </div>
           </div>
         )}
-        <section id='education' className='section-container' style={{marginBottom: '300px'}}>
+        <section id='education' className='section-container' style={{ marginBottom: '300px' }}>
           <div id='education' className='section-title'>Education...</div>
           <button id='education' className='item-container'>
 
@@ -1271,7 +1276,7 @@ function App() {
 
             <div id="skills" className='section-container'>
               <div className='lang-container'>
-                <div id="skills" class="section-title" style={{paddingTop: '10%'}}>Frameworks and Technologies...</div>
+                <div id="skills" class="section-title" style={{ paddingTop: '10%' }}>Frameworks and Technologies...</div>
 
                 <button id='skills' className='item-container fade in'>
 
@@ -1338,7 +1343,7 @@ function App() {
 
                 <button id='skills' className='item-container fade in'>
                   <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src={expressLogo} alt="Express.js logo" className='lang-img' style={{borderRadius: '7px'}}/>
+                    <img src={expressLogo} alt="Express.js logo" className='lang-img' style={{ borderRadius: '7px' }} />
                     <h2 className='item-title'>Express/NodeJS</h2>
                   </div>
                   <ul className='item-text'>
@@ -1367,7 +1372,7 @@ function App() {
 
         </div>
         <div className='copyright-container'>
-        <div className='copyright-text'>Copyright ©2023 | All rights reserved | Brayden O'Neil</div>
+          <div className='copyright-text'>Copyright ©2023 | All rights reserved | Brayden O'Neil</div>
 
         </div>
       </div>
