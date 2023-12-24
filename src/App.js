@@ -38,7 +38,7 @@ import pcl from './images/PCL.png';
 import video from './images/flashcards.mp4';
 import angular from './images/angular.png';
 
-function Header({ currentSection, setCurrentSection }) {
+function Header({ currentSection, setCurrentSection, isTransparent }) {
 
   function useOutsideAlerter(ref) {
     useEffect(() => {
@@ -125,7 +125,7 @@ function Header({ currentSection, setCurrentSection }) {
 
   return (
 
-    <header className="header">
+    <header className={`header ${isTransparent ? '' : 'header-past'}`}>
       <button type="name"
         className='name'
         onClick={() => scrollToTop()}
@@ -269,7 +269,7 @@ function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalFadeIn, setModalFadeIn] = useState(false);
   const [isBlurred, setIsBlurred] = useState(false);
-
+  const [isTransparent, setIsTransparent] = useState(true);
 
   const openModal = (modalId) => {
     setActiveModal(modalId);
@@ -318,6 +318,8 @@ function App() {
       }
 
       const shouldBlur = window.scrollY > topSection.offsetHeight;
+      const headerChange = window.scrollY > topSection.offsetHeight;
+      setIsTransparent(headerChange);
       setIsBlurred(shouldBlur);
 
       lastScrollY = currentScrollY;
@@ -407,7 +409,7 @@ function App() {
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <Header currentSection={currentSection} setCurrentSection={setCurrentSection} />
+      <Header currentSection={currentSection} setCurrentSection={setCurrentSection} isTransparent={isTransparent}/>
 
       <div className={`App ${isBlurred ? 'blur-active' : ''}`}>
 
