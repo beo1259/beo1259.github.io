@@ -269,7 +269,7 @@ function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalFadeIn, setModalFadeIn] = useState(false);
   const [isBlurred, setIsBlurred] = useState(false);
-  const [isTransparent, setIsTransparent] = useState(true);
+  const [isTransparent, setIsTransparent] = useState(false);
 
   const openModal = (modalId) => {
     setActiveModal(modalId);
@@ -303,6 +303,7 @@ function App() {
 
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
+      setIsTransparent(true);
     }
 
     let lastScrollY = window.scrollY;
