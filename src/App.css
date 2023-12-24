@@ -417,28 +417,22 @@ a {
   transform: scale(0);
   border-radius: 80px;
   animation: sway 8s infinite;
-
-  transition: transform 0.5s ease, box-shadow 0.2s ease, background 1.3s ease, text-shadow 0.2s ease, border 1.3s ease;
 }
 
 @keyframes sway {
-  0%, 100%{ transform: rotate(-1deg);}
-  50%{ transform: rotate(1deg); }
+  0%, 100%{ transform: rotate(-0.5deg);}
+  50%{ transform: rotate(0.5deg); }
 }
 
 #about-me .item-container.item-container-visible {
   transform: scale(1);
+  box-shadow: none ;
 
 
 }
 
 
-#about-me .item-container.item-container.item-container-visible:hover {
-  transform: scale(1.1);
-  border: white solid 2px;
-  box-shadow: none;
-  background: rgba(17, 17, 17, 0.9);
-}
+
 
 #about-me .item-container:before {
   z-index: -5;
@@ -1342,10 +1336,7 @@ a {
 
 
   #about-me .item-container.item-container.item-container-visible:hover {
-    transform: scale(1.1);
-    border: white solid 2px;
-    box-shadow: none;
-    background: rgba(17, 17, 17, 0.9);
+    transform: scale(1);
 
 
   }
