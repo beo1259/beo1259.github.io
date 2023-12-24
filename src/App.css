@@ -1856,11 +1856,13 @@ a {
   }
 
   .flowchart-img {
-    align-items: center;
-    margin-top: 15px;
-    height: 70% !important;
-    width: 100% !important;
-    border-radius: 20px;
+    display: flex;
+    width: 100%;
+    height: 35%;
+    margin-top: 20px;
+    border-radius: 15px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .about-me-content {
