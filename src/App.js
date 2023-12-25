@@ -351,7 +351,6 @@ function App() {
             if (title) {
               title.classList.add('title-visible');
             }
-
             if (entry.target.id === 'about-me') {
               document.querySelector('.headshot').classList.add('headshot-visible');
             }

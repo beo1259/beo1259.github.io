@@ -87,8 +87,8 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  backdrop-filter: blur(6px); 
-  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px); 
+  background: rgba(0, 0, 0, 0.25);
 
   z-index: -1;
 }
