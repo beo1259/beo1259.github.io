@@ -924,8 +924,8 @@ function App() {
                 <p className='modal-text'>
                   Exam season is tough, and sometimes as the day approaches you realize that you have nowhere near enough time to cram every piece of content
                   from your professor's 800 slides with whatever else you may have going on in your life. This web-app generates 10-500 flashcards on any topic
-                  you can possibly think of, through the power of a AI with a Large Language Model (LLM), allowing you to use live dictation for the foundation of
-                  your flashcards, the ability to modify the generated cards, and save the decks.
+                  you can possibly think of, through the power of AI with a Large Language Model (LLM), allowing you to use live dictation for the foundation of
+                  your flashcards, the ability to modify the generated cards, and save/load the decks.
                 </p>
                 <p></p>
                 <p className='modal-text'>
@@ -1127,7 +1127,7 @@ function App() {
             </div>
             <p>
               <p className='course-text-mobile'>Third Year Computer Science</p>
-              <p className='course-text-mobile' style={{ fontWeight: '800' }}>Expected Graduation - May 2025</p>
+              <p className='course-text-mobile' style={{ fontWeight: '800' }}>Expected Graduation - January 2026</p>
               <p className='item-text' style={{ fontWeight: '800' }}>Third Year Computer Science - Expected Gradiation May 2025</p>
               <ul>
                 <li className='item-text' style={{ fontWeight: '100', marginBottom: '10px' }}>Most Relevant Coursework</li>
