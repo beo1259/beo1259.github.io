@@ -37,6 +37,7 @@ import exit from './images/exit.png';
 import pcl from './images/PCL.png';
 import video from './images/flashcards.mp4';
 import angular from './images/angular.png';
+import wcs from './images/wcs.jpg';
 
 function Header({ currentSection, setCurrentSection, isTransparent }) {
 
@@ -487,6 +488,22 @@ function App() {
             </ul>
           </button>
 
+          <button onClick={() => openModal('wcsExperience')} id='experiences' className='item-container fade in'>
+
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <img src={wcs} alt="WCS Logo" className='logo' style={{borderRadius: '10px'}}/>
+              <h2 className='item-title'>Western Cyber Society <div className='item-subtitle'>VP of Technology & Project Manager: (Winter 2023 - Present) </div></h2>
+            </div>
+            <ul className='item-text'>
+              <p></p>
+              <li>Leading a team of capable students to develop an IBM Z Mainframe based project using, React, Express, Db2, Python, COBOL & JCL.</li>
+              <p></p>
+              <li>Helped bring Western University to #1 in Canada for IBM Z Xplore sign ups, and #4th worldwide.</li>
+              <p></p>
+              <li>Coordinated 3 workshops where students could come and work through the IBM Z Xplore modules, earning the 'Concepts' certification from IBM.</li>
+            </ul>
+          </button>
+
           <button onClick={() => openModal('toggleExperience')} id='experiences' className='item-container fade in'>
 
             <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -548,6 +565,23 @@ function App() {
               <li>Worked on/fixed the docks, maintaining a high level of club preservation.</li>
             </ul>
           </button>
+
+          {isModalVisible && activeModal === 'wcsExperience' && (
+            <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
+              <div className="overlay" onClick={closeModal}></div>
+              <div className="modal-content">
+                <button className='close-modal' onClick={closeModal}>
+                  X
+                </button>
+                <div className="modal-content2">
+
+                  <h2 className='item-title'>My Experience at Western Cyber Society</h2>
+
+                  <p className='modal-text'>Check back soon..... 👀🤫</p>
+                </div>
+              </div>
+            </div>
+          )}
 
           {isModalVisible && activeModal === 'pcycExperience' && (
             <div className={`modal ${modalFadeIn ? 'modal-fade-in' : 'modal-fade-out'}`}>
