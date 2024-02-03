@@ -86,7 +86,7 @@ function Header({ currentSection, setCurrentSection, isTransparent }) {
   }
 
   const scrollToSection = (sectionId) => {
-    setCurrentSection('skills');
+    setCurrentSection(null);
 
     const headerOffset = document.querySelector('.header').offsetHeight;
     const section = document.getElementById(sectionId);
