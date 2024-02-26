@@ -158,7 +158,7 @@ function Header({ currentSection, setCurrentSection, isTransparent }) {
             className={getButtonClass('about-me')}
             onClick={() => { scrollToSection('about-me'); toggleMenu(); }}
           >
-            ABOUT
+            About
           </button>
 
           <button
@@ -166,28 +166,28 @@ function Header({ currentSection, setCurrentSection, isTransparent }) {
             className={getButtonClass('experience')}
             onClick={() => { scrollToSection('experience'); toggleMenu(); }}
           >
-            EXPERIENCE
+            Experience
           </button>
           <button
             type="button"
             className={getButtonClass('projects')}
             onClick={() => { scrollToSection('projects'); toggleMenu(); }}
           >
-            PROJECTS
+            Projects
           </button>
           <button
             type="button"
             className={getButtonClass('education')}
             onClick={() => { scrollToSection('education'); toggleMenu(); }}
           >
-            EDUCATION
+            Education
           </button>
           <button
             type="button"
             className={getButtonClass('skills')}
             onClick={() => { scrollToSection('skills'); toggleMenu(); }}
           >
-            SKILLS
+            Skills
           </button>
           <a
             href={resume}
@@ -195,7 +195,7 @@ function Header({ currentSection, setCurrentSection, isTransparent }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            RESUME
+            Resume
           </a>
         </div>
 
@@ -205,7 +205,7 @@ function Header({ currentSection, setCurrentSection, isTransparent }) {
         className='name-button'
         onClick={() => scrollToTop()}
       >
-        BRAYDEN O'NEIL
+        Brayden O'Neil
       </button>
 
       <div className="button-container">
@@ -215,7 +215,7 @@ function Header({ currentSection, setCurrentSection, isTransparent }) {
           className={getButtonClass('about-me')}
           onClick={() => scrollToSection('about-me')}
         >
-          ABOUT
+          about
         </button>
 
         <button
@@ -223,28 +223,28 @@ function Header({ currentSection, setCurrentSection, isTransparent }) {
           className={getButtonClass('experience')}
           onClick={() => scrollToSection('experience')}
         >
-          EXPERIENCE
+          experience
         </button>
         <button
           type="button"
           className={getButtonClass('projects')}
           onClick={() => scrollToSection('projects')}
         >
-          PROJECTS
+          projects
         </button>
         <button
           type="button"
           className={getButtonClass('education')}
           onClick={() => scrollToSection('education')}
         >
-          EDUCATION
+          education
         </button>
         <button
           type="button"
           className={getButtonClass('skills')}
           onClick={() => scrollToSection('skills')}
         >
-          SKILLS
+          skills
         </button>
         <a
           href={resume}
@@ -252,7 +252,7 @@ function Header({ currentSection, setCurrentSection, isTransparent }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          RESUME
+          resume
         </a>
       </div>
       <div
