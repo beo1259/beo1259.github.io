@@ -1,23 +1,23 @@
 import './App.css';
 import React, { useEffect, useState, useRef } from 'react';
-import python from './images/python.png';
-import js from './images/js.png';
-import java from './images/java.png';
-import cpp from './images/C++_logo.png';
-import htmlcss from './images/htmlcss.png';
-import csharp from './images/csharp.png';
-import typescript from './images/typescript.png';
-import sql from './images/sql.png';
-import expressLogo from './images/expressLogo.png';
+// import python from './images/python.png';
+// import js from './images/js.png';
+// import java from './images/java.png';
+// import cpp from './images/C++_logo.png';
+// import htmlcss from './images/htmlcss.png';
+// import csharp from './images/csharp.png';
+// import typescript from './images/typescript.png';
+// import sql from './images/sql.png';
+// import expressLogo from './images/expressLogo.png';
 import toggle from './images/toggle.png';
 import wai from './images/wai.png';
 import mcdonalds from './images/mcdonalds.png';
 import headshot from './images/Headshot.png';
 import github from './images/github.png';
 import linkedin from './images/linkedin.png';
-import react from './images/react.png';
-import reactnative from './images/reactnative.png';
-import flutter from './images/flutter.png';
+// import react from './images/react.png';
+// import reactnative from './images/reactnative.png';
+// import flutter from './images/flutter.png';
 import pcyc from './images/pcyc.png'
 import githubgrey from './images/githubgrey.png';
 import resume from './resume.pdf';
@@ -36,7 +36,7 @@ import hamburger from './images/hamburger.png';
 import exit from './images/exit.png';
 import pcl from './images/PCL.png';
 import video from './images/flashcards.mp4';
-import angular from './images/angular.png';
+// import angular from './images/angular.png';
 import wcs from './images/wcs.jpg';
 
 function Header({ currentSection, setCurrentSection, isTransparent }) {
@@ -215,7 +215,7 @@ function Header({ currentSection, setCurrentSection, isTransparent }) {
           className={getButtonClass('about-me')}
           onClick={() => scrollToSection('about-me')}
         >
-          about
+          About
         </button>
 
         <button
@@ -223,28 +223,28 @@ function Header({ currentSection, setCurrentSection, isTransparent }) {
           className={getButtonClass('experience')}
           onClick={() => scrollToSection('experience')}
         >
-          experience
+          Experience
         </button>
         <button
           type="button"
           className={getButtonClass('projects')}
           onClick={() => scrollToSection('projects')}
         >
-          projects
+          Projects
         </button>
         <button
           type="button"
           className={getButtonClass('education')}
           onClick={() => scrollToSection('education')}
         >
-          education
+          Education
         </button>
         <button
           type="button"
           className={getButtonClass('skills')}
           onClick={() => scrollToSection('skills')}
         >
-          skills
+          Skills
         </button>
         <a
           href={resume}
@@ -252,7 +252,7 @@ function Header({ currentSection, setCurrentSection, isTransparent }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          resume
+          Resume
         </a>
       </div>
       <div
@@ -1182,17 +1182,15 @@ function App() {
 
 
         <div className="skills-section">
-          <section id='skills' className='section-container fade in skills-section'>
+          <section id='skills' className='skills-container fade in skills-section'>
             <div className='lang-container'>
-              <div class="section-title">Languages...</div>
+              <div class="section-title">Skills...</div>
 
               <button id='experiences' className='item-container fade in'>
 
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={python} alt="Python logo" className='lang-img' />
+                  {/* <img src={python} alt="Python logo" className='lang-img' /> */}
                   <h2 className='item-title'>Python</h2>
-                </div>
-                <ul className='item-text'>
+                {/* <ul className='item-text'>
                   <li style={{ paddingBottom: '7px' }}>
                     I have been using python since I was 14 years old, and am very well versed in this language. I frequently practice Leetcode problems using python
                     as I find it to be the closest to pseudocode.
@@ -1201,198 +1199,252 @@ function App() {
                     I have also used it for my Alarm Car project;
                     the entire script for its movement and behaviour is written in python.
                   </li>
-                </ul>
+                </ul> */}
               </button>
 
               <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={java} alt="Java logo" className='lang-img' />
                   <h2 className='item-title'>Java</h2>
-                </div>
-                <ul className='item-text'>
-                  <li style={{ paddingBottom: '7px' }}>
-                    I have been using Java since high school, and it is currently my strongest language.
-                  </li>
-                  <li>
-                    Java provides an  Object-Oriented programming experience, which makes it easy to bring the ideal structure of my projects into fruition
-                  </li>
-                </ul>
+
               </button>
 
               <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={js} alt="JavaScript logo" className='lang-img' />
+                  {/* <img src={js} alt="JavaScript logo" className='lang-img' /> */}
                   <h2 className='item-title'>JavaScript</h2>
-                </div>
-                <ul className='item-text'>
+                {/* <ul className='item-text'>
                   <li style={{ paddingBottom: '7px' }}>
                     JavaScript is essential for creating an entertaining user experience for web apps, and I have been honing on it while building this website!
                   </li>
                   <li>
                     I enjoy this aspect of web development, as it enables me to employ my problem solving skills and strategize approaches to different issues I may face while developing a website.
                   </li>
-                </ul>
+                </ul> */}
 
               </button>
 
               <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={typescript} alt="TypeScript logo" className='lang-img' />
+                  {/* <img src={typescript} alt="TypeScript logo" className='lang-img' /> */}
                   <h2 className='item-title'>TypeScript</h2>
-                </div>
-                <ul className='item-text'>
+                {/* <ul className='item-text'>
                   <li style={{ paddingBottom: '7px' }}>
                     I first used TypeScript at my most recent internship with Toggle, and picked it up rather quickly due to my previous experience with JavaScript.
                   </li>
                   <li>
                     I think TypeScript is a great choice for scalable websites worked on by a large group of people, as it outshines JavaScript in its maintainability and readability.
                   </li>
-                </ul>
+                </ul> */}
               </button>
 
 
               <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={htmlcss} alt="HTML/CSS logo" className='lang-img' />
-                  <h2 className='item-title'>HTML/CSS</h2>
-                </div>
-                <ul className='item-text'>
+                  {/* <img src={htmlcss} alt="HTML/CSS logo" className='lang-img' /> */}
+                  <h2 className='item-title'>HTML</h2>
+                {/* <ul className='item-text'>
                   <li style={{ paddingBottom: '7px' }}>
                     I have become very fluent in HTML while experimenting with web development over the past few years, I'm able to quickly turn a visualized website structure into what I want.
                   </li>
                   <li>
                     CSS has many styles, however its structure is simple. I'm able to consistently apply my desired design after of years of experience.
                   </li>
-                </ul>
+                </ul> */}
               </button>
 
               <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={csharp} alt="C# logo" className='lang-img' />
+                  {/* <img src={htmlcss} alt="HTML/CSS logo" className='lang-img' /> */}
+                  <h2 className='item-title'>CSS</h2>
+                {/* <ul className='item-text'>
+                  <li style={{ paddingBottom: '7px' }}>
+                    I have become very fluent in HTML while experimenting with web development over the past few years, I'm able to quickly turn a visualized website structure into what I want.
+                  </li>
+                  <li>
+                    CSS has many styles, however its structure is simple. I'm able to consistently apply my desired design after of years of experience.
+                  </li>
+                </ul> */}
+              </button>
+
+              <button id='skills' className='item-container fade in'>
+                  {/* <img src={csharp} alt="C# logo" className='lang-img' /> */}
                   <h2 className='item-title'>C#</h2>
-                </div>
-                <ul className='item-text'>
+                {/* <ul className='item-text'>
                   <li style={{ paddingBottom: '7px' }}>
                     Syntatically, I was able to pick C# up pretty quickly due to my abilities with Java; however I find the process of coding with C# more efficient than the latter.
                   </li>
                   <li>
                     C# is extremely scalable and used very widely, so I am currently practicing and learning its ins and outs by the day.
                   </li>
-                </ul>
+                </ul> */}
               </button>
               <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={cpp} alt="C++ Logo" className='lang-img' />
+                  {/* <img src={cpp} alt="C++ Logo" className='lang-img' /> */}
                   <h2 className='item-title'>C/C++</h2>
-                </div>
-                <ul className='item-text'>
+                {/* <ul className='item-text'>
                   <li style={{ paddingBottom: '7px' }}>
                     I am currently taking an Operating Systems course, and the assignments are done in C, which has allowed me to hone in on my low-level skills.
                   </li>
                   <li>
                     Being that C++ is very similar syntatically, but used on a much higher-level, I certainly plan to incorporate it into one of my future projects.
                   </li>
-                </ul>
+                </ul> */}
               </button>
               <button id='skills' className='item-container fade in'>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <img src={sql} alt="SQL logo" className='lang-img' />
+                  {/* <img src={sql} alt="SQL logo" className='lang-img' /> */}
                   <h2 className='item-title'>SQL</h2>
-                </div>
-                <ul className='item-text'>
+                {/* <ul className='item-text'>
                   <li style={{ paddingBottom: '7px' }}>
                     In my intership at Toggle, a coworker an I managed a SQL database, where I leared how to write queries and the structure of MySQL.
                   </li>
                   <li>
                     I frequently practice writing queries with Leetcode SQL questions, as SQL is an ever present language, and every back-end engineer will work with it at some point.
                   </li>
-                </ul>
+                </ul> */}
               </button>
-            </div>
 
-            <div id="skills" className='section-container'>
-              <div className='lang-container'>
-                <div id="skills" class="section-title" style={{ paddingTop: '10%' }}>Frameworks and Technologies...</div>
+            {/* <div id="skills" className='section-container'> */}
 
                 <button id='skills' className='item-container fade in'>
 
-                  <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src={angular} alt="React logo" className='lang-img' />
+                    {/* <img src={angular} alt="React logo" className='lang-img' /> */}
                     <h2 className='item-title'>Angular 2+</h2>
-                  </div>
-                  <ul className='item-text'>
+                  {/* <ul className='item-text'>
                     <li style={{ paddingBottom: '7px' }}>
                       In my most recent side project 'Forever Flashcards', I used Angular for the first time, getting a strong grasp on it's structural nature.
                     </li>
                     <li>
                       I really enjoy Angular and certainly plan to use it in the future for large scale projects with team's of people, which is where I feel it performs best.
                     </li>
-                  </ul>
+                  </ul> */}
                 </button>
 
                 <button id='skills' className='item-container fade in'>
 
-                  <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src={react} alt="React logo" className='lang-img' />
+                    {/* <img src={react} alt="React logo" className='lang-img' /> */}
                     <h2 className='item-title'>React</h2>
-                  </div>
-                  <ul className='item-text'>
+                  {/* <ul className='item-text'>
                     <li style={{ paddingBottom: '7px' }}>
                       In my intership at Toggle, React was the main framework I worked with for the front-end of the web-app, gaining invaluable experience with it.
                     </li>
                     <li>
                       I was able to learn from my coworkers how frameworks are used to structure web-apps, and it boosted my conceptual and technical understanding of front-end development.
                     </li>
-                  </ul>
+                  </ul> */}
                 </button>
 
                 <button id='skills' className='item-container fade in'>
-                  <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src={reactnative} alt="Native logo" className='lang-img' />
+                    {/* <img src={reactnative} alt="Native logo" className='lang-img' /> */}
                     <h2 className='item-title'>React Native</h2>
-                  </div>
-                  <ul className='item-text'>
+                  {/* <ul className='item-text'>
                     <li style={{ paddingBottom: '7px' }}>
                       Being that React Native is extremely similar to React, it wasn't as hard to pick up and was a smooth transition for me.
                     </li>
                     <li>
                       I learned how mobile devleopment frameworks work in conjunction with Android Studio, which I previously had no knowledge of.
                     </li>
-                  </ul>
+                  </ul> */}
                 </button>
 
                 <button id='skills' className='item-container fade in'>
-                  <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src={flutter} alt="Flutter logo" className='lang-img' />
-                    <h2 className='item-title'>Flutter and Dart</h2>
-                  </div>
-                  <ul className='item-text'>
+                    {/* <img src={flutter} alt="Flutter logo" className='lang-img' /> */}
+                    <h2 className='item-title'>Flutter</h2>
+                  {/* <ul className='item-text'>
                     <li style={{ paddingBottom: '7px' }}>
                       I have been using Flutter for a personal project, and at my internship with Toggle, where I helped build the front-end of a desktop app for Windows and MacOS.
                     </li>
                     <li>
                       This came with an understanding of dart, the language used with flutter. I find dart to be an interesting approach to the structure of code in web development, and I am excited keep using it.
                     </li>
-                  </ul>
+                  </ul> */}
+                </button>
+
+                <button id='skills' className='item-container fade in'>
+                    {/* <img src={flutter} alt="Flutter logo" className='lang-img' /> */}
+                    <h2 className='item-title'>Dart</h2>
+                  {/* <ul className='item-text'>
+                    <li style={{ paddingBottom: '7px' }}>
+                      I have been using Flutter for a personal project, and at my internship with Toggle, where I helped build the front-end of a desktop app for Windows and MacOS.
+                    </li>
+                    <li>
+                      This came with an understanding of dart, the language used with flutter. I find dart to be an interesting approach to the structure of code in web development, and I am excited keep using it.
+                    </li>
+                  </ul> */}
                 </button>
 
 
                 <button id='skills' className='item-container fade in'>
-                  <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src={expressLogo} alt="Express.js logo" className='lang-img' style={{ borderRadius: '7px' }} />
-                    <h2 className='item-title'>Express/NodeJS</h2>
-                  </div>
-                  <ul className='item-text'>
+                    {/* <img src={expressLogo} alt="Express.js logo" className='lang-img' style={{ borderRadius: '7px' }} /> */}
+                    <h2 className='item-title'>Express</h2>
+                  {/* <ul className='item-text'>
                     <li style={{ paddingBottom: '7px' }}>
                       Express and Node JS is what a coworker and I at Toggle used to engineer the REST API to connect our front-end to our back-end SQL database.
                     </li>
                     <li>
                       Though it took some time to pickup, the use of NodeJS to write the REST API has not only taught me how to use Express/NodeJS, but given me and understanding of how aan application's back-end is structured at its core.
                     </li>
-                  </ul>
+                  </ul> */}
                 </button>
+
+                <button id='skills' className='item-container fade in'>
+                    {/* <img src={expressLogo} alt="Express.js logo" className='lang-img' style={{ borderRadius: '7px' }} /> */}
+                    <h2 className='item-title'>NodeJS</h2>
+                  {/* <ul className='item-text'>
+                    <li style={{ paddingBottom: '7px' }}>
+                      Express and Node JS is what a coworker and I at Toggle used to engineer the REST API to connect our front-end to our back-end SQL database.
+                    </li>
+                    <li>
+                      Though it took some time to pickup, the use of NodeJS to write the REST API has not only taught me how to use Express/NodeJS, but given me and understanding of how aan application's back-end is structured at its core.
+                    </li>
+                  </ul> */}
+                </button>
+
+                <button id='skills' className='item-container fade in'>
+                    {/* <img src={expressLogo} alt="Express.js logo" className='lang-img' style={{ borderRadius: '7px' }} /> */}
+                    <h2 className='item-title'>COBOL</h2>
+                  {/* <ul className='item-text'>
+                    <li style={{ paddingBottom: '7px' }}>
+                      Express and Node JS is what a coworker and I at Toggle used to engineer the REST API to connect our front-end to our back-end SQL database.
+                    </li>
+                    <li>
+                      Though it took some time to pickup, the use of NodeJS to write the REST API has not only taught me how to use Express/NodeJS, but given me and understanding of how aan application's back-end is structured at its core.
+                    </li>
+                  </ul> */}
+                </button>
+                <button id='skills' className='item-container fade in'>
+                    {/* <img src={expressLogo} alt="Express.js logo" className='lang-img' style={{ borderRadius: '7px' }} /> */}
+                    <h2 className='item-title'>JCL</h2>
+                  {/* <ul className='item-text'>
+                    <li style={{ paddingBottom: '7px' }}>
+                      Express and Node JS is what a coworker and I at Toggle used to engineer the REST API to connect our front-end to our back-end SQL database.
+                    </li>
+                    <li>
+                      Though it took some time to pickup, the use of NodeJS to write the REST API has not only taught me how to use Express/NodeJS, but given me and understanding of how aan application's back-end is structured at its core.
+                    </li>
+                  </ul> */}
+                </button>
+                <button id='skills' className='item-container fade in'>
+                    {/* <img src={expressLogo} alt="Express.js logo" className='lang-img' style={{ borderRadius: '7px' }} /> */}
+                    <h2 className='item-title'>Db2</h2>
+                  {/* <ul className='item-text'>
+                    <li style={{ paddingBottom: '7px' }}>
+                      Express and Node JS is what a coworker and I at Toggle used to engineer the REST API to connect our front-end to our back-end SQL database.
+                    </li>
+                    <li>
+                      Though it took some time to pickup, the use of NodeJS to write the REST API has not only taught me how to use Express/NodeJS, but given me and understanding of how aan application's back-end is structured at its core.
+                    </li>
+                  </ul> */}
+                </button>
+                <button id='skills' className='item-container fade in'>
+                    {/* <img src={expressLogo} alt="Express.js logo" className='lang-img' style={{ borderRadius: '7px' }} /> */}
+                    <h2 className='item-title'>MySQL</h2>
+                  {/* <ul className='item-text'>
+                    <li style={{ paddingBottom: '7px' }}>
+                      Express and Node JS is what a coworker and I at Toggle used to engineer the REST API to connect our front-end to our back-end SQL database.
+                    </li>
+                    <li>
+                      Though it took some time to pickup, the use of NodeJS to write the REST API has not only taught me how to use Express/NodeJS, but given me and understanding of how aan application's back-end is structured at its core.
+                    </li>
+                  </ul> */}
+                </button>
+
               </div>
-            </div>
+            {/* </div> */}
           </section>
         </div>
 

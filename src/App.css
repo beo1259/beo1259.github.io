@@ -35,8 +35,8 @@
 }
 
 .lang-img {
-  max-width: 50px;
-  max-width: 50px;
+  max-width: 20px;
+  max-width: 20px;
   margin-right: 10px;
 }
 
@@ -121,13 +121,13 @@ a {
 
 .header {
   z-index: 1000 !important;
-  background-color: rgba(17, 17, 17, 0.9);
+  background-color: rgba(17, 17, 17, 0.95);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: top center;
   width: 100%;
-  height: 40px;
+  height: 6%;
   padding-bottom: 0.4%;
   position: fixed;
   top: 0;
@@ -145,7 +145,7 @@ a {
   background-attachment: fixed;
   background-position: top center;
   width: 100%;
-  height: 53px;
+  height: 70px;
   padding-bottom: 0.4%;
   position: fixed;
   top: 0;
@@ -156,8 +156,9 @@ a {
 }
 
 .header-hidden {
-  transform: translateY(-93%);
-  transition: transform 0.3s ease;
+  transform: translateY(-96.5%);
+  height: 6%;
+  transition: all 0.3s ease;
 }
 
 .progressMainWrapper {
@@ -313,6 +314,8 @@ a {
   justify-content: center;
   min-height: 100%;
   max-height: 100%;
+  padding-left: 20% !important;
+  padding-right: 20% !important;
   margin-top: 0%;
   margin-bottom: 0%;
   padding-bottom: 10%;
@@ -321,7 +324,21 @@ a {
   text-align: center;
   opacity: 1;
   overflow: hidden;
+  margin: 0 auto;
 }
+
+.skills-container{
+  
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  width: 65%;
+  margin: 0 auto; /* Add this line */
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
+
 
 
 #education .section-container {
@@ -556,56 +573,52 @@ a {
 
 
 #skills .item-container {
+  position: absolute;
+  padding: 0px;
   vertical-align: top;
-  border: white solid 2px;
-  border-radius: 1.75rem;
-  padding-left: 2%;
-  min-width: 40%;
-  max-width: 40%;
-  min-height: 340px;
-  max-height: 340px;
-  background: rgba(17, 17, 17, 0.9);
-  border: none;
+  border-radius: 1.9rem;
+  min-width: 14%;
+  max-width: 14%;
+  min-height: 80px;
+  max-height: 80px;
+  background: rgb(22, 22, 22);
+  box-shadow: 0 0 30px 0px rgba(255, 255, 254, 0.12);
+  border: solid rgb(90, 90, 90) 2px;
   z-index: 1 !important;
   opacity: 1;
   position: relative;
   color: white;
-  border: grey solid 1px;
   flex-grow: 0;
   flex-shrink: 0;
   overflow: hidden;
-  transition: transform 0.5s ease, box-shadow 0.2s ease, background 0.2s ease, text-shadow 0.2s ease;
+  transition: all 0.3s ease;
 }
 
-
-
-
-#skills .item-container:before {
-
-
-  z-index: -5;
+#skills .item-container::before {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-  border-radius: inherit;
+  position: fixed;
+  top: 0px; /* Adjust the border size */
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  transform: scale(1.1);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  background-size: 300% 300%; /* Large background size for the gradient animation */
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0; /* Hide initially */
+  border-radius: inherit; /* Match the container's border-radius */
 }
 
+#skills .item-container:hover::before {
+  opacity: 1; /* Show the animated border on hover */
+}
 
 #skills .item-container:hover {
-
-
-
-
-  transform: scale(1.01);
-  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.13);
-  z-index: -1;
+  transform: scale(1.03);
+  border: solid rgb(195, 195, 195) 2px;
+  box-shadow: 0 0 50px 10px rgba(255, 255, 255, 0.3);
+  animation: glowBorder 1.5s infinite alternate;
 }
 
 
@@ -693,6 +706,13 @@ a {
   font-size: 1.3rem;
 }
 
+#skills .item-title{
+  text-align: center;
+  
+  font-size: 1rem;
+  padding-left: 0px;
+}
+
 
 .item-subtitle {
   font-family: 'lato';
@@ -735,6 +755,10 @@ a {
   opacity: 0;
   transform: translateX(-350px);
   transition: transform 0.5s ease, opacity 0.1s ease;
+}
+
+#skills .section-title{
+  margin-bottom: 5%;
 }
 
 
@@ -1326,6 +1350,32 @@ a {
     padding-right: 5% !important;
   }
 
+  #skills .item-container {
+    position: absolute;
+    padding: 0px !important;
+    vertical-align: top;
+    border-radius: 1.9rem;
+    min-width: 90px !important;
+    max-width: 30px !important;
+    min-height: 70px !important;
+    max-height: 70px !important;
+    background: rgb(22, 22, 22);
+    box-shadow: 0 0 30px 0px rgba(255, 255, 254, 0.12);
+    box-shadow: 0 0 30px 0px rgba(255, 255, 254, 0.12);
+    z-index: 1 !important;
+    opacity: 1;
+    position: relative;
+    color: white;
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  #skills .item-title{
+    font-size: 0.9rem;
+  }
+  
 
   #about-me .item-container {
     display: flex;
@@ -1364,8 +1414,6 @@ a {
 
 
   #about-me .item-container:before {
-
-
     z-index: -5;
     content: '';
     position: absolute;
@@ -1506,6 +1554,11 @@ a {
     border-radius: 30px;
     transform: scale(0);
     transition: transform 0.5s ease;
+  }
+
+  .skills-container{
+    width: 100%;
+    margin-top: 70px;
   }
 
   #frameworks .lang-container{
@@ -1655,8 +1708,8 @@ a {
     margin: 3px;
     margin-left: 20px;
     border: none;
-    min-height: 80px !important;
-    max-height: 80px !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
     box-shadow: none;
     background-color: transparent;
   }
