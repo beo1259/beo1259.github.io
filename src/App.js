@@ -1182,7 +1182,8 @@ function App() {
 
 
         <div className="skills-section">
-          <section id='skills' className='skills-container fade in skills-section'>
+          <div className='skilsss'>
+          <section id='skills' className='section-container fade in skills-section'>
             <div className='lang-container'>
               <div class="section-title">Skills...</div>
 
@@ -1446,6 +1447,7 @@ function App() {
               </div>
             {/* </div> */}
           </section>
+        </div>
         </div>
 
         <div className='bottom-icons1'>
