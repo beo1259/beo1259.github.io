@@ -328,10 +328,11 @@ a {
 }
 
 .skilsss{
+  display: block;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  width: 70%;
+  width: 100%;
 }
 
 #skills .section-title{
@@ -588,8 +589,8 @@ a {
   padding: 0px;
   vertical-align: top;
   border-radius: 1.9rem;
-  min-width: 14%;
-  max-width: 14%;
+  min-width: 11%;
+  max-width: 11%;
   min-height: 80px;
   max-height: 80px;
   background: rgb(22, 22, 22);
@@ -769,7 +770,7 @@ a {
 }
 
 #skills .section-title{
-  padding-left: 4%;
+  padding-left: 6.5rem;
   padding-bottom: 3%;
 }
 
@@ -1113,6 +1114,7 @@ a {
   transition: transform 0.3s ease-in-out;
   transition: opacity 1s ease-in-out;
 }
+
 .modal-content2 {
   margin-left: auto;
   margin-right: auto;
@@ -1268,6 +1270,7 @@ a {
     margin-bottom: -80px;
     z-index: 100000000000000;
   }
+  
 
   #education .title-visible {
     transform: translateX(40px);
@@ -1552,20 +1555,8 @@ a {
     color: white;
   }
 
-  .lang-container {
-    margin-top: 20%;
-    margin-left: auto;
-    margin-right: auto;
-    align-self: center;
-    justify-content: center;
-    min-width: 78% !important;
-    max-width: 78% !important;
-    padding-top: 20px;
-    background: rgba(17, 17, 17, 0.9);
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 30px;
-    transform: scale(0);
-    transition: transform 0.5s ease;
+  .lang-container{
+    width: 100%;
   }
 
   .skills-container{
@@ -1579,6 +1570,7 @@ a {
 
   .lang-container-visible{
     transform: scale(1);
+    width: 100%;
   }
 
   .section-text {
@@ -1666,6 +1658,10 @@ a {
   }
 
 
+  #skills .section-title{
+    margin-right: 50px !important;
+  }
+
   .wrapper {
     display: none !important;
   }
@@ -1715,29 +1711,13 @@ a {
     display: none;
   }
 
-  #skills .item-container {
-    width: 1000px;
-    margin: 3px;
-    margin-left: 20px;
-    border: none;
-    min-height: 60px !important;
-    max-height: 60px !important;
-    box-shadow: none;
-    background-color: transparent;
-  }
-
+ 
 
   #skills .item-container:before {
     background-image: none;
   }
 
 
-  #skills .item-container:hover {
-    transform: scale(1.03);
-    border: none;
-    box-shadow: none;
-    background-color: transparent;
-  }
 
 
   .skills-section .item-container {
@@ -1866,6 +1846,15 @@ a {
     border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
   }
+
+  #skills .item-container {
+    min-height: 25% !important;
+    max-height: 25% !important;
+    min-width: 35% !important;
+    max-width: 35% !important;
+
+  }
+
 
   #education .item-container {
     min-width: 78% !important;
@@ -2001,6 +1990,11 @@ a {
     position: relative;
     font-size: 0.6rem;
     z-index: 5 !important;
+  }
+
+  #skills .section-title{
+    padding-left: 3rem;
+    padding-bottom: 3%;
   }
 
 

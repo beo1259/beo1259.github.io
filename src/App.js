@@ -1181,7 +1181,6 @@ function App() {
 
 
 
-        <div className="skills-section">
           <div className='skilsss'>
           <section id='skills' className='section-container fade in skills-section'>
             <div className='lang-container'>
@@ -1465,7 +1464,6 @@ function App() {
           <div className='copyright-text'>Copyright ©2023 | All rights reserved | Brayden O'Neil</div>
 
         </div>
-      </div>
     </>
   );
 }
